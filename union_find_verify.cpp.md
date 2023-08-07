@@ -9,7 +9,7 @@ data:
   attributes:
     links:
     - https://judge.yosupo.jp/problem/unionfind
-  bundledCode: "#line 1 \"code/union_find_verify.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/unionfind\"\
+  bundledCode: "#line 1 \"union_find_verify.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/unionfind\"\
     \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#define rep(i, n) for (ll\
     \ i = 0, n_f = (ll)(n); i < n_f; ++i)\n#define frep(i, l, r)                 \
     \                 \\\n    for (ll i = (ll)(l), l_f = (ll)(l), r_f = (ll)(r); \\\
@@ -61,15 +61,15 @@ data:
     \ }\n}"
   dependsOn: []
   isVerificationFile: false
-  path: code/union_find_verify.cpp
+  path: union_find_verify.cpp
   requiredBy: []
-  timestamp: '2023-08-08 00:26:45+09:00'
+  timestamp: '2023-08-08 00:45:05+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: code/union_find_verify.cpp
+documentation_of: union_find_verify.cpp
 layout: document
 redirect_from:
-- /library/code/union_find_verify.cpp
-- /library/code/union_find_verify.cpp.html
-title: code/union_find_verify.cpp
+- /library/union_find_verify.cpp
+- /library/union_find_verify.cpp.html
+title: union_find_verify.cpp
 ---

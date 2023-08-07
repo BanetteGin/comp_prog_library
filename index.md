@@ -1,11 +1,6 @@
 ---
 data:
   libraryCategories:
-  - name: code
-    pages:
-    - icon: ':warning:'
-      path: code/union_find_verify.cpp
-      title: code/union_find_verify.cpp
   - name: src
     pages:
     - icon: ':warning:'
@@ -116,6 +111,11 @@ data:
     - icon: ':warning:'
       path: src/union_find.hpp
       title: src/union_find.hpp
+  - name: .
+    pages:
+    - icon: ':warning:'
+      path: union_find_verify.cpp
+      title: union_find_verify.cpp
   verificationCategories: []
 layout: toppage
 ---
