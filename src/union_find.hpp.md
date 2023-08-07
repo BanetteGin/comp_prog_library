@@ -3,6 +3,9 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy:
   - icon: ':warning:'
+    path: code/union_find_verify.cpp
+    title: code/union_find_verify.cpp
+  - icon: ':warning:'
     path: src/all.hpp
     title: src/all.hpp
   _extendedVerifiedWith: []
@@ -38,6 +41,7 @@ data:
   path: src/union_find.hpp
   requiredBy:
   - src/all.hpp
+  - code/union_find_verify.cpp
   timestamp: '2023-08-07 22:07:44+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
