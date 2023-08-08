@@ -108,7 +108,7 @@ data:
     - icon: ':warning:'
       path: src/triangle.hpp
       title: src/triangle.hpp
-    - icon: ':x:'
+    - icon: ':warning:'
       path: src/union_find.hpp
       title: src/union_find.hpp
   verificationCategories:
