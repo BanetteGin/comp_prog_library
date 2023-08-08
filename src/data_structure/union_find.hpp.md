@@ -1,11 +1,17 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: src/all.hpp
+    title: src/all.hpp
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/library_checker/union_find.test.cpp
+    title: test/library_checker/union_find.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"src/data_structure/union_find.hpp\"\n\n\n\n#include <vector>\n\
@@ -33,10 +39,12 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: src/data_structure/union_find.hpp
-  requiredBy: []
+  requiredBy:
+  - src/all.hpp
   timestamp: '2023-08-08 12:20:54+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/library_checker/union_find.test.cpp
 documentation_of: src/data_structure/union_find.hpp
 layout: document
 redirect_from:

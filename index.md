@@ -42,7 +42,7 @@ data:
     - icon: ':warning:'
       path: src/data_structure/segment_tree.hpp
       title: src/data_structure/segment_tree.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: src/data_structure/union_find.hpp
       title: src/data_structure/union_find.hpp
   - name: src/geometry
@@ -130,7 +130,7 @@ data:
   verificationCategories:
   - name: test/library_checker
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library_checker/union_find.test.cpp
       title: test/library_checker/union_find.test.cpp
 layout: toppage

@@ -1,7 +1,10 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: src/all.hpp
+    title: src/all.hpp
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
@@ -27,7 +30,8 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: src/number_theory/eratosthenes_sieve.hpp
-  requiredBy: []
+  requiredBy:
+  - src/all.hpp
   timestamp: '2023-08-08 12:20:54+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []

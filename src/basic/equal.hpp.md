@@ -4,7 +4,31 @@ data:
   - icon: ':warning:'
     path: src/basic/constant.hpp
     title: src/basic/constant.hpp
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: src/all.hpp
+    title: src/all.hpp
+  - icon: ':warning:'
+    path: src/all.hpp
+    title: src/all.hpp
+  - icon: ':warning:'
+    path: src/geometry/circle.hpp
+    title: src/geometry/circle.hpp
+  - icon: ':warning:'
+    path: src/geometry/line.hpp
+    title: src/geometry/line.hpp
+  - icon: ':warning:'
+    path: src/geometry/point.hpp
+    title: src/geometry/point.hpp
+  - icon: ':warning:'
+    path: src/geometry/rotate.hpp
+    title: src/geometry/rotate.hpp
+  - icon: ':warning:'
+    path: src/geometry/segment.hpp
+    title: src/geometry/segment.hpp
+  - icon: ':warning:'
+    path: src/geometry/triangle.hpp
+    title: src/geometry/triangle.hpp
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
@@ -26,7 +50,15 @@ data:
   - src/basic/constant.hpp
   isVerificationFile: false
   path: src/basic/equal.hpp
-  requiredBy: []
+  requiredBy:
+  - src/all.hpp
+  - src/all.hpp
+  - src/geometry/triangle.hpp
+  - src/geometry/point.hpp
+  - src/geometry/circle.hpp
+  - src/geometry/rotate.hpp
+  - src/geometry/segment.hpp
+  - src/geometry/line.hpp
   timestamp: '2023-08-08 12:20:54+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
