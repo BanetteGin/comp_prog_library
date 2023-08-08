@@ -54,6 +54,9 @@ struct point {
     bool operator!=(const point& p) const noexcept {
         return !equal(this->x, p.x) || !equal(this->y, p.y);
     }
+    bool operator<(const point& p) const noexcept {
+        return !equal(this->x, p.x) || !equal(this->y, p.y);
+    }
 
     T dot(const point& p, const point& q) const noexcept {
         return p.x * q.x + p.y * q.y;

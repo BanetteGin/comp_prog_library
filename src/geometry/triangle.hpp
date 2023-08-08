@@ -26,6 +26,11 @@ struct triangle {
         T r = length_a / sin(angle_a) / 2;
         return std::make_pair(o, r);
     }
+    std::pair<point<T>, T> incenter() const noexcept {
+        point<T> o = (point_a * length_a + point_b * length_b + point_c * length_c) / (length_a + length_b + length_c);
+        T r =
+            return std::make_pair(o, r);
+    }
 };
 
 }  // namespace BanetteGin
