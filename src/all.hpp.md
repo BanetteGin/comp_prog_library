@@ -97,7 +97,7 @@ data:
   - icon: ':warning:'
     path: src/triangle.hpp
     title: src/triangle.hpp
-  - icon: ':warning:'
+  - icon: ':x:'
     path: src/union_find.hpp
     title: src/union_find.hpp
   _extendedRequiredBy: []

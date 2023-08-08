@@ -108,14 +108,14 @@ data:
     - icon: ':warning:'
       path: src/triangle.hpp
       title: src/triangle.hpp
-    - icon: ':warning:'
+    - icon: ':x:'
       path: src/union_find.hpp
       title: src/union_find.hpp
+  verificationCategories:
   - name: test/library_checker
     pages:
-    - icon: ':warning:'
-      path: test/library_checker/union_find_verify.cpp
-      title: test/library_checker/union_find_verify.cpp
-  verificationCategories: []
+    - icon: ':x:'
+      path: test/library_checker/union_find.test.cpp
+      title: test/library_checker/union_find.test.cpp
 layout: toppage
 ---
