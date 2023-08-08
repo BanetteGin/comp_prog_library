@@ -1,38 +1,54 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: src/union_find.hpp
+    title: src/union_find.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
-  attributes: {}
-  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.11.4/x64/lib/python3.11/site-packages/onlinejudge_verify/documentation/build.py\"\
-    , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
-    \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n          \
-    \         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\
-    \  File \"/opt/hostedtoolcache/Python/3.11.4/x64/lib/python3.11/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
-    , line 187, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.11.4/x64/lib/python3.11/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
-    , line 401, in update\n    self.update(self._resolve(pathlib.Path(included), included_from=path))\n\
-    \                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n \
-    \ File \"/opt/hostedtoolcache/Python/3.11.4/x64/lib/python3.11/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
-    , line 260, in _resolve\n    raise BundleErrorAt(path, -1, \"no such header\"\
-    )\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: /src/union_find.hpp:\
-    \ line -1: no such header\n"
+  _verificationStatusIcon: ':heavy_check_mark:'
+  attributes:
+    '*NOT_SPECIAL_COMMENTS*': ''
+    PROBLEM: https://judge.yosupo.jp/problem/unionfind
+    links:
+    - https://judge.yosupo.jp/problem/unionfind
+  bundledCode: "#line 1 \"test/library_checker/union_find.test.cpp\"\n#define PROBLEM\
+    \ \"https://judge.yosupo.jp/problem/unionfind\"\n\n#include <bits/stdc++.h>\n\
+    using namespace std;\n\n#define rep(i, n) for (ll i = 0, n_f = (ll)(n); i < n_f;\
+    \ ++i)\n\ntypedef long long ll;\n\n#line 1 \"src/union_find.hpp\"\n\n\n\n#line\
+    \ 5 \"src/union_find.hpp\"\n\nnamespace BanetteGin {\n\ntemplate <class T>\nstruct\
+    \ union_find {\n    std::vector<T> par, rk, sz;\n    union_find(T n)\n       \
+    \ : par(n, -1), rk(n, 0), sz(n, 1) {\n    }\n    T root(T& v) {\n        if (par[v]\
+    \ == -1)\n            return v;\n        else\n            return par[v] = root(par[v]);\n\
+    \    }\n    bool same(T& u, T& v) {\n        return root(u) == root(v);\n    }\n\
+    \    bool unite(T& u, T& v) {\n        T urt = root(u);\n        T vrt = root(v);\n\
+    \        if (urt == vrt) return false;\n        if (rk[urt] < rk[vrt]) swap(urt,\
+    \ vrt);\n        par[vrt] = urt;\n        if (rk[urt] == rk[vrt]) rk[urt]++;\n\
+    \        sz[urt] += sz[vrt];\n        return true;\n    }\n    T size(T& v) {\n\
+    \        return sz[root(v)];\n    }\n};\n\n}  // namespace BanetteGin\n\n\n#line\
+    \ 11 \"test/library_checker/union_find.test.cpp\"\nusing namespace BanetteGin;\n\
+    \nint main(void) {\n    ll n, q;\n    cin >> n >> q;\n    union_find uf(n);\n\
+    \    rep(i, q) {\n        ll t, u, v;\n        cin >> t >> u >> v;\n        if\
+    \ (t == 0)\n            uf.unite(u, v);\n        else {\n            if (uf.same(u,\
+    \ v))\n                cout << 1 << endl;\n            else\n                cout\
+    \ << 0 << endl;\n        }\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/unionfind\"\n\n#include\
     \ <bits/stdc++.h>\nusing namespace std;\n\n#define rep(i, n) for (ll i = 0, n_f\
-    \ = (ll)(n); i < n_f; ++i)\n\ntypedef long long ll;\n\n#include \"/src/union_find.hpp\"\
+    \ = (ll)(n); i < n_f; ++i)\n\ntypedef long long ll;\n\n#include \"src/union_find.hpp\"\
     \nusing namespace BanetteGin;\n\nint main(void) {\n    ll n, q;\n    cin >> n\
     \ >> q;\n    union_find uf(n);\n    rep(i, q) {\n        ll t, u, v;\n       \
     \ cin >> t >> u >> v;\n        if (t == 0)\n            uf.unite(u, v);\n    \
     \    else {\n            if (uf.same(u, v))\n                cout << 1 << endl;\n\
     \            else\n                cout << 0 << endl;\n        }\n    }\n}"
-  dependsOn: []
+  dependsOn:
+  - src/union_find.hpp
   isVerificationFile: true
   path: test/library_checker/union_find.test.cpp
   requiredBy: []
-  timestamp: '1970-01-01 00:00:00+00:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2023-08-08 11:34:58+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library_checker/union_find.test.cpp
 layout: document

@@ -5,10 +5,13 @@ data:
   - icon: ':warning:'
     path: src/all.hpp
     title: src/all.hpp
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/library_checker/union_find.test.cpp
+    title: test/library_checker/union_find.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"src/union_find.hpp\"\n\n\n\n#include <vector>\n\nnamespace\
@@ -39,8 +42,9 @@ data:
   requiredBy:
   - src/all.hpp
   timestamp: '2023-08-07 22:07:44+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/library_checker/union_find.test.cpp
 documentation_of: src/union_find.hpp
 layout: document
 redirect_from:
