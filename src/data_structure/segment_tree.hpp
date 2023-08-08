@@ -3,7 +3,7 @@
 
 #include <vector>
 
-#include "constant.hpp"
+#include "../basic/constant.hpp"
 
 namespace BanetteGin {
 

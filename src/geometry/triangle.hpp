@@ -1,7 +1,7 @@
 #ifndef BANETTEGIN_TRIANGLE_HPP_INCLUDED
 #define BANETTEGIN_TRIANGLE_HPP_INCLUDED
 
-#include "equal.hpp"
+#include "../basic/equal.hpp"
 #include "point.hpp"
 #include "segment.hpp"
 
