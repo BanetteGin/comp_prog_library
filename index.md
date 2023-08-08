@@ -6,115 +6,131 @@ data:
     - icon: ':warning:'
       path: src/all.hpp
       title: src/all.hpp
+  - name: src/basic
+    pages:
     - icon: ':warning:'
-      path: src/base_change.hpp
-      title: src/base_change.hpp
+      path: src/basic/chmax.hpp
+      title: src/basic/chmax.hpp
     - icon: ':warning:'
-      path: src/binary_indexed_tree.hpp
-      title: src/binary_indexed_tree.hpp
+      path: src/basic/chmin.hpp
+      title: src/basic/chmin.hpp
     - icon: ':warning:'
-      path: src/chmax.hpp
-      title: src/chmax.hpp
+      path: src/basic/constant.hpp
+      title: src/basic/constant.hpp
     - icon: ':warning:'
-      path: src/chmin.hpp
-      title: src/chmin.hpp
+      path: src/basic/equal.hpp
+      title: src/basic/equal.hpp
+  - name: src/combinatorics
+    pages:
     - icon: ':warning:'
-      path: src/circle.hpp
-      title: src/circle.hpp
+      path: src/combinatorics/combination.hpp
+      title: src/combinatorics/combination.hpp
     - icon: ':warning:'
-      path: src/clip_string.hpp
-      title: src/clip_string.hpp
+      path: src/combinatorics/homogenous_product.hpp
+      title: src/combinatorics/homogenous_product.hpp
     - icon: ':warning:'
-      path: src/combination.hpp
-      title: src/combination.hpp
+      path: src/combinatorics/permutation.hpp
+      title: src/combinatorics/permutation.hpp
+  - name: src/data_structure
+    pages:
     - icon: ':warning:'
-      path: src/constant.hpp
-      title: src/constant.hpp
+      path: src/data_structure/binary_indexed_tree.hpp
+      title: src/data_structure/binary_indexed_tree.hpp
     - icon: ':warning:'
-      path: src/divisors.hpp
-      title: src/divisors.hpp
+      path: src/data_structure/hold_ends.hpp
+      title: src/data_structure/hold_ends.hpp
     - icon: ':warning:'
-      path: src/edge.hpp
-      title: src/edge.hpp
+      path: src/data_structure/segment_tree.hpp
+      title: src/data_structure/segment_tree.hpp
     - icon: ':warning:'
-      path: src/equal.hpp
-      title: src/equal.hpp
+      path: src/data_structure/union_find.hpp
+      title: src/data_structure/union_find.hpp
+  - name: src/geometry
+    pages:
     - icon: ':warning:'
-      path: src/eratosthenes_sieve.hpp
-      title: src/eratosthenes_sieve.hpp
+      path: src/geometry/circle.hpp
+      title: src/geometry/circle.hpp
     - icon: ':warning:'
-      path: src/find_cycle_by_dfs.hpp
-      title: src/find_cycle_by_dfs.hpp
+      path: src/geometry/line.hpp
+      title: src/geometry/line.hpp
     - icon: ':warning:'
-      path: src/greatest_common_divisor.hpp
-      title: src/greatest_common_divisor.hpp
+      path: src/geometry/parallel_check.hpp
+      title: src/geometry/parallel_check.hpp
     - icon: ':warning:'
-      path: src/hold_ends.hpp
-      title: src/hold_ends.hpp
+      path: src/geometry/point.hpp
+      title: src/geometry/point.hpp
     - icon: ':warning:'
-      path: src/homogenous_product.hpp
-      title: src/homogenous_product.hpp
+      path: src/geometry/rotate.hpp
+      title: src/geometry/rotate.hpp
     - icon: ':warning:'
-      path: src/line.hpp
-      title: src/line.hpp
+      path: src/geometry/segment.hpp
+      title: src/geometry/segment.hpp
     - icon: ':warning:'
-      path: src/linear_sieve.hpp
-      title: src/linear_sieve.hpp
+      path: src/geometry/triangle.hpp
+      title: src/geometry/triangle.hpp
+  - name: src/graph
+    pages:
     - icon: ':warning:'
-      path: src/matrix_product.hpp
-      title: src/matrix_product.hpp
+      path: src/graph/edge.hpp
+      title: src/graph/edge.hpp
     - icon: ':warning:'
-      path: src/modint.hpp
-      title: src/modint.hpp
+      path: src/graph/find_cycle_by_dfs.hpp
+      title: src/graph/find_cycle_by_dfs.hpp
     - icon: ':warning:'
-      path: src/naive_sieve.hpp
-      title: src/naive_sieve.hpp
+      path: src/graph/topological_sort.hpp
+      title: src/graph/topological_sort.hpp
+  - name: src/matrix
+    pages:
     - icon: ':warning:'
-      path: src/parallel_check.hpp
-      title: src/parallel_check.hpp
+      path: src/matrix/matrix_product.hpp
+      title: src/matrix/matrix_product.hpp
+  - name: src/number_theory
+    pages:
     - icon: ':warning:'
-      path: src/permutation.hpp
-      title: src/permutation.hpp
+      path: src/number_theory/base_change.hpp
+      title: src/number_theory/base_change.hpp
     - icon: ':warning:'
-      path: src/point.hpp
-      title: src/point.hpp
+      path: src/number_theory/divisors.hpp
+      title: src/number_theory/divisors.hpp
     - icon: ':warning:'
-      path: src/prime_check.hpp
-      title: src/prime_check.hpp
+      path: src/number_theory/eratosthenes_sieve.hpp
+      title: src/number_theory/eratosthenes_sieve.hpp
     - icon: ':warning:'
-      path: src/prime_factorization.hpp
-      title: src/prime_factorization.hpp
+      path: src/number_theory/greatest_common_divisor.hpp
+      title: src/number_theory/greatest_common_divisor.hpp
     - icon: ':warning:'
-      path: src/rotate.hpp
-      title: src/rotate.hpp
+      path: src/number_theory/linear_sieve.hpp
+      title: src/number_theory/linear_sieve.hpp
     - icon: ':warning:'
-      path: src/rotate_string.hpp
-      title: src/rotate_string.hpp
+      path: src/number_theory/modint.hpp
+      title: src/number_theory/modint.hpp
     - icon: ':warning:'
-      path: src/run_length_encording.hpp
-      title: src/run_length_encording.hpp
+      path: src/number_theory/naive_sieve.hpp
+      title: src/number_theory/naive_sieve.hpp
     - icon: ':warning:'
-      path: src/segment.hpp
-      title: src/segment.hpp
+      path: src/number_theory/prime_check.hpp
+      title: src/number_theory/prime_check.hpp
     - icon: ':warning:'
-      path: src/segment_tree.hpp
-      title: src/segment_tree.hpp
+      path: src/number_theory/prime_factorization.hpp
+      title: src/number_theory/prime_factorization.hpp
     - icon: ':warning:'
-      path: src/sundaram_sieve.hpp
-      title: src/sundaram_sieve.hpp
+      path: src/number_theory/sundaram_sieve.hpp
+      title: src/number_theory/sundaram_sieve.hpp
+  - name: src/string
+    pages:
     - icon: ':warning:'
-      path: src/topological_sort.hpp
-      title: src/topological_sort.hpp
+      path: src/string/clip_string.hpp
+      title: src/string/clip_string.hpp
     - icon: ':warning:'
-      path: src/triangle.hpp
-      title: src/triangle.hpp
-    - icon: ':heavy_check_mark:'
-      path: src/union_find.hpp
-      title: src/union_find.hpp
+      path: src/string/rotate_string.hpp
+      title: src/string/rotate_string.hpp
+    - icon: ':warning:'
+      path: src/string/run_length_encording.hpp
+      title: src/string/run_length_encording.hpp
   verificationCategories:
   - name: test/library_checker
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/library_checker/union_find.test.cpp
       title: test/library_checker/union_find.test.cpp
 layout: toppage
