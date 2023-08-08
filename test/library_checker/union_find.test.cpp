@@ -7,7 +7,7 @@ using namespace std;
 
 typedef long long ll;
 
-#include "src/union_find.hpp"
+#include "../../src/union_find.hpp"
 using namespace BanetteGin;
 
 int main(void) {
