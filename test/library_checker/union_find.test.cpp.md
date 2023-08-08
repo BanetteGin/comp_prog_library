@@ -36,7 +36,7 @@ data:
     \ << 0 << endl;\n        }\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/unionfind\"\n\n#include\
     \ <bits/stdc++.h>\nusing namespace std;\n\n#define rep(i, n) for (ll i = 0, n_f\
-    \ = (ll)(n); i < n_f; ++i)\n\ntypedef long long ll;\n\n#include \"src/union_find.hpp\"\
+    \ = (ll)(n); i < n_f; ++i)\n\ntypedef long long ll;\n\n#include \"../../src/union_find.hpp\"\
     \nusing namespace BanetteGin;\n\nint main(void) {\n    ll n, q;\n    cin >> n\
     \ >> q;\n    union_find uf(n);\n    rep(i, q) {\n        ll t, u, v;\n       \
     \ cin >> t >> u >> v;\n        if (t == 0)\n            uf.unite(u, v);\n    \
@@ -47,7 +47,7 @@ data:
   isVerificationFile: true
   path: test/library_checker/union_find.test.cpp
   requiredBy: []
-  timestamp: '2023-08-08 11:34:58+09:00'
+  timestamp: '2023-08-08 11:54:06+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library_checker/union_find.test.cpp
