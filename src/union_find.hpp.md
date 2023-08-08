@@ -5,6 +5,9 @@ data:
   - icon: ':warning:'
     path: src/all.hpp
     title: src/all.hpp
+  - icon: ':warning:'
+    path: test/library_checker/union_find_verify.cpp
+    title: test/library_checker/union_find_verify.cpp
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
@@ -38,6 +41,7 @@ data:
   path: src/union_find.hpp
   requiredBy:
   - src/all.hpp
+  - test/library_checker/union_find_verify.cpp
   timestamp: '2023-08-07 22:07:44+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []

@@ -111,11 +111,11 @@ data:
     - icon: ':warning:'
       path: src/union_find.hpp
       title: src/union_find.hpp
-  - name: .
+  - name: test/library_checker
     pages:
     - icon: ':warning:'
-      path: union_find_verify.cpp
-      title: union_find_verify.cpp
+      path: test/library_checker/union_find_verify.cpp
+      title: test/library_checker/union_find_verify.cpp
   verificationCategories: []
 layout: toppage
 ---
