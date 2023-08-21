@@ -41,10 +41,10 @@ data:
     \ modint& r) const noexcept {\n        return this->val != r.val;\n    }\n\n \
     \   friend constexpr ostream& operator<<(ostream& os, const modint<MOD>& x) noexcept\
     \ {\n        return os << x.val;\n    }\n\n    friend constexpr modint<MOD> modpow(const\
-    \ modint<MOD>& a, long long int n) noexcept {\n        modint<MOD> ret = 1;\n\
-    \        modint<MOD> tmpa = a;\n        while (n > 0) {\n            if (n & 1)\
-    \ ret *= a;\n            tmpa = tmpa * tmpa;\n            n >>= 1;\n        }\n\
-    \        return ret;\n    }\n};\n\n}  // namespace BanetteGin\n\n\n"
+    \ modint<MOD>& a, long long int n) noexcept {\n        modint ret = 1;\n     \
+    \   modint tmpa = a;\n        while (n > 0) {\n            if (n & 1) ret *= a;\n\
+    \            tmpa = tmpa * tmpa;\n            n >>= 1;\n        }\n        return\
+    \ ret;\n    }\n};\n\n}  // namespace BanetteGin\n\n\n"
   code: "#ifndef BANETTEGIN_MODINT_HPP_INCLUDED\n#define BANETTEGIN_MODINT_HPP_INCLUDED\n\
     \nnamespace BanetteGin {\n\ntemplate <long long int MOD>\nstruct modint {\n  \
     \  long long int val;\n    constexpr modint(long long int v = 0) noexcept\n  \
@@ -75,16 +75,16 @@ data:
     \ operator!=(const modint& r) const noexcept {\n        return this->val != r.val;\n\
     \    }\n\n    friend constexpr ostream& operator<<(ostream& os, const modint<MOD>&\
     \ x) noexcept {\n        return os << x.val;\n    }\n\n    friend constexpr modint<MOD>\
-    \ modpow(const modint<MOD>& a, long long int n) noexcept {\n        modint<MOD>\
-    \ ret = 1;\n        modint<MOD> tmpa = a;\n        while (n > 0) {\n         \
-    \   if (n & 1) ret *= a;\n            tmpa = tmpa * tmpa;\n            n >>= 1;\n\
-    \        }\n        return ret;\n    }\n};\n\n}  // namespace BanetteGin\n\n#endif"
+    \ modpow(const modint<MOD>& a, long long int n) noexcept {\n        modint ret\
+    \ = 1;\n        modint tmpa = a;\n        while (n > 0) {\n            if (n &\
+    \ 1) ret *= a;\n            tmpa = tmpa * tmpa;\n            n >>= 1;\n      \
+    \  }\n        return ret;\n    }\n};\n\n}  // namespace BanetteGin\n\n#endif"
   dependsOn: []
   isVerificationFile: false
   path: src/number_theory/modint.hpp
   requiredBy:
   - src/all.hpp
-  timestamp: '2023-08-22 02:10:12+09:00'
+  timestamp: '2023-08-22 02:24:08+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/number_theory/modint.hpp
