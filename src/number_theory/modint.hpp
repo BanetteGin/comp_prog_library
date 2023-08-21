@@ -83,8 +83,8 @@ struct modint {
     }
 
     friend constexpr modint<MOD> modpow(const modint<MOD>& a, long long int n) noexcept {
-        modint<MOD> ret = 1;
-        modint<MOD> tmpa = a;
+        modint ret = 1;
+        modint tmpa = a;
         while (n > 0) {
             if (n & 1) ret *= a;
             tmpa = tmpa * tmpa;
