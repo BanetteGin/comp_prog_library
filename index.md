@@ -154,7 +154,7 @@ data:
     - icon: ':warning:'
       path: src/number_theory/linear_sieve.hpp
       title: src/number_theory/linear_sieve.hpp
-    - icon: ':x:'
+    - icon: ':warning:'
       path: src/number_theory/modint.hpp
       title: src/number_theory/modint.hpp
     - icon: ':warning:'
@@ -181,11 +181,6 @@ data:
       path: src/string/run_length_encording.hpp
       title: src/string/run_length_encording.hpp
   verificationCategories:
-  - name: test/atcoder
-    pages:
-    - icon: ':x:'
-      path: test/atcoder/modint.test.cpp
-      title: test/atcoder/modint.test.cpp
   - name: test/library_checker
     pages:
     - icon: ':heavy_check_mark:'

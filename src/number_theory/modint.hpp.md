@@ -5,13 +5,10 @@ data:
   - icon: ':warning:'
     path: src/all.hpp
     title: src/all.hpp
-  _extendedVerifiedWith:
-  - icon: ':x:'
-    path: test/atcoder/modint.test.cpp
-    title: test/atcoder/modint.test.cpp
-  _isVerificationFailed: true
+  _extendedVerifiedWith: []
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     links: []
   bundledCode: "#line 1 \"src/number_theory/modint.hpp\"\n\n\n\nnamespace BanetteGin\
@@ -88,9 +85,8 @@ data:
   requiredBy:
   - src/all.hpp
   timestamp: '2023-08-22 02:10:12+09:00'
-  verificationStatus: LIBRARY_ALL_WA
-  verifiedWith:
-  - test/atcoder/modint.test.cpp
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
 documentation_of: src/number_theory/modint.hpp
 layout: document
 redirect_from:

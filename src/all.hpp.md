@@ -112,7 +112,7 @@ data:
   - icon: ':warning:'
     path: src/number_theory/linear_sieve.hpp
     title: src/number_theory/linear_sieve.hpp
-  - icon: ':x:'
+  - icon: ':warning:'
     path: src/number_theory/modint.hpp
     title: src/number_theory/modint.hpp
   - icon: ':warning:'
