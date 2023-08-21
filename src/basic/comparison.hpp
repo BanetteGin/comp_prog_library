@@ -2,9 +2,9 @@
 #define BANETTEGIN_COMPARISON_HPP_INCLUDED
 
 #include "equal.hpp"
-#include "greater.hpp"
 #include "greater_equal.hpp"
-#include "less.hpp"
+#include "greater_than.hpp"
 #include "less_equal.hpp"
+#include "less_than.hpp"
 
 #endif

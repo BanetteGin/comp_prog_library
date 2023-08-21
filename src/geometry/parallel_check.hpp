@@ -8,7 +8,6 @@ namespace BanetteGin {
 
 template <class T>
 bool parallel_check(const line<T>& l, const line<T>& m) {
-    return a
 }
 
 }  // namespace BanetteGin

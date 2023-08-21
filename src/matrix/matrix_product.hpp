@@ -6,11 +6,11 @@
 namespace BanetteGin {
 
 template <class T>
-struct MatrixProduct {
-    const T adide = 0;
+struct matrix_product {
+    const T addide = 0;
     const T mulide = 1;
     std::vector<std::vector<T> > a, b;
-    MatrixProduct(std::vector<std::vector<T> > a_, std::vector<std::vector<T> > b_)
+    matrix_product(std::vector<std::vector<T> > a_, std::vector<std::vector<T> > b_)
         : a(a_), b(b_) {
     }
     T addition(T& x, T& y) const noexcept {

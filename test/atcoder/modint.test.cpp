@@ -10,5 +10,9 @@ typedef long long ll;
 #include "../../src/number_theory/modint.hpp"
 using namespace BanetteGin;
 
+const ll mod99ll = 998244353LL;
+using mint = modint<mod99ll>;
+
 int main(void) {
+    return 0;
 }

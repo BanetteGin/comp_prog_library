@@ -6,7 +6,7 @@
 namespace BanetteGin {
 
 template <class T>
-std::vector<T> TopologicalSort(const std::vector<std::vector<T> >& g) {
+std::vector<T> topological_sort(const std::vector<std::vector<T> >& g) {
     std::vector<T> ret;
     std::vector<T> ind(g.size(), 0);
     for (T i = 0; i < ind.size(); ++i) {
