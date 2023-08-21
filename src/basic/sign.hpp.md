@@ -4,13 +4,7 @@ data:
   - icon: ':warning:'
     path: src/basic/constant.hpp
     title: src/basic/constant.hpp
-  - icon: ':warning:'
-    path: src/basic/sign.hpp
-    title: src/basic/sign.hpp
   _extendedRequiredBy:
-  - icon: ':warning:'
-    path: src/all.hpp
-    title: src/all.hpp
   - icon: ':warning:'
     path: src/all.hpp
     title: src/all.hpp
@@ -23,6 +17,9 @@ data:
   - icon: ':warning:'
     path: src/basic/comparison.hpp
     title: src/basic/comparison.hpp
+  - icon: ':warning:'
+    path: src/basic/equal.hpp
+    title: src/basic/equal.hpp
   - icon: ':warning:'
     path: src/geometry/circle.hpp
     title: src/geometry/circle.hpp
@@ -41,12 +38,6 @@ data:
   - icon: ':warning:'
     path: src/geometry/intersect_circle_and_circle.hpp
     title: src/geometry/intersect_circle_and_circle.hpp
-  - icon: ':warning:'
-    path: src/geometry/intersect_circle_and_circle.hpp
-    title: src/geometry/intersect_circle_and_circle.hpp
-  - icon: ':warning:'
-    path: src/geometry/intersect_line_and_circle.hpp
-    title: src/geometry/intersect_line_and_circle.hpp
   - icon: ':warning:'
     path: src/geometry/intersect_line_and_circle.hpp
     title: src/geometry/intersect_line_and_circle.hpp
@@ -77,33 +68,28 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"src/basic/equal.hpp\"\n\n\n\n#line 1 \"src/basic/sign.hpp\"\
-    \n\n\n\n#line 1 \"src/basic/constant.hpp\"\n\n\n\nnamespace BanetteGin {\n\nconst\
-    \ long double EPS = 10e-12;\nconst long long int LINF = 1001001001001001001LL;\n\
-    const long double PI = acos(-1);\nconst long double GOLDEN_RATIO = 2 * cos(PI\
-    \ / 5);\n\n}  // namespace BanetteGin\n\n\n#line 5 \"src/basic/sign.hpp\"\n\n\
-    namespace BanetteGin {\n\ntemplate <class T>\nint sign(const T& x) {\n    return\
-    \ (x < -EPS ? -1 : (x < EPS ? 0 : 1));\n}\n\n}  // namespace BanetteGin\n\n\n\
-    #line 5 \"src/basic/equal.hpp\"\n\nnamespace BanetteGin {\n\ntemplate <class T>\n\
-    bool equal(const T &a, const T &b) {\n    return (sign(a - b) == 0);\n}\n\n} \
-    \ // namespace BanetteGin\n\n\n"
-  code: "#ifndef BANETTEGIN_EQUAL_HPP_INCLUDED\n#define BANETTEGIN_EQUAL_HPP_INCLUDED\n\
-    \n#include \"sign.hpp\"\n\nnamespace BanetteGin {\n\ntemplate <class T>\nbool\
-    \ equal(const T &a, const T &b) {\n    return (sign(a - b) == 0);\n}\n\n}  //\
-    \ namespace BanetteGin\n\n#endif"
+  bundledCode: "#line 1 \"src/basic/sign.hpp\"\n\n\n\n#line 1 \"src/basic/constant.hpp\"\
+    \n\n\n\nnamespace BanetteGin {\n\nconst long double EPS = 10e-12;\nconst long\
+    \ long int LINF = 1001001001001001001LL;\nconst long double PI = acos(-1);\nconst\
+    \ long double GOLDEN_RATIO = 2 * cos(PI / 5);\n\n}  // namespace BanetteGin\n\n\
+    \n#line 5 \"src/basic/sign.hpp\"\n\nnamespace BanetteGin {\n\ntemplate <class\
+    \ T>\nint sign(const T& x) {\n    return (x < -EPS ? -1 : (x < EPS ? 0 : 1));\n\
+    }\n\n}  // namespace BanetteGin\n\n\n"
+  code: "#ifndef BANETTEGIN_SIGN_HPP_INCLUDED\n#define BANETTEGIN_SIGN_HPP_INCLUDED\n\
+    \n#include \"constant.hpp\"\n\nnamespace BanetteGin {\n\ntemplate <class T>\n\
+    int sign(const T& x) {\n    return (x < -EPS ? -1 : (x < EPS ? 0 : 1));\n}\n\n\
+    }  // namespace BanetteGin\n\n#endif"
   dependsOn:
-  - src/basic/sign.hpp
   - src/basic/constant.hpp
   isVerificationFile: false
-  path: src/basic/equal.hpp
+  path: src/basic/sign.hpp
   requiredBy:
   - src/all.hpp
-  - src/all.hpp
+  - src/basic/equal.hpp
   - src/basic/comparison.hpp
   - src/analysis/golden_ratio_search.hpp
   - src/analysis/ternary_search.hpp
   - src/geometry/distance_point_and_point.hpp
-  - src/geometry/intersect_line_and_circle.hpp
   - src/geometry/intersect_line_and_circle.hpp
   - src/geometry/circle.hpp
   - src/geometry/parallel_check.hpp
@@ -116,15 +102,14 @@ data:
   - src/geometry/triangle.hpp
   - src/geometry/distance_point_and_line.hpp
   - src/geometry/intersect_circle_and_circle.hpp
-  - src/geometry/intersect_circle_and_circle.hpp
   - src/geometry/segment.hpp
   timestamp: '2023-08-22 02:10:12+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: src/basic/equal.hpp
+documentation_of: src/basic/sign.hpp
 layout: document
 redirect_from:
-- /library/src/basic/equal.hpp
-- /library/src/basic/equal.hpp.html
-title: src/basic/equal.hpp
+- /library/src/basic/sign.hpp
+- /library/src/basic/sign.hpp.html
+title: src/basic/sign.hpp
 ---

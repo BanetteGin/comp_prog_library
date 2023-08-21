@@ -12,9 +12,9 @@ data:
   attributes:
     links: []
   bundledCode: "#line 1 \"src/matrix/matrix_product.hpp\"\n\n\n\n#include <vector>\n\
-    \nnamespace BanetteGin {\n\ntemplate <class T>\nstruct MatrixProduct {\n    const\
-    \ T adide = 0;\n    const T mulide = 1;\n    std::vector<std::vector<T> > a, b;\n\
-    \    MatrixProduct(std::vector<std::vector<T> > a_, std::vector<std::vector<T>\
+    \nnamespace BanetteGin {\n\ntemplate <class T>\nstruct matrix_product {\n    const\
+    \ T addide = 0;\n    const T mulide = 1;\n    std::vector<std::vector<T> > a,\
+    \ b;\n    matrix_product(std::vector<std::vector<T> > a_, std::vector<std::vector<T>\
     \ > b_)\n        : a(a_), b(b_) {\n    }\n    T addition(T& x, T& y) const noexcept\
     \ {\n        return x + y;\n    }\n    T multiplication(T& x, T& y) const noexcept\
     \ {\n        return x * y;\n    }\n    std::vector<std::vector<T> > product()\
@@ -25,9 +25,9 @@ data:
     \                }\n            }\n        }\n        return c;\n    }\n};\n\n\
     }  // namespace BanetteGin\n\n\n"
   code: "#ifndef BANETTEGIN_MATRIX_PRODUCT_HPP_INCLUDED\n#define BANETTEGIN_MATRIX_PRODUCT_HPP_INCLUDED\n\
-    \n#include <vector>\n\nnamespace BanetteGin {\n\ntemplate <class T>\nstruct MatrixProduct\
-    \ {\n    const T adide = 0;\n    const T mulide = 1;\n    std::vector<std::vector<T>\
-    \ > a, b;\n    MatrixProduct(std::vector<std::vector<T> > a_, std::vector<std::vector<T>\
+    \n#include <vector>\n\nnamespace BanetteGin {\n\ntemplate <class T>\nstruct matrix_product\
+    \ {\n    const T addide = 0;\n    const T mulide = 1;\n    std::vector<std::vector<T>\
+    \ > a, b;\n    matrix_product(std::vector<std::vector<T> > a_, std::vector<std::vector<T>\
     \ > b_)\n        : a(a_), b(b_) {\n    }\n    T addition(T& x, T& y) const noexcept\
     \ {\n        return x + y;\n    }\n    T multiplication(T& x, T& y) const noexcept\
     \ {\n        return x * y;\n    }\n    std::vector<std::vector<T> > product()\
@@ -42,7 +42,7 @@ data:
   path: src/matrix/matrix_product.hpp
   requiredBy:
   - src/all.hpp
-  timestamp: '2023-08-08 12:20:54+09:00'
+  timestamp: '2023-08-22 02:10:12+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/matrix/matrix_product.hpp

@@ -31,9 +31,9 @@ data:
   isVerificationFile: false
   path: src/number_theory/prime_check.hpp
   requiredBy:
+  - src/all.hpp
+  - src/all.hpp
   - src/number_theory/naive_sieve.hpp
-  - src/all.hpp
-  - src/all.hpp
   timestamp: '2023-08-08 12:20:54+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []

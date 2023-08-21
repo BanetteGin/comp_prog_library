@@ -33,7 +33,8 @@ data:
     \ >> q;\n    union_find uf(n);\n    rep(i, q) {\n        ll t, u, v;\n       \
     \ cin >> t >> u >> v;\n        if (t == 0)\n            uf.unite(u, v);\n    \
     \    else {\n            if (uf.same(u, v))\n                cout << 1 << endl;\n\
-    \            else\n                cout << 0 << endl;\n        }\n    }\n}\n"
+    \            else\n                cout << 0 << endl;\n        }\n    }\n    return\
+    \ 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/unionfind\"\n\n#include\
     \ <bits/stdc++.h>\nusing namespace std;\n\n#define rep(i, n) for (ll i = 0, n_f\
     \ = (ll)(n); i < n_f; ++i)\n\ntypedef long long ll;\n\n#include \"../../src/data_structure/union_find.hpp\"\
@@ -41,13 +42,14 @@ data:
     \ >> q;\n    union_find uf(n);\n    rep(i, q) {\n        ll t, u, v;\n       \
     \ cin >> t >> u >> v;\n        if (t == 0)\n            uf.unite(u, v);\n    \
     \    else {\n            if (uf.same(u, v))\n                cout << 1 << endl;\n\
-    \            else\n                cout << 0 << endl;\n        }\n    }\n}"
+    \            else\n                cout << 0 << endl;\n        }\n    }\n    return\
+    \ 0;\n}"
   dependsOn:
   - src/data_structure/union_find.hpp
   isVerificationFile: true
   path: test/library_checker/union_find.test.cpp
   requiredBy: []
-  timestamp: '2023-08-08 12:44:30+09:00'
+  timestamp: '2023-08-22 02:10:12+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library_checker/union_find.test.cpp

@@ -16,17 +16,14 @@ data:
   - icon: ':warning:'
     path: src/geometry/point.hpp
     title: src/geometry/point.hpp
-  _extendedRequiredBy:
-  - icon: ':warning:'
-    path: src/all.hpp
-    title: src/all.hpp
+  _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"src/geometry/parallel_check.hpp\"\n\n\n\n#line 1 \"src/basic/equal.hpp\"\
+  bundledCode: "#line 1 \"src/geometry/orthogonal_check.hpp\"\n\n\n\n#line 1 \"src/basic/equal.hpp\"\
     \n\n\n\n#line 1 \"src/basic/sign.hpp\"\n\n\n\n#line 1 \"src/basic/constant.hpp\"\
     \n\n\n\nnamespace BanetteGin {\n\nconst long double EPS = 10e-12;\nconst long\
     \ long int LINF = 1001001001001001001LL;\nconst long double PI = acos(-1);\nconst\
@@ -75,12 +72,12 @@ data:
     \ l.a) && equal(this->b, l.b) && equal(this->c, l.c);\n    }\n    bool operator!=(const\
     \ line& l) const noexcept {\n        return !equal(this->a, l.a) || !equal(this->b,\
     \ l.b) || !equal(this->c, l.c);\n    }\n};\n\n}  // namespace BanetteGin\n\n\n\
-    #line 6 \"src/geometry/parallel_check.hpp\"\n\nnamespace BanetteGin {\n\ntemplate\
+    #line 6 \"src/geometry/orthogonal_check.hpp\"\n\nnamespace BanetteGin {\n\ntemplate\
     \ <class T>\nbool parallel_check(const line<T>& l, const line<T>& m) {\n}\n\n\
     }  // namespace BanetteGin\n\n\n"
-  code: '#ifndef BANETTEGIN_PARALLEL_CHECK_HPP_INCLUDED
+  code: '#ifndef BANETTEGIN_ORTHOGONAL_CHECK_HPP_INCLUDED
 
-    #define BANETTEGIN_PARALLEL_CHECK_HPP_INCLUDED
+    #define BANETTEGIN_ORTHOGONAL_CHECK_HPP_INCLUDED
 
 
     #include "../basic/equal.hpp"
@@ -109,16 +106,15 @@ data:
   - src/geometry/line.hpp
   - src/geometry/point.hpp
   isVerificationFile: false
-  path: src/geometry/parallel_check.hpp
-  requiredBy:
-  - src/all.hpp
+  path: src/geometry/orthogonal_check.hpp
+  requiredBy: []
   timestamp: '2023-08-22 02:10:12+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: src/geometry/parallel_check.hpp
+documentation_of: src/geometry/orthogonal_check.hpp
 layout: document
 redirect_from:
-- /library/src/geometry/parallel_check.hpp
-- /library/src/geometry/parallel_check.hpp.html
-title: src/geometry/parallel_check.hpp
+- /library/src/geometry/orthogonal_check.hpp
+- /library/src/geometry/orthogonal_check.hpp.html
+title: src/geometry/orthogonal_check.hpp
 ---

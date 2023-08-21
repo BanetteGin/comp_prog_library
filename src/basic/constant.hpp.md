@@ -15,8 +15,20 @@ data:
     path: src/all.hpp
     title: src/all.hpp
   - icon: ':warning:'
+    path: src/analysis/golden_ratio_search.hpp
+    title: src/analysis/golden_ratio_search.hpp
+  - icon: ':warning:'
+    path: src/analysis/ternary_search.hpp
+    title: src/analysis/ternary_search.hpp
+  - icon: ':warning:'
+    path: src/basic/comparison.hpp
+    title: src/basic/comparison.hpp
+  - icon: ':warning:'
     path: src/basic/equal.hpp
     title: src/basic/equal.hpp
+  - icon: ':warning:'
+    path: src/basic/sign.hpp
+    title: src/basic/sign.hpp
   - icon: ':warning:'
     path: src/data_structure/segment_tree.hpp
     title: src/data_structure/segment_tree.hpp
@@ -24,11 +36,41 @@ data:
     path: src/geometry/circle.hpp
     title: src/geometry/circle.hpp
   - icon: ':warning:'
+    path: src/geometry/degree_to_radian.hpp
+    title: src/geometry/degree_to_radian.hpp
+  - icon: ':warning:'
+    path: src/geometry/distance_point_and_line.hpp
+    title: src/geometry/distance_point_and_line.hpp
+  - icon: ':warning:'
+    path: src/geometry/distance_point_and_point.hpp
+    title: src/geometry/distance_point_and_point.hpp
+  - icon: ':warning:'
+    path: src/geometry/distance_point_and_segment.hpp
+    title: src/geometry/distance_point_and_segment.hpp
+  - icon: ':warning:'
+    path: src/geometry/distance_segment_and_segment.hpp
+    title: src/geometry/distance_segment_and_segment.hpp
+  - icon: ':warning:'
+    path: src/geometry/intersect_circle_and_circle.hpp
+    title: src/geometry/intersect_circle_and_circle.hpp
+  - icon: ':warning:'
+    path: src/geometry/intersect_line_and_circle.hpp
+    title: src/geometry/intersect_line_and_circle.hpp
+  - icon: ':warning:'
     path: src/geometry/line.hpp
     title: src/geometry/line.hpp
   - icon: ':warning:'
+    path: src/geometry/orthogonal_check.hpp
+    title: src/geometry/orthogonal_check.hpp
+  - icon: ':warning:'
+    path: src/geometry/parallel_check.hpp
+    title: src/geometry/parallel_check.hpp
+  - icon: ':warning:'
     path: src/geometry/point.hpp
     title: src/geometry/point.hpp
+  - icon: ':warning:'
+    path: src/geometry/radian_to_degree.hpp
+    title: src/geometry/radian_to_degree.hpp
   - icon: ':warning:'
     path: src/geometry/rotate.hpp
     title: src/geometry/rotate.hpp
@@ -61,6 +103,8 @@ data:
 
     const long double PI = acos(-1);
 
+    const long double GOLDEN_RATIO = 2 * cos(PI / 5);
+
 
     }  // namespace BanetteGin
 
@@ -81,6 +125,8 @@ data:
 
     const long double PI = acos(-1);
 
+    const long double GOLDEN_RATIO = 2 * cos(PI / 5);
+
 
     }  // namespace BanetteGin
 
@@ -91,19 +137,33 @@ data:
   path: src/basic/constant.hpp
   requiredBy:
   - src/data_structure/segment_tree.hpp
-  - src/basic/equal.hpp
-  - src/all.hpp
-  - src/all.hpp
-  - src/all.hpp
-  - src/all.hpp
   - src/string/clip_string.hpp
-  - src/geometry/triangle.hpp
-  - src/geometry/point.hpp
+  - src/all.hpp
+  - src/all.hpp
+  - src/all.hpp
+  - src/all.hpp
+  - src/basic/equal.hpp
+  - src/basic/comparison.hpp
+  - src/basic/sign.hpp
+  - src/analysis/golden_ratio_search.hpp
+  - src/analysis/ternary_search.hpp
+  - src/geometry/distance_point_and_point.hpp
+  - src/geometry/intersect_line_and_circle.hpp
   - src/geometry/circle.hpp
+  - src/geometry/parallel_check.hpp
   - src/geometry/rotate.hpp
-  - src/geometry/segment.hpp
+  - src/geometry/radian_to_degree.hpp
+  - src/geometry/point.hpp
+  - src/geometry/orthogonal_check.hpp
   - src/geometry/line.hpp
-  timestamp: '2023-08-08 12:20:54+09:00'
+  - src/geometry/degree_to_radian.hpp
+  - src/geometry/distance_point_and_segment.hpp
+  - src/geometry/distance_segment_and_segment.hpp
+  - src/geometry/triangle.hpp
+  - src/geometry/distance_point_and_line.hpp
+  - src/geometry/intersect_circle_and_circle.hpp
+  - src/geometry/segment.hpp
+  timestamp: '2023-08-22 02:10:12+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/basic/constant.hpp

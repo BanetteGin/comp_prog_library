@@ -6,6 +6,14 @@ data:
     - icon: ':warning:'
       path: src/all.hpp
       title: src/all.hpp
+  - name: src/analysis
+    pages:
+    - icon: ':warning:'
+      path: src/analysis/golden_ratio_search.hpp
+      title: src/analysis/golden_ratio_search.hpp
+    - icon: ':warning:'
+      path: src/analysis/ternary_search.hpp
+      title: src/analysis/ternary_search.hpp
   - name: src/basic
     pages:
     - icon: ':warning:'
@@ -15,11 +23,29 @@ data:
       path: src/basic/chmin.hpp
       title: src/basic/chmin.hpp
     - icon: ':warning:'
+      path: src/basic/comparison.hpp
+      title: src/basic/comparison.hpp
+    - icon: ':warning:'
       path: src/basic/constant.hpp
       title: src/basic/constant.hpp
     - icon: ':warning:'
       path: src/basic/equal.hpp
       title: src/basic/equal.hpp
+    - icon: ':warning:'
+      path: src/basic/greater_equal.hpp
+      title: src/basic/greater_equal.hpp
+    - icon: ':warning:'
+      path: src/basic/greater_than.hpp
+      title: src/basic/greater_than.hpp
+    - icon: ':warning:'
+      path: src/basic/less_equal.hpp
+      title: src/basic/less_equal.hpp
+    - icon: ':warning:'
+      path: src/basic/less_than.hpp
+      title: src/basic/less_than.hpp
+    - icon: ':warning:'
+      path: src/basic/sign.hpp
+      title: src/basic/sign.hpp
   - name: src/combinatorics
     pages:
     - icon: ':warning:'
@@ -51,14 +77,41 @@ data:
       path: src/geometry/circle.hpp
       title: src/geometry/circle.hpp
     - icon: ':warning:'
+      path: src/geometry/degree_to_radian.hpp
+      title: src/geometry/degree_to_radian.hpp
+    - icon: ':warning:'
+      path: src/geometry/distance_point_and_line.hpp
+      title: src/geometry/distance_point_and_line.hpp
+    - icon: ':warning:'
+      path: src/geometry/distance_point_and_point.hpp
+      title: src/geometry/distance_point_and_point.hpp
+    - icon: ':warning:'
+      path: src/geometry/distance_point_and_segment.hpp
+      title: src/geometry/distance_point_and_segment.hpp
+    - icon: ':warning:'
+      path: src/geometry/distance_segment_and_segment.hpp
+      title: src/geometry/distance_segment_and_segment.hpp
+    - icon: ':warning:'
+      path: src/geometry/intersect_circle_and_circle.hpp
+      title: src/geometry/intersect_circle_and_circle.hpp
+    - icon: ':warning:'
+      path: src/geometry/intersect_line_and_circle.hpp
+      title: src/geometry/intersect_line_and_circle.hpp
+    - icon: ':warning:'
       path: src/geometry/line.hpp
       title: src/geometry/line.hpp
+    - icon: ':warning:'
+      path: src/geometry/orthogonal_check.hpp
+      title: src/geometry/orthogonal_check.hpp
     - icon: ':warning:'
       path: src/geometry/parallel_check.hpp
       title: src/geometry/parallel_check.hpp
     - icon: ':warning:'
       path: src/geometry/point.hpp
       title: src/geometry/point.hpp
+    - icon: ':warning:'
+      path: src/geometry/radian_to_degree.hpp
+      title: src/geometry/radian_to_degree.hpp
     - icon: ':warning:'
       path: src/geometry/rotate.hpp
       title: src/geometry/rotate.hpp
@@ -101,7 +154,7 @@ data:
     - icon: ':warning:'
       path: src/number_theory/linear_sieve.hpp
       title: src/number_theory/linear_sieve.hpp
-    - icon: ':warning:'
+    - icon: ':x:'
       path: src/number_theory/modint.hpp
       title: src/number_theory/modint.hpp
     - icon: ':warning:'
@@ -128,6 +181,11 @@ data:
       path: src/string/run_length_encording.hpp
       title: src/string/run_length_encording.hpp
   verificationCategories:
+  - name: test/atcoder
+    pages:
+    - icon: ':x:'
+      path: test/atcoder/modint.test.cpp
+      title: test/atcoder/modint.test.cpp
   - name: test/library_checker
     pages:
     - icon: ':heavy_check_mark:'
