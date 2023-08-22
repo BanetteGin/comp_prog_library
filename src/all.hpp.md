@@ -454,14 +454,13 @@ data:
     \    }\n\n    constexpr bool operator==(const modint& r) const noexcept {\n  \
     \      return this->val == r.val;\n    }\n    constexpr bool operator!=(const\
     \ modint& r) const noexcept {\n        return this->val != r.val;\n    }\n\n \
-    \   /*\n    friend constexpr ostream& operator<<(ostream& os, const modint<MOD>&\
-    \ x) noexcept {\n        return os << x.val;\n    }\n    */\n\n    /*\n    friend\
-    \ constexpr modint<MOD> modpow(const modint<MOD>& a, long long int n) noexcept\
-    \ {\n        modint ret = 1;\n        modint tmpa = a;\n        while (n > 0)\
-    \ {\n            if (n & 1) ret *= a;\n            tmpa = tmpa * tmpa;\n     \
-    \       n >>= 1;\n        }\n        return ret;\n    }\n    */\n};\n\n}  // namespace\
-    \ BanetteGin\n\n\n#line 1 \"src/number_theory/naive_sieve.hpp\"\n\n\n\n#line 5\
-    \ \"src/number_theory/naive_sieve.hpp\"\n\n#line 1 \"src/number_theory/prime_check.hpp\"\
+    \   friend constexpr ostream& operator<<(ostream& os, const modint<MOD>& x) noexcept\
+    \ {\n        return os << x.val;\n    }\n\n    friend constexpr modint<MOD> modpow(const\
+    \ modint<MOD>& a, long long int n) noexcept {\n        modint ret = 1LL;\n   \
+    \     modint tmpa = a;\n        while (n > 0) {\n            if (n & 1) ret *=\
+    \ a;\n            tmpa = tmpa * tmpa;\n            n >>= 1;\n        }\n     \
+    \   return ret;\n    }\n};\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/number_theory/naive_sieve.hpp\"\
+    \n\n\n\n#line 5 \"src/number_theory/naive_sieve.hpp\"\n\n#line 1 \"src/number_theory/prime_check.hpp\"\
     \n\n\n\nnamespace BanetteGin {\n\ntemplate <class T>\nbool prime_check(T n) {\n\
     \    if (n < 2) return false;\n    if (n != 2 && n % 2 == 0) return false;\n \
     \   for (T i = 3; i * i <= n; i += 2)\n        if (n % i == 0) return false;\n\
@@ -647,7 +646,7 @@ data:
   isVerificationFile: false
   path: src/all.hpp
   requiredBy: []
-  timestamp: '2023-08-22 22:07:36+09:00'
+  timestamp: '2023-08-22 22:44:01+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/all.hpp
