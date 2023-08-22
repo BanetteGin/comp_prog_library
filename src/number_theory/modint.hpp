@@ -78,10 +78,13 @@ struct modint {
         return this->val != r.val;
     }
 
+    /*
     friend constexpr ostream& operator<<(ostream& os, const modint<MOD>& x) noexcept {
         return os << x.val;
     }
+    */
 
+    /*
     friend constexpr modint<MOD> modpow(const modint<MOD>& a, long long int n) noexcept {
         modint ret = 1;
         modint tmpa = a;
@@ -92,6 +95,7 @@ struct modint {
         }
         return ret;
     }
+    */
 };
 
 }  // namespace BanetteGin

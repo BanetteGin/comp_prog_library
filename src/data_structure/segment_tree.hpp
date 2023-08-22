@@ -23,11 +23,11 @@ struct segment_tree {
         }
     }
 
-    T monoid_operation(T& a, T& b) {
+    T monoid_operation(T a, T b) {
         return min(a, b);
     }
 
-    void update(T& p, T& x) {
+    void update(T p, T x) {
         p += n - 1;
         node[p] = x;
         while (p > 0) {
@@ -36,11 +36,11 @@ struct segment_tree {
         }
     }
 
-    T find(T& l, T& r) {
+    T find(T l, T r) {
         return find_sub(l, r, 0, 0, n);
     }
 
-    T find_sub(T& a, T& b, T& now, T& l, T& r) {
+    T find_sub(T a, T b, T now, T l, T r) {
         if (b <= l || r <= a) return ide;
         if (a <= l && r <= b) return node[now];
         T nl = find_sub(a, b, 2 * now + 1, l, (l + r) / 2);

@@ -6,7 +6,7 @@
 namespace BanetteGin {
 
 template <class T>
-struct ternary_search {
+struct golden_ratio_search {
     bool option;
     T left, right;
     ternary_search(T left_, T right_, bool option_ = true)

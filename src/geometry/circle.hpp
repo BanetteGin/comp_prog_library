@@ -1,7 +1,7 @@
 #ifndef BANETTEGIN_CIRCLE_HPP_INCLUDED
 #define BANETTEGIN_CIRCLE_HPP_INCLUDED
 
-#include "../basic/equal.hpp"
+#include "../basic/comparison.hpp"
 #include "distance_point_and_point.hpp"
 #include "point.hpp"
 #include "segment.hpp"

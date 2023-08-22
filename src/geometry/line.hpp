@@ -1,7 +1,7 @@
 #ifndef BANETTEGIN_LINE_HPP_INCLUDED
 #define BANETTEGIN_LINE_HPP_INCLUDED
 
-#include "../basic/equal.hpp"
+#include "../basic/comparison.hpp"
 #include "point.hpp"
 
 namespace BanetteGin {

@@ -3,7 +3,7 @@
 
 #include <complex>
 
-#include "../basic/equal.hpp"
+#include "../basic/comparison.hpp"
 
 namespace BanetteGin {
 
