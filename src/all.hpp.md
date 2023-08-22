@@ -8,6 +8,9 @@ data:
     path: src/basic/chmin.hpp
     title: src/basic/chmin.hpp
   - icon: ':warning:'
+    path: src/basic/comparison.hpp
+    title: src/basic/comparison.hpp
+  - icon: ':warning:'
     path: src/basic/constant.hpp
     title: src/basic/constant.hpp
   - icon: ':warning:'
@@ -25,6 +28,21 @@ data:
   - icon: ':warning:'
     path: src/basic/equal.hpp
     title: src/basic/equal.hpp
+  - icon: ':warning:'
+    path: src/basic/equal.hpp
+    title: src/basic/equal.hpp
+  - icon: ':warning:'
+    path: src/basic/greater_equal.hpp
+    title: src/basic/greater_equal.hpp
+  - icon: ':warning:'
+    path: src/basic/greater_than.hpp
+    title: src/basic/greater_than.hpp
+  - icon: ':warning:'
+    path: src/basic/less_equal.hpp
+    title: src/basic/less_equal.hpp
+  - icon: ':warning:'
+    path: src/basic/less_than.hpp
+    title: src/basic/less_than.hpp
   - icon: ':warning:'
     path: src/basic/sign.hpp
     title: src/basic/sign.hpp
@@ -177,19 +195,19 @@ data:
     \n\n\n\n#include <vector>\n\nnamespace BanetteGin {\n\ntemplate <class T>\nstruct\
     \ binary_indexed_tree {\n    T n;\n    std::vector<T> tree;\n    const T ide =\
     \ 0;\n\n    binary_indexed_tree(T n_)\n        : n(n_) {\n        tree.resize(n,\
-    \ ide);\n    }\n\n    T abel_operation(T& x, T& y) const noexcept {\n        return\
-    \ x + y;\n    }\n\n    T sum(T& l, T& r) const noexcept {\n        return sum_sub(r)\
-    \ - sum_sub(l - 1);\n    }\n\n    T sum_sub(T& a) const noexcept {\n        T\
-    \ ret = 0;\n        for (; a >= 0; a = (a & (a + 1)) - 1) ret = abel_operation(ret,\
-    \ tree[a]);\n        return ret;\n    }\n\n    void add(T& a, T& x) const noexcept\
-    \ {\n        for (; a < n; a |= a + 1) tree[a] = abel_operation(tree[a], x);\n\
-    \        return;\n    }\n};\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/data_structure/hold_ends.hpp\"\
-    \n\n\n\n#line 5 \"src/data_structure/hold_ends.hpp\"\n\nnamespace BanetteGin {\n\
-    \ntemplate <class T>\nstruct hold_ends {\n    T k;\n    std::multiset<T> high_end,\
-    \ high_other;\n    std::multiset<T> low_end, low_other;\n    T all_sum = 0, high_sum\
-    \ = 0, low_sum = 0;\n\n    hold_ends(T k_)\n        : k(k_) {\n    }\n    void\
-    \ normalize() {\n        while (high_end.size() < k && !high_other.empty()) {\n\
-    \            high_sum += *high_other.rbegin();\n            high_end.insert(*high_other.rbegin());\n\
+    \ ide);\n    }\n\n    T abel_operation(T x, T y) {\n        return x + y;\n  \
+    \  }\n\n    T sum(T l, T r) {\n        return sum_sub(r) - sum_sub(l - 1);\n \
+    \   }\n\n    T sum_sub(T a) {\n        T ret = 0;\n        for (; a >= 0; a =\
+    \ (a & (a + 1)) - 1) ret = abel_operation(ret, tree[a]);\n        return ret;\n\
+    \    }\n\n    void add(T a, T x) {\n        for (; a < n; a |= a + 1) tree[a]\
+    \ = abel_operation(tree[a], x);\n        return;\n    }\n};\n\n}  // namespace\
+    \ BanetteGin\n\n\n#line 1 \"src/data_structure/hold_ends.hpp\"\n\n\n\n#line 5\
+    \ \"src/data_structure/hold_ends.hpp\"\n\nnamespace BanetteGin {\n\ntemplate <class\
+    \ T>\nstruct hold_ends {\n    T k;\n    std::multiset<T> high_end, high_other;\n\
+    \    std::multiset<T> low_end, low_other;\n    T all_sum = 0, high_sum = 0, low_sum\
+    \ = 0;\n\n    hold_ends(T k_)\n        : k(k_) {\n    }\n    void normalize()\
+    \ {\n        while (high_end.size() < k && !high_other.empty()) {\n          \
+    \  high_sum += *high_other.rbegin();\n            high_end.insert(*high_other.rbegin());\n\
     \            high_other.erase(high_other.find(*high_other.rbegin()));\n      \
     \  }\n        while (high_end.size() > k) {\n            high_sum -= *high_end.begin();\n\
     \            high_other.insert(*high_end.begin());\n            high_end.erase(high_end.begin());\n\
@@ -220,28 +238,39 @@ data:
     \       while (n < a.size()) n *= 2;\n        node.resize(2 * n - 1, ide);\n \
     \       for (T i = 0; i < a.size(); i++) node[(n - 1) + i] = a[i];\n        for\
     \ (T i = n - 2; i >= 0; i--) {\n            node[i] = monoid_operation(node[i\
-    \ * 2 + 1], node[i * 2 + 2]);\n        }\n    }\n\n    T monoid_operation(T& a,\
-    \ T& b) {\n        return min(a, b);\n    }\n\n    void update(T& p, T& x) {\n\
-    \        p += n - 1;\n        node[p] = x;\n        while (p > 0) {\n        \
-    \    p = (p - 1) / 2;\n            node[p] = monoid_operation(node[2 * p + 1],\
-    \ node[2 * p + 2]);\n        }\n    }\n\n    T find(T& l, T& r) {\n        return\
-    \ find_sub(l, r, 0, 0, n);\n    }\n\n    T find_sub(T& a, T& b, T& now, T& l,\
-    \ T& r) {\n        if (b <= l || r <= a) return ide;\n        if (a <= l && r\
-    \ <= b) return node[now];\n        T nl = find_sub(a, b, 2 * now + 1, l, (l +\
-    \ r) / 2);\n        T nr = find_sub(a, b, 2 * now + 2, (l + r) / 2, r);\n    \
-    \    return monoid_operation(nl, nr);\n    }\n};\n\n}  // namespace BanetteGin\n\
-    \n\n#line 1 \"src/data_structure/union_find.hpp\"\n\n\n\n#line 5 \"src/data_structure/union_find.hpp\"\
-    \n\nnamespace BanetteGin {\n\ntemplate <class T>\nstruct union_find {\n    std::vector<T>\
-    \ par, rk, sz;\n    union_find(T n)\n        : par(n, -1), rk(n, 0), sz(n, 1)\
-    \ {\n    }\n    T root(T& v) {\n        if (par[v] == -1)\n            return\
-    \ v;\n        else\n            return par[v] = root(par[v]);\n    }\n    bool\
-    \ same(T& u, T& v) {\n        return root(u) == root(v);\n    }\n    bool unite(T&\
-    \ u, T& v) {\n        T urt = root(u);\n        T vrt = root(v);\n        if (urt\
-    \ == vrt) return false;\n        if (rk[urt] < rk[vrt]) swap(urt, vrt);\n    \
-    \    par[vrt] = urt;\n        if (rk[urt] == rk[vrt]) rk[urt]++;\n        sz[urt]\
-    \ += sz[vrt];\n        return true;\n    }\n    T size(T& v) {\n        return\
-    \ sz[root(v)];\n    }\n};\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/geometry/circle.hpp\"\
-    \n\n\n\n#line 1 \"src/geometry/distance_point_and_point.hpp\"\n\n\n\n#line 1 \"\
+    \ * 2 + 1], node[i * 2 + 2]);\n        }\n    }\n\n    T monoid_operation(T a,\
+    \ T b) {\n        return min(a, b);\n    }\n\n    void update(T p, T x) {\n  \
+    \      p += n - 1;\n        node[p] = x;\n        while (p > 0) {\n          \
+    \  p = (p - 1) / 2;\n            node[p] = monoid_operation(node[2 * p + 1], node[2\
+    \ * p + 2]);\n        }\n    }\n\n    T find(T l, T r) {\n        return find_sub(l,\
+    \ r, 0, 0, n);\n    }\n\n    T find_sub(T a, T b, T now, T l, T r) {\n       \
+    \ if (b <= l || r <= a) return ide;\n        if (a <= l && r <= b) return node[now];\n\
+    \        T nl = find_sub(a, b, 2 * now + 1, l, (l + r) / 2);\n        T nr = find_sub(a,\
+    \ b, 2 * now + 2, (l + r) / 2, r);\n        return monoid_operation(nl, nr);\n\
+    \    }\n};\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/data_structure/union_find.hpp\"\
+    \n\n\n\n#line 5 \"src/data_structure/union_find.hpp\"\n\nnamespace BanetteGin\
+    \ {\n\ntemplate <class T>\nstruct union_find {\n    std::vector<T> par, rk, sz;\n\
+    \    union_find(T n)\n        : par(n, -1), rk(n, 0), sz(n, 1) {\n    }\n    T\
+    \ root(T v) {\n        if (par[v] == -1)\n            return v;\n        else\n\
+    \            return par[v] = root(par[v]);\n    }\n    bool same(T u, T v) {\n\
+    \        return root(u) == root(v);\n    }\n    bool unite(T u, T v) {\n     \
+    \   T urt = root(u);\n        T vrt = root(v);\n        if (urt == vrt) return\
+    \ false;\n        if (rk[urt] < rk[vrt]) swap(urt, vrt);\n        par[vrt] = urt;\n\
+    \        if (rk[urt] == rk[vrt]) rk[urt]++;\n        sz[urt] += sz[vrt];\n   \
+    \     return true;\n    }\n    T size(T v) {\n        return sz[root(v)];\n  \
+    \  }\n};\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/geometry/circle.hpp\"\
+    \n\n\n\n#line 1 \"src/basic/comparison.hpp\"\n\n\n\n#line 1 \"src/basic/greater_equal.hpp\"\
+    \n\n\n\nnamespace BanetteGin {\n\ntemplate <class T>\nbool greater_equal(const\
+    \ T &a, const T &b) {\n    return (sign(a - b) >= 0);\n}\n\n}  // namespace BanetteGin\n\
+    \n\n#line 1 \"src/basic/greater_than.hpp\"\n\n\n\nnamespace BanetteGin {\n\ntemplate\
+    \ <class T>\nbool greater_than(const T &a, const T &b) {\n    return (sign(a -\
+    \ b) > 0);\n}\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/basic/less_equal.hpp\"\
+    \n\n\n\nnamespace BanetteGin {\n\ntemplate <class T>\nbool less_equal(const T\
+    \ &a, const T &b) {\n    return (sign(a - b) <= 0);\n}\n\n}  // namespace BanetteGin\n\
+    \n\n#line 1 \"src/basic/less_than.hpp\"\n\n\n\nnamespace BanetteGin {\n\ntemplate\
+    \ <class T>\nbool less_than(const T &a, const T &b) {\n    return (sign(a - b)\
+    \ < 0);\n}\n\n}  // namespace BanetteGin\n\n\n#line 9 \"src/basic/comparison.hpp\"\
+    \n\n\n#line 1 \"src/geometry/distance_point_and_point.hpp\"\n\n\n\n#line 1 \"\
     src/geometry/point.hpp\"\n\n\n\n#include <complex>\n\n#line 7 \"src/geometry/point.hpp\"\
     \n\nnamespace BanetteGin {\n\ntemplate <class T>\nstruct point {\n    T x, y;\n\
     \    point(T x_, T y_)\n        : x(x_), y(y_) {\n    }\n\n    point operator+(const\
@@ -270,7 +299,7 @@ data:
     }\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/geometry/segment.hpp\"\n\n\n\
     \n#line 6 \"src/geometry/segment.hpp\"\n\nnamespace BanetteGin {\n\ntemplate <class\
     \ T>\nstruct segment {\n    point<T> p, q;\n    T length;\n    segment(point<T>\
-    \ p_, point<T> q_)\n        : p(p_), q(q_), length(distance_between_point_and_point(p,\
+    \ p_, point<T> q_)\n        : p(p_), q(q_), length(distance_point_and_point(p,\
     \ q)) {\n    }\n};\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/geometry/triangle.hpp\"\
     \n\n\n\n#line 8 \"src/geometry/triangle.hpp\"\n\nnamespace BanetteGin {\n\ntemplate\
     \ <class T>\nstruct triangle {\n    point<T> point_a, point_b, point_c;\n    T\
@@ -425,13 +454,14 @@ data:
     \    }\n\n    constexpr bool operator==(const modint& r) const noexcept {\n  \
     \      return this->val == r.val;\n    }\n    constexpr bool operator!=(const\
     \ modint& r) const noexcept {\n        return this->val != r.val;\n    }\n\n \
-    \   friend constexpr ostream& operator<<(ostream& os, const modint<MOD>& x) noexcept\
-    \ {\n        return os << x.val;\n    }\n\n    friend constexpr modint<MOD> modpow(const\
-    \ modint<MOD>& a, long long int n) noexcept {\n        modint ret = 1;\n     \
-    \   modint tmpa = a;\n        while (n > 0) {\n            if (n & 1) ret *= a;\n\
-    \            tmpa = tmpa * tmpa;\n            n >>= 1;\n        }\n        return\
-    \ ret;\n    }\n};\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/number_theory/naive_sieve.hpp\"\
-    \n\n\n\n#line 5 \"src/number_theory/naive_sieve.hpp\"\n\n#line 1 \"src/number_theory/prime_check.hpp\"\
+    \   /*\n    friend constexpr ostream& operator<<(ostream& os, const modint<MOD>&\
+    \ x) noexcept {\n        return os << x.val;\n    }\n    */\n\n    /*\n    friend\
+    \ constexpr modint<MOD> modpow(const modint<MOD>& a, long long int n) noexcept\
+    \ {\n        modint ret = 1;\n        modint tmpa = a;\n        while (n > 0)\
+    \ {\n            if (n & 1) ret *= a;\n            tmpa = tmpa * tmpa;\n     \
+    \       n >>= 1;\n        }\n        return ret;\n    }\n    */\n};\n\n}  // namespace\
+    \ BanetteGin\n\n\n#line 1 \"src/number_theory/naive_sieve.hpp\"\n\n\n\n#line 5\
+    \ \"src/number_theory/naive_sieve.hpp\"\n\n#line 1 \"src/number_theory/prime_check.hpp\"\
     \n\n\n\nnamespace BanetteGin {\n\ntemplate <class T>\nbool prime_check(T n) {\n\
     \    if (n < 2) return false;\n    if (n != 2 && n % 2 == 0) return false;\n \
     \   for (T i = 3; i * i <= n; i += 2)\n        if (n % i == 0) return false;\n\
@@ -577,11 +607,17 @@ data:
   - src/basic/constant.hpp
   - src/data_structure/union_find.hpp
   - src/geometry/circle.hpp
+  - src/basic/comparison.hpp
   - src/basic/equal.hpp
+  - src/basic/greater_equal.hpp
+  - src/basic/greater_than.hpp
+  - src/basic/less_equal.hpp
+  - src/basic/less_than.hpp
   - src/geometry/distance_point_and_point.hpp
   - src/geometry/point.hpp
   - src/geometry/segment.hpp
   - src/geometry/triangle.hpp
+  - src/basic/equal.hpp
   - src/geometry/line.hpp
   - src/geometry/parallel_check.hpp
   - src/geometry/line.hpp
@@ -611,7 +647,7 @@ data:
   isVerificationFile: false
   path: src/all.hpp
   requiredBy: []
-  timestamp: '2023-08-22 02:24:08+09:00'
+  timestamp: '2023-08-22 22:07:36+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/all.hpp

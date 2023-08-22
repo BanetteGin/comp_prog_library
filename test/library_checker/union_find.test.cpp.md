@@ -21,14 +21,14 @@ data:
     \n\n\n\n#line 5 \"src/data_structure/union_find.hpp\"\n\nnamespace BanetteGin\
     \ {\n\ntemplate <class T>\nstruct union_find {\n    std::vector<T> par, rk, sz;\n\
     \    union_find(T n)\n        : par(n, -1), rk(n, 0), sz(n, 1) {\n    }\n    T\
-    \ root(T& v) {\n        if (par[v] == -1)\n            return v;\n        else\n\
-    \            return par[v] = root(par[v]);\n    }\n    bool same(T& u, T& v) {\n\
-    \        return root(u) == root(v);\n    }\n    bool unite(T& u, T& v) {\n   \
-    \     T urt = root(u);\n        T vrt = root(v);\n        if (urt == vrt) return\
+    \ root(T v) {\n        if (par[v] == -1)\n            return v;\n        else\n\
+    \            return par[v] = root(par[v]);\n    }\n    bool same(T u, T v) {\n\
+    \        return root(u) == root(v);\n    }\n    bool unite(T u, T v) {\n     \
+    \   T urt = root(u);\n        T vrt = root(v);\n        if (urt == vrt) return\
     \ false;\n        if (rk[urt] < rk[vrt]) swap(urt, vrt);\n        par[vrt] = urt;\n\
     \        if (rk[urt] == rk[vrt]) rk[urt]++;\n        sz[urt] += sz[vrt];\n   \
-    \     return true;\n    }\n    T size(T& v) {\n        return sz[root(v)];\n \
-    \   }\n};\n\n}  // namespace BanetteGin\n\n\n#line 11 \"test/library_checker/union_find.test.cpp\"\
+    \     return true;\n    }\n    T size(T v) {\n        return sz[root(v)];\n  \
+    \  }\n};\n\n}  // namespace BanetteGin\n\n\n#line 11 \"test/library_checker/union_find.test.cpp\"\
     \nusing namespace BanetteGin;\n\nint main(void) {\n    ll n, q;\n    cin >> n\
     \ >> q;\n    union_find uf(n);\n    rep(i, q) {\n        ll t, u, v;\n       \
     \ cin >> t >> u >> v;\n        if (t == 0)\n            uf.unite(u, v);\n    \
@@ -49,7 +49,7 @@ data:
   isVerificationFile: true
   path: test/library_checker/union_find.test.cpp
   requiredBy: []
-  timestamp: '2023-08-22 02:10:12+09:00'
+  timestamp: '2023-08-22 22:07:36+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library_checker/union_find.test.cpp

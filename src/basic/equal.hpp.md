@@ -15,6 +15,9 @@ data:
     path: src/all.hpp
     title: src/all.hpp
   - icon: ':warning:'
+    path: src/all.hpp
+    title: src/all.hpp
+  - icon: ':warning:'
     path: src/analysis/golden_ratio_search.hpp
     title: src/analysis/golden_ratio_search.hpp
   - icon: ':warning:'
@@ -23,6 +26,9 @@ data:
   - icon: ':warning:'
     path: src/basic/comparison.hpp
     title: src/basic/comparison.hpp
+  - icon: ':warning:'
+    path: src/geometry/circle.hpp
+    title: src/geometry/circle.hpp
   - icon: ':warning:'
     path: src/geometry/circle.hpp
     title: src/geometry/circle.hpp
@@ -57,6 +63,12 @@ data:
     path: src/geometry/orthogonal_check.hpp
     title: src/geometry/orthogonal_check.hpp
   - icon: ':warning:'
+    path: src/geometry/orthogonal_check.hpp
+    title: src/geometry/orthogonal_check.hpp
+  - icon: ':warning:'
+    path: src/geometry/parallel_check.hpp
+    title: src/geometry/parallel_check.hpp
+  - icon: ':warning:'
     path: src/geometry/parallel_check.hpp
     title: src/geometry/parallel_check.hpp
   - icon: ':warning:'
@@ -68,6 +80,9 @@ data:
   - icon: ':warning:'
     path: src/geometry/segment.hpp
     title: src/geometry/segment.hpp
+  - icon: ':warning:'
+    path: src/geometry/triangle.hpp
+    title: src/geometry/triangle.hpp
   - icon: ':warning:'
     path: src/geometry/triangle.hpp
     title: src/geometry/triangle.hpp
@@ -99,6 +114,7 @@ data:
   requiredBy:
   - src/all.hpp
   - src/all.hpp
+  - src/all.hpp
   - src/basic/comparison.hpp
   - src/analysis/golden_ratio_search.hpp
   - src/analysis/ternary_search.hpp
@@ -106,13 +122,17 @@ data:
   - src/geometry/intersect_line_and_circle.hpp
   - src/geometry/intersect_line_and_circle.hpp
   - src/geometry/circle.hpp
+  - src/geometry/circle.hpp
+  - src/geometry/parallel_check.hpp
   - src/geometry/parallel_check.hpp
   - src/geometry/rotate.hpp
   - src/geometry/point.hpp
   - src/geometry/orthogonal_check.hpp
+  - src/geometry/orthogonal_check.hpp
   - src/geometry/line.hpp
   - src/geometry/distance_point_and_segment.hpp
   - src/geometry/distance_segment_and_segment.hpp
+  - src/geometry/triangle.hpp
   - src/geometry/triangle.hpp
   - src/geometry/distance_point_and_line.hpp
   - src/geometry/intersect_circle_and_circle.hpp

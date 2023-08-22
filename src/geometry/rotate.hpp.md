@@ -2,11 +2,26 @@
 data:
   _extendedDependsOn:
   - icon: ':warning:'
+    path: src/basic/comparison.hpp
+    title: src/basic/comparison.hpp
+  - icon: ':warning:'
     path: src/basic/constant.hpp
     title: src/basic/constant.hpp
   - icon: ':warning:'
     path: src/basic/equal.hpp
     title: src/basic/equal.hpp
+  - icon: ':warning:'
+    path: src/basic/greater_equal.hpp
+    title: src/basic/greater_equal.hpp
+  - icon: ':warning:'
+    path: src/basic/greater_than.hpp
+    title: src/basic/greater_than.hpp
+  - icon: ':warning:'
+    path: src/basic/less_equal.hpp
+    title: src/basic/less_equal.hpp
+  - icon: ':warning:'
+    path: src/basic/less_than.hpp
+    title: src/basic/less_than.hpp
   - icon: ':warning:'
     path: src/basic/sign.hpp
     title: src/basic/sign.hpp
@@ -24,16 +39,27 @@ data:
   attributes:
     links: []
   bundledCode: "#line 1 \"src/geometry/rotate.hpp\"\n\n\n\n#line 1 \"src/geometry/point.hpp\"\
-    \n\n\n\n#include <complex>\n\n#line 1 \"src/basic/equal.hpp\"\n\n\n\n#line 1 \"\
-    src/basic/sign.hpp\"\n\n\n\n#line 1 \"src/basic/constant.hpp\"\n\n\n\nnamespace\
-    \ BanetteGin {\n\nconst long double EPS = 10e-12;\nconst long long int LINF =\
-    \ 1001001001001001001LL;\nconst long double PI = acos(-1);\nconst long double\
-    \ GOLDEN_RATIO = 2 * cos(PI / 5);\n\n}  // namespace BanetteGin\n\n\n#line 5 \"\
-    src/basic/sign.hpp\"\n\nnamespace BanetteGin {\n\ntemplate <class T>\nint sign(const\
-    \ T& x) {\n    return (x < -EPS ? -1 : (x < EPS ? 0 : 1));\n}\n\n}  // namespace\
-    \ BanetteGin\n\n\n#line 5 \"src/basic/equal.hpp\"\n\nnamespace BanetteGin {\n\n\
-    template <class T>\nbool equal(const T &a, const T &b) {\n    return (sign(a -\
-    \ b) == 0);\n}\n\n}  // namespace BanetteGin\n\n\n#line 7 \"src/geometry/point.hpp\"\
+    \n\n\n\n#include <complex>\n\n#line 1 \"src/basic/comparison.hpp\"\n\n\n\n#line\
+    \ 1 \"src/basic/equal.hpp\"\n\n\n\n#line 1 \"src/basic/sign.hpp\"\n\n\n\n#line\
+    \ 1 \"src/basic/constant.hpp\"\n\n\n\nnamespace BanetteGin {\n\nconst long double\
+    \ EPS = 10e-12;\nconst long long int LINF = 1001001001001001001LL;\nconst long\
+    \ double PI = acos(-1);\nconst long double GOLDEN_RATIO = 2 * cos(PI / 5);\n\n\
+    }  // namespace BanetteGin\n\n\n#line 5 \"src/basic/sign.hpp\"\n\nnamespace BanetteGin\
+    \ {\n\ntemplate <class T>\nint sign(const T& x) {\n    return (x < -EPS ? -1 :\
+    \ (x < EPS ? 0 : 1));\n}\n\n}  // namespace BanetteGin\n\n\n#line 5 \"src/basic/equal.hpp\"\
+    \n\nnamespace BanetteGin {\n\ntemplate <class T>\nbool equal(const T &a, const\
+    \ T &b) {\n    return (sign(a - b) == 0);\n}\n\n}  // namespace BanetteGin\n\n\
+    \n#line 1 \"src/basic/greater_equal.hpp\"\n\n\n\nnamespace BanetteGin {\n\ntemplate\
+    \ <class T>\nbool greater_equal(const T &a, const T &b) {\n    return (sign(a\
+    \ - b) >= 0);\n}\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/basic/greater_than.hpp\"\
+    \n\n\n\nnamespace BanetteGin {\n\ntemplate <class T>\nbool greater_than(const\
+    \ T &a, const T &b) {\n    return (sign(a - b) > 0);\n}\n\n}  // namespace BanetteGin\n\
+    \n\n#line 1 \"src/basic/less_equal.hpp\"\n\n\n\nnamespace BanetteGin {\n\ntemplate\
+    \ <class T>\nbool less_equal(const T &a, const T &b) {\n    return (sign(a - b)\
+    \ <= 0);\n}\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/basic/less_than.hpp\"\
+    \n\n\n\nnamespace BanetteGin {\n\ntemplate <class T>\nbool less_than(const T &a,\
+    \ const T &b) {\n    return (sign(a - b) < 0);\n}\n\n}  // namespace BanetteGin\n\
+    \n\n#line 9 \"src/basic/comparison.hpp\"\n\n\n#line 7 \"src/geometry/point.hpp\"\
     \n\nnamespace BanetteGin {\n\ntemplate <class T>\nstruct point {\n    T x, y;\n\
     \    point(T x_, T y_)\n        : x(x_), y(y_) {\n    }\n\n    point operator+(const\
     \ point& p) const noexcept {\n        return point<T>(this->x + p.x, this->y +\
@@ -66,14 +92,19 @@ data:
     \ namespace BanetteGin\n\n#endif"
   dependsOn:
   - src/geometry/point.hpp
+  - src/basic/comparison.hpp
   - src/basic/equal.hpp
   - src/basic/sign.hpp
   - src/basic/constant.hpp
+  - src/basic/greater_equal.hpp
+  - src/basic/greater_than.hpp
+  - src/basic/less_equal.hpp
+  - src/basic/less_than.hpp
   isVerificationFile: false
   path: src/geometry/rotate.hpp
   requiredBy:
   - src/all.hpp
-  timestamp: '2023-08-22 02:10:12+09:00'
+  timestamp: '2023-08-22 22:07:36+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/geometry/rotate.hpp

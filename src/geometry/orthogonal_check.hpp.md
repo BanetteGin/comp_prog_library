@@ -2,11 +2,29 @@
 data:
   _extendedDependsOn:
   - icon: ':warning:'
+    path: src/basic/comparison.hpp
+    title: src/basic/comparison.hpp
+  - icon: ':warning:'
     path: src/basic/constant.hpp
     title: src/basic/constant.hpp
   - icon: ':warning:'
     path: src/basic/equal.hpp
     title: src/basic/equal.hpp
+  - icon: ':warning:'
+    path: src/basic/equal.hpp
+    title: src/basic/equal.hpp
+  - icon: ':warning:'
+    path: src/basic/greater_equal.hpp
+    title: src/basic/greater_equal.hpp
+  - icon: ':warning:'
+    path: src/basic/greater_than.hpp
+    title: src/basic/greater_than.hpp
+  - icon: ':warning:'
+    path: src/basic/less_equal.hpp
+    title: src/basic/less_equal.hpp
+  - icon: ':warning:'
+    path: src/basic/less_than.hpp
+    title: src/basic/less_than.hpp
   - icon: ':warning:'
     path: src/basic/sign.hpp
     title: src/basic/sign.hpp
@@ -33,12 +51,23 @@ data:
     }\n\n}  // namespace BanetteGin\n\n\n#line 5 \"src/basic/equal.hpp\"\n\nnamespace\
     \ BanetteGin {\n\ntemplate <class T>\nbool equal(const T &a, const T &b) {\n \
     \   return (sign(a - b) == 0);\n}\n\n}  // namespace BanetteGin\n\n\n#line 1 \"\
-    src/geometry/line.hpp\"\n\n\n\n#line 1 \"src/geometry/point.hpp\"\n\n\n\n#include\
-    \ <complex>\n\n#line 7 \"src/geometry/point.hpp\"\n\nnamespace BanetteGin {\n\n\
-    template <class T>\nstruct point {\n    T x, y;\n    point(T x_, T y_)\n     \
-    \   : x(x_), y(y_) {\n    }\n\n    point operator+(const point& p) const noexcept\
-    \ {\n        return point<T>(this->x + p.x, this->y + p.y);\n    }\n    point\
-    \ operator-(const point& p) const noexcept {\n        return point<T>(this->x\
+    src/geometry/line.hpp\"\n\n\n\n#line 1 \"src/basic/comparison.hpp\"\n\n\n\n#line\
+    \ 1 \"src/basic/greater_equal.hpp\"\n\n\n\nnamespace BanetteGin {\n\ntemplate\
+    \ <class T>\nbool greater_equal(const T &a, const T &b) {\n    return (sign(a\
+    \ - b) >= 0);\n}\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/basic/greater_than.hpp\"\
+    \n\n\n\nnamespace BanetteGin {\n\ntemplate <class T>\nbool greater_than(const\
+    \ T &a, const T &b) {\n    return (sign(a - b) > 0);\n}\n\n}  // namespace BanetteGin\n\
+    \n\n#line 1 \"src/basic/less_equal.hpp\"\n\n\n\nnamespace BanetteGin {\n\ntemplate\
+    \ <class T>\nbool less_equal(const T &a, const T &b) {\n    return (sign(a - b)\
+    \ <= 0);\n}\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/basic/less_than.hpp\"\
+    \n\n\n\nnamespace BanetteGin {\n\ntemplate <class T>\nbool less_than(const T &a,\
+    \ const T &b) {\n    return (sign(a - b) < 0);\n}\n\n}  // namespace BanetteGin\n\
+    \n\n#line 9 \"src/basic/comparison.hpp\"\n\n\n#line 1 \"src/geometry/point.hpp\"\
+    \n\n\n\n#include <complex>\n\n#line 7 \"src/geometry/point.hpp\"\n\nnamespace\
+    \ BanetteGin {\n\ntemplate <class T>\nstruct point {\n    T x, y;\n    point(T\
+    \ x_, T y_)\n        : x(x_), y(y_) {\n    }\n\n    point operator+(const point&\
+    \ p) const noexcept {\n        return point<T>(this->x + p.x, this->y + p.y);\n\
+    \    }\n    point operator-(const point& p) const noexcept {\n        return point<T>(this->x\
     \ - p.x, this->y - p.y);\n    }\n    point operator*(const T& a) const noexcept\
     \ {\n        return point<T>(this->x * a, this->y * a);\n    }\n    point operator/(const\
     \ T& a) const noexcept {\n        return point<T>(this->x / a, this->y / a);\n\
@@ -104,11 +133,17 @@ data:
   - src/basic/sign.hpp
   - src/basic/constant.hpp
   - src/geometry/line.hpp
+  - src/basic/comparison.hpp
+  - src/basic/equal.hpp
+  - src/basic/greater_equal.hpp
+  - src/basic/greater_than.hpp
+  - src/basic/less_equal.hpp
+  - src/basic/less_than.hpp
   - src/geometry/point.hpp
   isVerificationFile: false
   path: src/geometry/orthogonal_check.hpp
   requiredBy: []
-  timestamp: '2023-08-22 02:10:12+09:00'
+  timestamp: '2023-08-22 22:07:36+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/geometry/orthogonal_check.hpp
