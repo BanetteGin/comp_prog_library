@@ -11,16 +11,16 @@ struct union_find {
     union_find(T n)
         : par(n, -1), rk(n, 0), sz(n, 1) {
     }
-    T root(T v) {
+    T root(const T& v) noexcept {
         if (par[v] == -1)
             return v;
         else
             return par[v] = root(par[v]);
     }
-    bool same(T u, T v) {
+    bool same(const T& u, const T& v) noexcept {
         return root(u) == root(v);
     }
-    bool unite(T u, T v) {
+    bool unite(const T& u, const T& v) noexcept {
         T urt = root(u);
         T vrt = root(v);
         if (urt == vrt) return false;
@@ -30,7 +30,7 @@ struct union_find {
         sz[urt] += sz[vrt];
         return true;
     }
-    T size(T v) {
+    T size(const T& v) const noexcept {
         return sz[root(v)];
     }
 };

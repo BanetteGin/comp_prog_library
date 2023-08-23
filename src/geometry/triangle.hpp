@@ -37,11 +37,6 @@ struct triangle {
         T r = area * 2 / (length_a + length_b + length_c);
         return std::make_pair(o, r);
     }
-    std::pair<point<T>, T> incenter() const noexcept {
-        point<T> o = (point_a * length_a + point_b * length_b + point_c * length_c) / (length_a + length_b + length_c);
-        T r = area * 2 / (length_a + length_b + length_c);
-        return std::make_pair(o, r);
-    }
     point<T> orthocenter() const noexcept {
         return (point_a * tan(angle_a) + point_b * tan(angle_b) + point_c * tan(angle_c)) / (tan(angle_a) + tan(angle_b) + tan(angle_c));
     }

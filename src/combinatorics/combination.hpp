@@ -4,7 +4,7 @@
 namespace BanetteGin {
 
 template <class T>
-T combination(T m, T n) {
+T combination(const T& m, const T& n) {
     T ret = 1;
     for (T i = m; i >= m - n + 1; --i) {
         ret = ret * i;

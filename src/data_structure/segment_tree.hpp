@@ -11,7 +11,7 @@ template <class T>
 struct segment_tree {
     T n;
     std::vector<T> node;
-    T ide = LINF;
+    const T ide = LINF;
 
     segment_tree(std::vector<T> a) {
         n = 1;
@@ -23,11 +23,11 @@ struct segment_tree {
         }
     }
 
-    T monoid_operation(T a, T b) {
+    T monoid_operation(const T& a, const T& b) const noexcept {
         return min(a, b);
     }
 
-    void update(T p, T x) {
+    void update(const T& p, const T& x) noexcept {
         p += n - 1;
         node[p] = x;
         while (p > 0) {
@@ -36,11 +36,11 @@ struct segment_tree {
         }
     }
 
-    T find(T l, T r) {
+    T find(const T& l, const T& r) const noexcept {
         return find_sub(l, r, 0, 0, n);
     }
 
-    T find_sub(T a, T b, T now, T l, T r) {
+    T find_sub(const T& a, const T& b, const T& now, const T& l, const T& r) const noexcept {
         if (b <= l || r <= a) return ide;
         if (a <= l && r <= b) return node[now];
         T nl = find_sub(a, b, 2 * now + 1, l, (l + r) / 2);

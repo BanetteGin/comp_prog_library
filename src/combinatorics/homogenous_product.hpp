@@ -4,7 +4,7 @@
 namespace BanetteGin {
 
 template <class T>
-T HomogenousProduct(T m, T n) {
+T homogenous_product(const T& m, const T& n) {
     T ret = 1;
     for (long long int i = m + n - 1; i >= m; --i) {
         ret = ret * i;

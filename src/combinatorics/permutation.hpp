@@ -4,7 +4,7 @@
 namespace BanetteGin {
 
 template <class T>
-T permutation(T m, T n) {
+T permutation(const T& m, const T& n) {
     T ret = 1;
     for (long long int i = m; i >= m - n + 1; --i) {
         ret = ret * i;

@@ -2,3 +2,5 @@
 *.exe
 test/template.cpp
 .vscode/settings.json
+manage/crawl.py
+manage/template.cpp

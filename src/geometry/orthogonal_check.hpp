@@ -7,7 +7,7 @@
 namespace BanetteGin {
 
 template <class T>
-bool parallel_check(const line<T>& l, const line<T>& m) {
+bool orthogonal_check(const line<T>& l, const line<T>& m) {
 }
 
 }  // namespace BanetteGin

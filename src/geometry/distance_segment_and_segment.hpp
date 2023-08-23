@@ -8,7 +8,7 @@
 namespace BanetteGin {
 
 template <class T>
-T distance_point_and_segment(point<T> l, segment<T> m) {
+T distance_segment_and_segment(point<T> l, segment<T> m) {
 }
 
 }  // namespace BanetteGin

@@ -20,7 +20,7 @@ struct matrix_product {
         return x * y;
     }
     std::vector<std::vector<T> > product() const noexcept {
-        std::vector<std::vector<T> > c(a.size(), std::vector<T>(b[0].size(), adide));
+        std::vector<std::vector<T> > c(a.size(), std::vector<T>(b[0].size(), addide));
         for (T i = 0; i < a.size(); ++i) {
             for (T j = 0; j < b[0].size(); ++j) {
                 for (T k = 0; k < b.size(); ++k) {

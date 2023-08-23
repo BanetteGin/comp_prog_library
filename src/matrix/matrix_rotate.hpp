@@ -13,7 +13,7 @@ std::vector<std::vector<T>> matrix_rotate(std::vector<std::vector<T>> a) {
         for (long long int j = 0; j < a.size(); ++j) {
             b.emplace_back(a[j][a[0].size() - 1 - i]);
         }
-        ret.emplace_back(t);
+        ret.emplace_back(b);
     }
     return ret;
 }
