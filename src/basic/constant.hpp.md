@@ -21,6 +21,9 @@ data:
     path: src/analysis/ternary_search.hpp
     title: src/analysis/ternary_search.hpp
   - icon: ':warning:'
+    path: src/analysis/ternary_search.hpp
+    title: src/analysis/ternary_search.hpp
+  - icon: ':warning:'
     path: src/basic/comparison.hpp
     title: src/basic/comparison.hpp
   - icon: ':warning:'
@@ -146,6 +149,7 @@ data:
   - src/basic/comparison.hpp
   - src/basic/sign.hpp
   - src/analysis/golden_ratio_search.hpp
+  - src/analysis/ternary_search.hpp
   - src/analysis/ternary_search.hpp
   - src/geometry/distance_point_and_point.hpp
   - src/geometry/intersect_line_and_circle.hpp

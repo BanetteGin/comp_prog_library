@@ -54,32 +54,40 @@ data:
     \ <class T>\nbool less_than(const T &a, const T &b) {\n    return (sign(a - b)\
     \ < 0);\n}\n\n}  // namespace BanetteGin\n\n\n#line 9 \"src/basic/comparison.hpp\"\
     \n\n\n#line 5 \"src/analysis/golden_ratio_search.hpp\"\n\nnamespace BanetteGin\
-    \ {\n\ntemplate <class T>\nstruct golden_ratio_search {\n    bool option;\n  \
-    \  T left, right;\n    ternary_search(T left_, T right_, bool option_ = true)\n\
-    \        : left(left_), right(right_), option(option_) {\n    }\n    T func(T\
-    \ x) const noexcept {\n        return x + 2 / (pow(2, x / 1.5));\n    }\n    T\
-    \ ternary_search() {\n        while (!equal(left, right)) {\n            T mid1\
-    \ = left + (right - left) / 3;\n            T mid2 = left + (right - left) / 3\
-    \ * 2;\n            if (minmax) {\n                if (less_equal(func(mid1),\
-    \ func(mid2)))\n                    right = mid2;\n                else\n    \
-    \                left = mid1;\n            } else {\n                if (greater_equal(func(mid1),\
-    \ func(mid2)))\n                    right = mid2;\n                else\n    \
-    \                left = mid1;\n            }\n        }\n        return left;\n\
-    \    }\n};\n\n}  // namespace BanetteGin\n\n\n"
+    \ {\n\ntemplate <class T, class Function>\nT golden_ratio_search(T left, T right,\
+    \ Function func, bool option = true) {\n    T mid1 = left + (right - left) * GOLDEN_RATIO\
+    \ / (2 * GOLDEN_RATIO + 1);\n    T mid2 = left + (right - left) * (GOLDEN_RATIO\
+    \ + 1) / (2 * GOLDEN_RATIO + 1);\n    while (!equal(left, right)) {\n        if\
+    \ (option) {\n            if (less_equal(func(mid1), func(mid2))) {\n        \
+    \        right = mid2;\n                mid2 = mid1;\n                mid1 = left\
+    \ + (right - left) * GOLDEN_RATIO / (2 * GOLDEN_RATIO + 1);\n            } else\
+    \ {\n                left = mid1;\n                mid1 = mid2;\n            \
+    \    mid2 = left + (right - left) * (GOLDEN_RATIO + 1) / (2 * GOLDEN_RATIO + 1);\n\
+    \            }\n        } else {\n            if (greater_equal(func(mid1), func(mid2)))\
+    \ {\n                right = mid2;\n                mid2 = mid1;\n           \
+    \     mid1 = left + (right - left) * GOLDEN_RATIO / (2 * GOLDEN_RATIO + 1);\n\
+    \            } else {\n                left = mid1;\n                mid1 = mid2;\n\
+    \                mid2 = left + (right - left) * (GOLDEN_RATIO + 1) / (2 * GOLDEN_RATIO\
+    \ + 1);\n            }\n        }\n    }\n    return left;\n}\n\n}  // namespace\
+    \ BanetteGin\n\n\n"
   code: "#ifndef BANETTEGIN_GOLDEN_RATIO_SEARCH_HPP_INCLUDED\n#define BANETTEGIN_GOLDEN_RATIO_SEARCH_HPP_INCLUDED\n\
     \n#include \"../basic/comparison.hpp\"\n\nnamespace BanetteGin {\n\ntemplate <class\
-    \ T>\nstruct golden_ratio_search {\n    bool option;\n    T left, right;\n   \
-    \ ternary_search(T left_, T right_, bool option_ = true)\n        : left(left_),\
-    \ right(right_), option(option_) {\n    }\n    T func(T x) const noexcept {\n\
-    \        return x + 2 / (pow(2, x / 1.5));\n    }\n    T ternary_search() {\n\
-    \        while (!equal(left, right)) {\n            T mid1 = left + (right - left)\
-    \ / 3;\n            T mid2 = left + (right - left) / 3 * 2;\n            if (minmax)\
-    \ {\n                if (less_equal(func(mid1), func(mid2)))\n               \
-    \     right = mid2;\n                else\n                    left = mid1;\n\
-    \            } else {\n                if (greater_equal(func(mid1), func(mid2)))\n\
-    \                    right = mid2;\n                else\n                   \
-    \ left = mid1;\n            }\n        }\n        return left;\n    }\n};\n\n\
-    }  // namespace BanetteGin\n\n#endif"
+    \ T, class Function>\nT golden_ratio_search(T left, T right, Function func, bool\
+    \ option = true) {\n    T mid1 = left + (right - left) * GOLDEN_RATIO / (2 * GOLDEN_RATIO\
+    \ + 1);\n    T mid2 = left + (right - left) * (GOLDEN_RATIO + 1) / (2 * GOLDEN_RATIO\
+    \ + 1);\n    while (!equal(left, right)) {\n        if (option) {\n          \
+    \  if (less_equal(func(mid1), func(mid2))) {\n                right = mid2;\n\
+    \                mid2 = mid1;\n                mid1 = left + (right - left) *\
+    \ GOLDEN_RATIO / (2 * GOLDEN_RATIO + 1);\n            } else {\n             \
+    \   left = mid1;\n                mid1 = mid2;\n                mid2 = left +\
+    \ (right - left) * (GOLDEN_RATIO + 1) / (2 * GOLDEN_RATIO + 1);\n            }\n\
+    \        } else {\n            if (greater_equal(func(mid1), func(mid2))) {\n\
+    \                right = mid2;\n                mid2 = mid1;\n               \
+    \ mid1 = left + (right - left) * GOLDEN_RATIO / (2 * GOLDEN_RATIO + 1);\n    \
+    \        } else {\n                left = mid1;\n                mid1 = mid2;\n\
+    \                mid2 = left + (right - left) * (GOLDEN_RATIO + 1) / (2 * GOLDEN_RATIO\
+    \ + 1);\n            }\n        }\n    }\n    return left;\n}\n\n}  // namespace\
+    \ BanetteGin\n\n#endif"
   dependsOn:
   - src/basic/comparison.hpp
   - src/basic/equal.hpp
@@ -92,7 +100,7 @@ data:
   isVerificationFile: false
   path: src/analysis/golden_ratio_search.hpp
   requiredBy: []
-  timestamp: '2023-08-22 22:07:36+09:00'
+  timestamp: '2023-08-23 13:22:45+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/analysis/golden_ratio_search.hpp

@@ -14,8 +14,8 @@ data:
   bundledCode: "#line 1 \"src/number_theory/modint.hpp\"\n\n\n\nnamespace BanetteGin\
     \ {\n\ntemplate <long long int MOD>\nstruct modint {\n    long long int val;\n\
     \    constexpr modint(long long int v = 0) noexcept\n        : val(v % MOD) {\n\
-    \        if (val < 0) val += MOD;\n    }\n    constexpr long long int getmod()\
-    \ {\n        return MOD;\n    }\n\n    constexpr modint operator-() const noexcept\
+    \        if (val < 0) val += MOD;\n    }\n    constexpr long long int get_mod()\
+    \ {\n        return MOD;\n    }\n    constexpr modint operator-() const noexcept\
     \ {\n        return val ? MOD - val : 0;\n    }\n\n    constexpr modint operator+(const\
     \ modint& r) const noexcept {\n        return modint(*this) += r;\n    }\n   \
     \ constexpr modint operator-(const modint& r) const noexcept {\n        return\
@@ -41,15 +41,14 @@ data:
     \ modint& r) const noexcept {\n        return this->val != r.val;\n    }\n\n \
     \   friend constexpr ostream& operator<<(ostream& os, const modint<MOD>& x) noexcept\
     \ {\n        return os << x.val;\n    }\n\n    friend constexpr modint<MOD> modpow(const\
-    \ modint<MOD>& a, long long int n) noexcept {\n        modint ret = 1LL;\n   \
-    \     modint tmpa = a;\n        while (n > 0) {\n            if (n & 1) ret *=\
-    \ a;\n            tmpa = tmpa * tmpa;\n            n >>= 1;\n        }\n     \
-    \   return ret;\n    }\n};\n\n}  // namespace BanetteGin\n\n\n"
+    \ modint<MOD>& a, long long int n) noexcept {\n        if (n == 0) return 1;\n\
+    \        auto t = modpow(a, n / 2);\n        t = t * t;\n        if (n & 1) t\
+    \ = t * a;\n        return t;\n    }\n};\n\n}  // namespace BanetteGin\n\n\n"
   code: "#ifndef BANETTEGIN_MODINT_HPP_INCLUDED\n#define BANETTEGIN_MODINT_HPP_INCLUDED\n\
     \nnamespace BanetteGin {\n\ntemplate <long long int MOD>\nstruct modint {\n  \
     \  long long int val;\n    constexpr modint(long long int v = 0) noexcept\n  \
     \      : val(v % MOD) {\n        if (val < 0) val += MOD;\n    }\n    constexpr\
-    \ long long int getmod() {\n        return MOD;\n    }\n\n    constexpr modint\
+    \ long long int get_mod() {\n        return MOD;\n    }\n    constexpr modint\
     \ operator-() const noexcept {\n        return val ? MOD - val : 0;\n    }\n\n\
     \    constexpr modint operator+(const modint& r) const noexcept {\n        return\
     \ modint(*this) += r;\n    }\n    constexpr modint operator-(const modint& r)\
@@ -75,16 +74,16 @@ data:
     \ operator!=(const modint& r) const noexcept {\n        return this->val != r.val;\n\
     \    }\n\n    friend constexpr ostream& operator<<(ostream& os, const modint<MOD>&\
     \ x) noexcept {\n        return os << x.val;\n    }\n\n    friend constexpr modint<MOD>\
-    \ modpow(const modint<MOD>& a, long long int n) noexcept {\n        modint ret\
-    \ = 1LL;\n        modint tmpa = a;\n        while (n > 0) {\n            if (n\
-    \ & 1) ret *= a;\n            tmpa = tmpa * tmpa;\n            n >>= 1;\n    \
-    \    }\n        return ret;\n    }\n};\n\n}  // namespace BanetteGin\n\n#endif"
+    \ modpow(const modint<MOD>& a, long long int n) noexcept {\n        if (n == 0)\
+    \ return 1;\n        auto t = modpow(a, n / 2);\n        t = t * t;\n        if\
+    \ (n & 1) t = t * a;\n        return t;\n    }\n};\n\n}  // namespace BanetteGin\n\
+    \n#endif"
   dependsOn: []
   isVerificationFile: false
   path: src/number_theory/modint.hpp
   requiredBy:
   - src/all.hpp
-  timestamp: '2023-08-22 22:44:01+09:00'
+  timestamp: '2023-08-23 13:22:45+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/number_theory/modint.hpp

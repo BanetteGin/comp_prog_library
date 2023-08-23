@@ -429,8 +429,8 @@ data:
     \ BanetteGin\n\n\n#line 1 \"src/number_theory/modint.hpp\"\n\n\n\nnamespace BanetteGin\
     \ {\n\ntemplate <long long int MOD>\nstruct modint {\n    long long int val;\n\
     \    constexpr modint(long long int v = 0) noexcept\n        : val(v % MOD) {\n\
-    \        if (val < 0) val += MOD;\n    }\n    constexpr long long int getmod()\
-    \ {\n        return MOD;\n    }\n\n    constexpr modint operator-() const noexcept\
+    \        if (val < 0) val += MOD;\n    }\n    constexpr long long int get_mod()\
+    \ {\n        return MOD;\n    }\n    constexpr modint operator-() const noexcept\
     \ {\n        return val ? MOD - val : 0;\n    }\n\n    constexpr modint operator+(const\
     \ modint& r) const noexcept {\n        return modint(*this) += r;\n    }\n   \
     \ constexpr modint operator-(const modint& r) const noexcept {\n        return\
@@ -456,28 +456,27 @@ data:
     \ modint& r) const noexcept {\n        return this->val != r.val;\n    }\n\n \
     \   friend constexpr ostream& operator<<(ostream& os, const modint<MOD>& x) noexcept\
     \ {\n        return os << x.val;\n    }\n\n    friend constexpr modint<MOD> modpow(const\
-    \ modint<MOD>& a, long long int n) noexcept {\n        modint ret = 1LL;\n   \
-    \     modint tmpa = a;\n        while (n > 0) {\n            if (n & 1) ret *=\
-    \ a;\n            tmpa = tmpa * tmpa;\n            n >>= 1;\n        }\n     \
-    \   return ret;\n    }\n};\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/number_theory/naive_sieve.hpp\"\
-    \n\n\n\n#line 5 \"src/number_theory/naive_sieve.hpp\"\n\n#line 1 \"src/number_theory/prime_check.hpp\"\
-    \n\n\n\nnamespace BanetteGin {\n\ntemplate <class T>\nbool prime_check(T n) {\n\
-    \    if (n < 2) return false;\n    if (n != 2 && n % 2 == 0) return false;\n \
-    \   for (T i = 3; i * i <= n; i += 2)\n        if (n % i == 0) return false;\n\
-    \    return true;\n}\n\n}  // namespace BanetteGin\n\n\n#line 7 \"src/number_theory/naive_sieve.hpp\"\
-    \n\nnamespace BanetteGin {\n\ntemplate <class T>\nstd::vector<T> naive_sieve(T&\
-    \ n) {\n    std::vector<T> prime_list;\n    for (T i = 2; i <= n; ++i) {\n   \
-    \     if (prime_check(i)) prime_list.emplace_back(i);\n    }\n    return prime_list;\n\
-    }\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/number_theory/prime_factorization.hpp\"\
-    \n\n\n\n#line 5 \"src/number_theory/prime_factorization.hpp\"\n\nnamespace BanetteGin\
-    \ {\n\ntemplate <class T>\nstd::vector<std::pair<T, T> > prime_factorization(T\
-    \ n) {\n    std::vector<std::pair<T, T> > prime_list;\n    for (T i = 2; i * i\
-    \ <= n; ++i) {\n        if (n % i == 0) {\n            ll e = 0;\n           \
-    \ while (n % i == 0) {\n                n /= i;\n                e++;\n      \
-    \      }\n            prime_list.emplace_back(make_pair(i, e));\n        }\n \
-    \   }\n    if (n != 1) {\n        prime_list.emplace_back(make_pair(n, 1));\n\
+    \ modint<MOD>& a, long long int n) noexcept {\n        if (n == 0) return 1;\n\
+    \        auto t = modpow(a, n / 2);\n        t = t * t;\n        if (n & 1) t\
+    \ = t * a;\n        return t;\n    }\n};\n\n}  // namespace BanetteGin\n\n\n#line\
+    \ 1 \"src/number_theory/naive_sieve.hpp\"\n\n\n\n#line 5 \"src/number_theory/naive_sieve.hpp\"\
+    \n\n#line 1 \"src/number_theory/prime_check.hpp\"\n\n\n\nnamespace BanetteGin\
+    \ {\n\ntemplate <class T>\nbool prime_check(T n) {\n    if (n < 2) return false;\n\
+    \    if (n != 2 && n % 2 == 0) return false;\n    for (T i = 3; i * i <= n; i\
+    \ += 2)\n        if (n % i == 0) return false;\n    return true;\n}\n\n}  // namespace\
+    \ BanetteGin\n\n\n#line 7 \"src/number_theory/naive_sieve.hpp\"\n\nnamespace BanetteGin\
+    \ {\n\ntemplate <class T>\nstd::vector<T> naive_sieve(T& n) {\n    std::vector<T>\
+    \ prime_list;\n    for (T i = 2; i <= n; ++i) {\n        if (prime_check(i)) prime_list.emplace_back(i);\n\
     \    }\n    return prime_list;\n}\n\n}  // namespace BanetteGin\n\n\n#line 1 \"\
-    src/number_theory/sundaram_sieve.hpp\"\n\n\n\n#line 5 \"src/number_theory/sundaram_sieve.hpp\"\
+    src/number_theory/prime_factorization.hpp\"\n\n\n\n#line 5 \"src/number_theory/prime_factorization.hpp\"\
+    \n\nnamespace BanetteGin {\n\ntemplate <class T>\nstd::vector<std::pair<T, T>\
+    \ > prime_factorization(T n) {\n    std::vector<std::pair<T, T> > prime_list;\n\
+    \    for (T i = 2; i * i <= n; ++i) {\n        if (n % i == 0) {\n           \
+    \ ll e = 0;\n            while (n % i == 0) {\n                n /= i;\n     \
+    \           e++;\n            }\n            prime_list.emplace_back(make_pair(i,\
+    \ e));\n        }\n    }\n    if (n != 1) {\n        prime_list.emplace_back(make_pair(n,\
+    \ 1));\n    }\n    return prime_list;\n}\n\n}  // namespace BanetteGin\n\n\n#line\
+    \ 1 \"src/number_theory/sundaram_sieve.hpp\"\n\n\n\n#line 5 \"src/number_theory/sundaram_sieve.hpp\"\
     \n\nnamespace BanetteGin {\n\ntemplate <class T>\nstd::vector<T> sundaram_sieve(T&\
     \ n) {\n    std::vector<bool> ret((n + 1) / 2, true);\n    std::vector<T> prime_list\
     \ = {2};\n    ret[0] = false;\n    T m = ((n + 1) / 2 - 2) / 3;\n    for (T a\
@@ -646,7 +645,7 @@ data:
   isVerificationFile: false
   path: src/all.hpp
   requiredBy: []
-  timestamp: '2023-08-22 22:44:01+09:00'
+  timestamp: '2023-08-23 13:22:45+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/all.hpp
