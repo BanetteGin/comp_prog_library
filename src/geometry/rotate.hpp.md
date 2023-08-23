@@ -28,10 +28,7 @@ data:
   - icon: ':warning:'
     path: src/geometry/point.hpp
     title: src/geometry/point.hpp
-  _extendedRequiredBy:
-  - icon: ':warning:'
-    path: src/all.hpp
-    title: src/all.hpp
+  _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
@@ -102,8 +99,7 @@ data:
   - src/basic/less_than.hpp
   isVerificationFile: false
   path: src/geometry/rotate.hpp
-  requiredBy:
-  - src/all.hpp
+  requiredBy: []
   timestamp: '2023-08-22 22:07:36+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []

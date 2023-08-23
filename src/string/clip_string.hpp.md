@@ -4,10 +4,7 @@ data:
   - icon: ':warning:'
     path: src/basic/constant.hpp
     title: src/basic/constant.hpp
-  _extendedRequiredBy:
-  - icon: ':warning:'
-    path: src/all.hpp
-    title: src/all.hpp
+  _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
@@ -53,8 +50,7 @@ data:
   - src/basic/constant.hpp
   isVerificationFile: false
   path: src/string/clip_string.hpp
-  requiredBy:
-  - src/all.hpp
+  requiredBy: []
   timestamp: '2023-08-22 02:10:12+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []

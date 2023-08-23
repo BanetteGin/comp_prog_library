@@ -74,8 +74,14 @@ data:
   - name: src/geometry
     pages:
     - icon: ':warning:'
+      path: src/geometry/centroid.hpp
+      title: src/geometry/centroid.hpp
+    - icon: ':warning:'
       path: src/geometry/circle.hpp
       title: src/geometry/circle.hpp
+    - icon: ':warning:'
+      path: src/geometry/circumcenter.hpp
+      title: src/geometry/circumcenter.hpp
     - icon: ':warning:'
       path: src/geometry/degree_to_radian.hpp
       title: src/geometry/degree_to_radian.hpp
@@ -92,6 +98,9 @@ data:
       path: src/geometry/distance_segment_and_segment.hpp
       title: src/geometry/distance_segment_and_segment.hpp
     - icon: ':warning:'
+      path: src/geometry/incenter.hpp
+      title: src/geometry/incenter.hpp
+    - icon: ':warning:'
       path: src/geometry/intersect_circle_and_circle.hpp
       title: src/geometry/intersect_circle_and_circle.hpp
     - icon: ':warning:'
@@ -100,6 +109,9 @@ data:
     - icon: ':warning:'
       path: src/geometry/line.hpp
       title: src/geometry/line.hpp
+    - icon: ':warning:'
+      path: src/geometry/orthocenter.hpp
+      title: src/geometry/orthocenter.hpp
     - icon: ':warning:'
       path: src/geometry/orthogonal_check.hpp
       title: src/geometry/orthogonal_check.hpp
@@ -137,6 +149,9 @@ data:
     - icon: ':warning:'
       path: src/matrix/matrix_product.hpp
       title: src/matrix/matrix_product.hpp
+    - icon: ':warning:'
+      path: src/matrix/matrix_rotate.hpp
+      title: src/matrix/matrix_rotate.hpp
   - name: src/number_theory
     pages:
     - icon: ':warning:'

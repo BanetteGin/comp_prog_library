@@ -1,10 +1,7 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy:
-  - icon: ':warning:'
-    path: src/all.hpp
-    title: src/all.hpp
+  _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
@@ -12,19 +9,19 @@ data:
   attributes:
     links: []
   bundledCode: "#line 1 \"src/combinatorics/permutation.hpp\"\n\n\n\nnamespace BanetteGin\
-    \ {\n\ntemplate <class T>\nT permutation(T m, T n) {\n    T ret = 1;\n    for\
-    \ (long long int i = m; i >= m - n + 1; --i) {\n        ret = ret * i;\n    }\n\
-    \    return ret;\n}\n\n}  // namespace BanetteGin\n\n\n"
+    \ {\n\ntemplate <class T>\nT permutation(const T& m, const T& n) {\n    T ret\
+    \ = 1;\n    for (long long int i = m; i >= m - n + 1; --i) {\n        ret = ret\
+    \ * i;\n    }\n    return ret;\n}\n\n}  // namespace BanetteGin\n\n\n"
   code: "#ifndef BANETTEGIN_PERMUTATION_HPP_INCLUDED\n#define BANETTEGIN_PERMUTATION_HPP_INCLUDED\n\
-    \nnamespace BanetteGin {\n\ntemplate <class T>\nT permutation(T m, T n) {\n  \
-    \  T ret = 1;\n    for (long long int i = m; i >= m - n + 1; --i) {\n        ret\
-    \ = ret * i;\n    }\n    return ret;\n}\n\n}  // namespace BanetteGin\n\n#endif"
+    \nnamespace BanetteGin {\n\ntemplate <class T>\nT permutation(const T& m, const\
+    \ T& n) {\n    T ret = 1;\n    for (long long int i = m; i >= m - n + 1; --i)\
+    \ {\n        ret = ret * i;\n    }\n    return ret;\n}\n\n}  // namespace BanetteGin\n\
+    \n#endif"
   dependsOn: []
   isVerificationFile: false
   path: src/combinatorics/permutation.hpp
-  requiredBy:
-  - src/all.hpp
-  timestamp: '2023-08-08 12:20:54+09:00'
+  requiredBy: []
+  timestamp: '2023-08-23 17:08:47+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/combinatorics/permutation.hpp

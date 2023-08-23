@@ -102,32 +102,14 @@ data:
     \ line& l) const noexcept {\n        return !equal(this->a, l.a) || !equal(this->b,\
     \ l.b) || !equal(this->c, l.c);\n    }\n};\n\n}  // namespace BanetteGin\n\n\n\
     #line 6 \"src/geometry/orthogonal_check.hpp\"\n\nnamespace BanetteGin {\n\ntemplate\
-    \ <class T>\nbool parallel_check(const line<T>& l, const line<T>& m) {\n}\n\n\
-    }  // namespace BanetteGin\n\n\n"
-  code: '#ifndef BANETTEGIN_ORTHOGONAL_CHECK_HPP_INCLUDED
-
-    #define BANETTEGIN_ORTHOGONAL_CHECK_HPP_INCLUDED
-
-
-    #include "../basic/equal.hpp"
-
-    #include "line.hpp"
-
-
-    namespace BanetteGin {
-
-
-    template <class T>
-
-    bool parallel_check(const line<T>& l, const line<T>& m) {
-
-    }
-
-
-    }  // namespace BanetteGin
-
-
-    #endif'
+    \ <class T>\nbool orthogonal_check(const line<T>& l, const line<T>& m) {\n   \
+    \ return equal(l.a * l.b + m.a * m.b, 0);\n}\n\n}  // namespace BanetteGin\n\n\
+    \n"
+  code: "#ifndef BANETTEGIN_ORTHOGONAL_CHECK_HPP_INCLUDED\n#define BANETTEGIN_ORTHOGONAL_CHECK_HPP_INCLUDED\n\
+    \n#include \"../basic/equal.hpp\"\n#include \"line.hpp\"\n\nnamespace BanetteGin\
+    \ {\n\ntemplate <class T>\nbool orthogonal_check(const line<T>& l, const line<T>&\
+    \ m) {\n    return equal(l.a * l.b + m.a * m.b, 0);\n}\n\n}  // namespace BanetteGin\n\
+    \n#endif"
   dependsOn:
   - src/basic/equal.hpp
   - src/basic/sign.hpp
@@ -143,7 +125,7 @@ data:
   isVerificationFile: false
   path: src/geometry/orthogonal_check.hpp
   requiredBy: []
-  timestamp: '2023-08-22 22:07:36+09:00'
+  timestamp: '2023-08-23 21:58:08+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/geometry/orthogonal_check.hpp

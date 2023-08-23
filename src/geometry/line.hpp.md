@@ -30,12 +30,6 @@ data:
     title: src/geometry/point.hpp
   _extendedRequiredBy:
   - icon: ':warning:'
-    path: src/all.hpp
-    title: src/all.hpp
-  - icon: ':warning:'
-    path: src/all.hpp
-    title: src/all.hpp
-  - icon: ':warning:'
     path: src/geometry/distance_point_and_line.hpp
     title: src/geometry/distance_point_and_line.hpp
   - icon: ':warning:'
@@ -150,8 +144,6 @@ data:
   isVerificationFile: false
   path: src/geometry/line.hpp
   requiredBy:
-  - src/all.hpp
-  - src/all.hpp
   - src/geometry/intersect_line_and_circle.hpp
   - src/geometry/parallel_check.hpp
   - src/geometry/orthogonal_check.hpp

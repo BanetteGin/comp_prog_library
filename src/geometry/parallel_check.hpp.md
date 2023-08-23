@@ -11,9 +11,6 @@ data:
     path: src/basic/equal.hpp
     title: src/basic/equal.hpp
   - icon: ':warning:'
-    path: src/basic/equal.hpp
-    title: src/basic/equal.hpp
-  - icon: ':warning:'
     path: src/basic/greater_equal.hpp
     title: src/basic/greater_equal.hpp
   - icon: ':warning:'
@@ -34,38 +31,35 @@ data:
   - icon: ':warning:'
     path: src/geometry/point.hpp
     title: src/geometry/point.hpp
-  _extendedRequiredBy:
-  - icon: ':warning:'
-    path: src/all.hpp
-    title: src/all.hpp
+  _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"src/geometry/parallel_check.hpp\"\n\n\n\n#line 1 \"src/basic/equal.hpp\"\
-    \n\n\n\n#line 1 \"src/basic/sign.hpp\"\n\n\n\n#line 1 \"src/basic/constant.hpp\"\
-    \n\n\n\nnamespace BanetteGin {\n\nconst long double EPS = 10e-12;\nconst long\
-    \ long int LINF = 1001001001001001001LL;\nconst long double PI = acos(-1);\nconst\
-    \ long double GOLDEN_RATIO = 2 * cos(PI / 5);\n\n}  // namespace BanetteGin\n\n\
-    \n#line 5 \"src/basic/sign.hpp\"\n\nnamespace BanetteGin {\n\ntemplate <class\
-    \ T>\nint sign(const T& x) {\n    return (x < -EPS ? -1 : (x < EPS ? 0 : 1));\n\
-    }\n\n}  // namespace BanetteGin\n\n\n#line 5 \"src/basic/equal.hpp\"\n\nnamespace\
-    \ BanetteGin {\n\ntemplate <class T>\nbool equal(const T &a, const T &b) {\n \
-    \   return (sign(a - b) == 0);\n}\n\n}  // namespace BanetteGin\n\n\n#line 1 \"\
-    src/geometry/line.hpp\"\n\n\n\n#line 1 \"src/basic/comparison.hpp\"\n\n\n\n#line\
-    \ 1 \"src/basic/greater_equal.hpp\"\n\n\n\nnamespace BanetteGin {\n\ntemplate\
-    \ <class T>\nbool greater_equal(const T &a, const T &b) {\n    return (sign(a\
-    \ - b) >= 0);\n}\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/basic/greater_than.hpp\"\
-    \n\n\n\nnamespace BanetteGin {\n\ntemplate <class T>\nbool greater_than(const\
-    \ T &a, const T &b) {\n    return (sign(a - b) > 0);\n}\n\n}  // namespace BanetteGin\n\
-    \n\n#line 1 \"src/basic/less_equal.hpp\"\n\n\n\nnamespace BanetteGin {\n\ntemplate\
-    \ <class T>\nbool less_equal(const T &a, const T &b) {\n    return (sign(a - b)\
-    \ <= 0);\n}\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/basic/less_than.hpp\"\
-    \n\n\n\nnamespace BanetteGin {\n\ntemplate <class T>\nbool less_than(const T &a,\
-    \ const T &b) {\n    return (sign(a - b) < 0);\n}\n\n}  // namespace BanetteGin\n\
-    \n\n#line 9 \"src/basic/comparison.hpp\"\n\n\n#line 1 \"src/geometry/point.hpp\"\
+  bundledCode: "#line 1 \"src/geometry/parallel_check.hpp\"\n\n\n\n#line 1 \"src/basic/comparison.hpp\"\
+    \n\n\n\n#line 1 \"src/basic/equal.hpp\"\n\n\n\n#line 1 \"src/basic/sign.hpp\"\n\
+    \n\n\n#line 1 \"src/basic/constant.hpp\"\n\n\n\nnamespace BanetteGin {\n\nconst\
+    \ long double EPS = 10e-12;\nconst long long int LINF = 1001001001001001001LL;\n\
+    const long double PI = acos(-1);\nconst long double GOLDEN_RATIO = 2 * cos(PI\
+    \ / 5);\n\n}  // namespace BanetteGin\n\n\n#line 5 \"src/basic/sign.hpp\"\n\n\
+    namespace BanetteGin {\n\ntemplate <class T>\nint sign(const T& x) {\n    return\
+    \ (x < -EPS ? -1 : (x < EPS ? 0 : 1));\n}\n\n}  // namespace BanetteGin\n\n\n\
+    #line 5 \"src/basic/equal.hpp\"\n\nnamespace BanetteGin {\n\ntemplate <class T>\n\
+    bool equal(const T &a, const T &b) {\n    return (sign(a - b) == 0);\n}\n\n} \
+    \ // namespace BanetteGin\n\n\n#line 1 \"src/basic/greater_equal.hpp\"\n\n\n\n\
+    namespace BanetteGin {\n\ntemplate <class T>\nbool greater_equal(const T &a, const\
+    \ T &b) {\n    return (sign(a - b) >= 0);\n}\n\n}  // namespace BanetteGin\n\n\
+    \n#line 1 \"src/basic/greater_than.hpp\"\n\n\n\nnamespace BanetteGin {\n\ntemplate\
+    \ <class T>\nbool greater_than(const T &a, const T &b) {\n    return (sign(a -\
+    \ b) > 0);\n}\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/basic/less_equal.hpp\"\
+    \n\n\n\nnamespace BanetteGin {\n\ntemplate <class T>\nbool less_equal(const T\
+    \ &a, const T &b) {\n    return (sign(a - b) <= 0);\n}\n\n}  // namespace BanetteGin\n\
+    \n\n#line 1 \"src/basic/less_than.hpp\"\n\n\n\nnamespace BanetteGin {\n\ntemplate\
+    \ <class T>\nbool less_than(const T &a, const T &b) {\n    return (sign(a - b)\
+    \ < 0);\n}\n\n}  // namespace BanetteGin\n\n\n#line 9 \"src/basic/comparison.hpp\"\
+    \n\n\n#line 1 \"src/geometry/line.hpp\"\n\n\n\n#line 1 \"src/geometry/point.hpp\"\
     \n\n\n\n#include <complex>\n\n#line 7 \"src/geometry/point.hpp\"\n\nnamespace\
     \ BanetteGin {\n\ntemplate <class T>\nstruct point {\n    T x, y;\n    point(T\
     \ x_, T y_)\n        : x(x_), y(y_) {\n    }\n\n    point operator+(const point&\
@@ -105,49 +99,28 @@ data:
     \ line& l) const noexcept {\n        return !equal(this->a, l.a) || !equal(this->b,\
     \ l.b) || !equal(this->c, l.c);\n    }\n};\n\n}  // namespace BanetteGin\n\n\n\
     #line 6 \"src/geometry/parallel_check.hpp\"\n\nnamespace BanetteGin {\n\ntemplate\
-    \ <class T>\nbool parallel_check(const line<T>& l, const line<T>& m) {\n}\n\n\
-    }  // namespace BanetteGin\n\n\n"
-  code: '#ifndef BANETTEGIN_PARALLEL_CHECK_HPP_INCLUDED
-
-    #define BANETTEGIN_PARALLEL_CHECK_HPP_INCLUDED
-
-
-    #include "../basic/equal.hpp"
-
-    #include "line.hpp"
-
-
-    namespace BanetteGin {
-
-
-    template <class T>
-
-    bool parallel_check(const line<T>& l, const line<T>& m) {
-
-    }
-
-
-    }  // namespace BanetteGin
-
-
-    #endif'
+    \ <class T>\nbool parallel_check(const line<T>& l, const line<T>& m) {\n    return\
+    \ equal(l.a * m.b - l.b * m.a, 0);\n}\n\n}  // namespace BanetteGin\n\n\n"
+  code: "#ifndef BANETTEGIN_PARALLEL_CHECK_HPP_INCLUDED\n#define BANETTEGIN_PARALLEL_CHECK_HPP_INCLUDED\n\
+    \n#include \"../basic/comparison.hpp\"\n#include \"line.hpp\"\n\nnamespace BanetteGin\
+    \ {\n\ntemplate <class T>\nbool parallel_check(const line<T>& l, const line<T>&\
+    \ m) {\n    return equal(l.a * m.b - l.b * m.a, 0);\n}\n\n}  // namespace BanetteGin\n\
+    \n#endif"
   dependsOn:
+  - src/basic/comparison.hpp
   - src/basic/equal.hpp
   - src/basic/sign.hpp
   - src/basic/constant.hpp
-  - src/geometry/line.hpp
-  - src/basic/comparison.hpp
-  - src/basic/equal.hpp
   - src/basic/greater_equal.hpp
   - src/basic/greater_than.hpp
   - src/basic/less_equal.hpp
   - src/basic/less_than.hpp
+  - src/geometry/line.hpp
   - src/geometry/point.hpp
   isVerificationFile: false
   path: src/geometry/parallel_check.hpp
-  requiredBy:
-  - src/all.hpp
-  timestamp: '2023-08-22 22:07:36+09:00'
+  requiredBy: []
+  timestamp: '2023-08-23 21:58:08+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/geometry/parallel_check.hpp

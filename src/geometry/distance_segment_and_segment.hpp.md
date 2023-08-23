@@ -113,7 +113,7 @@ data:
     \ {\n\ntemplate <class T>\nstruct segment {\n    point<T> p, q;\n    T length;\n\
     \    segment(point<T> p_, point<T> q_)\n        : p(p_), q(q_), length(distance_point_and_point(p,\
     \ q)) {\n    }\n};\n\n}  // namespace BanetteGin\n\n\n#line 7 \"src/geometry/distance_segment_and_segment.hpp\"\
-    \n\nnamespace BanetteGin {\n\ntemplate <class T>\nT distance_point_and_segment(point<T>\
+    \n\nnamespace BanetteGin {\n\ntemplate <class T>\nT distance_segment_and_segment(point<T>\
     \ l, segment<T> m) {\n}\n\n}  // namespace BanetteGin\n\n\n"
   code: '#ifndef BANETTEGIN_DISTANCE_SEGMENT_AND_SEGMENT_HPP_INCLUDED
 
@@ -132,7 +132,7 @@ data:
 
     template <class T>
 
-    T distance_point_and_segment(point<T> l, segment<T> m) {
+    T distance_segment_and_segment(point<T> l, segment<T> m) {
 
     }
 
@@ -157,7 +157,7 @@ data:
   isVerificationFile: false
   path: src/geometry/distance_segment_and_segment.hpp
   requiredBy: []
-  timestamp: '2023-08-22 22:07:36+09:00'
+  timestamp: '2023-08-23 17:08:47+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/geometry/distance_segment_and_segment.hpp

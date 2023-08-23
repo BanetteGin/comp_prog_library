@@ -11,6 +11,9 @@ data:
     path: src/basic/equal.hpp
     title: src/basic/equal.hpp
   - icon: ':warning:'
+    path: src/basic/equal.hpp
+    title: src/basic/equal.hpp
+  - icon: ':warning:'
     path: src/basic/greater_equal.hpp
     title: src/basic/greater_equal.hpp
   - icon: ':warning:'
@@ -26,50 +29,25 @@ data:
     path: src/basic/sign.hpp
     title: src/basic/sign.hpp
   - icon: ':warning:'
+    path: src/geometry/distance_point_and_point.hpp
+    title: src/geometry/distance_point_and_point.hpp
+  - icon: ':warning:'
     path: src/geometry/point.hpp
     title: src/geometry/point.hpp
-  _extendedRequiredBy:
-  - icon: ':warning:'
-    path: src/geometry/centroid.hpp
-    title: src/geometry/centroid.hpp
-  - icon: ':warning:'
-    path: src/geometry/circle.hpp
-    title: src/geometry/circle.hpp
-  - icon: ':warning:'
-    path: src/geometry/circumcenter.hpp
-    title: src/geometry/circumcenter.hpp
-  - icon: ':warning:'
-    path: src/geometry/distance_point_and_segment.hpp
-    title: src/geometry/distance_point_and_segment.hpp
-  - icon: ':warning:'
-    path: src/geometry/distance_segment_and_segment.hpp
-    title: src/geometry/distance_segment_and_segment.hpp
-  - icon: ':warning:'
-    path: src/geometry/incenter.hpp
-    title: src/geometry/incenter.hpp
-  - icon: ':warning:'
-    path: src/geometry/intersect_circle_and_circle.hpp
-    title: src/geometry/intersect_circle_and_circle.hpp
-  - icon: ':warning:'
-    path: src/geometry/intersect_line_and_circle.hpp
-    title: src/geometry/intersect_line_and_circle.hpp
-  - icon: ':warning:'
-    path: src/geometry/orthocenter.hpp
-    title: src/geometry/orthocenter.hpp
   - icon: ':warning:'
     path: src/geometry/segment.hpp
     title: src/geometry/segment.hpp
   - icon: ':warning:'
     path: src/geometry/triangle.hpp
     title: src/geometry/triangle.hpp
+  _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"src/geometry/distance_point_and_point.hpp\"\n\n\n\n#line\
-    \ 1 \"src/geometry/point.hpp\"\n\n\n\n#include <complex>\n\n#line 1 \"src/basic/comparison.hpp\"\
+  bundledCode: "#line 1 \"src/geometry/incenter.hpp\"\n\n\n\n#line 1 \"src/geometry/triangle.hpp\"\
     \n\n\n\n#line 1 \"src/basic/equal.hpp\"\n\n\n\n#line 1 \"src/basic/sign.hpp\"\n\
     \n\n\n#line 1 \"src/basic/constant.hpp\"\n\n\n\nnamespace BanetteGin {\n\nconst\
     \ long double EPS = 10e-12;\nconst long long int LINF = 1001001001001001001LL;\n\
@@ -79,10 +57,12 @@ data:
     \ (x < -EPS ? -1 : (x < EPS ? 0 : 1));\n}\n\n}  // namespace BanetteGin\n\n\n\
     #line 5 \"src/basic/equal.hpp\"\n\nnamespace BanetteGin {\n\ntemplate <class T>\n\
     bool equal(const T &a, const T &b) {\n    return (sign(a - b) == 0);\n}\n\n} \
-    \ // namespace BanetteGin\n\n\n#line 1 \"src/basic/greater_equal.hpp\"\n\n\n\n\
-    namespace BanetteGin {\n\ntemplate <class T>\nbool greater_equal(const T &a, const\
-    \ T &b) {\n    return (sign(a - b) >= 0);\n}\n\n}  // namespace BanetteGin\n\n\
-    \n#line 1 \"src/basic/greater_than.hpp\"\n\n\n\nnamespace BanetteGin {\n\ntemplate\
+    \ // namespace BanetteGin\n\n\n#line 1 \"src/geometry/distance_point_and_point.hpp\"\
+    \n\n\n\n#line 1 \"src/geometry/point.hpp\"\n\n\n\n#include <complex>\n\n#line\
+    \ 1 \"src/basic/comparison.hpp\"\n\n\n\n#line 1 \"src/basic/greater_equal.hpp\"\
+    \n\n\n\nnamespace BanetteGin {\n\ntemplate <class T>\nbool greater_equal(const\
+    \ T &a, const T &b) {\n    return (sign(a - b) >= 0);\n}\n\n}  // namespace BanetteGin\n\
+    \n\n#line 1 \"src/basic/greater_than.hpp\"\n\n\n\nnamespace BanetteGin {\n\ntemplate\
     \ <class T>\nbool greater_than(const T &a, const T &b) {\n    return (sign(a -\
     \ b) > 0);\n}\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/basic/less_equal.hpp\"\
     \n\n\n\nnamespace BanetteGin {\n\ntemplate <class T>\nbool less_equal(const T\
@@ -115,42 +95,59 @@ data:
     \ BanetteGin\n\n\n#line 5 \"src/geometry/distance_point_and_point.hpp\"\n\nnamespace\
     \ BanetteGin {\n\ntemplate <class T>\nT distance_point_and_point(point<T> p, point<T>\
     \ q) {\n    return sqrt(pow(p.x - q.x, 2) + pow(p.y - q.y, 2));\n}\n\n}  // namespace\
-    \ BanetteGin\n\n\n"
-  code: "#ifndef BANETTEGIN_DISTANCE_POINT_AND_POINT_HPP_INCLUDED\n#define BANETTEGIN_DISTANCE_POINT_AND_POINT_HPP_INCLUDED\n\
-    \n#include \"point.hpp\"\n\nnamespace BanetteGin {\n\ntemplate <class T>\nT distance_point_and_point(point<T>\
-    \ p, point<T> q) {\n    return sqrt(pow(p.x - q.x, 2) + pow(p.y - q.y, 2));\n\
-    }\n\n}  // namespace BanetteGin\n\n#endif"
+    \ BanetteGin\n\n\n#line 1 \"src/geometry/segment.hpp\"\n\n\n\n#line 6 \"src/geometry/segment.hpp\"\
+    \n\nnamespace BanetteGin {\n\ntemplate <class T>\nstruct segment {\n    point<T>\
+    \ p, q;\n    T length;\n    segment(point<T> p_, point<T> q_)\n        : p(p_),\
+    \ q(q_), length(distance_point_and_point(p, q)) {\n    }\n};\n\n}  // namespace\
+    \ BanetteGin\n\n\n#line 8 \"src/geometry/triangle.hpp\"\n\nnamespace BanetteGin\
+    \ {\n\ntemplate <class T>\nstruct triangle {\n    point<T> point_a, point_b, point_c;\n\
+    \    T length_a, length_b, length_c;\n    T angle_a, angle_b, angle_c;\n    T\
+    \ area;\n    triangle(point<T> point_a_, point<T> point_b_, point<T> point_c_)\n\
+    \        : point_a(point_a_), point_b(point_b_), point_c(point_c_) {\n       \
+    \ length_a = distance_point_and_point(point_b, point_c);\n        length_b = distance_point_and_point(point_c,\
+    \ point_a);\n        length_c = distance_point_and_point(point_a, point_b);\n\
+    \        angle_a = acos((pow(length_b, 2) + pow(length_c, 2) - pow(length_a, 2))\
+    \ / (2 * length_b * length_c));\n        angle_b = acos((pow(length_c, 2) + pow(length_a,\
+    \ 2) - pow(length_b, 2)) / (2 * length_c * length_a));\n        angle_c = acos((pow(length_a,\
+    \ 2) + pow(length_b, 2) - pow(length_c, 2)) / (2 * length_a * length_b));\n  \
+    \      area = length_b * length_c * sin(angle_a) / 2;\n    };\n};\n\n}  // namespace\
+    \ BanetteGin\n\n\n#line 5 \"src/geometry/incenter.hpp\"\n\nnamespace BanetteGin\
+    \ {\n\ntemplate <class T>\nstd::pair<point<T>, T> incenter(triangle<T> t) {\n\
+    \    point<T> o = (t.point_a * t.length_a + t.point_b * t.length_b + t.point_c\
+    \ * t.length_c) / (t.length_a + t.length_b + t.length_c);\n    T r = t.area *\
+    \ 2 / (t.length_a + t.length_b + t.length_c);\n    return std::make_pair(o, r);\n\
+    }\n\n}  // namespace BanetteGin\n\n\n"
+  code: "#ifndef BANETTEGIN_INCENTER_HPP_INCLUDED\n#define BANETTEGIN_INCENTER_HPP_INCLUDED\n\
+    \n#include \"triangle.hpp\"\n\nnamespace BanetteGin {\n\ntemplate <class T>\n\
+    std::pair<point<T>, T> incenter(triangle<T> t) {\n    point<T> o = (t.point_a\
+    \ * t.length_a + t.point_b * t.length_b + t.point_c * t.length_c) / (t.length_a\
+    \ + t.length_b + t.length_c);\n    T r = t.area * 2 / (t.length_a + t.length_b\
+    \ + t.length_c);\n    return std::make_pair(o, r);\n}\n\n}  // namespace BanetteGin\n\
+    \n#endif"
   dependsOn:
-  - src/geometry/point.hpp
-  - src/basic/comparison.hpp
+  - src/geometry/triangle.hpp
   - src/basic/equal.hpp
   - src/basic/sign.hpp
   - src/basic/constant.hpp
+  - src/geometry/distance_point_and_point.hpp
+  - src/geometry/point.hpp
+  - src/basic/comparison.hpp
+  - src/basic/equal.hpp
   - src/basic/greater_equal.hpp
   - src/basic/greater_than.hpp
   - src/basic/less_equal.hpp
   - src/basic/less_than.hpp
-  isVerificationFile: false
-  path: src/geometry/distance_point_and_point.hpp
-  requiredBy:
-  - src/geometry/intersect_line_and_circle.hpp
-  - src/geometry/circle.hpp
-  - src/geometry/circumcenter.hpp
-  - src/geometry/orthocenter.hpp
-  - src/geometry/distance_point_and_segment.hpp
-  - src/geometry/distance_segment_and_segment.hpp
-  - src/geometry/incenter.hpp
-  - src/geometry/triangle.hpp
-  - src/geometry/intersect_circle_and_circle.hpp
-  - src/geometry/centroid.hpp
   - src/geometry/segment.hpp
-  timestamp: '2023-08-22 22:07:36+09:00'
+  isVerificationFile: false
+  path: src/geometry/incenter.hpp
+  requiredBy: []
+  timestamp: '2023-08-23 21:58:08+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: src/geometry/distance_point_and_point.hpp
+documentation_of: src/geometry/incenter.hpp
 layout: document
 redirect_from:
-- /library/src/geometry/distance_point_and_point.hpp
-- /library/src/geometry/distance_point_and_point.hpp.html
-title: src/geometry/distance_point_and_point.hpp
+- /library/src/geometry/incenter.hpp
+- /library/src/geometry/incenter.hpp.html
+title: src/geometry/incenter.hpp
 ---

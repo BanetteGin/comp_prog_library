@@ -39,20 +39,26 @@ data:
     title: src/geometry/segment.hpp
   _extendedRequiredBy:
   - icon: ':warning:'
-    path: src/all.hpp
-    title: src/all.hpp
-  - icon: ':warning:'
-    path: src/all.hpp
-    title: src/all.hpp
+    path: src/geometry/centroid.hpp
+    title: src/geometry/centroid.hpp
   - icon: ':warning:'
     path: src/geometry/circle.hpp
     title: src/geometry/circle.hpp
+  - icon: ':warning:'
+    path: src/geometry/circumcenter.hpp
+    title: src/geometry/circumcenter.hpp
+  - icon: ':warning:'
+    path: src/geometry/incenter.hpp
+    title: src/geometry/incenter.hpp
   - icon: ':warning:'
     path: src/geometry/intersect_circle_and_circle.hpp
     title: src/geometry/intersect_circle_and_circle.hpp
   - icon: ':warning:'
     path: src/geometry/intersect_line_and_circle.hpp
     title: src/geometry/intersect_line_and_circle.hpp
+  - icon: ':warning:'
+    path: src/geometry/orthocenter.hpp
+    title: src/geometry/orthocenter.hpp
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
@@ -122,22 +128,7 @@ data:
     \ + pow(length_a, 2) - pow(length_b, 2)) / (2 * length_c * length_a));\n     \
     \   angle_c = acos((pow(length_a, 2) + pow(length_b, 2) - pow(length_c, 2)) /\
     \ (2 * length_a * length_b));\n        area = length_b * length_c * sin(angle_a)\
-    \ / 2;\n    };\n    point<T> centroid() const noexcept {\n        return (point_a\
-    \ + point_b + point_c) / 3;\n    }\n    std::pair<point<T>, T> circumcenter()\
-    \ const noexcept {\n        point<T> o = (point_a * sin(2 * angle_a) + point_b\
-    \ * sin(2 * angle_b) + point_c * sin(2 * angle_c)) / (sin(2 * angle_a) + sin(2\
-    \ * angle_b) + sin(2 * angle_c));\n        T r = length_a / sin(angle_a) / 2;\n\
-    \        return std::make_pair(o, r);\n    }\n    std::pair<point<T>, T> incenter()\
-    \ const noexcept {\n        point<T> o = (point_a * length_a + point_b * length_b\
-    \ + point_c * length_c) / (length_a + length_b + length_c);\n        T r = area\
-    \ * 2 / (length_a + length_b + length_c);\n        return std::make_pair(o, r);\n\
-    \    }\n    std::pair<point<T>, T> incenter() const noexcept {\n        point<T>\
-    \ o = (point_a * length_a + point_b * length_b + point_c * length_c) / (length_a\
-    \ + length_b + length_c);\n        T r = area * 2 / (length_a + length_b + length_c);\n\
-    \        return std::make_pair(o, r);\n    }\n    point<T> orthocenter() const\
-    \ noexcept {\n        return (point_a * tan(angle_a) + point_b * tan(angle_b)\
-    \ + point_c * tan(angle_c)) / (tan(angle_a) + tan(angle_b) + tan(angle_c));\n\
-    \    }\n};\n\n}  // namespace BanetteGin\n\n\n"
+    \ / 2;\n    };\n};\n\n}  // namespace BanetteGin\n\n\n"
   code: "#ifndef BANETTEGIN_TRIANGLE_HPP_INCLUDED\n#define BANETTEGIN_TRIANGLE_HPP_INCLUDED\n\
     \n#include \"../basic/equal.hpp\"\n#include \"distance_point_and_point.hpp\"\n\
     #include \"point.hpp\"\n#include \"segment.hpp\"\n\nnamespace BanetteGin {\n\n\
@@ -151,23 +142,8 @@ data:
     \ / (2 * length_b * length_c));\n        angle_b = acos((pow(length_c, 2) + pow(length_a,\
     \ 2) - pow(length_b, 2)) / (2 * length_c * length_a));\n        angle_c = acos((pow(length_a,\
     \ 2) + pow(length_b, 2) - pow(length_c, 2)) / (2 * length_a * length_b));\n  \
-    \      area = length_b * length_c * sin(angle_a) / 2;\n    };\n    point<T> centroid()\
-    \ const noexcept {\n        return (point_a + point_b + point_c) / 3;\n    }\n\
-    \    std::pair<point<T>, T> circumcenter() const noexcept {\n        point<T>\
-    \ o = (point_a * sin(2 * angle_a) + point_b * sin(2 * angle_b) + point_c * sin(2\
-    \ * angle_c)) / (sin(2 * angle_a) + sin(2 * angle_b) + sin(2 * angle_c));\n  \
-    \      T r = length_a / sin(angle_a) / 2;\n        return std::make_pair(o, r);\n\
-    \    }\n    std::pair<point<T>, T> incenter() const noexcept {\n        point<T>\
-    \ o = (point_a * length_a + point_b * length_b + point_c * length_c) / (length_a\
-    \ + length_b + length_c);\n        T r = area * 2 / (length_a + length_b + length_c);\n\
-    \        return std::make_pair(o, r);\n    }\n    std::pair<point<T>, T> incenter()\
-    \ const noexcept {\n        point<T> o = (point_a * length_a + point_b * length_b\
-    \ + point_c * length_c) / (length_a + length_b + length_c);\n        T r = area\
-    \ * 2 / (length_a + length_b + length_c);\n        return std::make_pair(o, r);\n\
-    \    }\n    point<T> orthocenter() const noexcept {\n        return (point_a *\
-    \ tan(angle_a) + point_b * tan(angle_b) + point_c * tan(angle_c)) / (tan(angle_a)\
-    \ + tan(angle_b) + tan(angle_c));\n    }\n};\n\n}  // namespace BanetteGin\n\n\
-    #endif"
+    \      area = length_b * length_c * sin(angle_a) / 2;\n    };\n};\n\n}  // namespace\
+    \ BanetteGin\n\n#endif"
   dependsOn:
   - src/basic/equal.hpp
   - src/basic/sign.hpp
@@ -184,12 +160,14 @@ data:
   isVerificationFile: false
   path: src/geometry/triangle.hpp
   requiredBy:
-  - src/all.hpp
-  - src/all.hpp
   - src/geometry/intersect_line_and_circle.hpp
   - src/geometry/circle.hpp
+  - src/geometry/circumcenter.hpp
+  - src/geometry/orthocenter.hpp
+  - src/geometry/incenter.hpp
   - src/geometry/intersect_circle_and_circle.hpp
-  timestamp: '2023-08-22 22:07:36+09:00'
+  - src/geometry/centroid.hpp
+  timestamp: '2023-08-23 21:58:08+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/geometry/triangle.hpp
