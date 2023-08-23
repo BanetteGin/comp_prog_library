@@ -24,22 +24,6 @@ struct triangle {
         angle_c = acos((pow(length_a, 2) + pow(length_b, 2) - pow(length_c, 2)) / (2 * length_a * length_b));
         area = length_b * length_c * sin(angle_a) / 2;
     };
-    point<T> centroid() const noexcept {
-        return (point_a + point_b + point_c) / 3;
-    }
-    std::pair<point<T>, T> circumcenter() const noexcept {
-        point<T> o = (point_a * sin(2 * angle_a) + point_b * sin(2 * angle_b) + point_c * sin(2 * angle_c)) / (sin(2 * angle_a) + sin(2 * angle_b) + sin(2 * angle_c));
-        T r = length_a / sin(angle_a) / 2;
-        return std::make_pair(o, r);
-    }
-    std::pair<point<T>, T> incenter() const noexcept {
-        point<T> o = (point_a * length_a + point_b * length_b + point_c * length_c) / (length_a + length_b + length_c);
-        T r = area * 2 / (length_a + length_b + length_c);
-        return std::make_pair(o, r);
-    }
-    point<T> orthocenter() const noexcept {
-        return (point_a * tan(angle_a) + point_b * tan(angle_b) + point_c * tan(angle_c)) / (tan(angle_a) + tan(angle_b) + tan(angle_c));
-    }
 };
 
 }  // namespace BanetteGin

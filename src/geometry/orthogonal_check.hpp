@@ -8,6 +8,7 @@ namespace BanetteGin {
 
 template <class T>
 bool orthogonal_check(const line<T>& l, const line<T>& m) {
+    return equal(l.a * l.b + m.a * m.b, 0);
 }
 
 }  // namespace BanetteGin
