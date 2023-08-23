@@ -86,6 +86,13 @@ struct dynamic_modint {
         return os << x.val;
     }
 
+    friend istream& operator>>(istream& is, dynamic_modint& x) noexcept {
+        long long int t;
+        is >> t;
+        x = dynamic_modint(t);
+        return (is);
+    }
+
     friend constexpr dynamic_modint modpow(const dynamic_modint& a, long long int n) noexcept {
         if (n == 0) return 1LL;
         auto t = modpow(a, n / 2);

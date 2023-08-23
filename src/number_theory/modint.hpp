@@ -81,6 +81,13 @@ struct modint {
         return os << x.val;
     }
 
+    friend istream& operator>>(istream& is, modint<MOD>& x) noexcept {
+        long long int t;
+        is >> t;
+        x = modint(t);
+        return (is);
+    }
+
     friend constexpr modint<MOD> modpow(const modint<MOD>& a, long long int n) noexcept {
         if (n == 0) return 1;
         auto t = modpow(a, n / 2);

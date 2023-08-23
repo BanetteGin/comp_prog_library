@@ -16,9 +16,7 @@ int main(void) {
     mint::set_mod(p);
     vector<mint> a(n);
     rep(i, n) {
-        ll x;
-        cin >> x;
-        a[i] = x;
+        cin >> a[i];
     }
     string s;
     cin >> s;
