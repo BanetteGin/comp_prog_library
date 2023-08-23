@@ -40,10 +40,13 @@ data:
     \      return this->val == r.val;\n    }\n    constexpr bool operator!=(const\
     \ modint& r) const noexcept {\n        return this->val != r.val;\n    }\n\n \
     \   friend constexpr ostream& operator<<(ostream& os, const modint<MOD>& x) noexcept\
-    \ {\n        return os << x.val;\n    }\n\n    friend constexpr modint<MOD> modpow(const\
-    \ modint<MOD>& a, long long int n) noexcept {\n        if (n == 0) return 1;\n\
-    \        auto t = modpow(a, n / 2);\n        t = t * t;\n        if (n & 1) t\
-    \ = t * a;\n        return t;\n    }\n};\n\n}  // namespace BanetteGin\n\n\n"
+    \ {\n        return os << x.val;\n    }\n\n    friend istream& operator>>(istream&\
+    \ is, modint<MOD>& x) noexcept {\n        long long int t;\n        is >> t;\n\
+    \        x = modint(t);\n        return (is);\n    }\n\n    friend constexpr modint<MOD>\
+    \ modpow(const modint<MOD>& a, long long int n) noexcept {\n        if (n == 0)\
+    \ return 1;\n        auto t = modpow(a, n / 2);\n        t = t * t;\n        if\
+    \ (n & 1) t = t * a;\n        return t;\n    }\n};\n\n}  // namespace BanetteGin\n\
+    \n\n"
   code: "#ifndef BANETTEGIN_MODINT_HPP_INCLUDED\n#define BANETTEGIN_MODINT_HPP_INCLUDED\n\
     \nnamespace BanetteGin {\n\ntemplate <long long int MOD>\nstruct modint {\n  \
     \  long long int val;\n    constexpr modint(long long int v = 0) noexcept\n  \
@@ -73,7 +76,9 @@ data:
     \ const noexcept {\n        return this->val == r.val;\n    }\n    constexpr bool\
     \ operator!=(const modint& r) const noexcept {\n        return this->val != r.val;\n\
     \    }\n\n    friend constexpr ostream& operator<<(ostream& os, const modint<MOD>&\
-    \ x) noexcept {\n        return os << x.val;\n    }\n\n    friend constexpr modint<MOD>\
+    \ x) noexcept {\n        return os << x.val;\n    }\n\n    friend istream& operator>>(istream&\
+    \ is, modint<MOD>& x) noexcept {\n        long long int t;\n        is >> t;\n\
+    \        x = modint(t);\n        return (is);\n    }\n\n    friend constexpr modint<MOD>\
     \ modpow(const modint<MOD>& a, long long int n) noexcept {\n        if (n == 0)\
     \ return 1;\n        auto t = modpow(a, n / 2);\n        t = t * t;\n        if\
     \ (n & 1) t = t * a;\n        return t;\n    }\n};\n\n}  // namespace BanetteGin\n\
@@ -83,7 +88,7 @@ data:
   path: src/number_theory/modint.hpp
   requiredBy:
   - src/all.hpp
-  timestamp: '2023-08-23 13:22:45+09:00'
+  timestamp: '2023-08-23 13:39:09+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/number_theory/modint.hpp

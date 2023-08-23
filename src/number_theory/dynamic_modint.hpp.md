@@ -46,10 +46,12 @@ data:
     \ bool operator!=(const dynamic_modint& r) const noexcept {\n        return this->val\
     \ != r.val;\n    }\n\n    friend constexpr ostream& operator<<(ostream& os, const\
     \ dynamic_modint& x) noexcept {\n        return os << x.val;\n    }\n\n    friend\
-    \ constexpr dynamic_modint modpow(const dynamic_modint& a, long long int n) noexcept\
-    \ {\n        if (n == 0) return 1LL;\n        auto t = modpow(a, n / 2);\n   \
-    \     t = t * t;\n        if (n & 1) t = t * a;\n        return t;\n    }\n};\n\
-    \n}  // namespace BanetteGin\n\n\n"
+    \ istream& operator>>(istream& is, dynamic_modint& x) noexcept {\n        long\
+    \ long int t;\n        is >> t;\n        x = dynamic_modint(t);\n        return\
+    \ (is);\n    }\n\n    friend constexpr dynamic_modint modpow(const dynamic_modint&\
+    \ a, long long int n) noexcept {\n        if (n == 0) return 1LL;\n        auto\
+    \ t = modpow(a, n / 2);\n        t = t * t;\n        if (n & 1) t = t * a;\n \
+    \       return t;\n    }\n};\n\n}  // namespace BanetteGin\n\n\n"
   code: "#ifndef BANETTEGIN_MODINT_HPP_INCLUDED\n#define BANETTEGIN_MODINT_HPP_INCLUDED\n\
     \nnamespace BanetteGin {\n\ntemplate <long long int id>\nstruct dynamic_modint\
     \ {\n    long long int val;\n    constexpr dynamic_modint(long long int v = 0)\
@@ -85,15 +87,17 @@ data:
     \ bool operator!=(const dynamic_modint& r) const noexcept {\n        return this->val\
     \ != r.val;\n    }\n\n    friend constexpr ostream& operator<<(ostream& os, const\
     \ dynamic_modint& x) noexcept {\n        return os << x.val;\n    }\n\n    friend\
-    \ constexpr dynamic_modint modpow(const dynamic_modint& a, long long int n) noexcept\
-    \ {\n        if (n == 0) return 1LL;\n        auto t = modpow(a, n / 2);\n   \
-    \     t = t * t;\n        if (n & 1) t = t * a;\n        return t;\n    }\n};\n\
-    \n}  // namespace BanetteGin\n\n#endif"
+    \ istream& operator>>(istream& is, dynamic_modint& x) noexcept {\n        long\
+    \ long int t;\n        is >> t;\n        x = dynamic_modint(t);\n        return\
+    \ (is);\n    }\n\n    friend constexpr dynamic_modint modpow(const dynamic_modint&\
+    \ a, long long int n) noexcept {\n        if (n == 0) return 1LL;\n        auto\
+    \ t = modpow(a, n / 2);\n        t = t * t;\n        if (n & 1) t = t * a;\n \
+    \       return t;\n    }\n};\n\n}  // namespace BanetteGin\n\n#endif"
   dependsOn: []
   isVerificationFile: false
   path: src/number_theory/dynamic_modint.hpp
   requiredBy: []
-  timestamp: '2023-08-23 13:22:45+09:00'
+  timestamp: '2023-08-23 13:39:09+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/1092.test.cpp

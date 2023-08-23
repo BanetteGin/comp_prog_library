@@ -455,11 +455,13 @@ data:
     \      return this->val == r.val;\n    }\n    constexpr bool operator!=(const\
     \ modint& r) const noexcept {\n        return this->val != r.val;\n    }\n\n \
     \   friend constexpr ostream& operator<<(ostream& os, const modint<MOD>& x) noexcept\
-    \ {\n        return os << x.val;\n    }\n\n    friend constexpr modint<MOD> modpow(const\
-    \ modint<MOD>& a, long long int n) noexcept {\n        if (n == 0) return 1;\n\
-    \        auto t = modpow(a, n / 2);\n        t = t * t;\n        if (n & 1) t\
-    \ = t * a;\n        return t;\n    }\n};\n\n}  // namespace BanetteGin\n\n\n#line\
-    \ 1 \"src/number_theory/naive_sieve.hpp\"\n\n\n\n#line 5 \"src/number_theory/naive_sieve.hpp\"\
+    \ {\n        return os << x.val;\n    }\n\n    friend istream& operator>>(istream&\
+    \ is, modint<MOD>& x) noexcept {\n        long long int t;\n        is >> t;\n\
+    \        x = modint(t);\n        return (is);\n    }\n\n    friend constexpr modint<MOD>\
+    \ modpow(const modint<MOD>& a, long long int n) noexcept {\n        if (n == 0)\
+    \ return 1;\n        auto t = modpow(a, n / 2);\n        t = t * t;\n        if\
+    \ (n & 1) t = t * a;\n        return t;\n    }\n};\n\n}  // namespace BanetteGin\n\
+    \n\n#line 1 \"src/number_theory/naive_sieve.hpp\"\n\n\n\n#line 5 \"src/number_theory/naive_sieve.hpp\"\
     \n\n#line 1 \"src/number_theory/prime_check.hpp\"\n\n\n\nnamespace BanetteGin\
     \ {\n\ntemplate <class T>\nbool prime_check(T n) {\n    if (n < 2) return false;\n\
     \    if (n != 2 && n % 2 == 0) return false;\n    for (T i = 3; i * i <= n; i\
@@ -645,7 +647,7 @@ data:
   isVerificationFile: false
   path: src/all.hpp
   requiredBy: []
-  timestamp: '2023-08-23 13:22:45+09:00'
+  timestamp: '2023-08-23 13:39:09+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/all.hpp
