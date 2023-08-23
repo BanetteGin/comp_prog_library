@@ -10,10 +10,9 @@ struct modint {
         : val(v % MOD) {
         if (val < 0) val += MOD;
     }
-    constexpr long long int getmod() {
+    constexpr long long int get_mod() {
         return MOD;
     }
-
     constexpr modint operator-() const noexcept {
         return val ? MOD - val : 0;
     }
@@ -83,14 +82,11 @@ struct modint {
     }
 
     friend constexpr modint<MOD> modpow(const modint<MOD>& a, long long int n) noexcept {
-        modint ret = 1LL;
-        modint tmpa = a;
-        while (n > 0) {
-            if (n & 1) ret *= a;
-            tmpa = tmpa * tmpa;
-            n >>= 1;
-        }
-        return ret;
+        if (n == 0) return 1;
+        auto t = modpow(a, n / 2);
+        t = t * t;
+        if (n & 1) t = t * a;
+        return t;
     }
 };
 
