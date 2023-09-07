@@ -79,28 +79,33 @@ data:
     \ }\n    bool operator!=(const point& p) const noexcept {\n        return !equal(this->x,\
     \ p.x) || !equal(this->y, p.y);\n    }\n    bool operator<(const point& p) const\
     \ noexcept {\n        return !equal(this->x, p.x) || !equal(this->y, p.y);\n \
-    \   }\n\n    T dot(const point& p, const point& q) const noexcept {\n        return\
-    \ p.x * q.x + p.y * q.y;\n    }\n    T cross(const point& p, const point& q) const\
-    \ noexcept {\n        return p.x * q.y - p.y * q.x;\n    }\n};\n\n}  // namespace\
-    \ BanetteGin\n\n\n#line 6 \"src/geometry/line.hpp\"\n\nnamespace BanetteGin {\n\
-    \ntemplate <class T>\nstruct line {\n    T a, b, c;\n    line(point<T> p_, point<T>\
-    \ q_)\n        : a(q_.y - p_.y), b(p_.x - q_.x), c(-p_.x * q_.y + q_.x * p_.y)\
-    \ {\n        if (!equal(a, 0)) {\n            a = 1;\n            b /= a;\n  \
-    \          c /= a;\n        } else if (!equal(b, 0)) {\n            b = 1;\n \
-    \           c /= b;\n        }\n    }\n    line(point<T> p_, T m_)\n        :\
-    \ a(m_), b(-1), c(p_.y - m_ * p_.x) {\n        if (!equal(a, 0)) {\n         \
-    \   b /= a;\n            c /= a;\n            a = 1;\n        } else if (!equal(b,\
-    \ 0)) {\n            c /= b;\n            b = 1;\n        }\n    }\n    line(T\
-    \ a_, T b_, T c_)\n        : a(a_), b(b_), c(c_) {\n        if (!equal(a, 0))\
-    \ {\n            b /= a;\n            c /= a;\n            a = 1;\n        } else\
-    \ if (!equal(b, 0)) {\n            c /= b;\n            b = 1;\n        }\n  \
-    \  }\n\n    bool operator==(const line& l) const noexcept {\n        return equal(this->a,\
-    \ l.a) && equal(this->b, l.b) && equal(this->c, l.c);\n    }\n    bool operator!=(const\
-    \ line& l) const noexcept {\n        return !equal(this->a, l.a) || !equal(this->b,\
-    \ l.b) || !equal(this->c, l.c);\n    }\n};\n\n}  // namespace BanetteGin\n\n\n\
-    #line 6 \"src/geometry/parallel_check.hpp\"\n\nnamespace BanetteGin {\n\ntemplate\
-    \ <class T>\nbool parallel_check(const line<T>& l, const line<T>& m) {\n    return\
-    \ equal(l.a * m.b - l.b * m.a, 0);\n}\n\n}  // namespace BanetteGin\n\n\n"
+    \   }\n\n    friend T dot(const point& p, const point& q) {\n        return p.x\
+    \ * q.x + p.y * q.y;\n    }\n    friend T cross(const point& p, const point& q)\
+    \ {\n        return p.x * q.y - p.y * q.x;\n    }\n};\n\n}  // namespace BanetteGin\n\
+    \n\n#line 6 \"src/geometry/line.hpp\"\n\nnamespace BanetteGin {\n\ntemplate <class\
+    \ T>\nstruct line {\n    T a, b, c;\n    point<T> p, q;\n    line(point<T> p_,\
+    \ point<T> q_)\n        : a(q_.y - p_.y), b(p_.x - q_.x), c(-p_.x * q_.y + q_.x\
+    \ * p_.y) {\n        normalize();\n    }\n    line(point<T> p_, T m_)\n      \
+    \  : a(m_), b(-1), c(p_.y - m_ * p_.x) {\n        normalize();\n    }\n    line(T\
+    \ a_, T b_, T c_)\n        : a(a_), b(b_), c(c_) {\n        normalize();\n   \
+    \ }\n    void normalize() {\n        if (!equal(a, 0)) {\n            b /= a;\n\
+    \            c /= a;\n            a = 1;\n        } else if (!equal(b, 0)) {\n\
+    \            b = 1;\n            c /= b;\n        } else {\n            assert(c\
+    \ == 0);\n        }\n        bool a_zero = equal(a, 0);\n        bool b_zero =\
+    \ equal(b, 0);\n        if (!a_zero && !b_zero) {\n            p = point(-(c /\
+    \ a), 0);\n            q = point(0, -(c / b));\n        } else if (!a_zero &&\
+    \ b_zero) {\n            p = point(-(c / a), 0);\n            q = point(-(c /\
+    \ a), 1);\n        } else if (a_zero && !b_zero) {\n            p = point(1, -(c\
+    \ / b));\n            q = point(0, -(c / b));\n        } else if (a_zero && b_zero)\
+    \ {\n            p = point(0, 0);\n            q = point(1, 0);\n        }\n \
+    \       return;\n    }\n    bool operator==(const line& l) const noexcept {\n\
+    \        return equal(this->a, l.a) && equal(this->b, l.b) && equal(this->c, l.c);\n\
+    \    }\n    bool operator!=(const line& l) const noexcept {\n        return !equal(this->a,\
+    \ l.a) || !equal(this->b, l.b) || !equal(this->c, l.c);\n    }\n};\n\n}  // namespace\
+    \ BanetteGin\n\n\n#line 6 \"src/geometry/parallel_check.hpp\"\n\nnamespace BanetteGin\
+    \ {\n\ntemplate <class T>\nbool parallel_check(const line<T>& l, const line<T>&\
+    \ m) {\n    return equal(l.a * m.b - l.b * m.a, 0);\n}\n\n}  // namespace BanetteGin\n\
+    \n\n"
   code: "#ifndef BANETTEGIN_PARALLEL_CHECK_HPP_INCLUDED\n#define BANETTEGIN_PARALLEL_CHECK_HPP_INCLUDED\n\
     \n#include \"../basic/comparison.hpp\"\n#include \"line.hpp\"\n\nnamespace BanetteGin\
     \ {\n\ntemplate <class T>\nbool parallel_check(const line<T>& l, const line<T>&\
@@ -120,7 +125,7 @@ data:
   isVerificationFile: false
   path: src/geometry/parallel_check.hpp
   requiredBy: []
-  timestamp: '2023-08-23 21:58:08+09:00'
+  timestamp: '2023-09-07 19:24:46+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/geometry/parallel_check.hpp

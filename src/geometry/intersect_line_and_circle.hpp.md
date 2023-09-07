@@ -101,61 +101,64 @@ data:
     \    return equal(this->x, p.x) && equal(this->y, p.y);\n    }\n    bool operator!=(const\
     \ point& p) const noexcept {\n        return !equal(this->x, p.x) || !equal(this->y,\
     \ p.y);\n    }\n    bool operator<(const point& p) const noexcept {\n        return\
-    \ !equal(this->x, p.x) || !equal(this->y, p.y);\n    }\n\n    T dot(const point&\
-    \ p, const point& q) const noexcept {\n        return p.x * q.x + p.y * q.y;\n\
-    \    }\n    T cross(const point& p, const point& q) const noexcept {\n       \
-    \ return p.x * q.y - p.y * q.x;\n    }\n};\n\n}  // namespace BanetteGin\n\n\n\
-    #line 5 \"src/geometry/distance_point_and_point.hpp\"\n\nnamespace BanetteGin\
-    \ {\n\ntemplate <class T>\nT distance_point_and_point(point<T> p, point<T> q)\
-    \ {\n    return sqrt(pow(p.x - q.x, 2) + pow(p.y - q.y, 2));\n}\n\n}  // namespace\
-    \ BanetteGin\n\n\n#line 1 \"src/geometry/segment.hpp\"\n\n\n\n#line 6 \"src/geometry/segment.hpp\"\
-    \n\nnamespace BanetteGin {\n\ntemplate <class T>\nstruct segment {\n    point<T>\
-    \ p, q;\n    T length;\n    segment(point<T> p_, point<T> q_)\n        : p(p_),\
-    \ q(q_), length(distance_point_and_point(p, q)) {\n    }\n};\n\n}  // namespace\
-    \ BanetteGin\n\n\n#line 8 \"src/geometry/triangle.hpp\"\n\nnamespace BanetteGin\
-    \ {\n\ntemplate <class T>\nstruct triangle {\n    point<T> point_a, point_b, point_c;\n\
-    \    T length_a, length_b, length_c;\n    T angle_a, angle_b, angle_c;\n    T\
-    \ area;\n    triangle(point<T> point_a_, point<T> point_b_, point<T> point_c_)\n\
-    \        : point_a(point_a_), point_b(point_b_), point_c(point_c_) {\n       \
-    \ length_a = distance_point_and_point(point_b, point_c);\n        length_b = distance_point_and_point(point_c,\
-    \ point_a);\n        length_c = distance_point_and_point(point_a, point_b);\n\
-    \        angle_a = acos((pow(length_b, 2) + pow(length_c, 2) - pow(length_a, 2))\
-    \ / (2 * length_b * length_c));\n        angle_b = acos((pow(length_c, 2) + pow(length_a,\
-    \ 2) - pow(length_b, 2)) / (2 * length_c * length_a));\n        angle_c = acos((pow(length_a,\
-    \ 2) + pow(length_b, 2) - pow(length_c, 2)) / (2 * length_a * length_b));\n  \
-    \      area = length_b * length_c * sin(angle_a) / 2;\n    };\n};\n\n}  // namespace\
-    \ BanetteGin\n\n\n#line 5 \"src/geometry/circumcenter.hpp\"\n\nnamespace BanetteGin\
-    \ {\n\ntemplate <class T>\npoint<T> circumcenter(triangle<T> t) {\n    point<T>\
-    \ o = (t.point_a * sin(2 * t.angle_a) + t.point_b * sin(2 * t.angle_b) + t.point_c\
-    \ * sin(2 * t.angle_c)) / (sin(2 * t.angle_a) + sin(2 * t.angle_b) + sin(2 * t.angle_c));\n\
-    \    T r = t.length_a / sin(t.angle_a) / 2;\n    return std::make_pair(o, r);\n\
-    }\n\n}  // namespace BanetteGin\n\n\n#line 10 \"src/geometry/circle.hpp\"\n\n\
-    namespace BanetteGin {\n\ntemplate <class T>\nstruct circle {\n    point<T> p;\n\
-    \    T r;\n    circle(point<T> p_, T r_)\n        : p(p_), r(r_) {\n    }\n  \
-    \  circle(point<T> p_, point<T> q_)\n        : p(p_), r(distance_point_and_point(p_,\
-    \ q_)) {\n    }\n    circle(point<T> p_, point<T> q_, point<T> r_)\n        :\
-    \ p(circumcenter(triangle(p_, q_, r_)).first), r(circumcenter(triangle(p_, q_,\
-    \ r_)).second) {\n    }\n    bool operator==(const circle& c) const noexcept {\n\
-    \        return equal(this->p, c.p) && equal(this->r, c.r);\n    }\n    bool operator!=(const\
-    \ circle& c) const noexcept {\n        return !equal(this->p, c.p) || !equal(this->r,\
-    \ c.r);\n    }\n};\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/geometry/distance_point_and_line.hpp\"\
-    \n\n\n\n#line 1 \"src/geometry/line.hpp\"\n\n\n\n#line 6 \"src/geometry/line.hpp\"\
-    \n\nnamespace BanetteGin {\n\ntemplate <class T>\nstruct line {\n    T a, b, c;\n\
-    \    line(point<T> p_, point<T> q_)\n        : a(q_.y - p_.y), b(p_.x - q_.x),\
-    \ c(-p_.x * q_.y + q_.x * p_.y) {\n        if (!equal(a, 0)) {\n            a\
-    \ = 1;\n            b /= a;\n            c /= a;\n        } else if (!equal(b,\
-    \ 0)) {\n            b = 1;\n            c /= b;\n        }\n    }\n    line(point<T>\
-    \ p_, T m_)\n        : a(m_), b(-1), c(p_.y - m_ * p_.x) {\n        if (!equal(a,\
+    \ !equal(this->x, p.x) || !equal(this->y, p.y);\n    }\n\n    friend T dot(const\
+    \ point& p, const point& q) {\n        return p.x * q.x + p.y * q.y;\n    }\n\
+    \    friend T cross(const point& p, const point& q) {\n        return p.x * q.y\
+    \ - p.y * q.x;\n    }\n};\n\n}  // namespace BanetteGin\n\n\n#line 5 \"src/geometry/distance_point_and_point.hpp\"\
+    \n\nnamespace BanetteGin {\n\ntemplate <class T>\nT distance_point_and_point(point<T>\
+    \ p, point<T> q) {\n    return sqrt(pow(p.x - q.x, 2) + pow(p.y - q.y, 2));\n\
+    }\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/geometry/segment.hpp\"\n\n\n\
+    \n#line 6 \"src/geometry/segment.hpp\"\n\nnamespace BanetteGin {\n\ntemplate <class\
+    \ T>\nstruct segment {\n    point<T> p, q;\n    T length;\n    segment(point<T>\
+    \ p_, point<T> q_)\n        : p(p_), q(q_), length(distance_point_and_point(p,\
+    \ q)) {\n    }\n};\n\n}  // namespace BanetteGin\n\n\n#line 8 \"src/geometry/triangle.hpp\"\
+    \n\nnamespace BanetteGin {\n\ntemplate <class T>\nstruct triangle {\n    point<T>\
+    \ point_a, point_b, point_c;\n    T length_a, length_b, length_c;\n    T angle_a,\
+    \ angle_b, angle_c;\n    T area;\n    triangle(point<T> point_a_, point<T> point_b_,\
+    \ point<T> point_c_)\n        : point_a(point_a_), point_b(point_b_), point_c(point_c_)\
+    \ {\n        length_a = distance_point_and_point(point_b, point_c);\n        length_b\
+    \ = distance_point_and_point(point_c, point_a);\n        length_c = distance_point_and_point(point_a,\
+    \ point_b);\n        angle_a = acos((pow(length_b, 2) + pow(length_c, 2) - pow(length_a,\
+    \ 2)) / (2 * length_b * length_c));\n        angle_b = acos((pow(length_c, 2)\
+    \ + pow(length_a, 2) - pow(length_b, 2)) / (2 * length_c * length_a));\n     \
+    \   angle_c = acos((pow(length_a, 2) + pow(length_b, 2) - pow(length_c, 2)) /\
+    \ (2 * length_a * length_b));\n        area = length_b * length_c * sin(angle_a)\
+    \ / 2;\n    };\n};\n\n}  // namespace BanetteGin\n\n\n#line 5 \"src/geometry/circumcenter.hpp\"\
+    \n\nnamespace BanetteGin {\n\ntemplate <class T>\npoint<T> circumcenter(triangle<T>\
+    \ t) {\n    point<T> o = (t.point_a * sin(2 * t.angle_a) + t.point_b * sin(2 *\
+    \ t.angle_b) + t.point_c * sin(2 * t.angle_c)) / (sin(2 * t.angle_a) + sin(2 *\
+    \ t.angle_b) + sin(2 * t.angle_c));\n    return o;\n}\n\n}  // namespace BanetteGin\n\
+    \n\n#line 10 \"src/geometry/circle.hpp\"\n\nnamespace BanetteGin {\n\ntemplate\
+    \ <class T>\nstruct circle {\n    point<T> p;\n    T r;\n    circle(point<T> p_,\
+    \ T r_)\n        : p(p_), r(r_) {\n    }\n    circle(point<T> p_, point<T> q_)\n\
+    \        : p(p_), r(distance_point_and_point(p_, q_)) {\n    }\n    circle(point<T>\
+    \ p_, point<T> q_, point<T> r_)\n        : p(circumcenter(triangle(p_, q_, r_)).first),\
+    \ r(circumcenter(triangle(p_, q_, r_)).second) {\n    }\n    bool operator==(const\
+    \ circle& c) const noexcept {\n        return equal(this->p, c.p) && equal(this->r,\
+    \ c.r);\n    }\n    bool operator!=(const circle& c) const noexcept {\n      \
+    \  return !equal(this->p, c.p) || !equal(this->r, c.r);\n    }\n};\n\n}  // namespace\
+    \ BanetteGin\n\n\n#line 1 \"src/geometry/distance_point_and_line.hpp\"\n\n\n\n\
+    #line 1 \"src/geometry/line.hpp\"\n\n\n\n#line 6 \"src/geometry/line.hpp\"\n\n\
+    namespace BanetteGin {\n\ntemplate <class T>\nstruct line {\n    T a, b, c;\n\
+    \    point<T> p, q;\n    line(point<T> p_, point<T> q_)\n        : a(q_.y - p_.y),\
+    \ b(p_.x - q_.x), c(-p_.x * q_.y + q_.x * p_.y) {\n        normalize();\n    }\n\
+    \    line(point<T> p_, T m_)\n        : a(m_), b(-1), c(p_.y - m_ * p_.x) {\n\
+    \        normalize();\n    }\n    line(T a_, T b_, T c_)\n        : a(a_), b(b_),\
+    \ c(c_) {\n        normalize();\n    }\n    void normalize() {\n        if (!equal(a,\
     \ 0)) {\n            b /= a;\n            c /= a;\n            a = 1;\n      \
-    \  } else if (!equal(b, 0)) {\n            c /= b;\n            b = 1;\n     \
-    \   }\n    }\n    line(T a_, T b_, T c_)\n        : a(a_), b(b_), c(c_) {\n  \
-    \      if (!equal(a, 0)) {\n            b /= a;\n            c /= a;\n       \
-    \     a = 1;\n        } else if (!equal(b, 0)) {\n            c /= b;\n      \
-    \      b = 1;\n        }\n    }\n\n    bool operator==(const line& l) const noexcept\
-    \ {\n        return equal(this->a, l.a) && equal(this->b, l.b) && equal(this->c,\
-    \ l.c);\n    }\n    bool operator!=(const line& l) const noexcept {\n        return\
-    \ !equal(this->a, l.a) || !equal(this->b, l.b) || !equal(this->c, l.c);\n    }\n\
-    };\n\n}  // namespace BanetteGin\n\n\n#line 6 \"src/geometry/distance_point_and_line.hpp\"\
+    \  } else if (!equal(b, 0)) {\n            b = 1;\n            c /= b;\n     \
+    \   } else {\n            assert(c == 0);\n        }\n        bool a_zero = equal(a,\
+    \ 0);\n        bool b_zero = equal(b, 0);\n        if (!a_zero && !b_zero) {\n\
+    \            p = point(-(c / a), 0);\n            q = point(0, -(c / b));\n  \
+    \      } else if (!a_zero && b_zero) {\n            p = point(-(c / a), 0);\n\
+    \            q = point(-(c / a), 1);\n        } else if (a_zero && !b_zero) {\n\
+    \            p = point(1, -(c / b));\n            q = point(0, -(c / b));\n  \
+    \      } else if (a_zero && b_zero) {\n            p = point(0, 0);\n        \
+    \    q = point(1, 0);\n        }\n        return;\n    }\n    bool operator==(const\
+    \ line& l) const noexcept {\n        return equal(this->a, l.a) && equal(this->b,\
+    \ l.b) && equal(this->c, l.c);\n    }\n    bool operator!=(const line& l) const\
+    \ noexcept {\n        return !equal(this->a, l.a) || !equal(this->b, l.b) || !equal(this->c,\
+    \ l.c);\n    }\n};\n\n}  // namespace BanetteGin\n\n\n#line 6 \"src/geometry/distance_point_and_line.hpp\"\
     \n\nnamespace BanetteGin {\n\ntemplate <class T>\nT distance_point_and_line(point<T>\
     \ p, line<T> l) {\n    return abs(p.x * l.a + p.y * l.b + l.c) / sqrt(l.a * l.a\
     \ + l.b * l.b);\n}\n\n}  // namespace BanetteGin\n\n\n#line 8 \"src/geometry/intersect_line_and_circle.hpp\"\
@@ -192,7 +195,7 @@ data:
   isVerificationFile: false
   path: src/geometry/intersect_line_and_circle.hpp
   requiredBy: []
-  timestamp: '2023-08-23 21:58:08+09:00'
+  timestamp: '2023-09-07 19:24:46+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/geometry/intersect_line_and_circle.hpp

@@ -33,6 +33,9 @@ data:
     path: src/geometry/circumcenter.hpp
     title: src/geometry/circumcenter.hpp
   - icon: ':warning:'
+    path: src/geometry/circumradius.hpp
+    title: src/geometry/circumradius.hpp
+  - icon: ':warning:'
     path: src/geometry/degree_to_radian.hpp
     title: src/geometry/degree_to_radian.hpp
   - icon: ':warning:'
@@ -50,6 +53,9 @@ data:
   - icon: ':warning:'
     path: src/geometry/incenter.hpp
     title: src/geometry/incenter.hpp
+  - icon: ':warning:'
+    path: src/geometry/inradius.hpp
+    title: src/geometry/inradius.hpp
   - icon: ':warning:'
     path: src/geometry/intersect_circle_and_circle.hpp
     title: src/geometry/intersect_circle_and_circle.hpp
@@ -154,8 +160,10 @@ data:
   - src/geometry/rotate.hpp
   - src/geometry/radian_to_degree.hpp
   - src/geometry/circumcenter.hpp
+  - src/geometry/inradius.hpp
   - src/geometry/point.hpp
   - src/geometry/orthogonal_check.hpp
+  - src/geometry/circumradius.hpp
   - src/geometry/orthocenter.hpp
   - src/geometry/line.hpp
   - src/geometry/degree_to_radian.hpp

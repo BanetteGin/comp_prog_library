@@ -1,6 +1,11 @@
 ---
 data:
   libraryCategories:
+  - name: manage
+    pages:
+    - icon: ':warning:'
+      path: manage/incenter_test.cpp
+      title: manage/incenter_test.cpp
   - name: src
     pages:
     - icon: ':warning:'
@@ -83,6 +88,9 @@ data:
       path: src/geometry/circumcenter.hpp
       title: src/geometry/circumcenter.hpp
     - icon: ':warning:'
+      path: src/geometry/circumradius.hpp
+      title: src/geometry/circumradius.hpp
+    - icon: ':warning:'
       path: src/geometry/degree_to_radian.hpp
       title: src/geometry/degree_to_radian.hpp
     - icon: ':warning:'
@@ -100,6 +108,9 @@ data:
     - icon: ':warning:'
       path: src/geometry/incenter.hpp
       title: src/geometry/incenter.hpp
+    - icon: ':warning:'
+      path: src/geometry/inradius.hpp
+      title: src/geometry/inradius.hpp
     - icon: ':warning:'
       path: src/geometry/intersect_circle_and_circle.hpp
       title: src/geometry/intersect_circle_and_circle.hpp
@@ -160,7 +171,7 @@ data:
     - icon: ':warning:'
       path: src/number_theory/divisors.hpp
       title: src/number_theory/divisors.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: src/number_theory/dynamic_modint.hpp
       title: src/number_theory/dynamic_modint.hpp
     - icon: ':warning:'
@@ -206,7 +217,7 @@ data:
       title: test/library_checker/union_find.test.cpp
   - name: test/yukicoder
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/yukicoder/1092.test.cpp
       title: test/yukicoder/1092.test.cpp
 layout: toppage

@@ -89,12 +89,12 @@ data:
     \ }\n    bool operator!=(const point& p) const noexcept {\n        return !equal(this->x,\
     \ p.x) || !equal(this->y, p.y);\n    }\n    bool operator<(const point& p) const\
     \ noexcept {\n        return !equal(this->x, p.x) || !equal(this->y, p.y);\n \
-    \   }\n\n    T dot(const point& p, const point& q) const noexcept {\n        return\
-    \ p.x * q.x + p.y * q.y;\n    }\n    T cross(const point& p, const point& q) const\
-    \ noexcept {\n        return p.x * q.y - p.y * q.x;\n    }\n};\n\n}  // namespace\
-    \ BanetteGin\n\n\n#line 5 \"src/geometry/distance_point_and_point.hpp\"\n\nnamespace\
-    \ BanetteGin {\n\ntemplate <class T>\nT distance_point_and_point(point<T> p, point<T>\
-    \ q) {\n    return sqrt(pow(p.x - q.x, 2) + pow(p.y - q.y, 2));\n}\n\n}  // namespace\
+    \   }\n\n    friend T dot(const point& p, const point& q) {\n        return p.x\
+    \ * q.x + p.y * q.y;\n    }\n    friend T cross(const point& p, const point& q)\
+    \ {\n        return p.x * q.y - p.y * q.x;\n    }\n};\n\n}  // namespace BanetteGin\n\
+    \n\n#line 5 \"src/geometry/distance_point_and_point.hpp\"\n\nnamespace BanetteGin\
+    \ {\n\ntemplate <class T>\nT distance_point_and_point(point<T> p, point<T> q)\
+    \ {\n    return sqrt(pow(p.x - q.x, 2) + pow(p.y - q.y, 2));\n}\n\n}  // namespace\
     \ BanetteGin\n\n\n#line 1 \"src/geometry/segment.hpp\"\n\n\n\n#line 6 \"src/geometry/segment.hpp\"\
     \n\nnamespace BanetteGin {\n\ntemplate <class T>\nstruct segment {\n    point<T>\
     \ p, q;\n    T length;\n    segment(point<T> p_, point<T> q_)\n        : p(p_),\
@@ -112,18 +112,15 @@ data:
     \ 2) + pow(length_b, 2) - pow(length_c, 2)) / (2 * length_a * length_b));\n  \
     \      area = length_b * length_c * sin(angle_a) / 2;\n    };\n};\n\n}  // namespace\
     \ BanetteGin\n\n\n#line 5 \"src/geometry/incenter.hpp\"\n\nnamespace BanetteGin\
-    \ {\n\ntemplate <class T>\nstd::pair<point<T>, T> incenter(triangle<T> t) {\n\
-    \    point<T> o = (t.point_a * t.length_a + t.point_b * t.length_b + t.point_c\
-    \ * t.length_c) / (t.length_a + t.length_b + t.length_c);\n    T r = t.area *\
-    \ 2 / (t.length_a + t.length_b + t.length_c);\n    return std::make_pair(o, r);\n\
-    }\n\n}  // namespace BanetteGin\n\n\n"
+    \ {\n\ntemplate <class T>\npoint<T> incenter(triangle<T> t) {\n    point<T> o\
+    \ = (t.point_a * t.length_a + t.point_b * t.length_b + t.point_c * t.length_c)\
+    \ / (t.length_a + t.length_b + t.length_c);\n    return o;\n}\n\n}  // namespace\
+    \ BanetteGin\n\n\n"
   code: "#ifndef BANETTEGIN_INCENTER_HPP_INCLUDED\n#define BANETTEGIN_INCENTER_HPP_INCLUDED\n\
     \n#include \"triangle.hpp\"\n\nnamespace BanetteGin {\n\ntemplate <class T>\n\
-    std::pair<point<T>, T> incenter(triangle<T> t) {\n    point<T> o = (t.point_a\
-    \ * t.length_a + t.point_b * t.length_b + t.point_c * t.length_c) / (t.length_a\
-    \ + t.length_b + t.length_c);\n    T r = t.area * 2 / (t.length_a + t.length_b\
-    \ + t.length_c);\n    return std::make_pair(o, r);\n}\n\n}  // namespace BanetteGin\n\
-    \n#endif"
+    point<T> incenter(triangle<T> t) {\n    point<T> o = (t.point_a * t.length_a +\
+    \ t.point_b * t.length_b + t.point_c * t.length_c) / (t.length_a + t.length_b\
+    \ + t.length_c);\n    return o;\n}\n\n}  // namespace BanetteGin\n\n#endif"
   dependsOn:
   - src/geometry/triangle.hpp
   - src/basic/equal.hpp
@@ -141,7 +138,7 @@ data:
   isVerificationFile: false
   path: src/geometry/incenter.hpp
   requiredBy: []
-  timestamp: '2023-08-23 21:58:08+09:00'
+  timestamp: '2023-09-07 19:24:46+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/geometry/incenter.hpp

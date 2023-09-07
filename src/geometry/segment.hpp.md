@@ -42,6 +42,9 @@ data:
     path: src/geometry/circumcenter.hpp
     title: src/geometry/circumcenter.hpp
   - icon: ':warning:'
+    path: src/geometry/circumradius.hpp
+    title: src/geometry/circumradius.hpp
+  - icon: ':warning:'
     path: src/geometry/distance_point_and_segment.hpp
     title: src/geometry/distance_point_and_segment.hpp
   - icon: ':warning:'
@@ -50,6 +53,9 @@ data:
   - icon: ':warning:'
     path: src/geometry/incenter.hpp
     title: src/geometry/incenter.hpp
+  - icon: ':warning:'
+    path: src/geometry/inradius.hpp
+    title: src/geometry/inradius.hpp
   - icon: ':warning:'
     path: src/geometry/intersect_circle_and_circle.hpp
     title: src/geometry/intersect_circle_and_circle.hpp
@@ -109,12 +115,12 @@ data:
     \ }\n    bool operator!=(const point& p) const noexcept {\n        return !equal(this->x,\
     \ p.x) || !equal(this->y, p.y);\n    }\n    bool operator<(const point& p) const\
     \ noexcept {\n        return !equal(this->x, p.x) || !equal(this->y, p.y);\n \
-    \   }\n\n    T dot(const point& p, const point& q) const noexcept {\n        return\
-    \ p.x * q.x + p.y * q.y;\n    }\n    T cross(const point& p, const point& q) const\
-    \ noexcept {\n        return p.x * q.y - p.y * q.x;\n    }\n};\n\n}  // namespace\
-    \ BanetteGin\n\n\n#line 5 \"src/geometry/distance_point_and_point.hpp\"\n\nnamespace\
-    \ BanetteGin {\n\ntemplate <class T>\nT distance_point_and_point(point<T> p, point<T>\
-    \ q) {\n    return sqrt(pow(p.x - q.x, 2) + pow(p.y - q.y, 2));\n}\n\n}  // namespace\
+    \   }\n\n    friend T dot(const point& p, const point& q) {\n        return p.x\
+    \ * q.x + p.y * q.y;\n    }\n    friend T cross(const point& p, const point& q)\
+    \ {\n        return p.x * q.y - p.y * q.x;\n    }\n};\n\n}  // namespace BanetteGin\n\
+    \n\n#line 5 \"src/geometry/distance_point_and_point.hpp\"\n\nnamespace BanetteGin\
+    \ {\n\ntemplate <class T>\nT distance_point_and_point(point<T> p, point<T> q)\
+    \ {\n    return sqrt(pow(p.x - q.x, 2) + pow(p.y - q.y, 2));\n}\n\n}  // namespace\
     \ BanetteGin\n\n\n#line 6 \"src/geometry/segment.hpp\"\n\nnamespace BanetteGin\
     \ {\n\ntemplate <class T>\nstruct segment {\n    point<T> p, q;\n    T length;\n\
     \    segment(point<T> p_, point<T> q_)\n        : p(p_), q(q_), length(distance_point_and_point(p,\
@@ -142,6 +148,8 @@ data:
   - src/geometry/intersect_line_and_circle.hpp
   - src/geometry/circle.hpp
   - src/geometry/circumcenter.hpp
+  - src/geometry/inradius.hpp
+  - src/geometry/circumradius.hpp
   - src/geometry/orthocenter.hpp
   - src/geometry/distance_point_and_segment.hpp
   - src/geometry/distance_segment_and_segment.hpp
@@ -149,7 +157,7 @@ data:
   - src/geometry/triangle.hpp
   - src/geometry/intersect_circle_and_circle.hpp
   - src/geometry/centroid.hpp
-  timestamp: '2023-08-22 22:07:36+09:00'
+  timestamp: '2023-09-07 19:24:46+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/geometry/segment.hpp

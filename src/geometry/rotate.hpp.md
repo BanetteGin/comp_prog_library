@@ -75,13 +75,13 @@ data:
     \ p.y);\n    }\n    bool operator!=(const point& p) const noexcept {\n       \
     \ return !equal(this->x, p.x) || !equal(this->y, p.y);\n    }\n    bool operator<(const\
     \ point& p) const noexcept {\n        return !equal(this->x, p.x) || !equal(this->y,\
-    \ p.y);\n    }\n\n    T dot(const point& p, const point& q) const noexcept {\n\
-    \        return p.x * q.x + p.y * q.y;\n    }\n    T cross(const point& p, const\
-    \ point& q) const noexcept {\n        return p.x * q.y - p.y * q.x;\n    }\n};\n\
-    \n}  // namespace BanetteGin\n\n\n#line 5 \"src/geometry/rotate.hpp\"\n\nnamespace\
-    \ BanetteGin {\n\ntemplate <class T>\npoint<T> rotate(const point<T>& p, const\
-    \ T& theta) {\n    return point<T>(cos(theta) * p.x - sin(theta) * p.y, sin(theta)\
-    \ * p.x + cos(theta) * p.y);\n}\n\n}  // namespace BanetteGin\n\n\n"
+    \ p.y);\n    }\n\n    friend T dot(const point& p, const point& q) {\n       \
+    \ return p.x * q.x + p.y * q.y;\n    }\n    friend T cross(const point& p, const\
+    \ point& q) {\n        return p.x * q.y - p.y * q.x;\n    }\n};\n\n}  // namespace\
+    \ BanetteGin\n\n\n#line 5 \"src/geometry/rotate.hpp\"\n\nnamespace BanetteGin\
+    \ {\n\ntemplate <class T>\npoint<T> rotate(const point<T>& p, const T& theta)\
+    \ {\n    return point<T>(cos(theta) * p.x - sin(theta) * p.y, sin(theta) * p.x\
+    \ + cos(theta) * p.y);\n}\n\n}  // namespace BanetteGin\n\n\n"
   code: "#ifndef BANETTEGIN_ROTATE_HPP_INCLUDED\n#define BANETTEGIN_ROTATE_HPP_INCLUDED\n\
     \n#include \"point.hpp\"\n\nnamespace BanetteGin {\n\ntemplate <class T>\npoint<T>\
     \ rotate(const point<T>& p, const T& theta) {\n    return point<T>(cos(theta)\
@@ -100,7 +100,7 @@ data:
   isVerificationFile: false
   path: src/geometry/rotate.hpp
   requiredBy: []
-  timestamp: '2023-08-22 22:07:36+09:00'
+  timestamp: '2023-09-07 19:24:46+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/geometry/rotate.hpp

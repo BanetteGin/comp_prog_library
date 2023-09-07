@@ -47,7 +47,7 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"src/geometry/centroid.hpp\"\n\n\n\n#line 1 \"src/geometry/triangle.hpp\"\
+  bundledCode: "#line 1 \"src/geometry/inradius.hpp\"\n\n\n\n#line 1 \"src/geometry/triangle.hpp\"\
     \n\n\n\n#line 1 \"src/basic/equal.hpp\"\n\n\n\n#line 1 \"src/basic/sign.hpp\"\n\
     \n\n\n#line 1 \"src/basic/constant.hpp\"\n\n\n\nnamespace BanetteGin {\n\nconst\
     \ long double EPS = 10e-12;\nconst long long int LINF = 1001001001001001001LL;\n\
@@ -111,13 +111,14 @@ data:
     \ 2) - pow(length_b, 2)) / (2 * length_c * length_a));\n        angle_c = acos((pow(length_a,\
     \ 2) + pow(length_b, 2) - pow(length_c, 2)) / (2 * length_a * length_b));\n  \
     \      area = length_b * length_c * sin(angle_a) / 2;\n    };\n};\n\n}  // namespace\
-    \ BanetteGin\n\n\n#line 5 \"src/geometry/centroid.hpp\"\n\nnamespace BanetteGin\
-    \ {\n\ntemplate <class T>\npoint<T> centroid(triangle<T> t) {\n    return (t.point_a\
-    \ + t.point_b + t.point_c) / 3;\n}\n\n}  // namespace BanetteGin\n\n\n"
-  code: "#ifndef BANETTEGIN_CENTROID_HPP_INCLUDED\n#define BANETTEGIN_CENTROID_HPP_INCLUDED\n\
+    \ BanetteGin\n\n\n#line 5 \"src/geometry/inradius.hpp\"\n\nnamespace BanetteGin\
+    \ {\n\ntemplate <class T>\npoint<T> inradius(triangle<T> t) {\n    T r = t.area\
+    \ * 2 / (t.length_a + t.length_b + t.length_c);\n    return r;\n}\n\n}  // namespace\
+    \ BanetteGin\n\n\n"
+  code: "#ifndef BANETTEGIN_INRADIUS_HPP_INCLUDED\n#define BANETTEGIN_INRADIUS_HPP_INCLUDED\n\
     \n#include \"triangle.hpp\"\n\nnamespace BanetteGin {\n\ntemplate <class T>\n\
-    point<T> centroid(triangle<T> t) {\n    return (t.point_a + t.point_b + t.point_c)\
-    \ / 3;\n}\n\n}  // namespace BanetteGin\n\n#endif"
+    point<T> inradius(triangle<T> t) {\n    T r = t.area * 2 / (t.length_a + t.length_b\
+    \ + t.length_c);\n    return r;\n}\n\n}  // namespace BanetteGin\n\n#endif"
   dependsOn:
   - src/geometry/triangle.hpp
   - src/basic/equal.hpp
@@ -133,15 +134,15 @@ data:
   - src/basic/less_than.hpp
   - src/geometry/segment.hpp
   isVerificationFile: false
-  path: src/geometry/centroid.hpp
+  path: src/geometry/inradius.hpp
   requiredBy: []
   timestamp: '2023-09-07 19:24:46+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: src/geometry/centroid.hpp
+documentation_of: src/geometry/inradius.hpp
 layout: document
 redirect_from:
-- /library/src/geometry/centroid.hpp
-- /library/src/geometry/centroid.hpp.html
-title: src/geometry/centroid.hpp
+- /library/src/geometry/inradius.hpp
+- /library/src/geometry/inradius.hpp.html
+title: src/geometry/inradius.hpp
 ---

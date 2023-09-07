@@ -89,12 +89,12 @@ data:
     \ }\n    bool operator!=(const point& p) const noexcept {\n        return !equal(this->x,\
     \ p.x) || !equal(this->y, p.y);\n    }\n    bool operator<(const point& p) const\
     \ noexcept {\n        return !equal(this->x, p.x) || !equal(this->y, p.y);\n \
-    \   }\n\n    T dot(const point& p, const point& q) const noexcept {\n        return\
-    \ p.x * q.x + p.y * q.y;\n    }\n    T cross(const point& p, const point& q) const\
-    \ noexcept {\n        return p.x * q.y - p.y * q.x;\n    }\n};\n\n}  // namespace\
-    \ BanetteGin\n\n\n#line 5 \"src/geometry/distance_point_and_point.hpp\"\n\nnamespace\
-    \ BanetteGin {\n\ntemplate <class T>\nT distance_point_and_point(point<T> p, point<T>\
-    \ q) {\n    return sqrt(pow(p.x - q.x, 2) + pow(p.y - q.y, 2));\n}\n\n}  // namespace\
+    \   }\n\n    friend T dot(const point& p, const point& q) {\n        return p.x\
+    \ * q.x + p.y * q.y;\n    }\n    friend T cross(const point& p, const point& q)\
+    \ {\n        return p.x * q.y - p.y * q.x;\n    }\n};\n\n}  // namespace BanetteGin\n\
+    \n\n#line 5 \"src/geometry/distance_point_and_point.hpp\"\n\nnamespace BanetteGin\
+    \ {\n\ntemplate <class T>\nT distance_point_and_point(point<T> p, point<T> q)\
+    \ {\n    return sqrt(pow(p.x - q.x, 2) + pow(p.y - q.y, 2));\n}\n\n}  // namespace\
     \ BanetteGin\n\n\n#line 1 \"src/geometry/segment.hpp\"\n\n\n\n#line 6 \"src/geometry/segment.hpp\"\
     \n\nnamespace BanetteGin {\n\ntemplate <class T>\nstruct segment {\n    point<T>\
     \ p, q;\n    T length;\n    segment(point<T> p_, point<T> q_)\n        : p(p_),\
@@ -138,7 +138,7 @@ data:
   isVerificationFile: false
   path: src/geometry/orthocenter.hpp
   requiredBy: []
-  timestamp: '2023-08-23 21:58:08+09:00'
+  timestamp: '2023-09-07 19:24:46+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/geometry/orthocenter.hpp

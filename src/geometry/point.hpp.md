@@ -36,6 +36,9 @@ data:
     path: src/geometry/circumcenter.hpp
     title: src/geometry/circumcenter.hpp
   - icon: ':warning:'
+    path: src/geometry/circumradius.hpp
+    title: src/geometry/circumradius.hpp
+  - icon: ':warning:'
     path: src/geometry/distance_point_and_line.hpp
     title: src/geometry/distance_point_and_line.hpp
   - icon: ':warning:'
@@ -50,6 +53,9 @@ data:
   - icon: ':warning:'
     path: src/geometry/incenter.hpp
     title: src/geometry/incenter.hpp
+  - icon: ':warning:'
+    path: src/geometry/inradius.hpp
+    title: src/geometry/inradius.hpp
   - icon: ':warning:'
     path: src/geometry/intersect_circle_and_circle.hpp
     title: src/geometry/intersect_circle_and_circle.hpp
@@ -123,10 +129,10 @@ data:
     \ }\n    bool operator!=(const point& p) const noexcept {\n        return !equal(this->x,\
     \ p.x) || !equal(this->y, p.y);\n    }\n    bool operator<(const point& p) const\
     \ noexcept {\n        return !equal(this->x, p.x) || !equal(this->y, p.y);\n \
-    \   }\n\n    T dot(const point& p, const point& q) const noexcept {\n        return\
-    \ p.x * q.x + p.y * q.y;\n    }\n    T cross(const point& p, const point& q) const\
-    \ noexcept {\n        return p.x * q.y - p.y * q.x;\n    }\n};\n\n}  // namespace\
-    \ BanetteGin\n\n\n"
+    \   }\n\n    friend T dot(const point& p, const point& q) {\n        return p.x\
+    \ * q.x + p.y * q.y;\n    }\n    friend T cross(const point& p, const point& q)\
+    \ {\n        return p.x * q.y - p.y * q.x;\n    }\n};\n\n}  // namespace BanetteGin\n\
+    \n\n"
   code: "#ifndef BANETTEGIN_POINT_HPP_INCLUDED\n#define BANETTEGIN_POINT_HPP_INCLUDED\n\
     \n#include <complex>\n\n#include \"../basic/comparison.hpp\"\n\nnamespace BanetteGin\
     \ {\n\ntemplate <class T>\nstruct point {\n    T x, y;\n    point(T x_, T y_)\n\
@@ -147,10 +153,10 @@ data:
     \ }\n    bool operator!=(const point& p) const noexcept {\n        return !equal(this->x,\
     \ p.x) || !equal(this->y, p.y);\n    }\n    bool operator<(const point& p) const\
     \ noexcept {\n        return !equal(this->x, p.x) || !equal(this->y, p.y);\n \
-    \   }\n\n    T dot(const point& p, const point& q) const noexcept {\n        return\
-    \ p.x * q.x + p.y * q.y;\n    }\n    T cross(const point& p, const point& q) const\
-    \ noexcept {\n        return p.x * q.y - p.y * q.x;\n    }\n};\n\n}  // namespace\
-    \ BanetteGin\n\n#endif"
+    \   }\n\n    friend T dot(const point& p, const point& q) {\n        return p.x\
+    \ * q.x + p.y * q.y;\n    }\n    friend T cross(const point& p, const point& q)\
+    \ {\n        return p.x * q.y - p.y * q.x;\n    }\n};\n\n}  // namespace BanetteGin\n\
+    \n#endif"
   dependsOn:
   - src/basic/comparison.hpp
   - src/basic/equal.hpp
@@ -169,7 +175,9 @@ data:
   - src/geometry/parallel_check.hpp
   - src/geometry/rotate.hpp
   - src/geometry/circumcenter.hpp
+  - src/geometry/inradius.hpp
   - src/geometry/orthogonal_check.hpp
+  - src/geometry/circumradius.hpp
   - src/geometry/orthocenter.hpp
   - src/geometry/line.hpp
   - src/geometry/distance_point_and_segment.hpp
@@ -180,7 +188,7 @@ data:
   - src/geometry/intersect_circle_and_circle.hpp
   - src/geometry/centroid.hpp
   - src/geometry/segment.hpp
-  timestamp: '2023-08-22 22:07:36+09:00'
+  timestamp: '2023-09-07 19:24:46+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/geometry/point.hpp
