@@ -8,7 +8,7 @@
 
 namespace BanetteGin {
 
-std::vector<std::string> clip_string(std::vector<std::string>& s, char target) {
+std::vector<std::string> clip_string(const std::vector<std::string>& s, char target) {
     long long int lefx, rigx, lefy, rigy;
     lefx = lefy = LINF;
     rigx = rigy = -LINF;

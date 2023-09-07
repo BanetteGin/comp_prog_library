@@ -6,57 +6,50 @@ namespace BanetteGin {
 template <long long int MOD>
 struct modint {
     long long int val;
-    constexpr modint(long long int v = 0) noexcept
+    modint(long long int v = 0) noexcept
         : val(v % MOD) {
         if (val < 0) val += MOD;
     }
-    constexpr long long int get_mod() {
+    long long int get_mod() const noexcept {
         return MOD;
     }
-    constexpr modint operator-() const noexcept {
-        return val ? MOD - val : 0;
-    }
 
-    constexpr modint operator+(const modint& r) const noexcept {
+    modint operator+(const modint& r) const noexcept {
         return modint(*this) += r;
     }
-    constexpr modint operator-(const modint& r) const noexcept {
+    modint operator-(const modint& r) const noexcept {
         return modint(*this) -= r;
     }
-    constexpr modint operator*(const modint& r) const noexcept {
+    modint operator*(const modint& r) const noexcept {
         return modint(*this) *= r;
     }
-    constexpr modint operator/(const modint& r) const noexcept {
+    modint operator/(const modint& r) const noexcept {
         return modint(*this) /= r;
     }
 
-    constexpr modint& operator+=(const modint& r) noexcept {
+    modint& operator+=(const modint& r) noexcept {
         val += r.val;
         if (val >= MOD) val -= MOD;
         return *this;
     }
-    constexpr modint& operator-=(const modint& r) noexcept {
+    modint& operator-=(const modint& r) noexcept {
         val -= r.val;
         if (val < 0) val += MOD;
         return *this;
     }
-    constexpr modint& operator*=(const modint& r) noexcept {
+    modint& operator*=(const modint& r) noexcept {
         val = val * r.val % MOD;
         return *this;
     }
 
-    constexpr modint& operator++() noexcept {
-        val += 1;
-        if (val >= MOD) val -= MOD;
-        return *this;
+    modint& operator++() noexcept {
+        return modint(*this) += 1;
     }
-    constexpr modint& operator--() noexcept {
-        val -= 1;
-        if (val < 0) val += MOD;
-        return *this;
+    modint& operator--() noexcept {
+        return modint(*this) -= 1;
     }
 
-    constexpr modint& operator/=(const modint& r) noexcept {
+    modint& operator/=(const modint& r) noexcept {
         long long int a = r.val, b = MOD, u = 1, v = 0;
         while (b) {
             long long int t = a / b;
@@ -70,14 +63,14 @@ struct modint {
         return *this;
     }
 
-    constexpr bool operator==(const modint& r) const noexcept {
+    bool operator==(const modint& r) const noexcept {
         return this->val == r.val;
     }
-    constexpr bool operator!=(const modint& r) const noexcept {
+    bool operator!=(const modint& r) const noexcept {
         return this->val != r.val;
     }
 
-    friend constexpr ostream& operator<<(ostream& os, const modint<MOD>& x) noexcept {
+    friend ostream& operator<<(ostream& os, const modint<MOD>& x) noexcept {
         return os << x.val;
     }
 
@@ -88,7 +81,7 @@ struct modint {
         return (is);
     }
 
-    friend constexpr modint<MOD> modpow(const modint<MOD>& a, long long int n) noexcept {
+    friend modint<MOD> modpow(const modint<MOD>& a, long long int n) noexcept {
         if (n == 0) return 1;
         auto t = modpow(a, n / 2);
         t = t * t;

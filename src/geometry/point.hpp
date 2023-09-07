@@ -58,10 +58,10 @@ struct point {
         return !equal(this->x, p.x) || !equal(this->y, p.y);
     }
 
-    T dot(const point& p, const point& q) const noexcept {
+    friend T dot(const point& p, const point& q) {
         return p.x * q.x + p.y * q.y;
     }
-    T cross(const point& p, const point& q) const noexcept {
+    friend T cross(const point& p, const point& q) {
         return p.x * q.y - p.y * q.x;
     }
 };

@@ -6,7 +6,7 @@
 namespace BanetteGin {
 
 template <class T>
-std::vector<T> sundaram_sieve(T& n) {
+std::vector<T> sundaram_sieve(T n) {
     std::vector<bool> ret((n + 1) / 2, true);
     std::vector<T> prime_list = {2};
     ret[0] = false;

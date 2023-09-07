@@ -6,7 +6,7 @@
 
 namespace BanetteGin {
 
-std::vector<std::pair<char, long long int> > run_length_encording(std::string s) {
+std::vector<std::pair<char, long long int> > run_length_encording(const std::string& s) {
     std::vector<std::pair<char, long long int> > ret;
     for (long long int i = 0; i < s.size();) {
         long long int j = i + 1;

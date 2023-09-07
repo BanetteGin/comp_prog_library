@@ -6,7 +6,7 @@
 
 namespace BanetteGin {
 
-std::vector<std::string> rotate_string(std::vector<std::string> s) {
+std::vector<std::string> rotate_string(const std::vector<std::string>& s) {
     std::vector<std::string> ret;
     for (long long int i = 0; i < s[0].size(); ++i) {
         std::string t = "";
