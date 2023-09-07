@@ -118,13 +118,15 @@ data:
     \ }\n    bool operator!=(const point& p) const noexcept {\n        return !equal(this->x,\
     \ p.x) || !equal(this->y, p.y);\n    }\n    bool operator<(const point& p) const\
     \ noexcept {\n        return !equal(this->x, p.x) || !equal(this->y, p.y);\n \
-    \   }\n\n    friend T dot(const point& p, const point& q) {\n        return p.x\
-    \ * q.x + p.y * q.y;\n    }\n    friend T cross(const point& p, const point& q)\
-    \ {\n        return p.x * q.y - p.y * q.x;\n    }\n};\n\n}  // namespace BanetteGin\n\
-    \n\n#line 5 \"src/geometry/distance_point_and_point.hpp\"\n\nnamespace BanetteGin\
-    \ {\n\ntemplate <class T>\nT distance_point_and_point(point<T> p, point<T> q)\
-    \ {\n    return sqrt(pow(p.x - q.x, 2) + pow(p.y - q.y, 2));\n}\n\n}  // namespace\
-    \ BanetteGin\n\n\n"
+    \   }\n\n    friend T dot(const point& p, const point& q) noexcept {\n       \
+    \ return p.x * q.x + p.y * q.y;\n    }\n    friend T cross(const point& p, const\
+    \ point& q) noexcept {\n        return p.x * q.y - p.y * q.x;\n    }\n    friend\
+    \ T norm(const point& p) {\n        return sqrt(p.x * p.x + p.y * p.y);\n    }\n\
+    \    friend T arg(const point& p) {\n        return atan2(p.y, p.x);\n    }\n\
+    };\n\n}  // namespace BanetteGin\n\n\n#line 5 \"src/geometry/distance_point_and_point.hpp\"\
+    \n\nnamespace BanetteGin {\n\ntemplate <class T>\nT distance_point_and_point(point<T>\
+    \ p, point<T> q) {\n    return sqrt(pow(p.x - q.x, 2) + pow(p.y - q.y, 2));\n\
+    }\n\n}  // namespace BanetteGin\n\n\n"
   code: "#ifndef BANETTEGIN_DISTANCE_POINT_AND_POINT_HPP_INCLUDED\n#define BANETTEGIN_DISTANCE_POINT_AND_POINT_HPP_INCLUDED\n\
     \n#include \"point.hpp\"\n\nnamespace BanetteGin {\n\ntemplate <class T>\nT distance_point_and_point(point<T>\
     \ p, point<T> q) {\n    return sqrt(pow(p.x - q.x, 2) + pow(p.y - q.y, 2));\n\
@@ -156,7 +158,7 @@ data:
   - src/geometry/intersect_circle_and_circle.hpp
   - src/geometry/centroid.hpp
   - src/geometry/segment.hpp
-  timestamp: '2023-09-07 19:24:46+09:00'
+  timestamp: '2023-09-08 07:19:50+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/geometry/distance_point_and_point.hpp

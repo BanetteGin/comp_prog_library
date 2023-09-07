@@ -98,27 +98,29 @@ data:
     \ }\n    bool operator!=(const point& p) const noexcept {\n        return !equal(this->x,\
     \ p.x) || !equal(this->y, p.y);\n    }\n    bool operator<(const point& p) const\
     \ noexcept {\n        return !equal(this->x, p.x) || !equal(this->y, p.y);\n \
-    \   }\n\n    friend T dot(const point& p, const point& q) {\n        return p.x\
-    \ * q.x + p.y * q.y;\n    }\n    friend T cross(const point& p, const point& q)\
-    \ {\n        return p.x * q.y - p.y * q.x;\n    }\n};\n\n}  // namespace BanetteGin\n\
-    \n\n#line 5 \"src/geometry/distance_point_and_point.hpp\"\n\nnamespace BanetteGin\
-    \ {\n\ntemplate <class T>\nT distance_point_and_point(point<T> p, point<T> q)\
-    \ {\n    return sqrt(pow(p.x - q.x, 2) + pow(p.y - q.y, 2));\n}\n\n}  // namespace\
-    \ BanetteGin\n\n\n#line 1 \"src/geometry/segment.hpp\"\n\n\n\n#line 6 \"src/geometry/segment.hpp\"\
-    \n\nnamespace BanetteGin {\n\ntemplate <class T>\nstruct segment {\n    point<T>\
-    \ p, q;\n    T length;\n    segment(point<T> p_, point<T> q_)\n        : p(p_),\
-    \ q(q_), length(distance_point_and_point(p, q)) {\n    }\n};\n\n}  // namespace\
-    \ BanetteGin\n\n\n#line 8 \"src/geometry/triangle.hpp\"\n\nnamespace BanetteGin\
-    \ {\n\ntemplate <class T>\nstruct triangle {\n    point<T> point_a, point_b, point_c;\n\
-    \    T length_a, length_b, length_c;\n    T angle_a, angle_b, angle_c;\n\n   \
-    \ vector<point<T>> points(3);\n    vector<T> lengths(3);\n    vector<T> angles(3);\n\
-    \    T area;\n    triangle(point<T> point_a, point<T> point_b, point<T> point_c)\n\
-    \        : points(std::vector<point<T>>(point_a, point_b, point_c)) {\n      \
-    \  for(int a=0;a<3;++a){\n            int b,c;\n            bool added_flag=false;\n\
-    \            for(int i=0;i<3;++i){\n                if(a!=i){\n              \
-    \      if(!added_flag) {\n                        b=i;\n                     \
-    \   added_flag=true;\n                    } else c=i;\n                }\n   \
-    \         }\n            lengths[a]=distance_point_and_point(points[b],points[c]);\n\
+    \   }\n\n    friend T dot(const point& p, const point& q) noexcept {\n       \
+    \ return p.x * q.x + p.y * q.y;\n    }\n    friend T cross(const point& p, const\
+    \ point& q) noexcept {\n        return p.x * q.y - p.y * q.x;\n    }\n    friend\
+    \ T norm(const point& p) {\n        return sqrt(p.x * p.x + p.y * p.y);\n    }\n\
+    \    friend T arg(const point& p) {\n        return atan2(p.y, p.x);\n    }\n\
+    };\n\n}  // namespace BanetteGin\n\n\n#line 5 \"src/geometry/distance_point_and_point.hpp\"\
+    \n\nnamespace BanetteGin {\n\ntemplate <class T>\nT distance_point_and_point(point<T>\
+    \ p, point<T> q) {\n    return sqrt(pow(p.x - q.x, 2) + pow(p.y - q.y, 2));\n\
+    }\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/geometry/segment.hpp\"\n\n\n\
+    \n#line 6 \"src/geometry/segment.hpp\"\n\nnamespace BanetteGin {\n\ntemplate <class\
+    \ T>\nstruct segment {\n    point<T> p, q;\n    T length;\n    segment(point<T>\
+    \ p_, point<T> q_)\n        : p(p_), q(q_), length(distance_point_and_point(p,\
+    \ q)) {\n    }\n};\n\n}  // namespace BanetteGin\n\n\n#line 8 \"src/geometry/triangle.hpp\"\
+    \n\nnamespace BanetteGin {\n\ntemplate <class T>\nstruct triangle {\n    point<T>\
+    \ point_a, point_b, point_c;\n    T length_a, length_b, length_c;\n    T angle_a,\
+    \ angle_b, angle_c;\n\n    vector<point<T>> points(3);\n    vector<T> lengths(3);\n\
+    \    vector<T> angles(3);\n    T area;\n    triangle(point<T> point_a, point<T>\
+    \ point_b, point<T> point_c)\n        : points(std::vector<point<T>>(point_a,\
+    \ point_b, point_c)) {\n        for(int a=0;a<3;++a){\n            int b,c;\n\
+    \            bool added_flag=false;\n            for(int i=0;i<3;++i){\n     \
+    \           if(a!=i){\n                    if(!added_flag) {\n               \
+    \         b=i;\n                        added_flag=true;\n                   \
+    \ } else c=i;\n                }\n            }\n            lengths[a]=distance_point_and_point(points[b],points[c]);\n\
     \        }\n\n        for(int a=0;a<3;++a){\n            int b,c;\n          \
     \  bool added_flag=false;\n            for(int i=0;i<3;++i){\n               \
     \ if(a!=i){\n                    if(!added_flag) {\n                        b=i;\n\
@@ -166,7 +168,7 @@ data:
   - src/geometry/intersect_line_and_circle.hpp
   - src/geometry/circle.hpp
   - src/geometry/intersect_circle_and_circle.hpp
-  timestamp: '2023-09-07 19:32:18+09:00'
+  timestamp: '2023-09-08 07:19:50+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/geometry/circumcenter.hpp

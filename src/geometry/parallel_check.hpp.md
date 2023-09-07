@@ -79,18 +79,20 @@ data:
     \ }\n    bool operator!=(const point& p) const noexcept {\n        return !equal(this->x,\
     \ p.x) || !equal(this->y, p.y);\n    }\n    bool operator<(const point& p) const\
     \ noexcept {\n        return !equal(this->x, p.x) || !equal(this->y, p.y);\n \
-    \   }\n\n    friend T dot(const point& p, const point& q) {\n        return p.x\
-    \ * q.x + p.y * q.y;\n    }\n    friend T cross(const point& p, const point& q)\
-    \ {\n        return p.x * q.y - p.y * q.x;\n    }\n};\n\n}  // namespace BanetteGin\n\
-    \n\n#line 6 \"src/geometry/line.hpp\"\n\nnamespace BanetteGin {\n\ntemplate <class\
-    \ T>\nstruct line {\n    T a, b, c;\n    point<T> p, q;\n    line(point<T> p_,\
-    \ point<T> q_)\n        : a(q_.y - p_.y), b(p_.x - q_.x), c(-p_.x * q_.y + q_.x\
-    \ * p_.y) {\n        normalize();\n    }\n    line(point<T> p_, T m_)\n      \
-    \  : a(m_), b(-1), c(p_.y - m_ * p_.x) {\n        normalize();\n    }\n    line(T\
-    \ a_, T b_, T c_)\n        : a(a_), b(b_), c(c_) {\n        normalize();\n   \
-    \ }\n    void normalize() {\n        if (!equal(a, 0)) {\n            b /= a;\n\
-    \            c /= a;\n            a = 1;\n        } else if (!equal(b, 0)) {\n\
-    \            b = 1;\n            c /= b;\n        } else {\n            assert(c\
+    \   }\n\n    friend T dot(const point& p, const point& q) noexcept {\n       \
+    \ return p.x * q.x + p.y * q.y;\n    }\n    friend T cross(const point& p, const\
+    \ point& q) noexcept {\n        return p.x * q.y - p.y * q.x;\n    }\n    friend\
+    \ T norm(const point& p) {\n        return sqrt(p.x * p.x + p.y * p.y);\n    }\n\
+    \    friend T arg(const point& p) {\n        return atan2(p.y, p.x);\n    }\n\
+    };\n\n}  // namespace BanetteGin\n\n\n#line 6 \"src/geometry/line.hpp\"\n\nnamespace\
+    \ BanetteGin {\n\ntemplate <class T>\nstruct line {\n    T a, b, c;\n    point<T>\
+    \ p, q;\n    line(point<T> p_, point<T> q_)\n        : a(q_.y - p_.y), b(p_.x\
+    \ - q_.x), c(-p_.x * q_.y + q_.x * p_.y) {\n        normalize();\n    }\n    line(point<T>\
+    \ p_, T m_)\n        : a(m_), b(-1), c(p_.y - m_ * p_.x) {\n        normalize();\n\
+    \    }\n    line(T a_, T b_, T c_)\n        : a(a_), b(b_), c(c_) {\n        normalize();\n\
+    \    }\n    void normalize() {\n        if (!equal(a, 0)) {\n            b /=\
+    \ a;\n            c /= a;\n            a = 1;\n        } else if (!equal(b, 0))\
+    \ {\n            b = 1;\n            c /= b;\n        } else {\n            assert(c\
     \ == 0);\n        }\n        bool a_zero = equal(a, 0);\n        bool b_zero =\
     \ equal(b, 0);\n        if (!a_zero && !b_zero) {\n            p = point(-(c /\
     \ a), 0);\n            q = point(0, -(c / b));\n        } else if (!a_zero &&\
@@ -125,7 +127,7 @@ data:
   isVerificationFile: false
   path: src/geometry/parallel_check.hpp
   requiredBy: []
-  timestamp: '2023-09-07 19:24:46+09:00'
+  timestamp: '2023-09-08 07:19:50+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/geometry/parallel_check.hpp

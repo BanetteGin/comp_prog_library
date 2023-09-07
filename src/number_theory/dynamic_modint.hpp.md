@@ -40,15 +40,15 @@ data:
     \ += 1;\n    }\n    dynamic_modint& operator--() noexcept {\n        return dynamic_modint(*this)\
     \ -= 1;\n    }\n\n    bool operator==(const dynamic_modint& r) const noexcept\
     \ {\n        return this->val == r.val;\n    }\n    bool operator!=(const dynamic_modint&\
-    \ r) const noexcept {\n        return this->val != r.val;\n    }\n\n    /*\n \
-    \   friend ostream& operator<<(ostream& os, const dynamic_modint& x) const noexcept\
-    \ {\n        return os << x.val;\n    }\n\n    friend istream& operator>>(istream&\
+    \ r) const noexcept {\n        return this->val != r.val;\n    }\n\n    friend\
+    \ std::ostream& operator<<(std::ostream& os, const dynamic_modint& x) noexcept\
+    \ {\n        return os << x.val;\n    }\n\n    friend std::istream& operator>>(std::istream&\
     \ is, dynamic_modint& x) noexcept {\n        long long int t;\n        is >> t;\n\
-    \        x = dynamic_modint(t);\n        return (is);\n    }\n    */\n\n    friend\
-    \ constexpr modpow(const dynamic_modint& a, long long int n) noexcept {\n    \
-    \    if (n == 0) return 1LL;\n        auto t = modpow(a, n / 2);\n        t =\
-    \ t * t;\n        if (n & 1) t = t * a;\n        return t;\n    }\n};\n\n}  //\
-    \ namespace BanetteGin\n\n\n"
+    \        x = dynamic_modint(t);\n        return (is);\n    }\n\n    friend constexpr\
+    \ modpow(const dynamic_modint& a, long long int n) noexcept {\n        if (n ==\
+    \ 0) return 1LL;\n        auto t = modpow(a, n / 2);\n        t = t * t;\n   \
+    \     if (n & 1) t = t * a;\n        return t;\n    }\n};\n\n}  // namespace BanetteGin\n\
+    \n\n"
   code: "#ifndef BANETTEGIN_DYNAMIC_MODINT_HPP_INCLUDED\n#define BANETTEGIN_DYNAMIC_MODINT_HPP_INCLUDED\n\
     \nnamespace BanetteGin {\n\ntemplate <long long int id>\nstruct dynamic_modint\
     \ {\n    long long int val;\n    dynamic_modint(long long int v = 0) noexcept\n\
@@ -78,20 +78,20 @@ data:
     \ += 1;\n    }\n    dynamic_modint& operator--() noexcept {\n        return dynamic_modint(*this)\
     \ -= 1;\n    }\n\n    bool operator==(const dynamic_modint& r) const noexcept\
     \ {\n        return this->val == r.val;\n    }\n    bool operator!=(const dynamic_modint&\
-    \ r) const noexcept {\n        return this->val != r.val;\n    }\n\n    /*\n \
-    \   friend ostream& operator<<(ostream& os, const dynamic_modint& x) const noexcept\
-    \ {\n        return os << x.val;\n    }\n\n    friend istream& operator>>(istream&\
+    \ r) const noexcept {\n        return this->val != r.val;\n    }\n\n    friend\
+    \ std::ostream& operator<<(std::ostream& os, const dynamic_modint& x) noexcept\
+    \ {\n        return os << x.val;\n    }\n\n    friend std::istream& operator>>(std::istream&\
     \ is, dynamic_modint& x) noexcept {\n        long long int t;\n        is >> t;\n\
-    \        x = dynamic_modint(t);\n        return (is);\n    }\n    */\n\n    friend\
-    \ constexpr modpow(const dynamic_modint& a, long long int n) noexcept {\n    \
-    \    if (n == 0) return 1LL;\n        auto t = modpow(a, n / 2);\n        t =\
-    \ t * t;\n        if (n & 1) t = t * a;\n        return t;\n    }\n};\n\n}  //\
-    \ namespace BanetteGin\n\n#endif"
+    \        x = dynamic_modint(t);\n        return (is);\n    }\n\n    friend constexpr\
+    \ modpow(const dynamic_modint& a, long long int n) noexcept {\n        if (n ==\
+    \ 0) return 1LL;\n        auto t = modpow(a, n / 2);\n        t = t * t;\n   \
+    \     if (n & 1) t = t * a;\n        return t;\n    }\n};\n\n}  // namespace BanetteGin\n\
+    \n#endif"
   dependsOn: []
   isVerificationFile: false
   path: src/number_theory/dynamic_modint.hpp
   requiredBy: []
-  timestamp: '2023-09-07 19:32:18+09:00'
+  timestamp: '2023-09-08 07:19:50+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/yukicoder/1092.test.cpp

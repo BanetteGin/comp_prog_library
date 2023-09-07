@@ -26,9 +26,9 @@ data:
     \ std;\n\n#define rep(i, n) for (ll i = 0, n_f = (ll)(n); i < n_f; ++i)\n\ntypedef\
     \ long long ll;\ntypedef long double ld;\n\nusing namespace BanetteGin;\n\nrandom_device\
     \ seed_gen;\nmt19937 engine(seed_gen());\nuniform_real_distribution<ld> tht_gen(0.0,\
-    \ M_PI);\n\nint main(void) {\n    ll n;\n    cin >> n;\n    ld x = 0;\n    ld\
-    \ y = 0;\n    rep(i, n) {\n        ld th1 = tht_gen(engine);\n        ld th2 =\
-    \ tht_gen(engine);\n        ld th3 = tht_gen(engine);\n        point a = point(cos(th1),\
+    \ M_PI / 2);\n\nint main(void) {\n    ll n;\n    cin >> n;\n    ld x = 0;\n  \
+    \  ld y = 0;\n    rep(i, n) {\n        ld th1 = tht_gen(engine);\n        ld th2\
+    \ = tht_gen(engine);\n        ld th3 = tht_gen(engine);\n        point a = point(cos(th1),\
     \ sin(th1));\n        point b = point(cos(th2), sin(th2));\n        point c =\
     \ point(cos(th3), sin(th3));\n        point inc = incenter(triangle(a, b, c));\n\
     \        x += inc.x;\n        y += inc.y;\n    }\n    cout << fixed << setprecision(20)\
