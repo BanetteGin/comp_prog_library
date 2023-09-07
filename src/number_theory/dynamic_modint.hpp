@@ -77,18 +77,16 @@ struct dynamic_modint {
         return this->val != r.val;
     }
 
-    /*
-    friend ostream& operator<<(ostream& os, const dynamic_modint& x) const noexcept {
+    friend std::ostream& operator<<(std::ostream& os, const dynamic_modint& x) noexcept {
         return os << x.val;
     }
 
-    friend istream& operator>>(istream& is, dynamic_modint& x) noexcept {
+    friend std::istream& operator>>(std::istream& is, dynamic_modint& x) noexcept {
         long long int t;
         is >> t;
         x = dynamic_modint(t);
         return (is);
     }
-    */
 
     friend constexpr modpow(const dynamic_modint& a, long long int n) noexcept {
         if (n == 0) return 1LL;

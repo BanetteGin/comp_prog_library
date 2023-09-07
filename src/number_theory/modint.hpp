@@ -70,11 +70,11 @@ struct modint {
         return this->val != r.val;
     }
 
-    friend ostream& operator<<(ostream& os, const modint<MOD>& x) noexcept {
+    friend std::ostream& operator<<(std::ostream& os, const modint<MOD>& x) noexcept {
         return os << x.val;
     }
 
-    friend istream& operator>>(istream& is, modint<MOD>& x) noexcept {
+    friend std::istream& operator>>(std::istream& is, modint<MOD>& x) noexcept {
         long long int t;
         is >> t;
         x = modint(t);

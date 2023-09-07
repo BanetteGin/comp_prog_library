@@ -58,11 +58,17 @@ struct point {
         return !equal(this->x, p.x) || !equal(this->y, p.y);
     }
 
-    friend T dot(const point& p, const point& q) {
+    friend T dot(const point& p, const point& q) noexcept {
         return p.x * q.x + p.y * q.y;
     }
-    friend T cross(const point& p, const point& q) {
+    friend T cross(const point& p, const point& q) noexcept {
         return p.x * q.y - p.y * q.x;
+    }
+    friend T norm(const point& p) {
+        return sqrt(p.x * p.x + p.y * p.y);
+    }
+    friend T arg(const point& p) {
+        return atan2(p.y, p.x);
     }
 };
 

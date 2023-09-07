@@ -12,7 +12,7 @@ using namespace BanetteGin;
 
 random_device seed_gen;
 mt19937 engine(seed_gen());
-uniform_real_distribution<ld> tht_gen(0.0, M_PI);
+uniform_real_distribution<ld> tht_gen(0.0, M_PI / 2);
 
 int main(void) {
     ll n;
