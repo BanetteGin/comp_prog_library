@@ -8,7 +8,7 @@ namespace BanetteGin {
 template <class T>
 std::vector<std::pair<T, T> > prime_factorization(T n) {
     std::vector<std::pair<T, T> > prime_list;
-    for (T i = 2; i * i <= n; ++i) {
+    for (long long int i = 2; i * i <= n; ++i) {
         if (n % i == 0) {
             ll e = 0;
             while (n % i == 0) {

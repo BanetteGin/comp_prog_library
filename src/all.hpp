@@ -43,7 +43,7 @@
 #include "graph\edge.hpp"
 #include "graph\find_cycle_by_dfs.hpp"
 #include "graph\topological_sort.hpp"
-#include "matrix\matrix_product.hpp"
+#include "matrix\matrix_operation.hpp"
 #include "matrix\matrix_rotate.hpp"
 #include "number_theory\base_change.hpp"
 #include "number_theory\divisors.hpp"

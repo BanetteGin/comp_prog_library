@@ -11,8 +11,8 @@ std::vector<T> sundaram_sieve(T& n) {
     std::vector<T> prime_list = {2};
     ret[0] = false;
     T m = ((n + 1) / 2 - 2) / 3;
-    for (T a = 1; a <= m; ++a) {
-        for (T b = 1; b <= a && a + b + 2 * a * b <= (n + 1) / 2 - 1; ++b) {
+    for (long long int a = 1; a <= m; ++a) {
+        for (long long int b = 1; b <= a && a + b + 2 * a * b <= (n + 1) / 2 - 1; ++b) {
             ret[a + b + 2 * a * b] = false;
         }
     }

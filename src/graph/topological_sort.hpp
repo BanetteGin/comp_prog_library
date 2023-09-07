@@ -9,11 +9,11 @@ template <class T>
 std::vector<T> topological_sort(const std::vector<std::vector<T> >& g) {
     std::vector<T> ret;
     std::vector<T> ind(g.size(), 0);
-    for (T i = 0; i < ind.size(); ++i) {
+    for (long long int i = 0; i < ind.size(); ++i) {
         for (T e : g[i]) ind[e]++;
     }
     std::queue<T> q;
-    for (T i = 0; i < ind.size(); ++i) {
+    for (long long int i = 0; i < ind.size(); ++i) {
         if (ind[i] == 0) q.push(i);
     }
     while (!q.empty()) {
