@@ -11,26 +11,27 @@ data:
   bundledCode: "#line 1 \"src/number_theory/linear_sieve.hpp\"\n\n\n\n#include <vector>\n\
     \nnamespace BanetteGin {\n\ntemplate <class T>\nstd::vector<T> linear_sieve(T\
     \ n) {\n    std::vector<T> prime_list;\n    std::vector<T> lpf(n + 1, n + 1);\n\
-    \    lpf[0] = 1;\n    lpf[1] = 1;\n    for (T i = 2; i <= n; ++i) {\n        if\
-    \ (lpf[i] == n + 1) {\n            lpf[i] = i;\n            prime_list.emplace_back(i);\n\
-    \        }\n        for (T j = 0; j < prime_list.size(); ++j) {\n            T\
-    \ p = prime_list[j];\n            if (p * i > n || p > lpf[i]) break;\n      \
-    \      lpf[p * i] = p;\n        }\n    }\n    return prime_list;\n}\n\n}  // namespace\
-    \ BanetteGin\n\n\n"
+    \    lpf[0] = 1;\n    lpf[1] = 1;\n    for (long long int i = 2; i <= n; ++i)\
+    \ {\n        if (lpf[i] == n + 1) {\n            lpf[i] = i;\n            prime_list.emplace_back(i);\n\
+    \        }\n        for (long long int j = 0; j < prime_list.size(); ++j) {\n\
+    \            T p = prime_list[j];\n            if (p * i > n || p > lpf[i]) break;\n\
+    \            lpf[p * i] = p;\n        }\n    }\n    return prime_list;\n}\n\n\
+    }  // namespace BanetteGin\n\n\n"
   code: "#ifndef BANETTEGIN_LINEAR_SIEVE_HPP_INCLUDED\n#define BANETTEGIN_LINEAR_SIEVE_HPP_INCLUDED\n\
     \n#include <vector>\n\nnamespace BanetteGin {\n\ntemplate <class T>\nstd::vector<T>\
     \ linear_sieve(T n) {\n    std::vector<T> prime_list;\n    std::vector<T> lpf(n\
-    \ + 1, n + 1);\n    lpf[0] = 1;\n    lpf[1] = 1;\n    for (T i = 2; i <= n; ++i)\
-    \ {\n        if (lpf[i] == n + 1) {\n            lpf[i] = i;\n            prime_list.emplace_back(i);\n\
-    \        }\n        for (T j = 0; j < prime_list.size(); ++j) {\n            T\
-    \ p = prime_list[j];\n            if (p * i > n || p > lpf[i]) break;\n      \
-    \      lpf[p * i] = p;\n        }\n    }\n    return prime_list;\n}\n\n}  // namespace\
-    \ BanetteGin\n\n#endif"
+    \ + 1, n + 1);\n    lpf[0] = 1;\n    lpf[1] = 1;\n    for (long long int i = 2;\
+    \ i <= n; ++i) {\n        if (lpf[i] == n + 1) {\n            lpf[i] = i;\n  \
+    \          prime_list.emplace_back(i);\n        }\n        for (long long int\
+    \ j = 0; j < prime_list.size(); ++j) {\n            T p = prime_list[j];\n   \
+    \         if (p * i > n || p > lpf[i]) break;\n            lpf[p * i] = p;\n \
+    \       }\n    }\n    return prime_list;\n}\n\n}  // namespace BanetteGin\n\n\
+    #endif"
   dependsOn: []
   isVerificationFile: false
   path: src/number_theory/linear_sieve.hpp
   requiredBy: []
-  timestamp: '2023-08-08 12:20:54+09:00'
+  timestamp: '2023-09-07 19:30:09+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/number_theory/linear_sieve.hpp

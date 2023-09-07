@@ -11,24 +11,24 @@ data:
   bundledCode: "#line 1 \"src/number_theory/prime_factorization.hpp\"\n\n\n\n#include\
     \ <vector>\n\nnamespace BanetteGin {\n\ntemplate <class T>\nstd::vector<std::pair<T,\
     \ T> > prime_factorization(T n) {\n    std::vector<std::pair<T, T> > prime_list;\n\
-    \    for (T i = 2; i * i <= n; ++i) {\n        if (n % i == 0) {\n           \
-    \ long long int e = 0;\n            while (n % i == 0) {\n                n /=\
-    \ i;\n                e++;\n            }\n            prime_list.emplace_back(make_pair(i,\
+    \    for (long long int i = 2; i * i <= n; ++i) {\n        if (n % i == 0) {\n\
+    \            long long int e = 0;\n            while (n % i == 0) {\n        \
+    \        n /= i;\n                e++;\n            }\n            prime_list.emplace_back(make_pair(i,\
     \ e));\n        }\n    }\n    if (n != 1) {\n        prime_list.emplace_back(make_pair(n,\
     \ 1));\n    }\n    return prime_list;\n}\n\n}  // namespace BanetteGin\n\n\n"
   code: "#ifndef BANETTEGIN_PRIME_FACTORIZATION_HPP_INCLUDED\n#define BANETTEGIN_PRIME_FACTORIZATION_HPP_INCLUDED\n\
     \n#include <vector>\n\nnamespace BanetteGin {\n\ntemplate <class T>\nstd::vector<std::pair<T,\
     \ T> > prime_factorization(T n) {\n    std::vector<std::pair<T, T> > prime_list;\n\
-    \    for (T i = 2; i * i <= n; ++i) {\n        if (n % i == 0) {\n           \
-    \ long long int e = 0;\n            while (n % i == 0) {\n                n /=\
-    \ i;\n                e++;\n            }\n            prime_list.emplace_back(make_pair(i,\
+    \    for (long long int i = 2; i * i <= n; ++i) {\n        if (n % i == 0) {\n\
+    \            long long int e = 0;\n            while (n % i == 0) {\n        \
+    \        n /= i;\n                e++;\n            }\n            prime_list.emplace_back(make_pair(i,\
     \ e));\n        }\n    }\n    if (n != 1) {\n        prime_list.emplace_back(make_pair(n,\
     \ 1));\n    }\n    return prime_list;\n}\n\n}  // namespace BanetteGin\n\n#endif"
   dependsOn: []
   isVerificationFile: false
   path: src/number_theory/prime_factorization.hpp
   requiredBy: []
-  timestamp: '2023-09-07 19:24:46+09:00'
+  timestamp: '2023-09-07 19:32:18+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/number_theory/prime_factorization.hpp

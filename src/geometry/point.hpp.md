@@ -51,6 +51,9 @@ data:
     path: src/geometry/distance_segment_and_segment.hpp
     title: src/geometry/distance_segment_and_segment.hpp
   - icon: ':warning:'
+    path: src/geometry/excenter.hpp
+    title: src/geometry/excenter.hpp
+  - icon: ':warning:'
     path: src/geometry/incenter.hpp
     title: src/geometry/incenter.hpp
   - icon: ':warning:'
@@ -177,6 +180,7 @@ data:
   - src/geometry/circumcenter.hpp
   - src/geometry/inradius.hpp
   - src/geometry/orthogonal_check.hpp
+  - src/geometry/excenter.hpp
   - src/geometry/circumradius.hpp
   - src/geometry/orthocenter.hpp
   - src/geometry/line.hpp

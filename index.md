@@ -91,6 +91,9 @@ data:
       path: src/geometry/circumradius.hpp
       title: src/geometry/circumradius.hpp
     - icon: ':warning:'
+      path: src/geometry/cocircle_check.hpp
+      title: src/geometry/cocircle_check.hpp
+    - icon: ':warning:'
       path: src/geometry/degree_to_radian.hpp
       title: src/geometry/degree_to_radian.hpp
     - icon: ':warning:'
@@ -105,6 +108,9 @@ data:
     - icon: ':warning:'
       path: src/geometry/distance_segment_and_segment.hpp
       title: src/geometry/distance_segment_and_segment.hpp
+    - icon: ':warning:'
+      path: src/geometry/excenter.hpp
+      title: src/geometry/excenter.hpp
     - icon: ':warning:'
       path: src/geometry/incenter.hpp
       title: src/geometry/incenter.hpp
@@ -158,8 +164,8 @@ data:
   - name: src/matrix
     pages:
     - icon: ':warning:'
-      path: src/matrix/matrix_product.hpp
-      title: src/matrix/matrix_product.hpp
+      path: src/matrix/matrix_operation.hpp
+      title: src/matrix/matrix_operation.hpp
     - icon: ':warning:'
       path: src/matrix/matrix_rotate.hpp
       title: src/matrix/matrix_rotate.hpp
@@ -198,6 +204,14 @@ data:
     - icon: ':warning:'
       path: src/number_theory/sundaram_sieve.hpp
       title: src/number_theory/sundaram_sieve.hpp
+  - name: src/sorting
+    pages:
+    - icon: ':warning:'
+      path: src/sorting/bubble_sort.hpp
+      title: src/sorting/bubble_sort.hpp
+    - icon: ':warning:'
+      path: src/sorting/insertion_sort.hpp
+      title: src/sorting/insertion_sort.hpp
   - name: src/string
     pages:
     - icon: ':warning:'

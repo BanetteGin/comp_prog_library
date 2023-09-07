@@ -108,9 +108,23 @@ data:
     \ q)) {\n    }\n};\n\n}  // namespace BanetteGin\n\n\n#line 8 \"src/geometry/triangle.hpp\"\
     \n\nnamespace BanetteGin {\n\ntemplate <class T>\nstruct triangle {\n    point<T>\
     \ point_a, point_b, point_c;\n    T length_a, length_b, length_c;\n    T angle_a,\
-    \ angle_b, angle_c;\n    T area;\n    triangle(point<T> point_a_, point<T> point_b_,\
-    \ point<T> point_c_)\n        : point_a(point_a_), point_b(point_b_), point_c(point_c_)\
-    \ {\n        length_a = distance_point_and_point(point_b, point_c);\n        length_b\
+    \ angle_b, angle_c;\n\n    vector<point<T>> points(3);\n    vector<T> lengths(3);\n\
+    \    vector<T> angles(3);\n    T area;\n    triangle(point<T> point_a, point<T>\
+    \ point_b, point<T> point_c)\n        : points(std::vector<point<T>>(point_a,\
+    \ point_b, point_c)) {\n        for(int a=0;a<3;++a){\n            int b,c;\n\
+    \            bool added_flag=false;\n            for(int i=0;i<3;++i){\n     \
+    \           if(a!=i){\n                    if(!added_flag) {\n               \
+    \         b=i;\n                        added_flag=true;\n                   \
+    \ } else c=i;\n                }\n            }\n            lengths[a]=distance_point_and_point(points[b],points[c]);\n\
+    \        }\n\n        for(int a=0;a<3;++a){\n            int b,c;\n          \
+    \  bool added_flag=false;\n            for(int i=0;i<3;++i){\n               \
+    \ if(a!=i){\n                    if(!added_flag) {\n                        b=i;\n\
+    \                        added_flag=true;\n                    } else c=i;\n \
+    \               }\n            }\n            angles[a]=acos((pow(lengths[b],\
+    \ 2) + pow(lengths[c], 2) - pow(lengths[a], 2)) / (2 * lengths[b] * lengths[c]))\n\
+    \        }\n\n        area = length_b * length_c * sin(angle_a) / 2;\n    };\n\
+    \    triangle(T length_a, T length_b, T length_c)\n        :  lengths(std::vector<T>(length_a,length_b,length_c)){\n\
+    \        length_a = distance_point_and_point(point_b, point_c);\n        length_b\
     \ = distance_point_and_point(point_c, point_a);\n        length_c = distance_point_and_point(point_a,\
     \ point_b);\n        angle_a = acos((pow(length_b, 2) + pow(length_c, 2) - pow(length_a,\
     \ 2)) / (2 * length_b * length_c));\n        angle_b = acos((pow(length_c, 2)\
@@ -167,7 +181,7 @@ data:
   isVerificationFile: false
   path: src/geometry/intersect_circle_and_circle.hpp
   requiredBy: []
-  timestamp: '2023-09-07 19:24:46+09:00'
+  timestamp: '2023-09-07 19:32:18+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/geometry/intersect_circle_and_circle.hpp

@@ -49,7 +49,7 @@ data:
     \    if (n == 0) return 1LL;\n        auto t = modpow(a, n / 2);\n        t =\
     \ t * t;\n        if (n & 1) t = t * a;\n        return t;\n    }\n};\n\n}  //\
     \ namespace BanetteGin\n\n\n"
-  code: "#ifndef BANETTEGIN_MODINT_HPP_INCLUDED\n#define BANETTEGIN_MODINT_HPP_INCLUDED\n\
+  code: "#ifndef BANETTEGIN_DYNAMIC_MODINT_HPP_INCLUDED\n#define BANETTEGIN_DYNAMIC_MODINT_HPP_INCLUDED\n\
     \nnamespace BanetteGin {\n\ntemplate <long long int id>\nstruct dynamic_modint\
     \ {\n    long long int val;\n    dynamic_modint(long long int v = 0) noexcept\n\
     \        : val(v % get_mod()) {\n        if (val < 0) val += get_mod();\n    }\n\
@@ -91,7 +91,7 @@ data:
   isVerificationFile: false
   path: src/number_theory/dynamic_modint.hpp
   requiredBy: []
-  timestamp: '2023-09-07 19:24:46+09:00'
+  timestamp: '2023-09-07 19:32:18+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/yukicoder/1092.test.cpp
