@@ -6,7 +6,7 @@
 namespace BanetteGin {
 
 template <class T>
-std::vector<T> divisors(T& n) {
+std::vector<T> divisors(T n) {
     std::vector<T> ret;
     for (long long int i = 1; i * i <= n; ++i) {
         if (n % i == 0) {
