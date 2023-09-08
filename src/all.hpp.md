@@ -13,70 +13,70 @@ data:
   - icon: ':warning:'
     path: src/basic/chmin.hpp
     title: src/basic/chmin.hpp
-  - icon: ':warning:'
+  - icon: ':x:'
     path: src/basic/comparison.hpp
     title: src/basic/comparison.hpp
-  - icon: ':warning:'
+  - icon: ':x:'
     path: src/basic/comparison.hpp
     title: src/basic/comparison.hpp
-  - icon: ':warning:'
+  - icon: ':x:'
     path: src/basic/comparison.hpp
     title: src/basic/comparison.hpp
-  - icon: ':warning:'
+  - icon: ':x:'
     path: src/basic/constant.hpp
     title: src/basic/constant.hpp
-  - icon: ':warning:'
+  - icon: ':x:'
     path: src/basic/constant.hpp
     title: src/basic/constant.hpp
-  - icon: ':warning:'
+  - icon: ':x:'
     path: src/basic/constant.hpp
     title: src/basic/constant.hpp
-  - icon: ':warning:'
+  - icon: ':x:'
     path: src/basic/constant.hpp
     title: src/basic/constant.hpp
-  - icon: ':warning:'
+  - icon: ':x:'
     path: src/basic/constant.hpp
     title: src/basic/constant.hpp
-  - icon: ':warning:'
+  - icon: ':x:'
     path: src/basic/constant.hpp
     title: src/basic/constant.hpp
-  - icon: ':warning:'
+  - icon: ':x:'
     path: src/basic/equal.hpp
     title: src/basic/equal.hpp
-  - icon: ':warning:'
+  - icon: ':x:'
     path: src/basic/equal.hpp
     title: src/basic/equal.hpp
-  - icon: ':warning:'
+  - icon: ':x:'
     path: src/basic/equal.hpp
     title: src/basic/equal.hpp
-  - icon: ':warning:'
+  - icon: ':x:'
     path: src/basic/greater_equal.hpp
     title: src/basic/greater_equal.hpp
-  - icon: ':warning:'
+  - icon: ':x:'
     path: src/basic/greater_equal.hpp
     title: src/basic/greater_equal.hpp
-  - icon: ':warning:'
+  - icon: ':x:'
     path: src/basic/greater_than.hpp
     title: src/basic/greater_than.hpp
-  - icon: ':warning:'
+  - icon: ':x:'
     path: src/basic/greater_than.hpp
     title: src/basic/greater_than.hpp
-  - icon: ':warning:'
+  - icon: ':x:'
     path: src/basic/less_equal.hpp
     title: src/basic/less_equal.hpp
-  - icon: ':warning:'
+  - icon: ':x:'
     path: src/basic/less_equal.hpp
     title: src/basic/less_equal.hpp
-  - icon: ':warning:'
+  - icon: ':x:'
     path: src/basic/less_than.hpp
     title: src/basic/less_than.hpp
-  - icon: ':warning:'
+  - icon: ':x:'
     path: src/basic/less_than.hpp
     title: src/basic/less_than.hpp
-  - icon: ':warning:'
+  - icon: ':x:'
     path: src/basic/sign.hpp
     title: src/basic/sign.hpp
-  - icon: ':warning:'
+  - icon: ':x:'
     path: src/basic/sign.hpp
     title: src/basic/sign.hpp
   - icon: ':warning:'
@@ -103,21 +103,15 @@ data:
   - icon: ':warning:'
     path: src/geometry/centroid.hpp
     title: src/geometry/centroid.hpp
-  - icon: ':warning:'
+  - icon: ':x:'
     path: src/geometry/circle.hpp
     title: src/geometry/circle.hpp
-  - icon: ':warning:'
+  - icon: ':x:'
     path: src/geometry/circle.hpp
     title: src/geometry/circle.hpp
-  - icon: ':warning:'
-    path: src/geometry/circumcenter.hpp
-    title: src/geometry/circumcenter.hpp
-  - icon: ':warning:'
-    path: src/geometry/circumcenter.hpp
-    title: src/geometry/circumcenter.hpp
-  - icon: ':warning:'
-    path: src/geometry/circumradius.hpp
-    title: src/geometry/circumradius.hpp
+  - icon: ':x:'
+    path: src/geometry/circumcircle.hpp
+    title: src/geometry/circumcircle.hpp
   - icon: ':warning:'
     path: src/geometry/concyclic.hpp
     title: src/geometry/concyclic.hpp
@@ -130,10 +124,10 @@ data:
   - icon: ':warning:'
     path: src/geometry/distance_point_and_line.hpp
     title: src/geometry/distance_point_and_line.hpp
-  - icon: ':warning:'
+  - icon: ':x:'
     path: src/geometry/distance_point_and_point.hpp
     title: src/geometry/distance_point_and_point.hpp
-  - icon: ':warning:'
+  - icon: ':x:'
     path: src/geometry/distance_point_and_point.hpp
     title: src/geometry/distance_point_and_point.hpp
   - icon: ':warning:'
@@ -143,17 +137,11 @@ data:
     path: src/geometry/distance_segment_and_segment.hpp
     title: src/geometry/distance_segment_and_segment.hpp
   - icon: ':warning:'
-    path: src/geometry/excenter.hpp
-    title: src/geometry/excenter.hpp
-  - icon: ':warning:'
-    path: src/geometry/exradius.hpp
-    title: src/geometry/exradius.hpp
-  - icon: ':warning:'
-    path: src/geometry/incenter.hpp
-    title: src/geometry/incenter.hpp
-  - icon: ':warning:'
-    path: src/geometry/inradius.hpp
-    title: src/geometry/inradius.hpp
+    path: src/geometry/excircle.hpp
+    title: src/geometry/excircle.hpp
+  - icon: ':x:'
+    path: src/geometry/incircle.hpp
+    title: src/geometry/incircle.hpp
   - icon: ':warning:'
     path: src/geometry/intersect_circle_and_circle.hpp
     title: src/geometry/intersect_circle_and_circle.hpp
@@ -167,6 +155,9 @@ data:
     path: src/geometry/line.hpp
     title: src/geometry/line.hpp
   - icon: ':warning:'
+    path: src/geometry/normal_vector.hpp
+    title: src/geometry/normal_vector.hpp
+  - icon: ':warning:'
     path: src/geometry/orthocenter.hpp
     title: src/geometry/orthocenter.hpp
   - icon: ':warning:'
@@ -175,10 +166,10 @@ data:
   - icon: ':warning:'
     path: src/geometry/parallel_check.hpp
     title: src/geometry/parallel_check.hpp
-  - icon: ':warning:'
+  - icon: ':x:'
     path: src/geometry/point.hpp
     title: src/geometry/point.hpp
-  - icon: ':warning:'
+  - icon: ':x:'
     path: src/geometry/point.hpp
     title: src/geometry/point.hpp
   - icon: ':warning:'
@@ -187,18 +178,21 @@ data:
   - icon: ':warning:'
     path: src/geometry/rotate.hpp
     title: src/geometry/rotate.hpp
-  - icon: ':warning:'
+  - icon: ':x:'
     path: src/geometry/segment.hpp
     title: src/geometry/segment.hpp
-  - icon: ':warning:'
+  - icon: ':x:'
     path: src/geometry/segment.hpp
     title: src/geometry/segment.hpp
-  - icon: ':warning:'
+  - icon: ':x:'
+    path: src/geometry/triangle.hpp
+    title: src/geometry/triangle.hpp
+  - icon: ':x:'
     path: src/geometry/triangle.hpp
     title: src/geometry/triangle.hpp
   - icon: ':warning:'
-    path: src/geometry/triangle.hpp
-    title: src/geometry/triangle.hpp
+    path: src/geometry/unit_vector.hpp
+    title: src/geometry/unit_vector.hpp
   - icon: ':warning:'
     path: src/graph/edge.hpp
     title: src/graph/edge.hpp
@@ -326,19 +320,19 @@ data:
     \ b) {\n    if (b < a) {\n        a = b;\n        return 1;\n    }\n    return\
     \ 0;\n}\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/combinatorics/combination.hpp\"\
     \n\n\n\nnamespace BanetteGin {\n\ntemplate <class T>\nT combination(const T& m,\
-    \ const T& n) {\n    T ret = 1;\n    for (long long int i = m; i >= m - n + 1;\
-    \ --i) {\n        ret = ret * i;\n    }\n    for (long long int i = m - n; i >=\
-    \ 1; --i) {\n        ret = ret / i;\n    }\n    return ret;\n}\n\n}  // namespace\
-    \ BanetteGin\n\n\n#line 1 \"src/combinatorics/homogenous_product.hpp\"\n\n\n\n\
-    namespace BanetteGin {\n\ntemplate <class T>\nT homogenous_product(const T& m,\
-    \ const T& n) {\n    T ret = 1;\n    for (long long int i = m + n - 1; i >= m;\
-    \ --i) {\n        ret = ret * i;\n    }\n    for (long long int i = m - 1; i >=\
-    \ 1; --i) {\n        ret = ret / i;\n    }\n    return ret;\n}\n\n}  // namespace\
-    \ BanetteGin\n\n\n#line 1 \"src/combinatorics/permutation.hpp\"\n\n\n\nnamespace\
-    \ BanetteGin {\n\ntemplate <class T>\nT permutation(const T& m, const T& n) {\n\
-    \    T ret = 1;\n    for (long long int i = m; i >= m - n + 1; --i) {\n      \
-    \  ret = ret * i;\n    }\n    return ret;\n}\n\n}  // namespace BanetteGin\n\n\
-    \n#line 1 \"src/data_structure/binary_indexed_tree.hpp\"\n\n\n\n#include <vector>\n\
+    \ const T& n) {\n    assert(m >= n);\n    T ret = 1;\n    for (long long int i\
+    \ = m; i >= m - n + 1; --i) {\n        ret = ret * i;\n    }\n    for (long long\
+    \ int i = n; i >= 1; --i) {\n        ret = ret / i;\n    }\n    return ret;\n\
+    }\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/combinatorics/homogenous_product.hpp\"\
+    \n\n\n\nnamespace BanetteGin {\n\ntemplate <class T>\nT homogenous_product(const\
+    \ T& m, const T& n) {\n    T ret = 1;\n    for (long long int i = m + n - 1; i\
+    \ >= m; --i) {\n        ret = ret * i;\n    }\n    for (long long int i = m -\
+    \ 1; i >= 1; --i) {\n        ret = ret / i;\n    }\n    return ret;\n}\n\n}  //\
+    \ namespace BanetteGin\n\n\n#line 1 \"src/combinatorics/permutation.hpp\"\n\n\n\
+    \nnamespace BanetteGin {\n\ntemplate <class T>\nT permutation(const T& m, const\
+    \ T& n) {\n    T ret = 1;\n    for (long long int i = m; i >= m - n + 1; --i)\
+    \ {\n        ret = ret * i;\n    }\n    return ret;\n}\n\n}  // namespace BanetteGin\n\
+    \n\n#line 1 \"src/data_structure/binary_indexed_tree.hpp\"\n\n\n\n#include <vector>\n\
     \nnamespace BanetteGin {\n\ntemplate <class T>\nstruct binary_indexed_tree {\n\
     \    T n;\n    std::vector<T> tree;\n    const T ide = 0;\n\n    binary_indexed_tree(T\
     \ n_)\n        : n(n_) {\n        tree.resize(n, ide);\n    }\n\n    T abel_operation(const\
@@ -472,26 +466,29 @@ data:
     \ * cos(angles[0]), lengths[2] * sin(angles[0]));\n\n        area = lengths[1]\
     \ * lengths[2] * sin(angles[0]) / 2;\n    };\n};\n\n}  // namespace BanetteGin\n\
     \n\n#line 5 \"src/geometry/centroid.hpp\"\n\nnamespace BanetteGin {\n\ntemplate\
-    \ <class T>\npoint<T> centroid(triangle<T> t) {\n    return (t.point_a + t.point_b\
-    \ + t.point_c) / 3;\n}\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/geometry/circle.hpp\"\
-    \n\n\n\n#line 1 \"src/geometry/circumcenter.hpp\"\n\n\n\n#line 5 \"src/geometry/circumcenter.hpp\"\
-    \n\nnamespace BanetteGin {\n\ntemplate <class T>\npoint<T> circumcenter(triangle<T>\
-    \ t) {\n    point<T> o = (t.point_a * sin(2 * t.angle_a) + t.point_b * sin(2 *\
-    \ t.angle_b) + t.point_c * sin(2 * t.angle_c)) / (sin(2 * t.angle_a) + sin(2 *\
-    \ t.angle_b) + sin(2 * t.angle_c));\n    return o;\n}\n\n}  // namespace BanetteGin\n\
-    \n\n#line 10 \"src/geometry/circle.hpp\"\n\nnamespace BanetteGin {\n\ntemplate\
+    \ <class T>\npoint<T> centroid(triangle<T> t) {\n    return (t.points[0] + t.points[1]\
+    \ + t.points[2]) / 3;\n}\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/geometry/circle.hpp\"\
+    \n\n\n\n#line 9 \"src/geometry/circle.hpp\"\n\nnamespace BanetteGin {\n\ntemplate\
     \ <class T>\nstruct circle {\n    point<T> p;\n    T r;\n    circle(point<T> p_,\
     \ T r_)\n        : p(p_), r(r_) {\n    }\n    circle(point<T> p_, point<T> q_)\n\
     \        : p(p_), r(distance_point_and_point(p_, q_)) {\n    }\n    circle(point<T>\
-    \ p_, point<T> q_, point<T> r_)\n        : p(circumcenter(triangle(p_, q_, r_)).first),\
-    \ r(circumcenter(triangle(p_, q_, r_)).second) {\n    }\n    bool operator==(const\
-    \ circle& c) const noexcept {\n        return equal(this->p, c.p) && equal(this->r,\
-    \ c.r);\n    }\n    bool operator!=(const circle& c) const noexcept {\n      \
-    \  return !equal(this->p, c.p) || !equal(this->r, c.r);\n    }\n};\n\n}  // namespace\
-    \ BanetteGin\n\n\n#line 1 \"src/geometry/circumradius.hpp\"\n\n\n\n#line 5 \"\
-    src/geometry/circumradius.hpp\"\n\nnamespace BanetteGin {\n\ntemplate <class T>\n\
-    T circumradius(triangle<T> t) {\n    T r = t.length_a / sin(t.angle_a) / 2;\n\
-    \    return r;\n}\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/geometry/concyclic.hpp\"\
+    \ p_, point<T> q_, point<T> r_)\n        : p(constracter_circumcircle(triangle(p_,\
+    \ q_, r_)).p), r(constracter_circumcircle(triangle(p_, q_, r_)).r) {\n    }\n\
+    \    bool operator==(const circle& c) const noexcept {\n        return equal(this->p,\
+    \ c.p) && equal(this->r, c.r);\n    }\n    bool operator!=(const circle& c) const\
+    \ noexcept {\n        return !equal(this->p, c.p) || !equal(this->r, c.r);\n \
+    \   }\n\nprivate:\n    circle<T> constracter_circumcircle(triangle<T> t) {\n \
+    \       point ret = point(0.0L, 0.0L);\n        T denom = 0.0L;\n        for (int\
+    \ i = 0; i < 3; ++i) {\n            ret += t.points[i] * sin(t.angles[i]);\n \
+    \           denom += sin(t.angles[i]);\n        }\n        T r = t.lengths[0]\
+    \ / sin(t.angles[0]) / 2;\n        return circle(ret / denom, r);\n    }\n};\n\
+    \n}  // namespace BanetteGin\n\n\n#line 1 \"src/geometry/circumcircle.hpp\"\n\n\
+    \n\n#line 6 \"src/geometry/circumcircle.hpp\"\n\nnamespace BanetteGin {\n\ntemplate\
+    \ <class T>\ncircle<T> circumcircle(triangle<T> t) {\n    point ret = point(0.0L,\
+    \ 0.0L);\n    T denom = 0.0L;\n    for (int i = 0; i < 3; ++i) {\n        ret\
+    \ += t.points[i] * sin(t.angles[i]);\n        denom += sin(t.angles[i]);\n   \
+    \ }\n    T r = t.lengths[0] / sin(t.angles[0]) / 2;\n    return circle(ret / denom,\
+    \ r);\n}\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/geometry/concyclic.hpp\"\
     \n\n\n\n#line 5 \"src/geometry/concyclic.hpp\"\n\nnamespace BanetteGin {\n\ntemplate\
     \ <class T>\nbool concyclic(std::vector<T> points) {\n    assert(points.size()\
     \ >= 3);\n    if (points.size() == 3) return true;\n    T theta = triangle(points[0],\
@@ -531,22 +528,20 @@ data:
     \ l) {\n}\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/geometry/distance_segment_and_segment.hpp\"\
     \n\n\n\n#line 7 \"src/geometry/distance_segment_and_segment.hpp\"\n\nnamespace\
     \ BanetteGin {\n\ntemplate <class T>\nT distance_segment_and_segment(point<T>\
-    \ l, segment<T> m) {\n}\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/geometry/excenter.hpp\"\
-    \n\n\n\n#line 5 \"src/geometry/excenter.hpp\"\n\nnamespace BanetteGin {\n\ntemplate\
-    \ <class T>\npoint<T> excenter(triangle<T> t, int option = 0) {\n    point ret\
-    \ = point(0, 0);\n    T denom = 0;\n    for (int i = 0; i < 3; ++i) {\n      \
-    \  T sgn = 1;\n        if (i == option) sgn = -1;\n        ret += t.points[i]\
-    \ * sgn * t.lengths[i];\n        denom += sgn * t.lengths[i];\n    }\n    return\
-    \ ret / denom;\n}\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/geometry/exradius.hpp\"\
-    \n\n#line 1 \"src/geometry/incenter.hpp\"\n\n\n\n#line 5 \"src/geometry/incenter.hpp\"\
-    \n\nnamespace BanetteGin {\n\ntemplate <class T>\npoint<T> incenter(triangle<T>\
+    \ l, segment<T> m) {\n}\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/geometry/excircle.hpp\"\
+    \n\n\n\n#line 6 \"src/geometry/excircle.hpp\"\n\nnamespace BanetteGin {\n\ntemplate\
+    \ <class T>\ncircle<T> excircle(triangle<T> t, int option = 0) {\n    assert(0\
+    \ <= option && option <= 2);\n    point ret = point(0.0L, 0.0L);\n    T denom\
+    \ = 0.0L;\n    for (int i = 0; i < 3; ++i) {\n        T sgn = 1;\n        if (i\
+    \ == option) sgn = -1;\n        ret += t.points[i] * sgn * t.lengths[i];\n   \
+    \     denom += sgn * t.lengths[i];\n    }\n\n    T r = t.area * 2 / denom;\n \
+    \   return circle(ret / denom, r);\n}\n\n}  // namespace BanetteGin\n\n\n#line\
+    \ 1 \"src/geometry/incircle.hpp\"\n\n\n\n#line 6 \"src/geometry/incircle.hpp\"\
+    \n\nnamespace BanetteGin {\n\ntemplate <class T>\ncircle<T> incircle(triangle<T>\
     \ t) {\n    point ret = point(0.0L, 0.0L);\n    T denom = 0.0L;\n    for (int\
     \ i = 0; i < 3; ++i) {\n        ret += t.points[i] * t.lengths[i];\n        denom\
-    \ += t.lengths[i];\n    }\n    return ret / denom;\n}\n\n}  // namespace BanetteGin\n\
-    \n\n#line 1 \"src/geometry/inradius.hpp\"\n\n\n\n#line 5 \"src/geometry/inradius.hpp\"\
-    \n\nnamespace BanetteGin {\n\ntemplate <class T>\npoint<T> inradius(triangle<T>\
-    \ t) {\n    T r = t.area * 2 / (t.lengths[0] + t.lengths[1] + t.lengths[2]);\n\
-    \    return r;\n}\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/geometry/intersect_circle_and_circle.hpp\"\
+    \ += t.lengths[i];\n    }\n    T r = t.area * 2 / denom;\n    return circle(ret\
+    \ / denom, r);\n}\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/geometry/intersect_circle_and_circle.hpp\"\
     \n\n\n\n#line 7 \"src/geometry/intersect_circle_and_circle.hpp\"\n\nnamespace\
     \ BanetteGin {\n\ntemplate <class T>\nint intersect_circle_and_circle(const circle<T>&\
     \ c1, const circle<T>& c2) {\n    T d = distance_between_point_and_point(c1.p,\
@@ -559,6 +554,9 @@ data:
     \ line<T>& l, const circle<T>& c) {\n    T d = distance_point_and_line(c.p, l);\n\
     \    if (greater_than(d, c.r)) {\n        return 2;\n    }\n    if (equal(d, c.r))\
     \ {\n        return 1;\n    }\n    return 0;\n}\n\n}  // namespace BanetteGin\n\
+    \n\n#line 1 \"src/geometry/normal_vector.hpp\"\n\n\n\n#line 5 \"src/geometry/normal_vector.hpp\"\
+    \n\nnamespace BanetteGin {\n\ntemplate <class T>\npoint<T> normal_vector(const\
+    \ point<T>& p) {\n    return p * point(0, 1);\n}\n\n}  // namespace BanetteGin\n\
     \n\n#line 1 \"src/geometry/orthocenter.hpp\"\n\n\n\n#line 5 \"src/geometry/orthocenter.hpp\"\
     \n\nnamespace BanetteGin {\n\ntemplate <class T>\npoint<T> orthocenter(triangle<T>\
     \ t) {\n    point ret = point(0.0L, 0.0L);\n    T denom = 0.0L;\n    for (int\
@@ -578,54 +576,57 @@ data:
     \n#line 5 \"src/geometry/rotate.hpp\"\n\nnamespace BanetteGin {\n\ntemplate <class\
     \ T>\npoint<T> rotate(const point<T>& p, const T& theta) {\n    return point<T>(cos(theta)\
     \ * p.x - sin(theta) * p.y, sin(theta) * p.x + cos(theta) * p.y);\n}\n\n}  //\
-    \ namespace BanetteGin\n\n\n#line 1 \"src/graph/edge.hpp\"\n\n\n\nnamespace BanetteGin\
-    \ {\n\ntemplate <class T>\nstruct edge {\n    T u, v, c;\n    edge(T u_, T v_,\
-    \ T c_)\n        : u(u_), v(v_), c(c_) {\n    }\n};\n\n}  // namespace BanetteGin\n\
-    \n\n#line 1 \"src/graph/find_cycle_by_dfs.hpp\"\n\n\n\n#line 5 \"src/graph/find_cycle_by_dfs.hpp\"\
-    \n\nnamespace BanetteGin {\n\ntemplate <class T>\nbool find_cycle_by_dfs(T v,\
-    \ std::vector<bool> &visited, std::vector<bool> &finished, const std::vector<std::vector<T>>\
-    \ &g) {\n    visited[v] = true;\n    for (T nv : g[v]) {\n        if (visited[nv])\
-    \ continue;\n        if (finished[nv]) continue;\n        if (visited[nv] && !finished[nv])\
-    \ return true;\n        if (find_cycle_by_dfs(nv, visited, finished, g)) return\
-    \ true;\n    }\n    finished[v] = true;\n    return false;\n}\n\n}  // namespace\
-    \ BanetteGin\n\n\n#line 1 \"src/graph/topological_sort.hpp\"\n\n\n\n#line 5 \"\
-    src/graph/topological_sort.hpp\"\n\nnamespace BanetteGin {\n\ntemplate <class\
-    \ T>\nstd::vector<T> topological_sort(const std::vector<std::vector<T> >& g) {\n\
-    \    std::vector<T> ret;\n    std::vector<T> ind(g.size(), 0);\n    for (long\
-    \ long int i = 0; i < ind.size(); ++i) {\n        for (T e : g[i]) ind[e]++;\n\
-    \    }\n    std::queue<T> q;\n    for (long long int i = 0; i < ind.size(); ++i)\
-    \ {\n        if (ind[i] == 0) q.push(i);\n    }\n    while (!q.empty()) {\n  \
-    \      T nv = q.front();\n        ret.push_back(nv);\n        q.pop();\n     \
-    \   for (T e : g[nv]) {\n            ind[e]--;\n            if (ind[e] == 0) q.push(e);\n\
-    \        }\n    }\n    return ret;\n}\n\n}  // namespace BanetteGin\n\n\n#line\
-    \ 1 \"src/matrix/matrix_operation.hpp\"\n\n\n\n#line 5 \"src/matrix/matrix_operation.hpp\"\
-    \n\nnamespace BanetteGin {\n\ntemplate <class T>\nstruct matrix_operation {\n\
-    \    const T addide = 0;\n    const T mulide = 1;\n    std::vector<std::vector<T>\
-    \ > a, b;\n    matrix_operation(std::vector<std::vector<T> > a_, std::vector<std::vector<T>\
-    \ > b_)\n        : a(a_), b(b_) {\n            assert(a.size()>0&&a[0].size>0);\n\
-    \            assert(b.size()>0&&b[0].size>0);\n    }\n    T addition(T& x, T&\
-    \ y) const noexcept {\n        return x + y;\n    }\n    T multiplication(T& x,\
-    \ T& y) const noexcept {\n        return x * y;\n    }\n    std::vector<std::vector<T>\
-    \ > addition() const noexcept {\n        assert(a.size() == b.size() && a[0].size()\
-    \ == b[0].size());\n\n        std::vector<std::vector<T> > c(a.size(), std::vector<T>(a[0].size(),\
+    \ namespace BanetteGin\n\n\n#line 1 \"src/geometry/unit_vector.hpp\"\n\n\n\n#line\
+    \ 5 \"src/geometry/unit_vector.hpp\"\n\nnamespace BanetteGin {\n\ntemplate <class\
+    \ T>\npoint<T> unit_vector(const point<T>& p) {\n    return p / norm(p);\n}\n\n\
+    }  // namespace BanetteGin\n\n\n#line 1 \"src/graph/edge.hpp\"\n\n\n\nnamespace\
+    \ BanetteGin {\n\ntemplate <class T>\nstruct edge {\n    T u, v, c;\n    edge(T\
+    \ u_, T v_, T c_)\n        : u(u_), v(v_), c(c_) {\n    }\n};\n\n}  // namespace\
+    \ BanetteGin\n\n\n#line 1 \"src/graph/find_cycle_by_dfs.hpp\"\n\n\n\n#line 5 \"\
+    src/graph/find_cycle_by_dfs.hpp\"\n\nnamespace BanetteGin {\n\ntemplate <class\
+    \ T>\nbool find_cycle_by_dfs(T v, std::vector<bool> &visited, std::vector<bool>\
+    \ &finished, const std::vector<std::vector<T>> &g) {\n    visited[v] = true;\n\
+    \    for (T nv : g[v]) {\n        if (visited[nv]) continue;\n        if (finished[nv])\
+    \ continue;\n        if (visited[nv] && !finished[nv]) return true;\n        if\
+    \ (find_cycle_by_dfs(nv, visited, finished, g)) return true;\n    }\n    finished[v]\
+    \ = true;\n    return false;\n}\n\n}  // namespace BanetteGin\n\n\n#line 1 \"\
+    src/graph/topological_sort.hpp\"\n\n\n\n#line 5 \"src/graph/topological_sort.hpp\"\
+    \n\nnamespace BanetteGin {\n\ntemplate <class T>\nstd::vector<T> topological_sort(const\
+    \ std::vector<std::vector<T> >& g) {\n    std::vector<T> ret;\n    std::vector<T>\
+    \ ind(g.size(), 0);\n    for (long long int i = 0; i < ind.size(); ++i) {\n  \
+    \      for (T e : g[i]) ind[e]++;\n    }\n    std::queue<T> q;\n    for (long\
+    \ long int i = 0; i < ind.size(); ++i) {\n        if (ind[i] == 0) q.push(i);\n\
+    \    }\n    while (!q.empty()) {\n        T nv = q.front();\n        ret.push_back(nv);\n\
+    \        q.pop();\n        for (T e : g[nv]) {\n            ind[e]--;\n      \
+    \      if (ind[e] == 0) q.push(e);\n        }\n    }\n    return ret;\n}\n\n}\
+    \  // namespace BanetteGin\n\n\n#line 1 \"src/matrix/matrix_operation.hpp\"\n\n\
+    \n\n#line 5 \"src/matrix/matrix_operation.hpp\"\n\nnamespace BanetteGin {\n\n\
+    template <class T>\nstruct matrix_operation {\n    const T addide = 0;\n    const\
+    \ T mulide = 1;\n    std::vector<std::vector<T> > a, b;\n    matrix_operation(std::vector<std::vector<T>\
+    \ > a_, std::vector<std::vector<T> > b_)\n        : a(a_), b(b_) {\n         \
+    \   assert(a.size()>0&&a[0].size>0);\n            assert(b.size()>0&&b[0].size>0);\n\
+    \    }\n    T addition(T& x, T& y) const noexcept {\n        return x + y;\n \
+    \   }\n    T multiplication(T& x, T& y) const noexcept {\n        return x * y;\n\
+    \    }\n    std::vector<std::vector<T> > addition() const noexcept {\n       \
+    \ assert(a.size() == b.size() && a[0].size() == b[0].size());\n\n        std::vector<std::vector<T>\
+    \ > c(a.size(), std::vector<T>(a[0].size(), addide));\n        for (long long\
+    \ int i = 0; i < a.size(); ++i) {\n            for (long long int j = 0; j < a[i].size();\
+    \ ++j) {\n                c[i][j] = addition(a[i][j], b[i][j]);\n            }\n\
+    \        }\n        return c;\n    }\n    std::vector<std::vector<T> > product()\
+    \ const noexcept {\n        assert(a.size() == b[0].size() && a[0].size() == b.size());\n\
+    \        std::vector<std::vector<T> > c(a.size(), std::vector<T>(b[0].size(),\
     \ addide));\n        for (long long int i = 0; i < a.size(); ++i) {\n        \
-    \    for (long long int j = 0; j < a[i].size(); ++j) {\n                c[i][j]\
-    \ = addition(a[i][j], b[i][j]);\n            }\n        }\n        return c;\n\
-    \    }\n    std::vector<std::vector<T> > product() const noexcept {\n        assert(a.size()\
-    \ == b[0].size() && a[0].size() == b.size());\n        std::vector<std::vector<T>\
-    \ > c(a.size(), std::vector<T>(b[0].size(), addide));\n        for (long long\
-    \ int i = 0; i < a.size(); ++i) {\n            for (long long int j = 0; j < b[0].size();\
-    \ ++j) {\n                for (long long int k = 0; k < b.size(); ++k) {\n   \
-    \                 c[i][j] = addition(c[i][j], multiplication(a[i][k], b[k][j]));\n\
-    \                }\n            }\n        }\n        return c;\n    }\n};\n\n\
-    }  // namespace BanetteGin\n\n\n#line 1 \"src/matrix/matrix_rotate.hpp\"\n\n\n\
-    \n#line 5 \"src/matrix/matrix_rotate.hpp\"\n\nnamespace BanetteGin {\n\ntemplate\
-    \ <class T>\nstd::vector<std::vector<T>> matrix_rotate(std::vector<std::vector<T>>\
-    \ a) {\n    std::vector<std::vector<T>> ret;\n    for (long long int i = 0; i\
-    \ < a[0].size(); ++i) {\n        std::vector<T> b;\n        for (long long int\
-    \ j = 0; j < a.size(); ++j) {\n            b.emplace_back(a[j][a[0].size() - 1\
-    \ - i]);\n        }\n        ret.emplace_back(b);\n    }\n    return ret;\n}\n\
-    \n}  // namespace BanetteGin\n\n\n#line 1 \"src/number_theory/base_change.hpp\"\
+    \    for (long long int j = 0; j < b[0].size(); ++j) {\n                for (long\
+    \ long int k = 0; k < b.size(); ++k) {\n                    c[i][j] = addition(c[i][j],\
+    \ multiplication(a[i][k], b[k][j]));\n                }\n            }\n     \
+    \   }\n        return c;\n    }\n};\n\n}  // namespace BanetteGin\n\n\n#line 1\
+    \ \"src/matrix/matrix_rotate.hpp\"\n\n\n\n#line 5 \"src/matrix/matrix_rotate.hpp\"\
+    \n\nnamespace BanetteGin {\n\ntemplate <class T>\nstd::vector<std::vector<T>>\
+    \ matrix_rotate(std::vector<std::vector<T>> a) {\n    std::vector<std::vector<T>>\
+    \ ret;\n    for (long long int i = 0; i < a[0].size(); ++i) {\n        std::vector<T>\
+    \ b;\n        for (long long int j = 0; j < a.size(); ++j) {\n            b.emplace_back(a[j][a[0].size()\
+    \ - 1 - i]);\n        }\n        ret.emplace_back(b);\n    }\n    return ret;\n\
+    }\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/number_theory/base_change.hpp\"\
     \n\n\n\n#include <string>\n\nnamespace BanetteGin {\n\ntemplate <class T>\nstd::string\
     \ base_change(const std::string& num, T m, T n) {\n    reverse(num.begin(), num.end());\n\
     \    T p = 1;\n    T covnum = 0;\n    for (long long int i = 0; i < num.size();\
@@ -794,7 +795,7 @@ data:
     \    long long int j = i + 1;\n        for (; j < s.size() && s[i] == s[j]; j++)\
     \ {\n        }\n        ret.emplace_back(std::make_pair(s[i], j - i));\n     \
     \   i = j;\n    }\n    return ret;\n}\n\n}  // namespace BanetteGin\n\n\n#line\
-    \ 69 \"src/all.hpp\"\n\n\n"
+    \ 68 \"src/all.hpp\"\n\n\n"
   code: '#ifndef BANETTEGIN_ALL_HPP_INCLUDED
 
     #define BANETTEGIN_ALL_HPP_INCLUDED
@@ -842,9 +843,7 @@ data:
 
     #include "geometry/circle.hpp"
 
-    #include "geometry/circumcenter.hpp"
-
-    #include "geometry/circumradius.hpp"
+    #include "geometry/circumcircle.hpp"
 
     #include "geometry/concyclic.hpp"
 
@@ -858,19 +857,17 @@ data:
 
     #include "geometry/distance_segment_and_segment.hpp"
 
-    #include "geometry/excenter.hpp"
+    #include "geometry/excircle.hpp"
 
-    #include "geometry/exradius.hpp"
-
-    #include "geometry/incenter.hpp"
-
-    #include "geometry/inradius.hpp"
+    #include "geometry/incircle.hpp"
 
     #include "geometry/intersect_circle_and_circle.hpp"
 
     #include "geometry/intersect_line_and_circle.hpp"
 
     #include "geometry/line.hpp"
+
+    #include "geometry/normal_vector.hpp"
 
     #include "geometry/orthocenter.hpp"
 
@@ -887,6 +884,8 @@ data:
     #include "geometry/segment.hpp"
 
     #include "geometry/triangle.hpp"
+
+    #include "geometry/unit_vector.hpp"
 
     #include "graph/edge.hpp"
 
@@ -970,9 +969,8 @@ data:
   - src/basic/comparison.hpp
   - src/geometry/segment.hpp
   - src/geometry/circle.hpp
-  - src/geometry/circumcenter.hpp
-  - src/geometry/circumcenter.hpp
-  - src/geometry/circumradius.hpp
+  - src/geometry/circumcircle.hpp
+  - src/geometry/circle.hpp
   - src/geometry/concyclic.hpp
   - src/geometry/degree_to_radian.hpp
   - src/basic/constant.hpp
@@ -981,15 +979,13 @@ data:
   - src/geometry/distance_point_and_point.hpp
   - src/geometry/distance_point_and_segment.hpp
   - src/geometry/distance_segment_and_segment.hpp
-  - src/geometry/excenter.hpp
-  - src/geometry/exradius.hpp
-  - src/geometry/incenter.hpp
-  - src/geometry/inradius.hpp
+  - src/geometry/excircle.hpp
+  - src/geometry/incircle.hpp
   - src/geometry/intersect_circle_and_circle.hpp
-  - src/geometry/circle.hpp
   - src/geometry/intersect_line_and_circle.hpp
   - src/geometry/distance_point_and_line.hpp
   - src/geometry/line.hpp
+  - src/geometry/normal_vector.hpp
   - src/geometry/orthocenter.hpp
   - src/geometry/orthogonal_check.hpp
   - src/geometry/parallel_check.hpp
@@ -998,6 +994,7 @@ data:
   - src/geometry/rotate.hpp
   - src/geometry/segment.hpp
   - src/geometry/triangle.hpp
+  - src/geometry/unit_vector.hpp
   - src/graph/edge.hpp
   - src/graph/find_cycle_by_dfs.hpp
   - src/graph/topological_sort.hpp
@@ -1024,7 +1021,7 @@ data:
   isVerificationFile: false
   path: src/all.hpp
   requiredBy: []
-  timestamp: '2023-09-08 09:49:37+09:00'
+  timestamp: '2023-09-08 11:51:57+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/all.hpp

@@ -1,43 +1,43 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':x:'
     path: src/basic/comparison.hpp
     title: src/basic/comparison.hpp
-  - icon: ':warning:'
+  - icon: ':x:'
     path: src/basic/constant.hpp
     title: src/basic/constant.hpp
-  - icon: ':warning:'
+  - icon: ':x:'
     path: src/basic/equal.hpp
     title: src/basic/equal.hpp
-  - icon: ':warning:'
+  - icon: ':x:'
     path: src/basic/equal.hpp
     title: src/basic/equal.hpp
-  - icon: ':warning:'
+  - icon: ':x:'
     path: src/basic/greater_equal.hpp
     title: src/basic/greater_equal.hpp
-  - icon: ':warning:'
+  - icon: ':x:'
     path: src/basic/greater_than.hpp
     title: src/basic/greater_than.hpp
-  - icon: ':warning:'
+  - icon: ':x:'
     path: src/basic/less_equal.hpp
     title: src/basic/less_equal.hpp
-  - icon: ':warning:'
+  - icon: ':x:'
     path: src/basic/less_than.hpp
     title: src/basic/less_than.hpp
-  - icon: ':warning:'
+  - icon: ':x:'
     path: src/basic/sign.hpp
     title: src/basic/sign.hpp
-  - icon: ':warning:'
+  - icon: ':x:'
     path: src/geometry/distance_point_and_point.hpp
     title: src/geometry/distance_point_and_point.hpp
-  - icon: ':warning:'
+  - icon: ':x:'
     path: src/geometry/point.hpp
     title: src/geometry/point.hpp
-  - icon: ':warning:'
+  - icon: ':x:'
     path: src/geometry/segment.hpp
     title: src/geometry/segment.hpp
-  - icon: ':warning:'
+  - icon: ':x:'
     path: src/geometry/triangle.hpp
     title: src/geometry/triangle.hpp
   _extendedRequiredBy:
@@ -135,11 +135,11 @@ data:
     \n        area = lengths[1] * lengths[2] * sin(angles[0]) / 2;\n    };\n};\n\n\
     }  // namespace BanetteGin\n\n\n#line 5 \"src/geometry/centroid.hpp\"\n\nnamespace\
     \ BanetteGin {\n\ntemplate <class T>\npoint<T> centroid(triangle<T> t) {\n   \
-    \ return (t.point_a + t.point_b + t.point_c) / 3;\n}\n\n}  // namespace BanetteGin\n\
-    \n\n"
+    \ return (t.points[0] + t.points[1] + t.points[2]) / 3;\n}\n\n}  // namespace\
+    \ BanetteGin\n\n\n"
   code: "#ifndef BANETTEGIN_CENTROID_HPP_INCLUDED\n#define BANETTEGIN_CENTROID_HPP_INCLUDED\n\
     \n#include \"triangle.hpp\"\n\nnamespace BanetteGin {\n\ntemplate <class T>\n\
-    point<T> centroid(triangle<T> t) {\n    return (t.point_a + t.point_b + t.point_c)\
+    point<T> centroid(triangle<T> t) {\n    return (t.points[0] + t.points[1] + t.points[2])\
     \ / 3;\n}\n\n}  // namespace BanetteGin\n\n#endif"
   dependsOn:
   - src/geometry/triangle.hpp
@@ -159,7 +159,7 @@ data:
   path: src/geometry/centroid.hpp
   requiredBy:
   - src/all.hpp
-  timestamp: '2023-09-08 09:32:39+09:00'
+  timestamp: '2023-09-08 11:51:57+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/geometry/centroid.hpp

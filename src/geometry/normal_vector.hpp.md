@@ -38,7 +38,7 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"src/geometry/concyclic.hpp\"\n\n\n\n#line 1 \"src/geometry/point.hpp\"\
+  bundledCode: "#line 1 \"src/geometry/normal_vector.hpp\"\n\n\n\n#line 1 \"src/geometry/point.hpp\"\
     \n\n\n\n#include <complex>\n\n#line 1 \"src/basic/comparison.hpp\"\n\n\n\n#line\
     \ 1 \"src/basic/equal.hpp\"\n\n\n\n#line 1 \"src/basic/sign.hpp\"\n\n\n\n#line\
     \ 1 \"src/basic/constant.hpp\"\n\n\n\nnamespace BanetteGin {\n\nconst long double\
@@ -83,21 +83,14 @@ data:
     \ p, const point& q) noexcept {\n        return p.x * q.y - p.y * q.x;\n    }\n\
     \    friend T norm(const point& p) {\n        return sqrt(p.x * p.x + p.y * p.y);\n\
     \    }\n    friend T arg(const point& p) {\n        return atan2(p.y, p.x);\n\
-    \    }\n};\n\n}  // namespace BanetteGin\n\n\n#line 5 \"src/geometry/concyclic.hpp\"\
-    \n\nnamespace BanetteGin {\n\ntemplate <class T>\nbool concyclic(std::vector<T>\
-    \ points) {\n    assert(points.size() >= 3);\n    if (points.size() == 3) return\
-    \ true;\n    T theta = triangle(points[0], points[1], points[2]).angles[2];\n\
-    \    for (long long int i = 3; i < points.size(); ++i) {\n        if (triangle(points[0],\
-    \ points[1], points[i]).angles[2] != theta) return false;\n    }\n    return true;\n\
-    }\n\n}  // namespace BanetteGin\n\n\n"
-  code: "#ifndef BANETTEGIN_CONCYCLIC_HPP_INCLUDED\n#define BANETTEGIN_CONCYCLIC_HPP_INCLUDED\n\
-    \n#include \"point.hpp\"\n\nnamespace BanetteGin {\n\ntemplate <class T>\nbool\
-    \ concyclic(std::vector<T> points) {\n    assert(points.size() >= 3);\n    if\
-    \ (points.size() == 3) return true;\n    T theta = triangle(points[0], points[1],\
-    \ points[2]).angles[2];\n    for (long long int i = 3; i < points.size(); ++i)\
-    \ {\n        if (triangle(points[0], points[1], points[i]).angles[2] != theta)\
-    \ return false;\n    }\n    return true;\n}\n\n}  // namespace BanetteGin\n\n\
-    #endif"
+    \    }\n};\n\n}  // namespace BanetteGin\n\n\n#line 5 \"src/geometry/normal_vector.hpp\"\
+    \n\nnamespace BanetteGin {\n\ntemplate <class T>\npoint<T> normal_vector(const\
+    \ point<T>& p) {\n    return p * point(0, 1);\n}\n\n}  // namespace BanetteGin\n\
+    \n\n"
+  code: "#ifndef BANETTEGIN_NORMAL_VECTOR_HPP_INCLUDED\n#define BANETTEGIN_NORMAL_VECTOR_HPP_INCLUDED\n\
+    \n#include \"point.hpp\"\n\nnamespace BanetteGin {\n\ntemplate <class T>\npoint<T>\
+    \ normal_vector(const point<T>& p) {\n    return p * point(0, 1);\n}\n\n}  //\
+    \ namespace BanetteGin\n\n#endif"
   dependsOn:
   - src/geometry/point.hpp
   - src/basic/comparison.hpp
@@ -109,16 +102,16 @@ data:
   - src/basic/less_equal.hpp
   - src/basic/less_than.hpp
   isVerificationFile: false
-  path: src/geometry/concyclic.hpp
+  path: src/geometry/normal_vector.hpp
   requiredBy:
   - src/all.hpp
-  timestamp: '2023-09-08 09:32:39+09:00'
+  timestamp: '2023-09-08 11:51:57+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: src/geometry/concyclic.hpp
+documentation_of: src/geometry/normal_vector.hpp
 layout: document
 redirect_from:
-- /library/src/geometry/concyclic.hpp
-- /library/src/geometry/concyclic.hpp.html
-title: src/geometry/concyclic.hpp
+- /library/src/geometry/normal_vector.hpp
+- /library/src/geometry/normal_vector.hpp.html
+title: src/geometry/normal_vector.hpp
 ---

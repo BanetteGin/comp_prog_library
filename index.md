@@ -22,28 +22,28 @@ data:
     - icon: ':warning:'
       path: src/basic/chmin.hpp
       title: src/basic/chmin.hpp
-    - icon: ':warning:'
+    - icon: ':x:'
       path: src/basic/comparison.hpp
       title: src/basic/comparison.hpp
-    - icon: ':warning:'
+    - icon: ':x:'
       path: src/basic/constant.hpp
       title: src/basic/constant.hpp
-    - icon: ':warning:'
+    - icon: ':x:'
       path: src/basic/equal.hpp
       title: src/basic/equal.hpp
-    - icon: ':warning:'
+    - icon: ':x:'
       path: src/basic/greater_equal.hpp
       title: src/basic/greater_equal.hpp
-    - icon: ':warning:'
+    - icon: ':x:'
       path: src/basic/greater_than.hpp
       title: src/basic/greater_than.hpp
-    - icon: ':warning:'
+    - icon: ':x:'
       path: src/basic/less_equal.hpp
       title: src/basic/less_equal.hpp
-    - icon: ':warning:'
+    - icon: ':x:'
       path: src/basic/less_than.hpp
       title: src/basic/less_than.hpp
-    - icon: ':warning:'
+    - icon: ':x:'
       path: src/basic/sign.hpp
       title: src/basic/sign.hpp
   - name: src/combinatorics
@@ -76,15 +76,12 @@ data:
     - icon: ':warning:'
       path: src/geometry/centroid.hpp
       title: src/geometry/centroid.hpp
-    - icon: ':warning:'
+    - icon: ':x:'
       path: src/geometry/circle.hpp
       title: src/geometry/circle.hpp
-    - icon: ':warning:'
-      path: src/geometry/circumcenter.hpp
-      title: src/geometry/circumcenter.hpp
-    - icon: ':warning:'
-      path: src/geometry/circumradius.hpp
-      title: src/geometry/circumradius.hpp
+    - icon: ':x:'
+      path: src/geometry/circumcircle.hpp
+      title: src/geometry/circumcircle.hpp
     - icon: ':warning:'
       path: src/geometry/concyclic.hpp
       title: src/geometry/concyclic.hpp
@@ -94,7 +91,7 @@ data:
     - icon: ':warning:'
       path: src/geometry/distance_point_and_line.hpp
       title: src/geometry/distance_point_and_line.hpp
-    - icon: ':warning:'
+    - icon: ':x:'
       path: src/geometry/distance_point_and_point.hpp
       title: src/geometry/distance_point_and_point.hpp
     - icon: ':warning:'
@@ -104,17 +101,11 @@ data:
       path: src/geometry/distance_segment_and_segment.hpp
       title: src/geometry/distance_segment_and_segment.hpp
     - icon: ':warning:'
-      path: src/geometry/excenter.hpp
-      title: src/geometry/excenter.hpp
-    - icon: ':warning:'
-      path: src/geometry/exradius.hpp
-      title: src/geometry/exradius.hpp
-    - icon: ':warning:'
-      path: src/geometry/incenter.hpp
-      title: src/geometry/incenter.hpp
-    - icon: ':warning:'
-      path: src/geometry/inradius.hpp
-      title: src/geometry/inradius.hpp
+      path: src/geometry/excircle.hpp
+      title: src/geometry/excircle.hpp
+    - icon: ':x:'
+      path: src/geometry/incircle.hpp
+      title: src/geometry/incircle.hpp
     - icon: ':warning:'
       path: src/geometry/intersect_circle_and_circle.hpp
       title: src/geometry/intersect_circle_and_circle.hpp
@@ -125,6 +116,9 @@ data:
       path: src/geometry/line.hpp
       title: src/geometry/line.hpp
     - icon: ':warning:'
+      path: src/geometry/normal_vector.hpp
+      title: src/geometry/normal_vector.hpp
+    - icon: ':warning:'
       path: src/geometry/orthocenter.hpp
       title: src/geometry/orthocenter.hpp
     - icon: ':warning:'
@@ -133,7 +127,7 @@ data:
     - icon: ':warning:'
       path: src/geometry/parallel_check.hpp
       title: src/geometry/parallel_check.hpp
-    - icon: ':warning:'
+    - icon: ':x:'
       path: src/geometry/point.hpp
       title: src/geometry/point.hpp
     - icon: ':warning:'
@@ -142,12 +136,15 @@ data:
     - icon: ':warning:'
       path: src/geometry/rotate.hpp
       title: src/geometry/rotate.hpp
-    - icon: ':warning:'
+    - icon: ':x:'
       path: src/geometry/segment.hpp
       title: src/geometry/segment.hpp
-    - icon: ':warning:'
+    - icon: ':x:'
       path: src/geometry/triangle.hpp
       title: src/geometry/triangle.hpp
+    - icon: ':warning:'
+      path: src/geometry/unit_vector.hpp
+      title: src/geometry/unit_vector.hpp
   - name: src/graph
     pages:
     - icon: ':warning:'
@@ -222,6 +219,14 @@ data:
       path: src/string/run_length_encording.hpp
       title: src/string/run_length_encording.hpp
   verificationCategories:
+  - name: test/aizu_online_judge/Library/CGL
+    pages:
+    - icon: ':x:'
+      path: test/aizu_online_judge/Library/CGL/7_B.test.cpp
+      title: test/aizu_online_judge/Library/CGL/7_B.test.cpp
+    - icon: ':x:'
+      path: test/aizu_online_judge/Library/CGL/7_C.test.cpp
+      title: test/aizu_online_judge/Library/CGL/7_C.test.cpp
   - name: test/library_checker
     pages:
     - icon: ':heavy_check_mark:'
