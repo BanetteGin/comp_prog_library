@@ -20,7 +20,7 @@ int main(void) {
     ll ans = 1;
     for (ll i = 1; i < a.size(); ++i) {
         if (binary_search(a.begin(), a.end(), a[i] * a[i] - 2)) {
-            ans++;
+            ans += 2;
         }
     }
     cout << ans << endl;
