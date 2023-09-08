@@ -8,7 +8,7 @@ namespace BanetteGin {
 template <class T>
 T euler_phi(const T& n) {
     auto a = prime_factorization(n);
-    rep(i, a.size()) {
+    for (long long int i = 0; i < a.size(); ++i) {
         n /= a[i].first;
         n *= (a[i].first - 1);
     }
