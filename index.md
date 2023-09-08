@@ -169,7 +169,7 @@ data:
     - icon: ':warning:'
       path: src/number_theory/eratosthenes_sieve.hpp
       title: src/number_theory/eratosthenes_sieve.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: src/number_theory/euler_phi.hpp
       title: src/number_theory/euler_phi.hpp
     - icon: ':heavy_check_mark:'
@@ -187,7 +187,7 @@ data:
     - icon: ':warning:'
       path: src/number_theory/prime_check.hpp
       title: src/number_theory/prime_check.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: src/number_theory/prime_factorization.hpp
       title: src/number_theory/prime_factorization.hpp
     - icon: ':warning:'
@@ -232,7 +232,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aizu_online_judge/Library/NTL/A_3.test.cpp
       title: test/aizu_online_judge/Library/NTL/A_3.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aizu_online_judge/Library/NTL/A_4.test.cpp
       title: test/aizu_online_judge/Library/NTL/A_4.test.cpp
   - name: test/library_checker

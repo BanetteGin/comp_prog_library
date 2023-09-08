@@ -5,19 +5,19 @@ data:
   - icon: ':warning:'
     path: src/all.hpp
     title: src/all.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: src/number_theory/euler_phi.hpp
     title: src/number_theory/euler_phi.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aizu_online_judge/Library/NTL/A_1.test.cpp
     title: test/aizu_online_judge/Library/NTL/A_1.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aizu_online_judge/Library/NTL/A_4.test.cpp
     title: test/aizu_online_judge/Library/NTL/A_4.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"src/number_theory/prime_factorization.hpp\"\n\n\n\n#include\
@@ -43,7 +43,7 @@ data:
   - src/all.hpp
   - src/number_theory/euler_phi.hpp
   timestamp: '2023-09-08 09:32:39+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aizu_online_judge/Library/NTL/A_1.test.cpp
   - test/aizu_online_judge/Library/NTL/A_4.test.cpp

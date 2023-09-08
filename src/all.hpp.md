@@ -226,7 +226,7 @@ data:
   - icon: ':warning:'
     path: src/number_theory/prime_check.hpp
     title: src/number_theory/prime_check.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/number_theory/prime_factorization.hpp
     title: src/number_theory/prime_factorization.hpp
   - icon: ':warning:'
