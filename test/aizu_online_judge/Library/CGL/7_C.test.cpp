@@ -18,6 +18,6 @@ int main(void) {
     point b = point(bx, by);
     point c = point(cx, cy);
     circle ans = circumcircle(triangle(a, b, c));
-    cout << fixed << setprecision(20) << ans.p.x << " " << ans.p.y << " " << ans.r << endl;
+    cout << fixed << setprecision(30) << ans.p.x << " " << ans.p.y << " " << ans.r << endl;
     return 0;
 }
