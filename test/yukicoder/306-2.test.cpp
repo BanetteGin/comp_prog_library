@@ -11,7 +11,6 @@ typedef long double ld;
 #include "../../src/analysis/golden_ratio_search.hpp"
 #include "../../src/geometry/distance.hpp"
 #include "../../src/geometry/point.hpp"
-#include "../../src/number_theory/base_change.hpp"
 
 using namespace BanetteGin;
 int main(void) {
@@ -23,6 +22,6 @@ int main(void) {
         point a = point(0.0L, y);
         return distance(a, p) + distance(a, q);
     };
-    cout << fixed << setprecision(20) << golden_ratio_search(0.0L, 10000.0L, func) << endl;
+    cout << fixed << setprecision(20) << golden_ratio_search(0.0L, 2000.0L, func) << endl;
     return 0;
 }
