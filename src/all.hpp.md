@@ -486,7 +486,7 @@ data:
     \n\n#line 6 \"src/geometry/circumcircle.hpp\"\n\nnamespace BanetteGin {\n\ntemplate\
     \ <class T>\ncircle<T> circumcircle(triangle<T> t) {\n    point ret = point(0.0L,\
     \ 0.0L);\n    T denom = 0.0L;\n    for (int i = 0; i < 3; ++i) {\n        ret\
-    \ += t.points[i] * sin(2 * t.angles[i]);\n        denom += sin(2 * t.angles[i]);\n\
+    \ += t.points[i] * sin(2.0L * t.angles[i]);\n        denom += sin(2.0L * t.angles[i]);\n\
     \    }\n    T r = t.lengths[0] / sin(t.angles[0]) / 2;\n    return circle(ret\
     \ / denom, r);\n}\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/geometry/concyclic.hpp\"\
     \n\n\n\n#line 5 \"src/geometry/concyclic.hpp\"\n\nnamespace BanetteGin {\n\ntemplate\
@@ -532,15 +532,15 @@ data:
     \n\n\n\n#line 6 \"src/geometry/excircle.hpp\"\n\nnamespace BanetteGin {\n\ntemplate\
     \ <class T>\ncircle<T> excircle(triangle<T> t, int option = 0) {\n    assert(0\
     \ <= option && option <= 2);\n    point ret = point(0.0L, 0.0L);\n    T denom\
-    \ = 0.0L;\n    for (int i = 0; i < 3; ++i) {\n        T sgn = 1;\n        if (i\
-    \ == option) sgn = -1;\n        ret += t.points[i] * sgn * t.lengths[i];\n   \
-    \     denom += sgn * t.lengths[i];\n    }\n\n    T r = t.area * 2 / denom;\n \
-    \   return circle(ret / denom, r);\n}\n\n}  // namespace BanetteGin\n\n\n#line\
+    \ = 0.0L;\n    for (int i = 0; i < 3; ++i) {\n        T sgn = 1.0L;\n        if\
+    \ (i == option) sgn = -1.0L;\n        ret += t.points[i] * sgn * t.lengths[i];\n\
+    \        denom += sgn * t.lengths[i];\n    }\n\n    T r = t.area * 2.0L / denom;\n\
+    \    return circle(ret / denom, r);\n}\n\n}  // namespace BanetteGin\n\n\n#line\
     \ 1 \"src/geometry/incircle.hpp\"\n\n\n\n#line 6 \"src/geometry/incircle.hpp\"\
     \n\nnamespace BanetteGin {\n\ntemplate <class T>\ncircle<T> incircle(triangle<T>\
     \ t) {\n    point ret = point(0.0L, 0.0L);\n    T denom = 0.0L;\n    for (int\
     \ i = 0; i < 3; ++i) {\n        ret += t.points[i] * t.lengths[i];\n        denom\
-    \ += t.lengths[i];\n    }\n    T r = t.area * 2 / denom;\n    return circle(ret\
+    \ += t.lengths[i];\n    }\n    T r = t.area * 2.0L / denom;\n    return circle(ret\
     \ / denom, r);\n}\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/geometry/intersect_circle_and_circle.hpp\"\
     \n\n\n\n#line 7 \"src/geometry/intersect_circle_and_circle.hpp\"\n\nnamespace\
     \ BanetteGin {\n\ntemplate <class T>\nint intersect_circle_and_circle(const circle<T>&\
@@ -1021,7 +1021,7 @@ data:
   isVerificationFile: false
   path: src/all.hpp
   requiredBy: []
-  timestamp: '2023-09-08 12:39:10+09:00'
+  timestamp: '2023-09-08 12:51:07+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/all.hpp

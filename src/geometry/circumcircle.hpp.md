@@ -156,17 +156,17 @@ data:
     \n}  // namespace BanetteGin\n\n\n#line 6 \"src/geometry/circumcircle.hpp\"\n\n\
     namespace BanetteGin {\n\ntemplate <class T>\ncircle<T> circumcircle(triangle<T>\
     \ t) {\n    point ret = point(0.0L, 0.0L);\n    T denom = 0.0L;\n    for (int\
-    \ i = 0; i < 3; ++i) {\n        ret += t.points[i] * sin(2 * t.angles[i]);\n \
-    \       denom += sin(2 * t.angles[i]);\n    }\n    T r = t.lengths[0] / sin(t.angles[0])\
+    \ i = 0; i < 3; ++i) {\n        ret += t.points[i] * sin(2.0L * t.angles[i]);\n\
+    \        denom += sin(2.0L * t.angles[i]);\n    }\n    T r = t.lengths[0] / sin(t.angles[0])\
     \ / 2;\n    return circle(ret / denom, r);\n}\n\n}  // namespace BanetteGin\n\n\
     \n"
   code: "#ifndef BANETTEGIN_CIRCUMCIRCLE_HPP_INCLUDED\n#define BANETTEGIN_CIRCUMCIRCLE_HPP_INCLUDED\n\
     \n#include \"circle.hpp\"\n#include \"triangle.hpp\"\n\nnamespace BanetteGin {\n\
     \ntemplate <class T>\ncircle<T> circumcircle(triangle<T> t) {\n    point ret =\
     \ point(0.0L, 0.0L);\n    T denom = 0.0L;\n    for (int i = 0; i < 3; ++i) {\n\
-    \        ret += t.points[i] * sin(2 * t.angles[i]);\n        denom += sin(2 *\
-    \ t.angles[i]);\n    }\n    T r = t.lengths[0] / sin(t.angles[0]) / 2;\n    return\
-    \ circle(ret / denom, r);\n}\n\n}  // namespace BanetteGin\n\n#endif"
+    \        ret += t.points[i] * sin(2.0L * t.angles[i]);\n        denom += sin(2.0L\
+    \ * t.angles[i]);\n    }\n    T r = t.lengths[0] / sin(t.angles[0]) / 2;\n   \
+    \ return circle(ret / denom, r);\n}\n\n}  // namespace BanetteGin\n\n#endif"
   dependsOn:
   - src/geometry/circle.hpp
   - src/basic/comparison.hpp
@@ -186,7 +186,7 @@ data:
   path: src/geometry/circumcircle.hpp
   requiredBy:
   - src/all.hpp
-  timestamp: '2023-09-08 12:39:10+09:00'
+  timestamp: '2023-09-08 12:51:07+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/aizu_online_judge/Library/CGL/7_C.test.cpp
