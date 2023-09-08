@@ -208,13 +208,13 @@ data:
   - icon: ':warning:'
     path: src/number_theory/eratosthenes_sieve.hpp
     title: src/number_theory/eratosthenes_sieve.hpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: src/number_theory/greatest_common_divisor.hpp
     title: src/number_theory/greatest_common_divisor.hpp
   - icon: ':warning:'
     path: src/number_theory/linear_sieve.hpp
     title: src/number_theory/linear_sieve.hpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: src/number_theory/modint.hpp
     title: src/number_theory/modint.hpp
   - icon: ':warning:'
@@ -226,7 +226,7 @@ data:
   - icon: ':warning:'
     path: src/number_theory/prime_check.hpp
     title: src/number_theory/prime_check.hpp
-  - icon: ':warning:'
+  - icon: ':question:'
     path: src/number_theory/prime_factorization.hpp
     title: src/number_theory/prime_factorization.hpp
   - icon: ':warning:'

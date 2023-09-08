@@ -5,10 +5,19 @@ data:
   - icon: ':warning:'
     path: src/all.hpp
     title: src/all.hpp
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  - icon: ':x:'
+    path: src/number_theory/euler_phi.hpp
+    title: src/number_theory/euler_phi.hpp
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aizu_online_judge/Library/NTL/A_1.test.cpp
+    title: test/aizu_online_judge/Library/NTL/A_1.test.cpp
+  - icon: ':x:'
+    path: test/aizu_online_judge/Library/NTL/A_4.test.cpp
+    title: test/aizu_online_judge/Library/NTL/A_4.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"src/number_theory/prime_factorization.hpp\"\n\n\n\n#include\
@@ -32,9 +41,12 @@ data:
   path: src/number_theory/prime_factorization.hpp
   requiredBy:
   - src/all.hpp
+  - src/number_theory/euler_phi.hpp
   timestamp: '2023-09-08 09:32:39+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_SOME_WA
+  verifiedWith:
+  - test/aizu_online_judge/Library/NTL/A_1.test.cpp
+  - test/aizu_online_judge/Library/NTL/A_4.test.cpp
 documentation_of: src/number_theory/prime_factorization.hpp
 layout: document
 redirect_from:

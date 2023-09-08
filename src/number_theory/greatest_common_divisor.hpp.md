@@ -5,10 +5,13 @@ data:
   - icon: ':warning:'
     path: src/all.hpp
     title: src/all.hpp
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aizu_online_judge/Library/NTL/A_3.test.cpp
+    title: test/aizu_online_judge/Library/NTL/A_3.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"src/number_theory/greatest_common_divisor.hpp\"\n\n\n\n\
@@ -25,8 +28,9 @@ data:
   requiredBy:
   - src/all.hpp
   timestamp: '2023-08-08 12:20:54+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/aizu_online_judge/Library/NTL/A_3.test.cpp
 documentation_of: src/number_theory/greatest_common_divisor.hpp
 layout: document
 redirect_from:

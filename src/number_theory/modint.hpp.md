@@ -5,10 +5,13 @@ data:
   - icon: ':warning:'
     path: src/all.hpp
     title: src/all.hpp
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aizu_online_judge/Library/NTL/A_2.test.cpp
+    title: test/aizu_online_judge/Library/NTL/A_2.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"src/number_theory/modint.hpp\"\n\n\n\nnamespace BanetteGin\
@@ -80,8 +83,9 @@ data:
   requiredBy:
   - src/all.hpp
   timestamp: '2023-09-08 09:49:37+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/aizu_online_judge/Library/NTL/A_2.test.cpp
 documentation_of: src/number_theory/modint.hpp
 layout: document
 redirect_from:
