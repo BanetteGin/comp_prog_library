@@ -479,16 +479,16 @@ data:
     \ noexcept {\n        return !equal(this->p, c.p) || !equal(this->r, c.r);\n \
     \   }\n\nprivate:\n    circle<T> constracter_circumcircle(triangle<T> t) {\n \
     \       point ret = point(0.0L, 0.0L);\n        T denom = 0.0L;\n        for (int\
-    \ i = 0; i < 3; ++i) {\n            ret += t.points[i] * sin(t.angles[i]);\n \
-    \           denom += sin(t.angles[i]);\n        }\n        T r = t.lengths[0]\
-    \ / sin(t.angles[0]) / 2;\n        return circle(ret / denom, r);\n    }\n};\n\
-    \n}  // namespace BanetteGin\n\n\n#line 1 \"src/geometry/circumcircle.hpp\"\n\n\
-    \n\n#line 6 \"src/geometry/circumcircle.hpp\"\n\nnamespace BanetteGin {\n\ntemplate\
-    \ <class T>\ncircle<T> circumcircle(triangle<T> t) {\n    point ret = point(0.0L,\
+    \ i = 0; i < 3; ++i) {\n            ret += t.points[i] * sin(2 * t.angles[i]);\n\
+    \            denom += sin(t.angles[i]);\n        }\n        T r = t.lengths[0]\
+    \ / sin(2 * t.angles[0]) / 2;\n        return circle(ret / denom, r);\n    }\n\
+    };\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/geometry/circumcircle.hpp\"\
+    \n\n\n\n#line 6 \"src/geometry/circumcircle.hpp\"\n\nnamespace BanetteGin {\n\n\
+    template <class T>\ncircle<T> circumcircle(triangle<T> t) {\n    point ret = point(0.0L,\
     \ 0.0L);\n    T denom = 0.0L;\n    for (int i = 0; i < 3; ++i) {\n        ret\
-    \ += t.points[i] * sin(t.angles[i]);\n        denom += sin(t.angles[i]);\n   \
-    \ }\n    T r = t.lengths[0] / sin(t.angles[0]) / 2;\n    return circle(ret / denom,\
-    \ r);\n}\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/geometry/concyclic.hpp\"\
+    \ += t.points[i] * sin(2 * t.angles[i]);\n        denom += sin(2 * t.angles[i]);\n\
+    \    }\n    T r = t.lengths[0] / sin(t.angles[0]) / 2;\n    return circle(ret\
+    \ / denom, r);\n}\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/geometry/concyclic.hpp\"\
     \n\n\n\n#line 5 \"src/geometry/concyclic.hpp\"\n\nnamespace BanetteGin {\n\ntemplate\
     \ <class T>\nbool concyclic(std::vector<T> points) {\n    assert(points.size()\
     \ >= 3);\n    if (points.size() == 3) return true;\n    T theta = triangle(points[0],\
@@ -1021,7 +1021,7 @@ data:
   isVerificationFile: false
   path: src/all.hpp
   requiredBy: []
-  timestamp: '2023-09-08 11:51:57+09:00'
+  timestamp: '2023-09-08 12:01:00+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/all.hpp
