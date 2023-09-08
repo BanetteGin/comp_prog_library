@@ -50,37 +50,34 @@ data:
   - icon: ':warning:'
     path: src/all.hpp
     title: src/all.hpp
-  _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/aizu_online_judge/Library/CGL/7_C.test.cpp
-    title: test/aizu_online_judge/Library/CGL/7_C.test.cpp
+  _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"src/geometry/circumcircle.hpp\"\n\n\n\n#line 1 \"src/geometry/circle.hpp\"\
-    \n\n\n\n#line 1 \"src/basic/comparison.hpp\"\n\n\n\n#line 1 \"src/basic/equal.hpp\"\
-    \n\n\n\n#line 1 \"src/basic/sign.hpp\"\n\n\n\n#line 1 \"src/basic/constant.hpp\"\
-    \n\n\n\nnamespace BanetteGin {\n\nconst long double EPS = 10e-12;\nconst long\
-    \ long int LINF = 1001001001001001001LL;\nconst long double PI = acos(-1);\nconst\
-    \ long double GOLDEN_RATIO = 2 * cos(PI / 5);\n\n}  // namespace BanetteGin\n\n\
-    \n#line 5 \"src/basic/sign.hpp\"\n\nnamespace BanetteGin {\n\ntemplate <class\
-    \ T>\nint sign(const T& x) {\n    return (x < -EPS ? -1 : (x < EPS ? 0 : 1));\n\
-    }\n\n}  // namespace BanetteGin\n\n\n#line 5 \"src/basic/equal.hpp\"\n\nnamespace\
-    \ BanetteGin {\n\ntemplate <class T>\nbool equal(const T &a, const T &b) {\n \
-    \   return (sign(a - b) == 0);\n}\n\n}  // namespace BanetteGin\n\n\n#line 1 \"\
-    src/basic/greater_equal.hpp\"\n\n\n\nnamespace BanetteGin {\n\ntemplate <class\
-    \ T>\nbool greater_equal(const T &a, const T &b) {\n    return (sign(a - b) >=\
-    \ 0);\n}\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/basic/greater_than.hpp\"\
-    \n\n\n\nnamespace BanetteGin {\n\ntemplate <class T>\nbool greater_than(const\
-    \ T &a, const T &b) {\n    return (sign(a - b) > 0);\n}\n\n}  // namespace BanetteGin\n\
-    \n\n#line 1 \"src/basic/less_equal.hpp\"\n\n\n\nnamespace BanetteGin {\n\ntemplate\
-    \ <class T>\nbool less_equal(const T &a, const T &b) {\n    return (sign(a - b)\
-    \ <= 0);\n}\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/basic/less_than.hpp\"\
-    \n\n\n\nnamespace BanetteGin {\n\ntemplate <class T>\nbool less_than(const T &a,\
-    \ const T &b) {\n    return (sign(a - b) < 0);\n}\n\n}  // namespace BanetteGin\n\
-    \n\n#line 9 \"src/basic/comparison.hpp\"\n\n\n#line 1 \"src/geometry/distance.hpp\"\
+  bundledCode: "#line 1 \"src/geometry/intersect.hpp\"\n\n\n\n#line 1 \"src/basic/comparison.hpp\"\
+    \n\n\n\n#line 1 \"src/basic/equal.hpp\"\n\n\n\n#line 1 \"src/basic/sign.hpp\"\n\
+    \n\n\n#line 1 \"src/basic/constant.hpp\"\n\n\n\nnamespace BanetteGin {\n\nconst\
+    \ long double EPS = 10e-12;\nconst long long int LINF = 1001001001001001001LL;\n\
+    const long double PI = acos(-1);\nconst long double GOLDEN_RATIO = 2 * cos(PI\
+    \ / 5);\n\n}  // namespace BanetteGin\n\n\n#line 5 \"src/basic/sign.hpp\"\n\n\
+    namespace BanetteGin {\n\ntemplate <class T>\nint sign(const T& x) {\n    return\
+    \ (x < -EPS ? -1 : (x < EPS ? 0 : 1));\n}\n\n}  // namespace BanetteGin\n\n\n\
+    #line 5 \"src/basic/equal.hpp\"\n\nnamespace BanetteGin {\n\ntemplate <class T>\n\
+    bool equal(const T &a, const T &b) {\n    return (sign(a - b) == 0);\n}\n\n} \
+    \ // namespace BanetteGin\n\n\n#line 1 \"src/basic/greater_equal.hpp\"\n\n\n\n\
+    namespace BanetteGin {\n\ntemplate <class T>\nbool greater_equal(const T &a, const\
+    \ T &b) {\n    return (sign(a - b) >= 0);\n}\n\n}  // namespace BanetteGin\n\n\
+    \n#line 1 \"src/basic/greater_than.hpp\"\n\n\n\nnamespace BanetteGin {\n\ntemplate\
+    \ <class T>\nbool greater_than(const T &a, const T &b) {\n    return (sign(a -\
+    \ b) > 0);\n}\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/basic/less_equal.hpp\"\
+    \n\n\n\nnamespace BanetteGin {\n\ntemplate <class T>\nbool less_equal(const T\
+    \ &a, const T &b) {\n    return (sign(a - b) <= 0);\n}\n\n}  // namespace BanetteGin\n\
+    \n\n#line 1 \"src/basic/less_than.hpp\"\n\n\n\nnamespace BanetteGin {\n\ntemplate\
+    \ <class T>\nbool less_than(const T &a, const T &b) {\n    return (sign(a - b)\
+    \ < 0);\n}\n\n}  // namespace BanetteGin\n\n\n#line 9 \"src/basic/comparison.hpp\"\
+    \n\n\n#line 1 \"src/geometry/circle.hpp\"\n\n\n\n#line 1 \"src/geometry/distance.hpp\"\
     \n\n\n\n#line 1 \"src/geometry/line.hpp\"\n\n\n\n#line 1 \"src/geometry/point.hpp\"\
     \n\n\n\n#include <complex>\n\n#line 7 \"src/geometry/point.hpp\"\n\nnamespace\
     \ BanetteGin {\n\ntemplate <class T>\nstruct point {\n    T x, y;\n    point(T\
@@ -179,27 +176,28 @@ data:
     \ i = 0; i < 3; ++i) {\n            ret += t.points[i] * sin(2 * t.angles[i]);\n\
     \            denom += sin(2 * t.angles[i]);\n        }\n        T r = t.lengths[0]\
     \ / sin(t.angles[0]) / 2;\n        return circle(ret / denom, r);\n    }\n};\n\
-    \n}  // namespace BanetteGin\n\n\n#line 6 \"src/geometry/circumcircle.hpp\"\n\n\
-    namespace BanetteGin {\n\ntemplate <class T>\ncircle<T> circumcircle(triangle<T>\
-    \ t) {\n    point ret = point(T(0), T(0));\n    for (int i = 0; i < 3; ++i) {\n\
-    \        T mlt = 0;\n        for (int j = 0; j < 3; ++j) {\n            if (i\
-    \ == j)\n                mlt += -pow(t.lengths[j], T(2));\n            else\n\
-    \                mlt += pow(t.lengths[j], T(2));\n        }\n        mlt *= pow(t.lengths[i],\
-    \ T(2));\n        ret += t.points[i] * mlt;\n    }\n    T r = t.lengths[0] / sin(t.angles[0])\
-    \ / T(2);\n    return circle(ret / (T(16) * pow(t.area, T(2))), r);\n}\n\n}  //\
-    \ namespace BanetteGin\n\n\n"
-  code: "#ifndef BANETTEGIN_CIRCUMCIRCLE_HPP_INCLUDED\n#define BANETTEGIN_CIRCUMCIRCLE_HPP_INCLUDED\n\
-    \n#include \"circle.hpp\"\n#include \"triangle.hpp\"\n\nnamespace BanetteGin {\n\
-    \ntemplate <class T>\ncircle<T> circumcircle(triangle<T> t) {\n    point ret =\
-    \ point(T(0), T(0));\n    for (int i = 0; i < 3; ++i) {\n        T mlt = 0;\n\
-    \        for (int j = 0; j < 3; ++j) {\n            if (i == j)\n            \
-    \    mlt += -pow(t.lengths[j], T(2));\n            else\n                mlt +=\
-    \ pow(t.lengths[j], T(2));\n        }\n        mlt *= pow(t.lengths[i], T(2));\n\
-    \        ret += t.points[i] * mlt;\n    }\n    T r = t.lengths[0] / sin(t.angles[0])\
-    \ / T(2);\n    return circle(ret / (T(16) * pow(t.area, T(2))), r);\n}\n\n}  //\
-    \ namespace BanetteGin\n\n#endif"
+    \n}  // namespace BanetteGin\n\n\n#line 7 \"src/geometry/intersect.hpp\"\n\nnamespace\
+    \ BanetteGin {\n\ntemplate <class T>\nint intersect(const line<T>& l, const circle<T>&\
+    \ c) {\n    T d = distance(c.p, l);\n    if (greater_than(d, c.r)) {\n       \
+    \ return 2;\n    }\n    if (equal(d, c.r)) {\n        return 1;\n    }\n    return\
+    \ 0;\n}\n\ntemplate <class T>\nint intersect(const circle<T>& c1, const circle<T>&\
+    \ c2) {\n    T d = distance(c1.p, c2.p);\n    if (greater_than(d, c1.r + c2.r))\
+    \ {\n        return 4;\n    }\n    if (greater_than(d, c1.r + c2.r)) {\n     \
+    \   return 3;\n    }\n    if (equal(d, abs(c1.r - c2.r))) {\n        return 1;\n\
+    \    }\n    if (less_than(d, abs(c1.r - c2.r))) {\n        return 0;\n    }\n\
+    \    return 2;\n}\n\n}  // namespace BanetteGin\n\n\n"
+  code: "#ifndef BANETTEGIN_INTERSECT_HPP_INCLUDED\n#define BANETTEGIN_INTERSECT_HPP_INCLUDED\n\
+    \n#include \"../basic/comparison.hpp\"\n#include \"circle.hpp\"\n#include \"distance.hpp\"\
+    \n\nnamespace BanetteGin {\n\ntemplate <class T>\nint intersect(const line<T>&\
+    \ l, const circle<T>& c) {\n    T d = distance(c.p, l);\n    if (greater_than(d,\
+    \ c.r)) {\n        return 2;\n    }\n    if (equal(d, c.r)) {\n        return\
+    \ 1;\n    }\n    return 0;\n}\n\ntemplate <class T>\nint intersect(const circle<T>&\
+    \ c1, const circle<T>& c2) {\n    T d = distance(c1.p, c2.p);\n    if (greater_than(d,\
+    \ c1.r + c2.r)) {\n        return 4;\n    }\n    if (greater_than(d, c1.r + c2.r))\
+    \ {\n        return 3;\n    }\n    if (equal(d, abs(c1.r - c2.r))) {\n       \
+    \ return 1;\n    }\n    if (less_than(d, abs(c1.r - c2.r))) {\n        return\
+    \ 0;\n    }\n    return 2;\n}\n\n}  // namespace BanetteGin\n\n#endif"
   dependsOn:
-  - src/geometry/circle.hpp
   - src/basic/comparison.hpp
   - src/basic/equal.hpp
   - src/basic/sign.hpp
@@ -208,6 +206,7 @@ data:
   - src/basic/greater_than.hpp
   - src/basic/less_equal.hpp
   - src/basic/less_than.hpp
+  - src/geometry/circle.hpp
   - src/geometry/distance.hpp
   - src/geometry/line.hpp
   - src/geometry/point.hpp
@@ -215,17 +214,16 @@ data:
   - src/geometry/triangle.hpp
   - src/basic/equal.hpp
   isVerificationFile: false
-  path: src/geometry/circumcircle.hpp
+  path: src/geometry/intersect.hpp
   requiredBy:
   - src/all.hpp
   timestamp: '2023-09-08 15:22:49+09:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - test/aizu_online_judge/Library/CGL/7_C.test.cpp
-documentation_of: src/geometry/circumcircle.hpp
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
+documentation_of: src/geometry/intersect.hpp
 layout: document
 redirect_from:
-- /library/src/geometry/circumcircle.hpp
-- /library/src/geometry/circumcircle.hpp.html
-title: src/geometry/circumcircle.hpp
+- /library/src/geometry/intersect.hpp
+- /library/src/geometry/intersect.hpp.html
+title: src/geometry/intersect.hpp
 ---

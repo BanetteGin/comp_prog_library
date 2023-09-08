@@ -11,9 +11,6 @@ data:
     path: src/basic/equal.hpp
     title: src/basic/equal.hpp
   - icon: ':heavy_check_mark:'
-    path: src/basic/equal.hpp
-    title: src/basic/equal.hpp
-  - icon: ':heavy_check_mark:'
     path: src/basic/greater_equal.hpp
     title: src/basic/greater_equal.hpp
   - icon: ':heavy_check_mark:'
@@ -34,17 +31,57 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/geometry/point.hpp
     title: src/geometry/point.hpp
+  - icon: ':heavy_check_mark:'
+    path: src/geometry/segment.hpp
+    title: src/geometry/segment.hpp
   _extendedRequiredBy:
   - icon: ':warning:'
     path: src/all.hpp
     title: src/all.hpp
-  _extendedVerifiedWith: []
+  - icon: ':warning:'
+    path: src/all.hpp
+    title: src/all.hpp
+  - icon: ':warning:'
+    path: src/geometry/centroid.hpp
+    title: src/geometry/centroid.hpp
+  - icon: ':heavy_check_mark:'
+    path: src/geometry/circle.hpp
+    title: src/geometry/circle.hpp
+  - icon: ':heavy_check_mark:'
+    path: src/geometry/circumcircle.hpp
+    title: src/geometry/circumcircle.hpp
+  - icon: ':warning:'
+    path: src/geometry/excircle.hpp
+    title: src/geometry/excircle.hpp
+  - icon: ':heavy_check_mark:'
+    path: src/geometry/incircle.hpp
+    title: src/geometry/incircle.hpp
+  - icon: ':warning:'
+    path: src/geometry/intersect.hpp
+    title: src/geometry/intersect.hpp
+  - icon: ':warning:'
+    path: src/geometry/orthocenter.hpp
+    title: src/geometry/orthocenter.hpp
+  - icon: ':heavy_check_mark:'
+    path: src/geometry/segment.hpp
+    title: src/geometry/segment.hpp
+  - icon: ':heavy_check_mark:'
+    path: src/geometry/triangle.hpp
+    title: src/geometry/triangle.hpp
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aizu_online_judge/Library/CGL/7_B.test.cpp
+    title: test/aizu_online_judge/Library/CGL/7_B.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aizu_online_judge/Library/CGL/7_C.test.cpp
+    title: test/aizu_online_judge/Library/CGL/7_C.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"src/geometry/orthogonal_check.hpp\"\n\n\n\n#line 1 \"src/basic/equal.hpp\"\
+  bundledCode: "#line 1 \"src/geometry/distance.hpp\"\n\n\n\n#line 1 \"src/geometry/line.hpp\"\
+    \n\n\n\n#line 1 \"src/basic/comparison.hpp\"\n\n\n\n#line 1 \"src/basic/equal.hpp\"\
     \n\n\n\n#line 1 \"src/basic/sign.hpp\"\n\n\n\n#line 1 \"src/basic/constant.hpp\"\
     \n\n\n\nnamespace BanetteGin {\n\nconst long double EPS = 10e-12;\nconst long\
     \ long int LINF = 1001001001001001001LL;\nconst long double PI = acos(-1);\nconst\
@@ -54,10 +91,9 @@ data:
     }\n\n}  // namespace BanetteGin\n\n\n#line 5 \"src/basic/equal.hpp\"\n\nnamespace\
     \ BanetteGin {\n\ntemplate <class T>\nbool equal(const T &a, const T &b) {\n \
     \   return (sign(a - b) == 0);\n}\n\n}  // namespace BanetteGin\n\n\n#line 1 \"\
-    src/geometry/line.hpp\"\n\n\n\n#line 1 \"src/basic/comparison.hpp\"\n\n\n\n#line\
-    \ 1 \"src/basic/greater_equal.hpp\"\n\n\n\nnamespace BanetteGin {\n\ntemplate\
-    \ <class T>\nbool greater_equal(const T &a, const T &b) {\n    return (sign(a\
-    \ - b) >= 0);\n}\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/basic/greater_than.hpp\"\
+    src/basic/greater_equal.hpp\"\n\n\n\nnamespace BanetteGin {\n\ntemplate <class\
+    \ T>\nbool greater_equal(const T &a, const T &b) {\n    return (sign(a - b) >=\
+    \ 0);\n}\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/basic/greater_than.hpp\"\
     \n\n\n\nnamespace BanetteGin {\n\ntemplate <class T>\nbool greater_than(const\
     \ T &a, const T &b) {\n    return (sign(a - b) > 0);\n}\n\n}  // namespace BanetteGin\n\
     \n\n#line 1 \"src/basic/less_equal.hpp\"\n\n\n\nnamespace BanetteGin {\n\ntemplate\
@@ -110,38 +146,60 @@ data:
     \        return equal(this->a, l.a) && equal(this->b, l.b) && equal(this->c, l.c);\n\
     \    }\n    bool operator!=(const line& l) const noexcept {\n        return !equal(this->a,\
     \ l.a) || !equal(this->b, l.b) || !equal(this->c, l.c);\n    }\n};\n\n}  // namespace\
-    \ BanetteGin\n\n\n#line 6 \"src/geometry/orthogonal_check.hpp\"\n\nnamespace BanetteGin\
-    \ {\n\ntemplate <class T>\nbool orthogonal_check(const line<T>& l, const line<T>&\
-    \ m) {\n    return equal(l.a * l.b + m.a * m.b, 0);\n}\n\n}  // namespace BanetteGin\n\
-    \n\n"
-  code: "#ifndef BANETTEGIN_ORTHOGONAL_CHECK_HPP_INCLUDED\n#define BANETTEGIN_ORTHOGONAL_CHECK_HPP_INCLUDED\n\
-    \n#include \"../basic/equal.hpp\"\n#include \"line.hpp\"\n\nnamespace BanetteGin\
-    \ {\n\ntemplate <class T>\nbool orthogonal_check(const line<T>& l, const line<T>&\
-    \ m) {\n    return equal(l.a * l.b + m.a * m.b, 0);\n}\n\n}  // namespace BanetteGin\n\
-    \n#endif"
+    \ BanetteGin\n\n\n#line 1 \"src/geometry/segment.hpp\"\n\n\n\n#line 6 \"src/geometry/segment.hpp\"\
+    \n\nnamespace BanetteGin {\n\ntemplate <class T>\nstruct segment {\n    point<T>\
+    \ p, q;\n    T length;\n    segment(point<T> p_, point<T> q_)\n        : p(p_),\
+    \ q(q_), length(sqrt(pow(p_.x - q_.x, T(2)) + pow(p_.y - q_.y, T(2)))) {\n   \
+    \ }\n};\n\n}  // namespace BanetteGin\n\n\n#line 7 \"src/geometry/distance.hpp\"\
+    \n\nnamespace BanetteGin {\n\ntemplate <class T>\nT distance(point<T> p, point<T>\
+    \ q) {\n    return sqrt(pow(p.x - q.x, T(2)) + pow(p.y - q.y, T(2)));\n}\n\ntemplate\
+    \ <class T>\nT distance(point<T> p, line<T> l) {\n    return abs(p.x * l.a + p.y\
+    \ * l.b + l.c) / sqrt(l.a * l.a + l.b * l.b);\n}\n\ntemplate <class T>\nT distance(point<T>\
+    \ p, segment<T> s) {\n}\n\ntemplate <class T>\nT distance(segment<T> s, segment<T>\
+    \ t) {\n}\n\n}  // namespace BanetteGin\n\n\n"
+  code: "#ifndef BANETTEGIN_DISTANCE_HPP_INCLUDED\n#define BANETTEGIN_DISTANCE_HPP_INCLUDED\n\
+    \n#include \"line.hpp\"\n#include \"point.hpp\"\n#include \"segment.hpp\"\n\n\
+    namespace BanetteGin {\n\ntemplate <class T>\nT distance(point<T> p, point<T>\
+    \ q) {\n    return sqrt(pow(p.x - q.x, T(2)) + pow(p.y - q.y, T(2)));\n}\n\ntemplate\
+    \ <class T>\nT distance(point<T> p, line<T> l) {\n    return abs(p.x * l.a + p.y\
+    \ * l.b + l.c) / sqrt(l.a * l.a + l.b * l.b);\n}\n\ntemplate <class T>\nT distance(point<T>\
+    \ p, segment<T> s) {\n}\n\ntemplate <class T>\nT distance(segment<T> s, segment<T>\
+    \ t) {\n}\n\n}  // namespace BanetteGin\n\n#endif"
   dependsOn:
-  - src/basic/equal.hpp
-  - src/basic/sign.hpp
-  - src/basic/constant.hpp
   - src/geometry/line.hpp
   - src/basic/comparison.hpp
   - src/basic/equal.hpp
+  - src/basic/sign.hpp
+  - src/basic/constant.hpp
   - src/basic/greater_equal.hpp
   - src/basic/greater_than.hpp
   - src/basic/less_equal.hpp
   - src/basic/less_than.hpp
   - src/geometry/point.hpp
+  - src/geometry/segment.hpp
   isVerificationFile: false
-  path: src/geometry/orthogonal_check.hpp
+  path: src/geometry/distance.hpp
   requiredBy:
   - src/all.hpp
-  timestamp: '2023-09-08 07:19:50+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
-documentation_of: src/geometry/orthogonal_check.hpp
+  - src/all.hpp
+  - src/geometry/circle.hpp
+  - src/geometry/circumcircle.hpp
+  - src/geometry/orthocenter.hpp
+  - src/geometry/excircle.hpp
+  - src/geometry/incircle.hpp
+  - src/geometry/triangle.hpp
+  - src/geometry/centroid.hpp
+  - src/geometry/segment.hpp
+  - src/geometry/intersect.hpp
+  timestamp: '2023-09-08 15:22:49+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/aizu_online_judge/Library/CGL/7_C.test.cpp
+  - test/aizu_online_judge/Library/CGL/7_B.test.cpp
+documentation_of: src/geometry/distance.hpp
 layout: document
 redirect_from:
-- /library/src/geometry/orthogonal_check.hpp
-- /library/src/geometry/orthogonal_check.hpp.html
-title: src/geometry/orthogonal_check.hpp
+- /library/src/geometry/distance.hpp
+- /library/src/geometry/distance.hpp.html
+title: src/geometry/distance.hpp
 ---

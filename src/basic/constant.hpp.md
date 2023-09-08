@@ -56,18 +56,9 @@ data:
   - icon: ':warning:'
     path: src/geometry/degree_to_radian.hpp
     title: src/geometry/degree_to_radian.hpp
-  - icon: ':warning:'
-    path: src/geometry/distance_point_and_line.hpp
-    title: src/geometry/distance_point_and_line.hpp
   - icon: ':heavy_check_mark:'
-    path: src/geometry/distance_point_and_point.hpp
-    title: src/geometry/distance_point_and_point.hpp
-  - icon: ':warning:'
-    path: src/geometry/distance_point_and_segment.hpp
-    title: src/geometry/distance_point_and_segment.hpp
-  - icon: ':warning:'
-    path: src/geometry/distance_segment_and_segment.hpp
-    title: src/geometry/distance_segment_and_segment.hpp
+    path: src/geometry/distance.hpp
+    title: src/geometry/distance.hpp
   - icon: ':warning:'
     path: src/geometry/excircle.hpp
     title: src/geometry/excircle.hpp
@@ -75,12 +66,9 @@ data:
     path: src/geometry/incircle.hpp
     title: src/geometry/incircle.hpp
   - icon: ':warning:'
-    path: src/geometry/intersect_circle_and_circle.hpp
-    title: src/geometry/intersect_circle_and_circle.hpp
-  - icon: ':warning:'
-    path: src/geometry/intersect_line_and_circle.hpp
-    title: src/geometry/intersect_line_and_circle.hpp
-  - icon: ':warning:'
+    path: src/geometry/intersect.hpp
+    title: src/geometry/intersect.hpp
+  - icon: ':heavy_check_mark:'
     path: src/geometry/line.hpp
     title: src/geometry/line.hpp
   - icon: ':warning:'
@@ -98,6 +86,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/geometry/point.hpp
     title: src/geometry/point.hpp
+  - icon: ':warning:'
+    path: src/geometry/projection.hpp
+    title: src/geometry/projection.hpp
   - icon: ':warning:'
     path: src/geometry/radian_to_degree.hpp
     title: src/geometry/radian_to_degree.hpp
@@ -190,12 +181,12 @@ data:
   - src/analysis/ternary_search.hpp
   - src/analysis/ternary_search.hpp
   - src/geometry/normal_vector.hpp
-  - src/geometry/distance_point_and_point.hpp
-  - src/geometry/intersect_line_and_circle.hpp
   - src/geometry/circle.hpp
   - src/geometry/parallel_check.hpp
   - src/geometry/rotate.hpp
   - src/geometry/radian_to_degree.hpp
+  - src/geometry/projection.hpp
+  - src/geometry/distance.hpp
   - src/geometry/point.hpp
   - src/geometry/concyclic.hpp
   - src/geometry/orthogonal_check.hpp
@@ -205,14 +196,11 @@ data:
   - src/geometry/line.hpp
   - src/geometry/degree_to_radian.hpp
   - src/geometry/excircle.hpp
-  - src/geometry/distance_point_and_segment.hpp
-  - src/geometry/distance_segment_and_segment.hpp
   - src/geometry/incircle.hpp
   - src/geometry/triangle.hpp
-  - src/geometry/distance_point_and_line.hpp
-  - src/geometry/intersect_circle_and_circle.hpp
   - src/geometry/centroid.hpp
   - src/geometry/segment.hpp
+  - src/geometry/intersect.hpp
   timestamp: '2023-08-22 02:10:12+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

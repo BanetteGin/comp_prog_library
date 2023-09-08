@@ -11,9 +11,6 @@ data:
     path: src/basic/equal.hpp
     title: src/basic/equal.hpp
   - icon: ':heavy_check_mark:'
-    path: src/basic/equal.hpp
-    title: src/basic/equal.hpp
-  - icon: ':heavy_check_mark:'
     path: src/basic/greater_equal.hpp
     title: src/basic/greater_equal.hpp
   - icon: ':heavy_check_mark:'
@@ -44,7 +41,8 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"src/geometry/orthogonal_check.hpp\"\n\n\n\n#line 1 \"src/basic/equal.hpp\"\
+  bundledCode: "#line 1 \"src/geometry/projection.hpp\"\n\n\n\n#line 1 \"src/geometry/line.hpp\"\
+    \n\n\n\n#line 1 \"src/basic/comparison.hpp\"\n\n\n\n#line 1 \"src/basic/equal.hpp\"\
     \n\n\n\n#line 1 \"src/basic/sign.hpp\"\n\n\n\n#line 1 \"src/basic/constant.hpp\"\
     \n\n\n\nnamespace BanetteGin {\n\nconst long double EPS = 10e-12;\nconst long\
     \ long int LINF = 1001001001001001001LL;\nconst long double PI = acos(-1);\nconst\
@@ -54,10 +52,9 @@ data:
     }\n\n}  // namespace BanetteGin\n\n\n#line 5 \"src/basic/equal.hpp\"\n\nnamespace\
     \ BanetteGin {\n\ntemplate <class T>\nbool equal(const T &a, const T &b) {\n \
     \   return (sign(a - b) == 0);\n}\n\n}  // namespace BanetteGin\n\n\n#line 1 \"\
-    src/geometry/line.hpp\"\n\n\n\n#line 1 \"src/basic/comparison.hpp\"\n\n\n\n#line\
-    \ 1 \"src/basic/greater_equal.hpp\"\n\n\n\nnamespace BanetteGin {\n\ntemplate\
-    \ <class T>\nbool greater_equal(const T &a, const T &b) {\n    return (sign(a\
-    \ - b) >= 0);\n}\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/basic/greater_than.hpp\"\
+    src/basic/greater_equal.hpp\"\n\n\n\nnamespace BanetteGin {\n\ntemplate <class\
+    \ T>\nbool greater_equal(const T &a, const T &b) {\n    return (sign(a - b) >=\
+    \ 0);\n}\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/basic/greater_than.hpp\"\
     \n\n\n\nnamespace BanetteGin {\n\ntemplate <class T>\nbool greater_than(const\
     \ T &a, const T &b) {\n    return (sign(a - b) > 0);\n}\n\n}  // namespace BanetteGin\n\
     \n\n#line 1 \"src/basic/less_equal.hpp\"\n\n\n\nnamespace BanetteGin {\n\ntemplate\
@@ -110,38 +107,55 @@ data:
     \        return equal(this->a, l.a) && equal(this->b, l.b) && equal(this->c, l.c);\n\
     \    }\n    bool operator!=(const line& l) const noexcept {\n        return !equal(this->a,\
     \ l.a) || !equal(this->b, l.b) || !equal(this->c, l.c);\n    }\n};\n\n}  // namespace\
-    \ BanetteGin\n\n\n#line 6 \"src/geometry/orthogonal_check.hpp\"\n\nnamespace BanetteGin\
-    \ {\n\ntemplate <class T>\nbool orthogonal_check(const line<T>& l, const line<T>&\
-    \ m) {\n    return equal(l.a * l.b + m.a * m.b, 0);\n}\n\n}  // namespace BanetteGin\n\
-    \n\n"
-  code: "#ifndef BANETTEGIN_ORTHOGONAL_CHECK_HPP_INCLUDED\n#define BANETTEGIN_ORTHOGONAL_CHECK_HPP_INCLUDED\n\
-    \n#include \"../basic/equal.hpp\"\n#include \"line.hpp\"\n\nnamespace BanetteGin\
-    \ {\n\ntemplate <class T>\nbool orthogonal_check(const line<T>& l, const line<T>&\
-    \ m) {\n    return equal(l.a * l.b + m.a * m.b, 0);\n}\n\n}  // namespace BanetteGin\n\
-    \n#endif"
+    \ BanetteGin\n\n\n#line 6 \"src/geometry/projection.hpp\"\n\nnamespace BanetteGin\
+    \ {\n\ntemplate <class T>\npoint<T> projection(const point<T> p, const line<T>&\
+    \ l) {\n}\n\n}  // namespace BanetteGin\n\n\n"
+  code: '#ifndef BANETTEGIN_PROJECTION_HPP_INCLUDED
+
+    #define BANETTEGIN_PROJECTION_HPP_INCLUDED
+
+
+    #include "line.hpp"
+
+    #include "point.hpp"
+
+
+    namespace BanetteGin {
+
+
+    template <class T>
+
+    point<T> projection(const point<T> p, const line<T>& l) {
+
+    }
+
+
+    }  // namespace BanetteGin
+
+
+    #endif'
   dependsOn:
-  - src/basic/equal.hpp
-  - src/basic/sign.hpp
-  - src/basic/constant.hpp
   - src/geometry/line.hpp
   - src/basic/comparison.hpp
   - src/basic/equal.hpp
+  - src/basic/sign.hpp
+  - src/basic/constant.hpp
   - src/basic/greater_equal.hpp
   - src/basic/greater_than.hpp
   - src/basic/less_equal.hpp
   - src/basic/less_than.hpp
   - src/geometry/point.hpp
   isVerificationFile: false
-  path: src/geometry/orthogonal_check.hpp
+  path: src/geometry/projection.hpp
   requiredBy:
   - src/all.hpp
-  timestamp: '2023-09-08 07:19:50+09:00'
+  timestamp: '2023-09-08 15:22:49+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: src/geometry/orthogonal_check.hpp
+documentation_of: src/geometry/projection.hpp
 layout: document
 redirect_from:
-- /library/src/geometry/orthogonal_check.hpp
-- /library/src/geometry/orthogonal_check.hpp.html
-title: src/geometry/orthogonal_check.hpp
+- /library/src/geometry/projection.hpp
+- /library/src/geometry/projection.hpp.html
+title: src/geometry/projection.hpp
 ---

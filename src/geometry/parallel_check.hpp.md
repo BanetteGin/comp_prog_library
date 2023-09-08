@@ -25,7 +25,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/basic/sign.hpp
     title: src/basic/sign.hpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: src/geometry/line.hpp
     title: src/geometry/line.hpp
   - icon: ':heavy_check_mark:'

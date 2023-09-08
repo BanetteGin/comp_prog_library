@@ -36,27 +36,54 @@ data:
     path: src/all.hpp
     title: src/all.hpp
   - icon: ':warning:'
-    path: src/geometry/distance_point_and_line.hpp
-    title: src/geometry/distance_point_and_line.hpp
+    path: src/geometry/centroid.hpp
+    title: src/geometry/centroid.hpp
+  - icon: ':heavy_check_mark:'
+    path: src/geometry/circle.hpp
+    title: src/geometry/circle.hpp
+  - icon: ':heavy_check_mark:'
+    path: src/geometry/circumcircle.hpp
+    title: src/geometry/circumcircle.hpp
+  - icon: ':heavy_check_mark:'
+    path: src/geometry/distance.hpp
+    title: src/geometry/distance.hpp
   - icon: ':warning:'
-    path: src/geometry/distance_point_and_segment.hpp
-    title: src/geometry/distance_point_and_segment.hpp
+    path: src/geometry/excircle.hpp
+    title: src/geometry/excircle.hpp
+  - icon: ':heavy_check_mark:'
+    path: src/geometry/incircle.hpp
+    title: src/geometry/incircle.hpp
   - icon: ':warning:'
-    path: src/geometry/distance_segment_and_segment.hpp
-    title: src/geometry/distance_segment_and_segment.hpp
+    path: src/geometry/intersect.hpp
+    title: src/geometry/intersect.hpp
   - icon: ':warning:'
-    path: src/geometry/intersect_line_and_circle.hpp
-    title: src/geometry/intersect_line_and_circle.hpp
+    path: src/geometry/orthocenter.hpp
+    title: src/geometry/orthocenter.hpp
   - icon: ':warning:'
     path: src/geometry/orthogonal_check.hpp
     title: src/geometry/orthogonal_check.hpp
   - icon: ':warning:'
     path: src/geometry/parallel_check.hpp
     title: src/geometry/parallel_check.hpp
-  _extendedVerifiedWith: []
+  - icon: ':warning:'
+    path: src/geometry/projection.hpp
+    title: src/geometry/projection.hpp
+  - icon: ':heavy_check_mark:'
+    path: src/geometry/segment.hpp
+    title: src/geometry/segment.hpp
+  - icon: ':heavy_check_mark:'
+    path: src/geometry/triangle.hpp
+    title: src/geometry/triangle.hpp
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aizu_online_judge/Library/CGL/7_B.test.cpp
+    title: test/aizu_online_judge/Library/CGL/7_B.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aizu_online_judge/Library/CGL/7_C.test.cpp
+    title: test/aizu_online_judge/Library/CGL/7_C.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"src/geometry/line.hpp\"\n\n\n\n#line 1 \"src/basic/comparison.hpp\"\
@@ -163,15 +190,24 @@ data:
   requiredBy:
   - src/all.hpp
   - src/all.hpp
-  - src/geometry/intersect_line_and_circle.hpp
+  - src/geometry/circle.hpp
   - src/geometry/parallel_check.hpp
+  - src/geometry/projection.hpp
+  - src/geometry/distance.hpp
   - src/geometry/orthogonal_check.hpp
-  - src/geometry/distance_point_and_segment.hpp
-  - src/geometry/distance_segment_and_segment.hpp
-  - src/geometry/distance_point_and_line.hpp
+  - src/geometry/circumcircle.hpp
+  - src/geometry/orthocenter.hpp
+  - src/geometry/excircle.hpp
+  - src/geometry/incircle.hpp
+  - src/geometry/triangle.hpp
+  - src/geometry/centroid.hpp
+  - src/geometry/segment.hpp
+  - src/geometry/intersect.hpp
   timestamp: '2023-09-08 07:19:50+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/aizu_online_judge/Library/CGL/7_C.test.cpp
+  - test/aizu_online_judge/Library/CGL/7_B.test.cpp
 documentation_of: src/geometry/line.hpp
 layout: document
 redirect_from:
