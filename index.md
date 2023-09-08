@@ -160,7 +160,7 @@ data:
       title: src/matrix/matrix_rotate.hpp
   - name: src/number_theory
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: src/number_theory/base_change.hpp
       title: src/number_theory/base_change.hpp
     - icon: ':warning:'
@@ -254,5 +254,8 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/1092.test.cpp
       title: test/yukicoder/1092.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/yukicoder/499.test.cpp
+      title: test/yukicoder/499.test.cpp
 layout: toppage
 ---
