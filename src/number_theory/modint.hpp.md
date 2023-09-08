@@ -29,9 +29,9 @@ data:
     \ 1;\n    }\n    modint& operator--() noexcept {\n        return modint(*this)\
     \ -= 1;\n    }\n\n    modint& operator/=(const modint& r) noexcept {\n       \
     \ long long int a = r.val, b = MOD, u = 1, v = 0;\n        while (b) {\n     \
-    \       long long int t = a / b;\n            a -= t * b;\n            this->swap(a,\
-    \ b);\n            u -= t * v;\n            this->swap(u, v);\n        }\n   \
-    \     val = val * u % MOD;\n        if (val < 0) val += MOD;\n        return *this;\n\
+    \       long long int t = a / b;\n            a -= t * b;\n            std::swap(a,\
+    \ b);\n            u -= t * v;\n            std::swap(u, v);\n        }\n    \
+    \    val = val * u % MOD;\n        if (val < 0) val += MOD;\n        return *this;\n\
     \    }\n\n    bool operator==(const modint& r) const noexcept {\n        return\
     \ this->val == r.val;\n    }\n    bool operator!=(const modint& r) const noexcept\
     \ {\n        return this->val != r.val;\n    }\n\n    friend std::ostream& operator<<(std::ostream&\
@@ -61,8 +61,8 @@ data:
     \ {\n        return modint(*this) -= 1;\n    }\n\n    modint& operator/=(const\
     \ modint& r) noexcept {\n        long long int a = r.val, b = MOD, u = 1, v =\
     \ 0;\n        while (b) {\n            long long int t = a / b;\n            a\
-    \ -= t * b;\n            this->swap(a, b);\n            u -= t * v;\n        \
-    \    this->swap(u, v);\n        }\n        val = val * u % MOD;\n        if (val\
+    \ -= t * b;\n            std::swap(a, b);\n            u -= t * v;\n         \
+    \   std::swap(u, v);\n        }\n        val = val * u % MOD;\n        if (val\
     \ < 0) val += MOD;\n        return *this;\n    }\n\n    bool operator==(const\
     \ modint& r) const noexcept {\n        return this->val == r.val;\n    }\n   \
     \ bool operator!=(const modint& r) const noexcept {\n        return this->val\
@@ -79,7 +79,7 @@ data:
   path: src/number_theory/modint.hpp
   requiredBy:
   - src/all.hpp
-  timestamp: '2023-09-08 09:32:39+09:00'
+  timestamp: '2023-09-08 09:49:37+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/number_theory/modint.hpp
