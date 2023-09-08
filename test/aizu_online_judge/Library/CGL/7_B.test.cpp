@@ -1,4 +1,4 @@
-#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/all/CGL_7_C"
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/all/CGL_7_B"
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -18,6 +18,6 @@ int main(void) {
     point b = point(bx, by);
     point c = point(cx, cy);
     circle ans = incircle(triangle(a, b, c));
-    cout << ans.p.x << " " << ans.p.y << " " << ans.r << endl;
+    cout << fixed << setprecision(20) << ans.p.x << " " << ans.p.y << " " << ans.r << endl;
     return 0;
 }
