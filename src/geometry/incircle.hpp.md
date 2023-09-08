@@ -1,46 +1,46 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/basic/comparison.hpp
     title: src/basic/comparison.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/basic/constant.hpp
     title: src/basic/constant.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/basic/equal.hpp
     title: src/basic/equal.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/basic/equal.hpp
     title: src/basic/equal.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/basic/greater_equal.hpp
     title: src/basic/greater_equal.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/basic/greater_than.hpp
     title: src/basic/greater_than.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/basic/less_equal.hpp
     title: src/basic/less_equal.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/basic/less_than.hpp
     title: src/basic/less_than.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/basic/sign.hpp
     title: src/basic/sign.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/geometry/circle.hpp
     title: src/geometry/circle.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/geometry/distance_point_and_point.hpp
     title: src/geometry/distance_point_and_point.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/geometry/point.hpp
     title: src/geometry/point.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/geometry/segment.hpp
     title: src/geometry/segment.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/geometry/triangle.hpp
     title: src/geometry/triangle.hpp
   _extendedRequiredBy:
@@ -155,16 +155,16 @@ data:
     \ / sin(t.angles[0]) / 2;\n        return circle(ret / denom, r);\n    }\n};\n\
     \n}  // namespace BanetteGin\n\n\n#line 6 \"src/geometry/incircle.hpp\"\n\nnamespace\
     \ BanetteGin {\n\ntemplate <class T>\ncircle<T> incircle(triangle<T> t) {\n  \
-    \  point ret = point(0.0L, 0.0L);\n    T denom = 0.0L;\n    for (int i = 0; i\
+    \  point ret = point(T(0), T(0));\n    T denom = T(0);\n    for (int i = 0; i\
     \ < 3; ++i) {\n        ret += t.points[i] * t.lengths[i];\n        denom += t.lengths[i];\n\
-    \    }\n    T r = t.area * 2.0L / denom;\n    return circle(ret / denom, r);\n\
+    \    }\n    T r = t.area * T(2) / denom;\n    return circle(ret / denom, r);\n\
     }\n\n}  // namespace BanetteGin\n\n\n"
   code: "#ifndef BANETTEGIN_INCIRCLE_HPP_INCLUDED\n#define BANETTEGIN_INCIRCLE_HPP_INCLUDED\n\
     \n#include \"circle.hpp\"\n#include \"triangle.hpp\"\n\nnamespace BanetteGin {\n\
-    \ntemplate <class T>\ncircle<T> incircle(triangle<T> t) {\n    point ret = point(0.0L,\
-    \ 0.0L);\n    T denom = 0.0L;\n    for (int i = 0; i < 3; ++i) {\n        ret\
+    \ntemplate <class T>\ncircle<T> incircle(triangle<T> t) {\n    point ret = point(T(0),\
+    \ T(0));\n    T denom = T(0);\n    for (int i = 0; i < 3; ++i) {\n        ret\
     \ += t.points[i] * t.lengths[i];\n        denom += t.lengths[i];\n    }\n    T\
-    \ r = t.area * 2.0L / denom;\n    return circle(ret / denom, r);\n}\n\n}  // namespace\
+    \ r = t.area * T(2) / denom;\n    return circle(ret / denom, r);\n}\n\n}  // namespace\
     \ BanetteGin\n\n#endif"
   dependsOn:
   - src/geometry/circle.hpp
@@ -185,7 +185,7 @@ data:
   path: src/geometry/incircle.hpp
   requiredBy:
   - src/all.hpp
-  timestamp: '2023-09-08 12:51:07+09:00'
+  timestamp: '2023-09-08 14:49:40+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aizu_online_judge/Library/CGL/7_B.test.cpp

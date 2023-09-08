@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/basic/constant.hpp
     title: src/basic/constant.hpp
   _extendedRequiredBy:

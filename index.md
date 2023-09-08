@@ -22,28 +22,28 @@ data:
     - icon: ':warning:'
       path: src/basic/chmin.hpp
       title: src/basic/chmin.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: src/basic/comparison.hpp
       title: src/basic/comparison.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: src/basic/constant.hpp
       title: src/basic/constant.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: src/basic/equal.hpp
       title: src/basic/equal.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: src/basic/greater_equal.hpp
       title: src/basic/greater_equal.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: src/basic/greater_than.hpp
       title: src/basic/greater_than.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: src/basic/less_equal.hpp
       title: src/basic/less_equal.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: src/basic/less_than.hpp
       title: src/basic/less_than.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: src/basic/sign.hpp
       title: src/basic/sign.hpp
   - name: src/combinatorics
@@ -76,10 +76,10 @@ data:
     - icon: ':warning:'
       path: src/geometry/centroid.hpp
       title: src/geometry/centroid.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: src/geometry/circle.hpp
       title: src/geometry/circle.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: src/geometry/circumcircle.hpp
       title: src/geometry/circumcircle.hpp
     - icon: ':warning:'
@@ -91,7 +91,7 @@ data:
     - icon: ':warning:'
       path: src/geometry/distance_point_and_line.hpp
       title: src/geometry/distance_point_and_line.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: src/geometry/distance_point_and_point.hpp
       title: src/geometry/distance_point_and_point.hpp
     - icon: ':warning:'
@@ -127,7 +127,7 @@ data:
     - icon: ':warning:'
       path: src/geometry/parallel_check.hpp
       title: src/geometry/parallel_check.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: src/geometry/point.hpp
       title: src/geometry/point.hpp
     - icon: ':warning:'
@@ -136,10 +136,10 @@ data:
     - icon: ':warning:'
       path: src/geometry/rotate.hpp
       title: src/geometry/rotate.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: src/geometry/segment.hpp
       title: src/geometry/segment.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: src/geometry/triangle.hpp
       title: src/geometry/triangle.hpp
     - icon: ':warning:'
@@ -224,7 +224,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aizu_online_judge/Library/CGL/7_B.test.cpp
       title: test/aizu_online_judge/Library/CGL/7_B.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aizu_online_judge/Library/CGL/7_C.test.cpp
       title: test/aizu_online_judge/Library/CGL/7_C.test.cpp
   - name: test/library_checker

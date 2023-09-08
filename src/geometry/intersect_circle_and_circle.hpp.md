@@ -1,46 +1,46 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/basic/comparison.hpp
     title: src/basic/comparison.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/basic/constant.hpp
     title: src/basic/constant.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/basic/equal.hpp
     title: src/basic/equal.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/basic/equal.hpp
     title: src/basic/equal.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/basic/greater_equal.hpp
     title: src/basic/greater_equal.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/basic/greater_than.hpp
     title: src/basic/greater_than.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/basic/less_equal.hpp
     title: src/basic/less_equal.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/basic/less_than.hpp
     title: src/basic/less_than.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/basic/sign.hpp
     title: src/basic/sign.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/geometry/circle.hpp
     title: src/geometry/circle.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/geometry/distance_point_and_point.hpp
     title: src/geometry/distance_point_and_point.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/geometry/point.hpp
     title: src/geometry/point.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/geometry/segment.hpp
     title: src/geometry/segment.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/geometry/triangle.hpp
     title: src/geometry/triangle.hpp
   _extendedRequiredBy:

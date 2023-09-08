@@ -1,46 +1,46 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/basic/comparison.hpp
     title: src/basic/comparison.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/basic/constant.hpp
     title: src/basic/constant.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/basic/equal.hpp
     title: src/basic/equal.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/basic/equal.hpp
     title: src/basic/equal.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/basic/greater_equal.hpp
     title: src/basic/greater_equal.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/basic/greater_than.hpp
     title: src/basic/greater_than.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/basic/less_equal.hpp
     title: src/basic/less_equal.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/basic/less_than.hpp
     title: src/basic/less_than.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/basic/sign.hpp
     title: src/basic/sign.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/geometry/circle.hpp
     title: src/geometry/circle.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/geometry/distance_point_and_point.hpp
     title: src/geometry/distance_point_and_point.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/geometry/point.hpp
     title: src/geometry/point.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/geometry/segment.hpp
     title: src/geometry/segment.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/geometry/triangle.hpp
     title: src/geometry/triangle.hpp
   _extendedRequiredBy:
@@ -48,12 +48,12 @@ data:
     path: src/all.hpp
     title: src/all.hpp
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aizu_online_judge/Library/CGL/7_C.test.cpp
     title: test/aizu_online_judge/Library/CGL/7_C.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"src/geometry/circumcircle.hpp\"\n\n\n\n#line 1 \"src/geometry/circle.hpp\"\
@@ -155,18 +155,23 @@ data:
     \ / sin(t.angles[0]) / 2;\n        return circle(ret / denom, r);\n    }\n};\n\
     \n}  // namespace BanetteGin\n\n\n#line 6 \"src/geometry/circumcircle.hpp\"\n\n\
     namespace BanetteGin {\n\ntemplate <class T>\ncircle<T> circumcircle(triangle<T>\
-    \ t) {\n    point ret = point(0.0L, 0.0L);\n    T denom = 0.0L;\n    for (int\
-    \ i = 0; i < 3; ++i) {\n        ret += t.points[i] * sin(2.0L * t.angles[i]);\n\
-    \        denom += sin(2.0L * t.angles[i]);\n    }\n    T r = t.lengths[0] / sin(t.angles[0])\
-    \ / 2;\n    return circle(ret / denom, r);\n}\n\n}  // namespace BanetteGin\n\n\
-    \n"
+    \ t) {\n    point ret = point(T(0), T(0));\n    for (int i = 0; i < 3; ++i) {\n\
+    \        T mlt = 0;\n        for (int j = 0; j < 3; ++j) {\n            if (i\
+    \ == j)\n                mlt += -pow(t.lengths[j], T(2));\n            else\n\
+    \                mlt += pow(t.lengths[j], T(2));\n        }\n        mlt *= pow(t.lengths[i],\
+    \ T(2));\n        ret += t.points[i] * mlt;\n    }\n    T r = t.lengths[0] / sin(t.angles[0])\
+    \ / T(2);\n    return circle(ret / (T(16) * pow(t.area, T(2))), r);\n}\n\n}  //\
+    \ namespace BanetteGin\n\n\n"
   code: "#ifndef BANETTEGIN_CIRCUMCIRCLE_HPP_INCLUDED\n#define BANETTEGIN_CIRCUMCIRCLE_HPP_INCLUDED\n\
     \n#include \"circle.hpp\"\n#include \"triangle.hpp\"\n\nnamespace BanetteGin {\n\
     \ntemplate <class T>\ncircle<T> circumcircle(triangle<T> t) {\n    point ret =\
-    \ point(0.0L, 0.0L);\n    T denom = 0.0L;\n    for (int i = 0; i < 3; ++i) {\n\
-    \        ret += t.points[i] * sin(2.0L * t.angles[i]);\n        denom += sin(2.0L\
-    \ * t.angles[i]);\n    }\n    T r = t.lengths[0] / sin(t.angles[0]) / 2;\n   \
-    \ return circle(ret / denom, r);\n}\n\n}  // namespace BanetteGin\n\n#endif"
+    \ point(T(0), T(0));\n    for (int i = 0; i < 3; ++i) {\n        T mlt = 0;\n\
+    \        for (int j = 0; j < 3; ++j) {\n            if (i == j)\n            \
+    \    mlt += -pow(t.lengths[j], T(2));\n            else\n                mlt +=\
+    \ pow(t.lengths[j], T(2));\n        }\n        mlt *= pow(t.lengths[i], T(2));\n\
+    \        ret += t.points[i] * mlt;\n    }\n    T r = t.lengths[0] / sin(t.angles[0])\
+    \ / T(2);\n    return circle(ret / (T(16) * pow(t.area, T(2))), r);\n}\n\n}  //\
+    \ namespace BanetteGin\n\n#endif"
   dependsOn:
   - src/geometry/circle.hpp
   - src/basic/comparison.hpp
@@ -186,8 +191,8 @@ data:
   path: src/geometry/circumcircle.hpp
   requiredBy:
   - src/all.hpp
-  timestamp: '2023-09-08 12:51:07+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2023-09-08 14:49:40+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aizu_online_judge/Library/CGL/7_C.test.cpp
 documentation_of: src/geometry/circumcircle.hpp
