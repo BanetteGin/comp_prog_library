@@ -1,17 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: src/number_theory/prime_check.hpp
     title: src/number_theory/prime_check.hpp
   _extendedRequiredBy:
   - icon: ':warning:'
     path: src/all.hpp
     title: src/all.hpp
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/713.test.cpp
+    title: test/yukicoder/713.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"src/number_theory/naive_sieve.hpp\"\n\n\n\n#include <vector>\n\
@@ -21,13 +24,15 @@ data:
     \ * i <= n; i += 2)\n        if (n % i == 0) return false;\n    return true;\n\
     }\n\n}  // namespace BanetteGin\n\n\n#line 7 \"src/number_theory/naive_sieve.hpp\"\
     \n\nnamespace BanetteGin {\n\ntemplate <class T>\nstd::vector<T> naive_sieve(T\
-    \ n) {\n    std::vector<T> prime_list;\n    for (long long int i = 2; i <= n;\
-    \ ++i) {\n        if (prime_check(i)) prime_list.emplace_back(i);\n    }\n   \
-    \ return prime_list;\n}\n\n}  // namespace BanetteGin\n\n\n"
+    \ n) {\n    std::vector<T> prime_list;\n    if (n < 2) return prime_list;\n  \
+    \  prime_list.emplace_back(2);\n    for (long long int i = 3; i <= n; i += 2)\
+    \ {\n        if (prime_check(i)) prime_list.emplace_back(i);\n    }\n    return\
+    \ prime_list;\n}\n\n}  // namespace BanetteGin\n\n\n"
   code: "#ifndef BANETTEGIN_NAIVE_SIEVE_HPP_INCLUDED\n#define BANETTEGIN_NAIVE_SIEVE_HPP_INCLUDED\n\
     \n#include <vector>\n\n#include \"prime_check.hpp\"\n\nnamespace BanetteGin {\n\
     \ntemplate <class T>\nstd::vector<T> naive_sieve(T n) {\n    std::vector<T> prime_list;\n\
-    \    for (long long int i = 2; i <= n; ++i) {\n        if (prime_check(i)) prime_list.emplace_back(i);\n\
+    \    if (n < 2) return prime_list;\n    prime_list.emplace_back(2);\n    for (long\
+    \ long int i = 3; i <= n; i += 2) {\n        if (prime_check(i)) prime_list.emplace_back(i);\n\
     \    }\n    return prime_list;\n}\n\n}  // namespace BanetteGin\n\n#endif"
   dependsOn:
   - src/number_theory/prime_check.hpp
@@ -35,9 +40,10 @@ data:
   path: src/number_theory/naive_sieve.hpp
   requiredBy:
   - src/all.hpp
-  timestamp: '2023-09-07 19:32:18+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  timestamp: '2023-09-08 16:51:51+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/yukicoder/713.test.cpp
 documentation_of: src/number_theory/naive_sieve.hpp
 layout: document
 redirect_from:

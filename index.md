@@ -187,10 +187,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/number_theory/modint.hpp
       title: src/number_theory/modint.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: src/number_theory/naive_sieve.hpp
       title: src/number_theory/naive_sieve.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: src/number_theory/prime_check.hpp
       title: src/number_theory/prime_check.hpp
     - icon: ':heavy_check_mark:'
@@ -257,6 +257,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/499.test.cpp
       title: test/yukicoder/499.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/yukicoder/713.test.cpp
+      title: test/yukicoder/713.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/843-1.test.cpp
       title: test/yukicoder/843-1.test.cpp

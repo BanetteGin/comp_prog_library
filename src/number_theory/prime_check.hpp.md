@@ -8,13 +8,16 @@ data:
   - icon: ':warning:'
     path: src/all.hpp
     title: src/all.hpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: src/number_theory/naive_sieve.hpp
     title: src/number_theory/naive_sieve.hpp
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/713.test.cpp
+    title: test/yukicoder/713.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"src/number_theory/prime_check.hpp\"\n\n\n\nnamespace BanetteGin\
@@ -35,8 +38,9 @@ data:
   - src/all.hpp
   - src/number_theory/naive_sieve.hpp
   timestamp: '2023-09-07 19:30:09+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/yukicoder/713.test.cpp
 documentation_of: src/number_theory/prime_check.hpp
 layout: document
 redirect_from:

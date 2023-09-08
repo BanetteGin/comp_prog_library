@@ -217,13 +217,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/number_theory/modint.hpp
     title: src/number_theory/modint.hpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: src/number_theory/naive_sieve.hpp
     title: src/number_theory/naive_sieve.hpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: src/number_theory/prime_check.hpp
     title: src/number_theory/prime_check.hpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: src/number_theory/prime_check.hpp
     title: src/number_theory/prime_check.hpp
   - icon: ':heavy_check_mark:'
@@ -719,9 +719,10 @@ data:
     \   for (long long int i = 3; i * i <= n; i += 2)\n        if (n % i == 0) return\
     \ false;\n    return true;\n}\n\n}  // namespace BanetteGin\n\n\n#line 7 \"src/number_theory/naive_sieve.hpp\"\
     \n\nnamespace BanetteGin {\n\ntemplate <class T>\nstd::vector<T> naive_sieve(T\
-    \ n) {\n    std::vector<T> prime_list;\n    for (long long int i = 2; i <= n;\
-    \ ++i) {\n        if (prime_check(i)) prime_list.emplace_back(i);\n    }\n   \
-    \ return prime_list;\n}\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/number_theory/prime_factorization.hpp\"\
+    \ n) {\n    std::vector<T> prime_list;\n    if (n < 2) return prime_list;\n  \
+    \  prime_list.emplace_back(2);\n    for (long long int i = 3; i <= n; i += 2)\
+    \ {\n        if (prime_check(i)) prime_list.emplace_back(i);\n    }\n    return\
+    \ prime_list;\n}\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/number_theory/prime_factorization.hpp\"\
     \n\n\n\n#line 5 \"src/number_theory/prime_factorization.hpp\"\n\nnamespace BanetteGin\
     \ {\n\ntemplate <class T>\nstd::vector<std::pair<T, T> > prime_factorization(T\
     \ n) {\n    std::vector<std::pair<T, T> > prime_list;\n    for (long long int\
@@ -996,7 +997,7 @@ data:
   isVerificationFile: false
   path: src/all.hpp
   requiredBy: []
-  timestamp: '2023-09-08 16:34:00+09:00'
+  timestamp: '2023-09-08 16:51:51+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/all.hpp
