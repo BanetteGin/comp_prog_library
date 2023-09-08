@@ -139,6 +139,9 @@ data:
   - name: src/graph
     pages:
     - icon: ':warning:'
+      path: src/graph/dijkstra.hpp
+      title: src/graph/dijkstra.hpp
+    - icon: ':warning:'
       path: src/graph/edge.hpp
       title: src/graph/edge.hpp
     - icon: ':warning:'
@@ -172,6 +175,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/number_theory/euler_phi.hpp
       title: src/number_theory/euler_phi.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/number_theory/extend_gcd.hpp
+      title: src/number_theory/extend_gcd.hpp
     - icon: ':heavy_check_mark:'
       path: src/number_theory/greatest_common_divisor.hpp
       title: src/number_theory/greatest_common_divisor.hpp
@@ -235,6 +241,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aizu_online_judge/Library/NTL/A_4.test.cpp
       title: test/aizu_online_judge/Library/NTL/A_4.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aizu_online_judge/Library/NTL/A_5.test.cpp
+      title: test/aizu_online_judge/Library/NTL/A_5.test.cpp
   - name: test/library_checker
     pages:
     - icon: ':heavy_check_mark:'
