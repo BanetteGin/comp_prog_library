@@ -7,7 +7,13 @@ namespace BanetteGin {
 
 template <class T>
 point<T> orthocenter(triangle<T> t) {
-    return (t.point_a * tan(t.angle_a) + t.point_b * tan(t.angle_b) + t.point_c * tan(t.angle_c)) / (tan(t.angle_a) + tan(t.angle_b) + tan(t.angle_c));
+    point ret = point(0.0L, 0.0L);
+    T denom = 0.0L;
+    for (int i = 0; i < 3; ++i) {
+        ret += t.points[i] * tan(t.angles[i]);
+        denom += tan(t.angles[i]);
+    }
+    return ret / denom;
 }
 
 }  // namespace BanetteGin

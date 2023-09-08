@@ -7,8 +7,13 @@ namespace BanetteGin {
 
 template <class T>
 point<T> incenter(triangle<T> t) {
-    point<T> o = (t.point_a * t.length_a + t.point_b * t.length_b + t.point_c * t.length_c) / (t.length_a + t.length_b + t.length_c);
-    return o;
+    point ret = point(0.0L, 0.0L);
+    T denom = 0.0L;
+    for (int i = 0; i < 3; ++i) {
+        ret += t.points[i] * t.lengths[i];
+        denom += t.lengths[i];
+    }
+    return ret / denom;
 }
 
 }  // namespace BanetteGin

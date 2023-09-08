@@ -7,7 +7,7 @@ namespace BanetteGin {
 
 template <class T>
 point<T> inradius(triangle<T> t) {
-    T r = t.area * 2 / (t.length_a + t.length_b + t.length_c);
+    T r = t.area * 2 / (t.lengths[0] + t.lengths[1] + t.lengths[2]);
     return r;
 }
 

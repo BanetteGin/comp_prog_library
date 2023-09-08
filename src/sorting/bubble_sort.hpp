@@ -7,9 +7,9 @@ namespace BanetteGin {
 
 template <class T>
 std::vector<T> bubble_sort(const std::vector<T>& a) {
-    for(long long int i=0;i<a.size();++i){
-        for(long long int j=i+1;j<a.size();++j){
-            if(a[i]>a[j]) swap(a[i],a[j]);
+    for (long long int i = 0; i < a.size(); ++i) {
+        for (long long int j = i + 1; j < a.size(); ++j) {
+            if (a[i] > a[j]) swap(a[i], a[j]);
         }
     }
     return a;

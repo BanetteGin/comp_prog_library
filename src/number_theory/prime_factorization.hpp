@@ -15,11 +15,11 @@ std::vector<std::pair<T, T> > prime_factorization(T n) {
                 n /= i;
                 e++;
             }
-            prime_list.emplace_back(make_pair(i, e));
+            prime_list.emplace_back(std::make_pair(i, e));
         }
     }
     if (n != 1) {
-        prime_list.emplace_back(make_pair(n, 1));
+        prime_list.emplace_back(std::make_pair(n, 1));
     }
     return prime_list;
 }
