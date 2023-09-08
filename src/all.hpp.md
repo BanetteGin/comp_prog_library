@@ -196,7 +196,7 @@ data:
   - icon: ':warning:'
     path: src/matrix/matrix_rotate.hpp
     title: src/matrix/matrix_rotate.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/number_theory/base_change.hpp
     title: src/number_theory/base_change.hpp
   - icon: ':heavy_check_mark:'
@@ -255,75 +255,71 @@ data:
   attributes:
     links: []
   bundledCode: "#line 1 \"src/all.hpp\"\n\n\n\n#line 1 \"src/analysis/golden_ratio_search.hpp\"\
-    \n\n\n\n#line 1 \"src/basic/comparison.hpp\"\n\n\n\n#line 1 \"src/basic/equal.hpp\"\
-    \n\n\n\n#line 1 \"src/basic/sign.hpp\"\n\n\n\n#line 1 \"src/basic/constant.hpp\"\
-    \n\n\n\nnamespace BanetteGin {\n\nconst long double EPS = 10e-12L;\nconst long\
-    \ long int LINF = 1001001001001001001LL;\nconst long double PI = acos(-1.0L);\n\
-    const long double GOLDEN_RATIO = 2.0L * cos(PI / 5.0L);\n\n}  // namespace BanetteGin\n\
-    \n\n#line 5 \"src/basic/sign.hpp\"\n\nnamespace BanetteGin {\n\ntemplate <class\
-    \ T>\nint sign(const T& x) {\n    return (x < -EPS ? -1 : (x < EPS ? 0 : 1));\n\
-    }\n\n}  // namespace BanetteGin\n\n\n#line 5 \"src/basic/equal.hpp\"\n\nnamespace\
-    \ BanetteGin {\n\ntemplate <class T>\nbool equal(const T &a, const T &b) {\n \
-    \   return (sign(a - b) == 0);\n}\n\n}  // namespace BanetteGin\n\n\n#line 1 \"\
-    src/basic/greater_equal.hpp\"\n\n\n\nnamespace BanetteGin {\n\ntemplate <class\
-    \ T>\nbool greater_equal(const T &a, const T &b) {\n    return (sign(a - b) >=\
-    \ 0);\n}\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/basic/greater_than.hpp\"\
-    \n\n\n\nnamespace BanetteGin {\n\ntemplate <class T>\nbool greater_than(const\
-    \ T &a, const T &b) {\n    return (sign(a - b) > 0);\n}\n\n}  // namespace BanetteGin\n\
-    \n\n#line 1 \"src/basic/less_equal.hpp\"\n\n\n\nnamespace BanetteGin {\n\ntemplate\
-    \ <class T>\nbool less_equal(const T &a, const T &b) {\n    return (sign(a - b)\
-    \ <= 0);\n}\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/basic/less_than.hpp\"\
-    \n\n\n\nnamespace BanetteGin {\n\ntemplate <class T>\nbool less_than(const T &a,\
-    \ const T &b) {\n    return (sign(a - b) < 0);\n}\n\n}  // namespace BanetteGin\n\
-    \n\n#line 9 \"src/basic/comparison.hpp\"\n\n\n#line 6 \"src/analysis/golden_ratio_search.hpp\"\
-    \n\nnamespace BanetteGin {\n\ntemplate <class T, class Function>\nT golden_ratio_search(T\
-    \ left, T right, Function func, bool minimize = true) {\n    assert(greater_equal(right,\
-    \ left));\n    T mid1 = left + (right - left) * GOLDEN_RATIO / (2 * GOLDEN_RATIO\
-    \ + 1);\n    T mid2 = left + (right - left) * (GOLDEN_RATIO + 1) / (2 * GOLDEN_RATIO\
-    \ + 1);\n    long long int iter = (std::log(right - left) - std::log(EPS)) / std::log(GOLDEN_RATIO)\
-    \ + 1;\n\n    while (iter--) {\n        if (minimize) {\n            if (less_equal(func(mid1),\
-    \ func(mid2))) {\n                right = mid2;\n                mid2 = mid1;\n\
-    \                mid1 = left + (right - left) * T(GOLDEN_RATIO) / (T(2) * T(GOLDEN_RATIO)\
-    \ + 1);\n            } else {\n                left = mid1;\n                mid1\
-    \ = mid2;\n                mid2 = left + (right - left) * T(GOLDEN_RATIO + 1)\
-    \ / (T(2) * T(GOLDEN_RATIO) + 1);\n            }\n        } else {\n         \
-    \   if (greater_equal(func(mid1), func(mid2))) {\n                right = mid2;\n\
-    \                mid2 = mid1;\n                mid1 = left + (right - left) *\
-    \ T(GOLDEN_RATIO) / (T(2) * T(GOLDEN_RATIO) + 1);\n            } else {\n    \
-    \            left = mid1;\n                mid1 = mid2;\n                mid2\
-    \ = left + (right - left) * T(GOLDEN_RATIO + 1) / (T(2) * T(GOLDEN_RATIO) + 1);\n\
-    \            }\n        }\n    }\n    return left;\n}\n\n}  // namespace BanetteGin\n\
-    \n\n#line 1 \"src/analysis/ternary_search.hpp\"\n\n\n\n#line 6 \"src/analysis/ternary_search.hpp\"\
+    \n\n\n\n#include <cmath>\n\n#line 1 \"src/basic/comparison.hpp\"\n\n\n\n#line\
+    \ 1 \"src/basic/equal.hpp\"\n\n\n\n#line 1 \"src/basic/sign.hpp\"\n\n\n\n#line\
+    \ 1 \"src/basic/constant.hpp\"\n\n\n\nnamespace BanetteGin {\n\nconst long double\
+    \ EPS = 10e-14L;\nconst long long int LINF = 1001001001001001001LL;\nconst long\
+    \ double PI = acos(-1.0L);\nconst long double GOLDEN_RATIO = 2.0L * cos(PI / 5.0L);\n\
+    \n}  // namespace BanetteGin\n\n\n#line 5 \"src/basic/sign.hpp\"\n\nnamespace\
+    \ BanetteGin {\n\ntemplate <class T>\nint sign(const T& x) {\n    return (x <\
+    \ -EPS ? -1 : (x < EPS ? 0 : 1));\n}\n\n}  // namespace BanetteGin\n\n\n#line\
+    \ 5 \"src/basic/equal.hpp\"\n\nnamespace BanetteGin {\n\ntemplate <class T>\n\
+    bool equal(const T &a, const T &b) {\n    return (sign(a - b) == 0);\n}\n\n} \
+    \ // namespace BanetteGin\n\n\n#line 1 \"src/basic/greater_equal.hpp\"\n\n\n\n\
+    namespace BanetteGin {\n\ntemplate <class T>\nbool greater_equal(const T &a, const\
+    \ T &b) {\n    return (sign(a - b) >= 0);\n}\n\n}  // namespace BanetteGin\n\n\
+    \n#line 1 \"src/basic/greater_than.hpp\"\n\n\n\nnamespace BanetteGin {\n\ntemplate\
+    \ <class T>\nbool greater_than(const T &a, const T &b) {\n    return (sign(a -\
+    \ b) > 0);\n}\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/basic/less_equal.hpp\"\
+    \n\n\n\nnamespace BanetteGin {\n\ntemplate <class T>\nbool less_equal(const T\
+    \ &a, const T &b) {\n    return (sign(a - b) <= 0);\n}\n\n}  // namespace BanetteGin\n\
+    \n\n#line 1 \"src/basic/less_than.hpp\"\n\n\n\nnamespace BanetteGin {\n\ntemplate\
+    \ <class T>\nbool less_than(const T &a, const T &b) {\n    return (sign(a - b)\
+    \ < 0);\n}\n\n}  // namespace BanetteGin\n\n\n#line 9 \"src/basic/comparison.hpp\"\
+    \n\n\n#line 8 \"src/analysis/golden_ratio_search.hpp\"\n\nnamespace BanetteGin\
+    \ {\n\ntemplate <class T, class Function>\nT golden_ratio_search(T left, T right,\
+    \ Function&& func, bool minimize = true) {\n    assert(greater_equal(right, left));\n\
+    \    T denom = GOLDEN_RATIO + T(1.0);\n    T mid1 = (left * GOLDEN_RATIO + right)\
+    \ / denom;\n    T mid2 = (left + right * GOLDEN_RATIO) / denom;\n    T fnmid1\
+    \ = func(mid1);\n    T fnmid2 = func(mid2);\n    long long int iter = ((std::log(right\
+    \ - left) - std::log(EPS)) / std::log(GOLDEN_RATIO) + 1);\n\n    while (iter--)\
+    \ {\n        if (minimize ^ less_equal(fnmid1, fnmid2)) {\n            left =\
+    \ mid1;\n            mid1 = mid2;\n            mid2 = (left + right * GOLDEN_RATIO)\
+    \ / denom;\n            fnmid1 = fnmid2;\n            fnmid2 = func(mid2);\n \
+    \       } else {\n            right = mid2;\n            mid2 = mid1;\n      \
+    \      mid1 = (left * GOLDEN_RATIO + right) / denom;\n            fnmid2 = fnmid1;\n\
+    \            fnmid1 = func(mid1);\n        }\n    }\n    return left;\n}\n\n}\
+    \  // namespace BanetteGin\n\n\n#line 1 \"src/analysis/ternary_search.hpp\"\n\n\
+    \n\n#line 5 \"src/analysis/ternary_search.hpp\"\n\n#line 8 \"src/analysis/ternary_search.hpp\"\
     \n\nnamespace BanetteGin {\n\ntemplate <class T, class Function>\nT ternary_search(T\
-    \ left, T right, Function func, bool minimize = true) {\n    long long int iter\
-    \ = (std::log(right - left) - std::log(EPS)) / std::log(T(3) / T(2)) + 1;\n  \
-    \  while (iter--) {\n        T mid1 = left + (right - left) / T(3);\n        T\
-    \ mid2 = left + (right - left) / T(3) * T(2);\n        if (minimize) {\n     \
-    \       if (less_equal(func(mid1), func(mid2)))\n                right = mid2;\n\
-    \            else\n                left = mid1;\n        } else {\n          \
-    \  if (greater_equal(func(mid1), func(mid2)))\n                right = mid2;\n\
-    \            else\n                left = mid1;\n        }\n    }\n    return\
-    \ left;\n}\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/basic/chmax.hpp\"\n\
-    \n\n\nnamespace BanetteGin {\n\ntemplate <class T>\nbool chmax(T& a, const T&\
-    \ b) {\n    if (a < b) {\n        a = b;\n        return 1;\n    }\n    return\
-    \ 0;\n}\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/basic/chmin.hpp\"\n\n\
-    \n\nnamespace BanetteGin {\n\ntemplate <class T>\nbool chmin(T& a, const T& b)\
-    \ {\n    if (b < a) {\n        a = b;\n        return 1;\n    }\n    return 0;\n\
-    }\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/combinatorics/combination.hpp\"\
-    \n\n\n\nnamespace BanetteGin {\n\ntemplate <class T>\nT combination(const T& m,\
-    \ const T& n) {\n    assert(m >= n);\n    T ret = 1;\n    for (long long int i\
-    \ = m; i >= m - n + 1; --i) {\n        ret = ret * i;\n    }\n    for (long long\
-    \ int i = n; i >= 1; --i) {\n        ret = ret / i;\n    }\n    return ret;\n\
-    }\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/combinatorics/homogenous_product.hpp\"\
-    \n\n\n\nnamespace BanetteGin {\n\ntemplate <class T>\nT homogenous_product(const\
-    \ T& m, const T& n) {\n    T ret = 1;\n    for (long long int i = m + n - 1; i\
-    \ >= m; --i) {\n        ret = ret * i;\n    }\n    for (long long int i = m -\
-    \ 1; i >= 1; --i) {\n        ret = ret / i;\n    }\n    return ret;\n}\n\n}  //\
-    \ namespace BanetteGin\n\n\n#line 1 \"src/combinatorics/permutation.hpp\"\n\n\n\
-    \nnamespace BanetteGin {\n\ntemplate <class T>\nT permutation(const T& m, const\
-    \ T& n) {\n    T ret = 1;\n    for (long long int i = m; i >= m - n + 1; --i)\
-    \ {\n        ret = ret * i;\n    }\n    return ret;\n}\n\n}  // namespace BanetteGin\n\
-    \n\n#line 1 \"src/data_structure/binary_indexed_tree.hpp\"\n\n\n\n#include <vector>\n\
+    \ left, T right, Function&& func, bool minimize = true) {\n    assert(greater_equal(right,\
+    \ left));\n    long long int iter = (long long int)((std::log(right - left) -\
+    \ std::log(EPS)) / std::log(T(3.0 / 2.0)) + 1);\n    while (iter--) {\n      \
+    \  T mid1 = (left * T(2.0) + right) / T(3.0);\n        T mid2 = (left + right\
+    \ * T(2.0)) / T(3.0);\n        T a = func(mid1);\n        T b = func(mid2);\n\
+    \        if (minimize ^ less_equal(a, b)) {\n            left = mid1;\n      \
+    \  } else {\n            right = mid2;\n        }\n    }\n    return left;\n}\n\
+    \n}  // namespace BanetteGin\n\n\n#line 1 \"src/basic/chmax.hpp\"\n\n\n\nnamespace\
+    \ BanetteGin {\n\ntemplate <class T>\nbool chmax(T& a, const T& b) {\n    if (a\
+    \ < b) {\n        a = b;\n        return 1;\n    }\n    return 0;\n}\n\n}  //\
+    \ namespace BanetteGin\n\n\n#line 1 \"src/basic/chmin.hpp\"\n\n\n\nnamespace BanetteGin\
+    \ {\n\ntemplate <class T>\nbool chmin(T& a, const T& b) {\n    if (b < a) {\n\
+    \        a = b;\n        return 1;\n    }\n    return 0;\n}\n\n}  // namespace\
+    \ BanetteGin\n\n\n#line 1 \"src/combinatorics/combination.hpp\"\n\n\n\nnamespace\
+    \ BanetteGin {\n\ntemplate <class T>\nT combination(const T& m, const T& n) {\n\
+    \    assert(m >= n);\n    T ret = 1;\n    for (long long int i = m; i >= m - n\
+    \ + 1; --i) {\n        ret = ret * i;\n    }\n    for (long long int i = n; i\
+    \ >= 1; --i) {\n        ret = ret / i;\n    }\n    return ret;\n}\n\n}  // namespace\
+    \ BanetteGin\n\n\n#line 1 \"src/combinatorics/homogenous_product.hpp\"\n\n\n\n\
+    namespace BanetteGin {\n\ntemplate <class T>\nT homogenous_product(const T& m,\
+    \ const T& n) {\n    T ret = 1;\n    for (long long int i = m + n - 1; i >= m;\
+    \ --i) {\n        ret = ret * i;\n    }\n    for (long long int i = m - 1; i >=\
+    \ 1; --i) {\n        ret = ret / i;\n    }\n    return ret;\n}\n\n}  // namespace\
+    \ BanetteGin\n\n\n#line 1 \"src/combinatorics/permutation.hpp\"\n\n\n\nnamespace\
+    \ BanetteGin {\n\ntemplate <class T>\nT permutation(const T& m, const T& n) {\n\
+    \    T ret = 1;\n    for (long long int i = m; i >= m - n + 1; --i) {\n      \
+    \  ret = ret * i;\n    }\n    return ret;\n}\n\n}  // namespace BanetteGin\n\n\
+    \n#line 1 \"src/data_structure/binary_indexed_tree.hpp\"\n\n\n\n#include <vector>\n\
     \nnamespace BanetteGin {\n\ntemplate <class T>\nstruct binary_indexed_tree {\n\
     \    T n;\n    std::vector<T> tree;\n    const T ide = 0;\n\n    binary_indexed_tree(T\
     \ n_)\n        : n(n_) {\n        tree.resize(n, ide);\n    }\n\n    T abel_operation(const\
@@ -1000,7 +996,7 @@ data:
   isVerificationFile: false
   path: src/all.hpp
   requiredBy: []
-  timestamp: '2023-09-08 21:12:14+09:00'
+  timestamp: '2023-09-09 00:48:13+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/all.hpp

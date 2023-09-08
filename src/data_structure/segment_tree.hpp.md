@@ -16,7 +16,7 @@ data:
     links: []
   bundledCode: "#line 1 \"src/data_structure/segment_tree.hpp\"\n\n\n\n#include <vector>\n\
     \n#line 1 \"src/basic/constant.hpp\"\n\n\n\nnamespace BanetteGin {\n\nconst long\
-    \ double EPS = 10e-12L;\nconst long long int LINF = 1001001001001001001LL;\nconst\
+    \ double EPS = 10e-14L;\nconst long long int LINF = 1001001001001001001LL;\nconst\
     \ long double PI = acos(-1.0L);\nconst long double GOLDEN_RATIO = 2.0L * cos(PI\
     \ / 5.0L);\n\n}  // namespace BanetteGin\n\n\n#line 7 \"src/data_structure/segment_tree.hpp\"\
     \n\nnamespace BanetteGin {\n\ntemplate <class T>\nstruct segment_tree {\n    T\
@@ -61,7 +61,7 @@ data:
   path: src/data_structure/segment_tree.hpp
   requiredBy:
   - src/all.hpp
-  timestamp: '2023-09-08 21:12:14+09:00'
+  timestamp: '2023-09-09 00:37:06+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/data_structure/segment_tree.hpp

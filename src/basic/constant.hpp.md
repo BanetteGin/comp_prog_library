@@ -142,7 +142,7 @@ data:
     namespace BanetteGin {
 
 
-    const long double EPS = 10e-12L;
+    const long double EPS = 10e-14L;
 
     const long long int LINF = 1001001001001001001LL;
 
@@ -164,7 +164,7 @@ data:
     namespace BanetteGin {
 
 
-    const long double EPS = 10e-12L;
+    const long double EPS = 10e-14L;
 
     const long long int LINF = 1001001001001001001LL;
 
@@ -217,7 +217,7 @@ data:
   - src/geometry/centroid.hpp
   - src/geometry/segment.hpp
   - src/geometry/intersect.hpp
-  timestamp: '2023-09-08 21:12:14+09:00'
+  timestamp: '2023-09-09 00:37:06+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/aizu_online_judge/Library/CGL/7_C.test.cpp

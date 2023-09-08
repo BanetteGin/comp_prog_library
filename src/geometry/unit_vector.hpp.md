@@ -42,7 +42,7 @@ data:
     \n\n\n\n#include <complex>\n\n#line 1 \"src/basic/comparison.hpp\"\n\n\n\n#line\
     \ 1 \"src/basic/equal.hpp\"\n\n\n\n#line 1 \"src/basic/sign.hpp\"\n\n\n\n#line\
     \ 1 \"src/basic/constant.hpp\"\n\n\n\nnamespace BanetteGin {\n\nconst long double\
-    \ EPS = 10e-12L;\nconst long long int LINF = 1001001001001001001LL;\nconst long\
+    \ EPS = 10e-14L;\nconst long long int LINF = 1001001001001001001LL;\nconst long\
     \ double PI = acos(-1.0L);\nconst long double GOLDEN_RATIO = 2.0L * cos(PI / 5.0L);\n\
     \n}  // namespace BanetteGin\n\n\n#line 5 \"src/basic/sign.hpp\"\n\nnamespace\
     \ BanetteGin {\n\ntemplate <class T>\nint sign(const T& x) {\n    return (x <\
@@ -105,7 +105,7 @@ data:
   path: src/geometry/unit_vector.hpp
   requiredBy:
   - src/all.hpp
-  timestamp: '2023-09-08 21:12:14+09:00'
+  timestamp: '2023-09-09 00:37:06+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/geometry/unit_vector.hpp

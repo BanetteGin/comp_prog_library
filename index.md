@@ -160,7 +160,7 @@ data:
       title: src/matrix/matrix_rotate.hpp
   - name: src/number_theory
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: src/number_theory/base_change.hpp
       title: src/number_theory/base_change.hpp
     - icon: ':heavy_check_mark:'
