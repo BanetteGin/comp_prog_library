@@ -1,4 +1,5 @@
 #define PROBLEM "https://yukicoder.me/problems/no/306"
+#define ERROR 10e-6
 
 #include <bits/stdc++.h>
 using namespace std;
