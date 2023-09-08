@@ -1,11 +1,6 @@
 ---
 data:
   libraryCategories:
-  - name: manage
-    pages:
-    - icon: ':warning:'
-      path: manage/incenter_test.cpp
-      title: manage/incenter_test.cpp
   - name: src
     pages:
     - icon: ':warning:'
