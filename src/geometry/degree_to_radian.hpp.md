@@ -15,9 +15,9 @@ data:
   attributes:
     links: []
   bundledCode: "#line 1 \"src/geometry/degree_to_radian.hpp\"\n\n\n\n#line 1 \"src/basic/constant.hpp\"\
-    \n\n\n\nnamespace BanetteGin {\n\nconst long double EPS = 10e-14L;\nconst long\
-    \ long int LINF = 1001001001001001001LL;\nconst long double PI = acos(-1.0L);\n\
-    const long double GOLDEN_RATIO = 2.0L * cos(PI / 5.0L);\n\n}  // namespace BanetteGin\n\
+    \n\n\n\nnamespace BanetteGin {\n\nconst long double EPS = 1e-6L;\nconst long long\
+    \ int LINF = 1001001001001001001LL;\nconst long double PI = acos(-1.0L);\nconst\
+    \ long double GOLDEN_RATIO = 2.0L * cos(PI / 5.0L);\n\n}  // namespace BanetteGin\n\
     \n\n#line 5 \"src/geometry/degree_to_radian.hpp\"\n\nnamespace BanetteGin {\n\n\
     template <class T>\nT degree_to_radian(T theta) {\n    return theta / 180 * PI;\n\
     }\n\n}  // namespace BanetteGin\n\n\n"
@@ -31,7 +31,7 @@ data:
   path: src/geometry/degree_to_radian.hpp
   requiredBy:
   - src/all.hpp
-  timestamp: '2023-09-09 00:37:06+09:00'
+  timestamp: '2023-09-09 01:13:20+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/geometry/degree_to_radian.hpp

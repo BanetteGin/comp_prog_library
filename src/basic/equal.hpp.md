@@ -136,7 +136,7 @@ data:
     links: []
   bundledCode: "#line 1 \"src/basic/equal.hpp\"\n\n\n\n#line 1 \"src/basic/sign.hpp\"\
     \n\n\n\n#line 1 \"src/basic/constant.hpp\"\n\n\n\nnamespace BanetteGin {\n\nconst\
-    \ long double EPS = 10e-14L;\nconst long long int LINF = 1001001001001001001LL;\n\
+    \ long double EPS = 1e-6L;\nconst long long int LINF = 1001001001001001001LL;\n\
     const long double PI = acos(-1.0L);\nconst long double GOLDEN_RATIO = 2.0L * cos(PI\
     \ / 5.0L);\n\n}  // namespace BanetteGin\n\n\n#line 5 \"src/basic/sign.hpp\"\n\
     \nnamespace BanetteGin {\n\ntemplate <class T>\nint sign(const T& x) {\n    return\
@@ -188,7 +188,7 @@ data:
   - src/geometry/segment.hpp
   - src/geometry/intersect.hpp
   - src/geometry/intersect.hpp
-  timestamp: '2023-09-09 00:37:06+09:00'
+  timestamp: '2023-09-09 01:13:20+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/aizu_online_judge/Library/CGL/7_C.test.cpp
