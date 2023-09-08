@@ -205,13 +205,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/number_theory/dynamic_modint.hpp
     title: src/number_theory/dynamic_modint.hpp
-  - icon: ':warning:'
+  - icon: ':x:'
     path: src/number_theory/eratosthenes_sieve.hpp
     title: src/number_theory/eratosthenes_sieve.hpp
   - icon: ':heavy_check_mark:'
     path: src/number_theory/greatest_common_divisor.hpp
     title: src/number_theory/greatest_common_divisor.hpp
-  - icon: ':warning:'
+  - icon: ':x:'
     path: src/number_theory/linear_sieve.hpp
     title: src/number_theory/linear_sieve.hpp
   - icon: ':heavy_check_mark:'
@@ -229,7 +229,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/number_theory/prime_factorization.hpp
     title: src/number_theory/prime_factorization.hpp
-  - icon: ':warning:'
+  - icon: ':x:'
     path: src/number_theory/sundaram_sieve.hpp
     title: src/number_theory/sundaram_sieve.hpp
   - icon: ':warning:'
@@ -732,14 +732,15 @@ data:
     \ 1));\n    }\n    return prime_list;\n}\n\n}  // namespace BanetteGin\n\n\n#line\
     \ 1 \"src/number_theory/sundaram_sieve.hpp\"\n\n\n\n#line 5 \"src/number_theory/sundaram_sieve.hpp\"\
     \n\nnamespace BanetteGin {\n\ntemplate <class T>\nstd::vector<T> sundaram_sieve(T\
-    \ n) {\n    std::vector<bool> ret((n + 1) / 2, true);\n    std::vector<T> prime_list\
-    \ = {2};\n    ret[0] = false;\n    T m = ((n + 1) / 2 - 2) / 3;\n    for (long\
-    \ long int a = 1; a <= m; ++a) {\n        for (long long int b = 1; b <= a &&\
-    \ a + b + 2 * a * b <= (n + 1) / 2 - 1; ++b) {\n            ret[a + b + 2 * a\
-    \ * b] = false;\n        }\n    }\n    for (T i = 0; i < ret.size(); ++i) {\n\
-    \        if (ret[i]) prime_list.emplace_back(i * 2 + 1);\n    }\n    return prime_list;\n\
-    }\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/sorting/bubble_sort.hpp\"\n\
-    \n\n\n#line 5 \"src/sorting/bubble_sort.hpp\"\n\nnamespace BanetteGin {\n\ntemplate\
+    \ n) {\n    std::vector<bool> ret((n + 1) / 2, true);\n    std::vector<T> prime_list;\n\
+    \    if (n < 2) return prime_list;\n    prime_list.emplace_back(2);\n    ret[0]\
+    \ = false;\n    T m = ((n + 1) / 2 - 2) / 3;\n    for (long long int a = 1; a\
+    \ <= m; ++a) {\n        for (long long int b = 1; b <= a && a + b + 2 * a * b\
+    \ <= (n + 1) / 2 - 1; ++b) {\n            ret[a + b + 2 * a * b] = false;\n  \
+    \      }\n    }\n    for (T i = 0; i < ret.size(); ++i) {\n        if (ret[i])\
+    \ prime_list.emplace_back(i * 2 + 1);\n    }\n    return prime_list;\n}\n\n} \
+    \ // namespace BanetteGin\n\n\n#line 1 \"src/sorting/bubble_sort.hpp\"\n\n\n\n\
+    #line 5 \"src/sorting/bubble_sort.hpp\"\n\nnamespace BanetteGin {\n\ntemplate\
     \ <class T>\nstd::vector<T> bubble_sort(const std::vector<T>& a) {\n    for (long\
     \ long int i = 0; i < a.size(); ++i) {\n        for (long long int j = i + 1;\
     \ j < a.size(); ++j) {\n            if (a[i] > a[j]) swap(a[i], a[j]);\n     \
@@ -995,7 +996,7 @@ data:
   isVerificationFile: false
   path: src/all.hpp
   requiredBy: []
-  timestamp: '2023-09-08 16:18:56+09:00'
+  timestamp: '2023-09-08 16:34:00+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/all.hpp

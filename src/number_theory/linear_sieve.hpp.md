@@ -5,10 +5,13 @@ data:
   - icon: ':warning:'
     path: src/all.hpp
     title: src/all.hpp
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: test/yukicoder/843-3.test.cpp
+    title: test/yukicoder/843-3.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 1 \"src/number_theory/linear_sieve.hpp\"\n\n\n\n#include <vector>\n\
@@ -36,8 +39,9 @@ data:
   requiredBy:
   - src/all.hpp
   timestamp: '2023-09-07 19:30:09+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_WA
+  verifiedWith:
+  - test/yukicoder/843-3.test.cpp
 documentation_of: src/number_theory/linear_sieve.hpp
 layout: document
 redirect_from:
