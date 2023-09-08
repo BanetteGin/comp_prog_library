@@ -8,7 +8,9 @@ namespace BanetteGin {
 template <class T>
 std::vector<T> sundaram_sieve(T n) {
     std::vector<bool> ret((n + 1) / 2, true);
-    std::vector<T> prime_list = {2};
+    std::vector<T> prime_list;
+    if (n < 2) return prime_list;
+    prime_list.emplace_back(2);
     ret[0] = false;
     T m = ((n + 1) / 2 - 2) / 3;
     for (long long int a = 1; a <= m; ++a) {
