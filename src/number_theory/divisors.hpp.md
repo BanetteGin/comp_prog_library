@@ -5,10 +5,13 @@ data:
   - icon: ':warning:'
     path: src/all.hpp
     title: src/all.hpp
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/888.test.cpp
+    title: test/yukicoder/888.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"src/number_theory/divisors.hpp\"\n\n\n\n#include <vector>\n\
@@ -32,8 +35,9 @@ data:
   requiredBy:
   - src/all.hpp
   timestamp: '2023-09-07 19:32:18+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/yukicoder/888.test.cpp
 documentation_of: src/number_theory/divisors.hpp
 layout: document
 redirect_from:

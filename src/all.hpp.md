@@ -199,7 +199,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/number_theory/base_change.hpp
     title: src/number_theory/base_change.hpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: src/number_theory/divisors.hpp
     title: src/number_theory/divisors.hpp
   - icon: ':heavy_check_mark:'
