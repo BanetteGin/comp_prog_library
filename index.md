@@ -8,7 +8,7 @@ data:
       title: src/all.hpp
   - name: src/analysis
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: src/analysis/golden_ratio_search.hpp
       title: src/analysis/golden_ratio_search.hpp
     - icon: ':x:'
@@ -257,7 +257,7 @@ data:
     - icon: ':x:'
       path: test/yukicoder/306-1.test.cpp
       title: test/yukicoder/306-1.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/yukicoder/306-2.test.cpp
       title: test/yukicoder/306-2.test.cpp
     - icon: ':heavy_check_mark:'

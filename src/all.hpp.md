@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: src/analysis/golden_ratio_search.hpp
     title: src/analysis/golden_ratio_search.hpp
   - icon: ':x:'
