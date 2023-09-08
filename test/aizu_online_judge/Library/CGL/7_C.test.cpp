@@ -1,4 +1,5 @@
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/all/CGL_7_C"
+#define ERROR 10e-6
 
 #include <bits/stdc++.h>
 using namespace std;
