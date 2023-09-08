@@ -1,34 +1,34 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: src/basic/comparison.hpp
     title: src/basic/comparison.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: src/basic/constant.hpp
     title: src/basic/constant.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: src/basic/equal.hpp
     title: src/basic/equal.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: src/basic/greater_equal.hpp
     title: src/basic/greater_equal.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: src/basic/greater_than.hpp
     title: src/basic/greater_than.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: src/basic/less_equal.hpp
     title: src/basic/less_equal.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: src/basic/less_than.hpp
     title: src/basic/less_than.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: src/basic/sign.hpp
     title: src/basic/sign.hpp
   - icon: ':warning:'
     path: src/geometry/line.hpp
     title: src/geometry/line.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: src/geometry/point.hpp
     title: src/geometry/point.hpp
   _extendedRequiredBy:

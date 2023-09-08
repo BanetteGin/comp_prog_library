@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: src/basic/constant.hpp
     title: src/basic/constant.hpp
   _extendedRequiredBy:

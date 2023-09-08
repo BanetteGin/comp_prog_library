@@ -1,43 +1,43 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: src/basic/comparison.hpp
     title: src/basic/comparison.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: src/basic/constant.hpp
     title: src/basic/constant.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: src/basic/equal.hpp
     title: src/basic/equal.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: src/basic/equal.hpp
     title: src/basic/equal.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: src/basic/greater_equal.hpp
     title: src/basic/greater_equal.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: src/basic/greater_than.hpp
     title: src/basic/greater_than.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: src/basic/less_equal.hpp
     title: src/basic/less_equal.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: src/basic/less_than.hpp
     title: src/basic/less_than.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: src/basic/sign.hpp
     title: src/basic/sign.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: src/geometry/distance_point_and_point.hpp
     title: src/geometry/distance_point_and_point.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: src/geometry/point.hpp
     title: src/geometry/point.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: src/geometry/segment.hpp
     title: src/geometry/segment.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: src/geometry/triangle.hpp
     title: src/geometry/triangle.hpp
   _extendedRequiredBy:
@@ -53,7 +53,7 @@ data:
   - icon: ':warning:'
     path: src/geometry/excircle.hpp
     title: src/geometry/excircle.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: src/geometry/incircle.hpp
     title: src/geometry/incircle.hpp
   - icon: ':warning:'
@@ -63,7 +63,7 @@ data:
     path: src/geometry/intersect_line_and_circle.hpp
     title: src/geometry/intersect_line_and_circle.hpp
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aizu_online_judge/Library/CGL/7_B.test.cpp
     title: test/aizu_online_judge/Library/CGL/7_B.test.cpp
   - icon: ':x:'
@@ -71,7 +71,7 @@ data:
     title: test/aizu_online_judge/Library/CGL/7_C.test.cpp
   _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"src/geometry/circle.hpp\"\n\n\n\n#line 1 \"src/basic/comparison.hpp\"\
@@ -214,7 +214,7 @@ data:
   - src/geometry/incircle.hpp
   - src/geometry/intersect_circle_and_circle.hpp
   timestamp: '2023-09-08 12:39:10+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/aizu_online_judge/Library/CGL/7_C.test.cpp
   - test/aizu_online_judge/Library/CGL/7_B.test.cpp
