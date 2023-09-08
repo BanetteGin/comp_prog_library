@@ -7,7 +7,7 @@ namespace BanetteGin {
 
 template <class T>
 point<T> centroid(triangle<T> t) {
-    return (t.point_a + t.point_b + t.point_c) / 3;
+    return (t.points[0] + t.points[1] + t.points[2]) / 3;
 }
 
 }  // namespace BanetteGin

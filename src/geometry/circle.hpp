@@ -2,7 +2,6 @@
 #define BANETTEGIN_CIRCLE_HPP_INCLUDED
 
 #include "../basic/comparison.hpp"
-#include "circumcenter.hpp"
 #include "distance_point_and_point.hpp"
 #include "point.hpp"
 #include "segment.hpp"
@@ -21,13 +20,25 @@ struct circle {
         : p(p_), r(distance_point_and_point(p_, q_)) {
     }
     circle(point<T> p_, point<T> q_, point<T> r_)
-        : p(circumcenter(triangle(p_, q_, r_)).first), r(circumcenter(triangle(p_, q_, r_)).second) {
+        : p(constracter_circumcircle(triangle(p_, q_, r_)).p), r(constracter_circumcircle(triangle(p_, q_, r_)).r) {
     }
     bool operator==(const circle& c) const noexcept {
         return equal(this->p, c.p) && equal(this->r, c.r);
     }
     bool operator!=(const circle& c) const noexcept {
         return !equal(this->p, c.p) || !equal(this->r, c.r);
+    }
+
+private:
+    circle<T> constracter_circumcircle(triangle<T> t) {
+        point ret = point(0.0L, 0.0L);
+        T denom = 0.0L;
+        for (int i = 0; i < 3; ++i) {
+            ret += t.points[i] * sin(t.angles[i]);
+            denom += sin(t.angles[i]);
+        }
+        T r = t.lengths[0] / sin(t.angles[0]) / 2;
+        return circle(ret / denom, r);
     }
 };
 
