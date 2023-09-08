@@ -7,11 +7,12 @@
 namespace BanetteGin {
 
 template <class T, class Function>
-T ternary_search(T left, T right, Function func, bool option = true) {
-    while (!equal(left, right)) {
-        T mid1 = left + (right - left) / 3;
-        T mid2 = left + (right - left) / 3 * 2;
-        if (option) {
+T ternary_search(T left, T right, Function func, bool minimize = true) {
+    long long int iter = (std::log(right - left) - std::log(EPS)) / std::log(T(3) / T(2)) + 1;
+    while (iter--) {
+        T mid1 = left + (right - left) / T(3);
+        T mid2 = left + (right - left) / T(3) * T(2);
+        if (minimize) {
             if (less_equal(func(mid1), func(mid2)))
                 right = mid2;
             else
