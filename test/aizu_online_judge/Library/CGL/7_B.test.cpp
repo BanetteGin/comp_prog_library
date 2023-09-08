@@ -17,7 +17,8 @@ int main(void) {
     point a = point(ax, ay);
     point b = point(bx, by);
     point c = point(cx, cy);
-    circle ans = incircle(triangle(a, b, c));
+    triangle t = triangle(a, b, c);
+    circle ans = incircle(t);
     cout << fixed << setprecision(20) << ans.p.x << " " << ans.p.y << " " << ans.r << endl;
     return 0;
 }

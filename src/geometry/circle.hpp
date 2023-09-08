@@ -35,9 +35,9 @@ private:
         T denom = 0.0L;
         for (int i = 0; i < 3; ++i) {
             ret += t.points[i] * sin(2 * t.angles[i]);
-            denom += sin(t.angles[i]);
+            denom += sin(2 * t.angles[i]);
         }
-        T r = t.lengths[0] / sin(2 * t.angles[0]) / 2;
+        T r = t.lengths[0] / sin(t.angles[0]) / 2;
         return circle(ret / denom, r);
     }
 };
