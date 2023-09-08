@@ -20,16 +20,16 @@ T golden_ratio_search(T left, T right, Function&& func, bool minimize = true) {
 
     while (iter--) {
         if (minimize ^ less_equal(fnmid1, fnmid2)) {
-            fnmid1 = fnmid2;
             left = mid1;
             mid1 = mid2;
-            mid2 = (left * GOLDEN_RATIO + right) / denom;
+            mid2 = (left + right * GOLDEN_RATIO) / denom;
+            fnmid1 = fnmid2;
             fnmid2 = func(mid2);
         } else {
-            fnmid2 = fnmid1;
             right = mid2;
             mid2 = mid1;
-            mid1 = (left + right * GOLDEN_RATIO) / denom;
+            mid1 = (left * GOLDEN_RATIO + right) / denom;
+            fnmid2 = fnmid1;
             fnmid1 = func(mid1);
         }
     }
