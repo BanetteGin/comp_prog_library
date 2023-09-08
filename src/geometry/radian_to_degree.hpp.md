@@ -4,7 +4,10 @@ data:
   - icon: ':warning:'
     path: src/basic/constant.hpp
     title: src/basic/constant.hpp
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: src/all.hpp
+    title: src/all.hpp
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
@@ -26,7 +29,8 @@ data:
   - src/basic/constant.hpp
   isVerificationFile: false
   path: src/geometry/radian_to_degree.hpp
-  requiredBy: []
+  requiredBy:
+  - src/all.hpp
   timestamp: '2023-08-22 02:10:12+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []

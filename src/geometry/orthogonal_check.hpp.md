@@ -34,7 +34,10 @@ data:
   - icon: ':warning:'
     path: src/geometry/point.hpp
     title: src/geometry/point.hpp
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: src/all.hpp
+    title: src/all.hpp
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
@@ -130,7 +133,8 @@ data:
   - src/geometry/point.hpp
   isVerificationFile: false
   path: src/geometry/orthogonal_check.hpp
-  requiredBy: []
+  requiredBy:
+  - src/all.hpp
   timestamp: '2023-09-08 07:19:50+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []

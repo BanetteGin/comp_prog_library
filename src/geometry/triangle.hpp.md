@@ -39,6 +39,12 @@ data:
     title: src/geometry/segment.hpp
   _extendedRequiredBy:
   - icon: ':warning:'
+    path: src/all.hpp
+    title: src/all.hpp
+  - icon: ':warning:'
+    path: src/all.hpp
+    title: src/all.hpp
+  - icon: ':warning:'
     path: src/geometry/centroid.hpp
     title: src/geometry/centroid.hpp
   - icon: ':warning:'
@@ -205,6 +211,8 @@ data:
   isVerificationFile: false
   path: src/geometry/triangle.hpp
   requiredBy:
+  - src/all.hpp
+  - src/all.hpp
   - src/geometry/intersect_line_and_circle.hpp
   - src/geometry/circle.hpp
   - src/geometry/circumcenter.hpp

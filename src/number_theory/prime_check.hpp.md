@@ -3,6 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy:
   - icon: ':warning:'
+    path: src/all.hpp
+    title: src/all.hpp
+  - icon: ':warning:'
+    path: src/all.hpp
+    title: src/all.hpp
+  - icon: ':warning:'
     path: src/number_theory/naive_sieve.hpp
     title: src/number_theory/naive_sieve.hpp
   _extendedVerifiedWith: []
@@ -25,6 +31,8 @@ data:
   isVerificationFile: false
   path: src/number_theory/prime_check.hpp
   requiredBy:
+  - src/all.hpp
+  - src/all.hpp
   - src/number_theory/naive_sieve.hpp
   timestamp: '2023-09-07 19:30:09+09:00'
   verificationStatus: LIBRARY_NO_TESTS

@@ -1,7 +1,10 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: src/all.hpp
+    title: src/all.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/library_checker/union_find.test.cpp
@@ -38,7 +41,8 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: src/data_structure/union_find.hpp
-  requiredBy: []
+  requiredBy:
+  - src/all.hpp
   timestamp: '2023-08-23 17:08:47+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

@@ -28,7 +28,10 @@ data:
   - icon: ':warning:'
     path: src/basic/sign.hpp
     title: src/basic/sign.hpp
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: src/all.hpp
+    title: src/all.hpp
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
@@ -88,7 +91,8 @@ data:
   - src/basic/constant.hpp
   isVerificationFile: false
   path: src/analysis/ternary_search.hpp
-  requiredBy: []
+  requiredBy:
+  - src/all.hpp
   timestamp: '2023-08-23 13:22:45+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []

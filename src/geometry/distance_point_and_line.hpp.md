@@ -33,6 +33,12 @@ data:
     title: src/geometry/point.hpp
   _extendedRequiredBy:
   - icon: ':warning:'
+    path: src/all.hpp
+    title: src/all.hpp
+  - icon: ':warning:'
+    path: src/all.hpp
+    title: src/all.hpp
+  - icon: ':warning:'
     path: src/geometry/intersect_line_and_circle.hpp
     title: src/geometry/intersect_line_and_circle.hpp
   _extendedVerifiedWith: []
@@ -131,6 +137,8 @@ data:
   isVerificationFile: false
   path: src/geometry/distance_point_and_line.hpp
   requiredBy:
+  - src/all.hpp
+  - src/all.hpp
   - src/geometry/intersect_line_and_circle.hpp
   timestamp: '2023-09-08 07:19:50+09:00'
   verificationStatus: LIBRARY_NO_TESTS

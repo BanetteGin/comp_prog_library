@@ -9,6 +9,15 @@ data:
     title: src/basic/sign.hpp
   _extendedRequiredBy:
   - icon: ':warning:'
+    path: src/all.hpp
+    title: src/all.hpp
+  - icon: ':warning:'
+    path: src/all.hpp
+    title: src/all.hpp
+  - icon: ':warning:'
+    path: src/all.hpp
+    title: src/all.hpp
+  - icon: ':warning:'
     path: src/analysis/golden_ratio_search.hpp
     title: src/analysis/golden_ratio_search.hpp
   - icon: ':warning:'
@@ -145,6 +154,9 @@ data:
   isVerificationFile: false
   path: src/basic/equal.hpp
   requiredBy:
+  - src/all.hpp
+  - src/all.hpp
+  - src/all.hpp
   - src/basic/comparison.hpp
   - src/analysis/golden_ratio_search.hpp
   - src/analysis/ternary_search.hpp
