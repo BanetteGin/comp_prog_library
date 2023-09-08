@@ -4,3 +4,4 @@
 manage/crawl.py
 manage/template.cpp
 manage/incenter_test.cpp
+*.py

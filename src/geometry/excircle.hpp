@@ -12,13 +12,13 @@ circle<T> excircle(triangle<T> t, int option = 0) {
     point ret = point(0.0L, 0.0L);
     T denom = 0.0L;
     for (int i = 0; i < 3; ++i) {
-        T sgn = 1;
-        if (i == option) sgn = -1;
+        T sgn = 1.0L;
+        if (i == option) sgn = -1.0L;
         ret += t.points[i] * sgn * t.lengths[i];
         denom += sgn * t.lengths[i];
     }
 
-    T r = t.area * 2 / denom;
+    T r = t.area * 2.0L / denom;
     return circle(ret / denom, r);
 }
 

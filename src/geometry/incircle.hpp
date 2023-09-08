@@ -14,7 +14,7 @@ circle<T> incircle(triangle<T> t) {
         ret += t.points[i] * t.lengths[i];
         denom += t.lengths[i];
     }
-    T r = t.area * 2 / denom;
+    T r = t.area * 2.0L / denom;
     return circle(ret / denom, r);
 }
 
