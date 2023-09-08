@@ -69,6 +69,10 @@ data:
 
     #include "geometry\circumcenter.hpp"
 
+    #include "geometry\circumradius.hpp"
+
+    #include "geometry\concyclic.hpp"
+
     #include "geometry\degree_to_radian.hpp"
 
     #include "geometry\distance_point_and_line.hpp"
@@ -79,7 +83,13 @@ data:
 
     #include "geometry\distance_segment_and_segment.hpp"
 
+    #include "geometry\excenter.hpp"
+
+    #include "geometry\exradius.hpp"
+
     #include "geometry\incenter.hpp"
+
+    #include "geometry\inradius.hpp"
 
     #include "geometry\intersect_circle_and_circle.hpp"
 
@@ -134,6 +144,10 @@ data:
     #include "number_theory\prime_factorization.hpp"
 
     #include "number_theory\sundaram_sieve.hpp"
+
+    #include "sorting\bubble_sort.hpp"
+
+    #include "sorting\insertion_sort.hpp"
 
     #include "string\clip_string.hpp"
 

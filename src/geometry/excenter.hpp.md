@@ -103,43 +103,46 @@ data:
     \ p_, point<T> q_)\n        : p(p_), q(q_), length(distance_point_and_point(p,\
     \ q)) {\n    }\n};\n\n}  // namespace BanetteGin\n\n\n#line 8 \"src/geometry/triangle.hpp\"\
     \n\nnamespace BanetteGin {\n\ntemplate <class T>\nstruct triangle {\n    point<T>\
-    \ point_a, point_b, point_c;\n    T length_a, length_b, length_c;\n    T angle_a,\
-    \ angle_b, angle_c;\n\n    vector<point<T>> points(3);\n    vector<T> lengths(3);\n\
-    \    vector<T> angles(3);\n    T area;\n    triangle(point<T> point_a, point<T>\
-    \ point_b, point<T> point_c)\n        : points(std::vector<point<T>>(point_a,\
-    \ point_b, point_c)) {\n        for(int a=0;a<3;++a){\n            int b,c;\n\
-    \            bool added_flag=false;\n            for(int i=0;i<3;++i){\n     \
-    \           if(a!=i){\n                    if(!added_flag) {\n               \
-    \         b=i;\n                        added_flag=true;\n                   \
-    \ } else c=i;\n                }\n            }\n            lengths[a]=distance_point_and_point(points[b],points[c]);\n\
-    \        }\n\n        for(int a=0;a<3;++a){\n            int b,c;\n          \
-    \  bool added_flag=false;\n            for(int i=0;i<3;++i){\n               \
-    \ if(a!=i){\n                    if(!added_flag) {\n                        b=i;\n\
-    \                        added_flag=true;\n                    } else c=i;\n \
-    \               }\n            }\n            angles[a]=acos((pow(lengths[b],\
-    \ 2) + pow(lengths[c], 2) - pow(lengths[a], 2)) / (2 * lengths[b] * lengths[c]))\n\
-    \        }\n\n        area = length_b * length_c * sin(angle_a) / 2;\n    };\n\
-    \    triangle(T length_a, T length_b, T length_c)\n        :  lengths(std::vector<T>(length_a,length_b,length_c)){\n\
-    \        length_a = distance_point_and_point(point_b, point_c);\n        length_b\
-    \ = distance_point_and_point(point_c, point_a);\n        length_c = distance_point_and_point(point_a,\
-    \ point_b);\n        angle_a = acos((pow(length_b, 2) + pow(length_c, 2) - pow(length_a,\
-    \ 2)) / (2 * length_b * length_c));\n        angle_b = acos((pow(length_c, 2)\
-    \ + pow(length_a, 2) - pow(length_b, 2)) / (2 * length_c * length_a));\n     \
-    \   angle_c = acos((pow(length_a, 2) + pow(length_b, 2) - pow(length_c, 2)) /\
-    \ (2 * length_a * length_b));\n        area = length_b * length_c * sin(angle_a)\
-    \ / 2;\n    };\n};\n\n}  // namespace BanetteGin\n\n\n#line 5 \"src/geometry/excenter.hpp\"\
-    \n\nnamespace BanetteGin {\n\ntemplate <class T>\nstd::pair<point<T>, T> excenter(triangle<T>\
-    \ t,int option = 0) {\n    point<T> o = (t.point_a * t.length_a + t.point_b *\
-    \ t.length_b + t.point_c * t.length_c) / (t.length_a + t.length_b + t.length_c);\n\
-    \    T r = t.area * 2 / (t.length_a + t.length_b + t.length_c);\n    return std::make_pair(o,\
-    \ r);\n}\n\n}  // namespace BanetteGin\n\n\n"
+    \ points[3];\n    T lengths[3];\n    T angles[3];\n    T area;\n    triangle(point<T>\
+    \ point_a, point<T> point_b, point<T> point_c)\n        : points{point_a, point_b,\
+    \ point_c} {\n        for (int a = 0; a < 3; ++a) {\n            int b, c;\n \
+    \           bool added_flag = false;\n            for (int i = 0; i < 3; ++i)\
+    \ {\n                if (a != i) {\n                    if (!added_flag) {\n \
+    \                       b = i;\n                        added_flag = true;\n \
+    \                   } else\n                        c = i;\n                }\n\
+    \            }\n            lengths[a] = distance_point_and_point(points[b], points[c]);\n\
+    \        }\n\n        for (int a = 0; a < 3; ++a) {\n            int b, c;\n \
+    \           bool added_flag = false;\n            for (int i = 0; i < 3; ++i)\
+    \ {\n                if (a != i) {\n                    if (!added_flag) {\n \
+    \                       b = i;\n                        added_flag = true;\n \
+    \                   } else\n                        c = i;\n                }\n\
+    \            }\n            angles[a] = acos((pow(lengths[b], 2) + pow(lengths[c],\
+    \ 2) - pow(lengths[a], 2)) / (2 * lengths[b] * lengths[c]));\n        }\n\n  \
+    \      area = lengths[1] * lengths[2] * sin(angles[0]) / 2;\n    };\n    triangle(T\
+    \ length_a, T length_b, T length_c)\n        : lengths{length_a, length_b, length_c}\
+    \ {\n        for (int a = 0; a < 3; ++a) {\n            int b, c;\n          \
+    \  bool added_flag = false;\n            for (int i = 0; i < 3; ++i) {\n     \
+    \           if (a != i) {\n                    if (!added_flag) {\n          \
+    \              b = i;\n                        added_flag = true;\n          \
+    \          } else\n                        c = i;\n                }\n       \
+    \     }\n            angles[a] = acos((pow(lengths[b], 2) + pow(lengths[c], 2)\
+    \ - pow(lengths[a], 2)) / (2 * lengths[b] * lengths[c]));\n        }\n\n     \
+    \   points[0] = point(0, 0);\n        points[1] = point(0, lengths[1]);\n    \
+    \    points[2] = point(lengths[2] * cos(angles[0]), lengths[2] * sin(angles[0]));\n\
+    \n        area = lengths[1] * lengths[2] * sin(angles[0]) / 2;\n    };\n};\n\n\
+    }  // namespace BanetteGin\n\n\n#line 5 \"src/geometry/excenter.hpp\"\n\nnamespace\
+    \ BanetteGin {\n\ntemplate <class T>\npoint<T> excenter(triangle<T> t, int option\
+    \ = 0) {\n    point ret = point(0, 0);\n    T denom = 0;\n    for (int i = 0;\
+    \ i < 3; ++i) {\n        T sgn = 1;\n        if (i == option) sgn = -1;\n    \
+    \    ret += t.points[i] * sgn * t.lengths[i];\n        denom += sgn * t.lengths[i];\n\
+    \    }\n    return ret / denom;\n}\n\n}  // namespace BanetteGin\n\n\n"
   code: "#ifndef BANETTEGIN_EXCENTER_HPP_INCLUDED\n#define BANETTEGIN_EXCENTER_HPP_INCLUDED\n\
     \n#include \"triangle.hpp\"\n\nnamespace BanetteGin {\n\ntemplate <class T>\n\
-    std::pair<point<T>, T> excenter(triangle<T> t,int option = 0) {\n    point<T>\
-    \ o = (t.point_a * t.length_a + t.point_b * t.length_b + t.point_c * t.length_c)\
-    \ / (t.length_a + t.length_b + t.length_c);\n    T r = t.area * 2 / (t.length_a\
-    \ + t.length_b + t.length_c);\n    return std::make_pair(o, r);\n}\n\n}  // namespace\
-    \ BanetteGin\n\n#endif"
+    point<T> excenter(triangle<T> t, int option = 0) {\n    point ret = point(0, 0);\n\
+    \    T denom = 0;\n    for (int i = 0; i < 3; ++i) {\n        T sgn = 1;\n   \
+    \     if (i == option) sgn = -1;\n        ret += t.points[i] * sgn * t.lengths[i];\n\
+    \        denom += sgn * t.lengths[i];\n    }\n    return ret / denom;\n}\n\n}\
+    \  // namespace BanetteGin\n\n#endif"
   dependsOn:
   - src/geometry/triangle.hpp
   - src/basic/equal.hpp
@@ -157,7 +160,7 @@ data:
   isVerificationFile: false
   path: src/geometry/excenter.hpp
   requiredBy: []
-  timestamp: '2023-09-08 07:19:50+09:00'
+  timestamp: '2023-09-08 09:32:39+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/geometry/excenter.hpp

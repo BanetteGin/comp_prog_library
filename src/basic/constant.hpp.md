@@ -36,6 +36,9 @@ data:
     path: src/geometry/circumradius.hpp
     title: src/geometry/circumradius.hpp
   - icon: ':warning:'
+    path: src/geometry/concyclic.hpp
+    title: src/geometry/concyclic.hpp
+  - icon: ':warning:'
     path: src/geometry/degree_to_radian.hpp
     title: src/geometry/degree_to_radian.hpp
   - icon: ':warning:'
@@ -165,6 +168,7 @@ data:
   - src/geometry/circumcenter.hpp
   - src/geometry/inradius.hpp
   - src/geometry/point.hpp
+  - src/geometry/concyclic.hpp
   - src/geometry/orthogonal_check.hpp
   - src/geometry/excenter.hpp
   - src/geometry/circumradius.hpp

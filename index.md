@@ -91,8 +91,8 @@ data:
       path: src/geometry/circumradius.hpp
       title: src/geometry/circumradius.hpp
     - icon: ':warning:'
-      path: src/geometry/cocircle_check.hpp
-      title: src/geometry/cocircle_check.hpp
+      path: src/geometry/concyclic.hpp
+      title: src/geometry/concyclic.hpp
     - icon: ':warning:'
       path: src/geometry/degree_to_radian.hpp
       title: src/geometry/degree_to_radian.hpp
@@ -111,6 +111,9 @@ data:
     - icon: ':warning:'
       path: src/geometry/excenter.hpp
       title: src/geometry/excenter.hpp
+    - icon: ':warning:'
+      path: src/geometry/exradius.hpp
+      title: src/geometry/exradius.hpp
     - icon: ':warning:'
       path: src/geometry/incenter.hpp
       title: src/geometry/incenter.hpp

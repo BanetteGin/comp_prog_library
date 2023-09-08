@@ -26,9 +26,9 @@ data:
     \ 1;\n    }\n    modint& operator--() noexcept {\n        return modint(*this)\
     \ -= 1;\n    }\n\n    modint& operator/=(const modint& r) noexcept {\n       \
     \ long long int a = r.val, b = MOD, u = 1, v = 0;\n        while (b) {\n     \
-    \       long long int t = a / b;\n            a -= t * b;\n            swap(a,\
-    \ b);\n            u -= t * v;\n            swap(u, v);\n        }\n        val\
-    \ = val * u % MOD;\n        if (val < 0) val += MOD;\n        return *this;\n\
+    \       long long int t = a / b;\n            a -= t * b;\n            this->swap(a,\
+    \ b);\n            u -= t * v;\n            this->swap(u, v);\n        }\n   \
+    \     val = val * u % MOD;\n        if (val < 0) val += MOD;\n        return *this;\n\
     \    }\n\n    bool operator==(const modint& r) const noexcept {\n        return\
     \ this->val == r.val;\n    }\n    bool operator!=(const modint& r) const noexcept\
     \ {\n        return this->val != r.val;\n    }\n\n    friend std::ostream& operator<<(std::ostream&\
@@ -58,24 +58,24 @@ data:
     \ {\n        return modint(*this) -= 1;\n    }\n\n    modint& operator/=(const\
     \ modint& r) noexcept {\n        long long int a = r.val, b = MOD, u = 1, v =\
     \ 0;\n        while (b) {\n            long long int t = a / b;\n            a\
-    \ -= t * b;\n            swap(a, b);\n            u -= t * v;\n            swap(u,\
-    \ v);\n        }\n        val = val * u % MOD;\n        if (val < 0) val += MOD;\n\
-    \        return *this;\n    }\n\n    bool operator==(const modint& r) const noexcept\
-    \ {\n        return this->val == r.val;\n    }\n    bool operator!=(const modint&\
-    \ r) const noexcept {\n        return this->val != r.val;\n    }\n\n    friend\
-    \ std::ostream& operator<<(std::ostream& os, const modint<MOD>& x) noexcept {\n\
-    \        return os << x.val;\n    }\n\n    friend std::istream& operator>>(std::istream&\
-    \ is, modint<MOD>& x) noexcept {\n        long long int t;\n        is >> t;\n\
-    \        x = modint(t);\n        return (is);\n    }\n\n    friend modint<MOD>\
-    \ modpow(const modint<MOD>& a, long long int n) noexcept {\n        if (n == 0)\
-    \ return 1;\n        auto t = modpow(a, n / 2);\n        t = t * t;\n        if\
-    \ (n & 1) t = t * a;\n        return t;\n    }\n};\n\n}  // namespace BanetteGin\n\
-    \n#endif"
+    \ -= t * b;\n            this->swap(a, b);\n            u -= t * v;\n        \
+    \    this->swap(u, v);\n        }\n        val = val * u % MOD;\n        if (val\
+    \ < 0) val += MOD;\n        return *this;\n    }\n\n    bool operator==(const\
+    \ modint& r) const noexcept {\n        return this->val == r.val;\n    }\n   \
+    \ bool operator!=(const modint& r) const noexcept {\n        return this->val\
+    \ != r.val;\n    }\n\n    friend std::ostream& operator<<(std::ostream& os, const\
+    \ modint<MOD>& x) noexcept {\n        return os << x.val;\n    }\n\n    friend\
+    \ std::istream& operator>>(std::istream& is, modint<MOD>& x) noexcept {\n    \
+    \    long long int t;\n        is >> t;\n        x = modint(t);\n        return\
+    \ (is);\n    }\n\n    friend modint<MOD> modpow(const modint<MOD>& a, long long\
+    \ int n) noexcept {\n        if (n == 0) return 1;\n        auto t = modpow(a,\
+    \ n / 2);\n        t = t * t;\n        if (n & 1) t = t * a;\n        return t;\n\
+    \    }\n};\n\n}  // namespace BanetteGin\n\n#endif"
   dependsOn: []
   isVerificationFile: false
   path: src/number_theory/modint.hpp
   requiredBy: []
-  timestamp: '2023-09-08 07:19:50+09:00'
+  timestamp: '2023-09-08 09:32:39+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/number_theory/modint.hpp
