@@ -88,8 +88,8 @@ struct dynamic_modint {
         return (is);
     }
 
-    friend constexpr modpow(const dynamic_modint& a, long long int n) noexcept {
-        if (n == 0) return 1LL;
+    friend dynamic_modint<id> modpow(const dynamic_modint& a, long long int n) noexcept {
+        if (n == 0) return 1;
         auto t = modpow(a, n / 2);
         t = t * t;
         if (n & 1) t = t * a;
