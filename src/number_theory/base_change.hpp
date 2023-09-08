@@ -6,16 +6,17 @@
 namespace BanetteGin {
 
 template <class T>
-std::string base_change(const std::string& num, T m, T n) {
-    reverse(num.begin(), num.end());
+std::string base_change(const std::string& num, const T& m, const T& n) {
+    string tmp = num;
+    reverse(tmp.begin(), tmp.end());
     T p = 1;
     T covnum = 0;
     for (long long int i = 0; i < num.size(); ++i) {
-        covnum += (T)(num[i] - '0') * p;
+        covnum += T(tmp[i] - '0') * p;
         p = p * m;
     }
     T max_np = 1;
-    while (max_np <= covnum) {
+    while (max_np * n <= covnum) {
         max_np *= n;
     }
     std::string ret = "";
