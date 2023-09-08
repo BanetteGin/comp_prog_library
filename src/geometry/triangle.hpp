@@ -2,7 +2,7 @@
 #define BANETTEGIN_TRIANGLE_HPP_INCLUDED
 
 #include "../basic/equal.hpp"
-#include "distance_point_and_point.hpp"
+#include "distance.hpp"
 #include "point.hpp"
 #include "segment.hpp"
 
@@ -28,7 +28,7 @@ struct triangle {
                         c = i;
                 }
             }
-            lengths[a] = distance_point_and_point(points[b], points[c]);
+            lengths[a] = distance(points[b], points[c]);
         }
 
         for (int a = 0; a < 3; ++a) {

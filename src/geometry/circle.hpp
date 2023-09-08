@@ -2,7 +2,7 @@
 #define BANETTEGIN_CIRCLE_HPP_INCLUDED
 
 #include "../basic/comparison.hpp"
-#include "distance_point_and_point.hpp"
+#include "distance.hpp"
 #include "point.hpp"
 #include "segment.hpp"
 #include "triangle.hpp"
@@ -17,7 +17,7 @@ struct circle {
         : p(p_), r(r_) {
     }
     circle(point<T> p_, point<T> q_)
-        : p(p_), r(distance_point_and_point(p_, q_)) {
+        : p(p_), r(distance(p_, q_)) {
     }
     circle(point<T> p_, point<T> q_, point<T> r_)
         : p(constracter_circumcircle(triangle(p_, q_, r_)).p), r(constracter_circumcircle(triangle(p_, q_, r_)).r) {
