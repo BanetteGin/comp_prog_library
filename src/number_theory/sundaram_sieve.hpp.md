@@ -6,12 +6,12 @@ data:
     path: src/all.hpp
     title: src/all.hpp
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/843-2.test.cpp
     title: test/yukicoder/843-2.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"src/number_theory/sundaram_sieve.hpp\"\n\n\n\n#include <vector>\n\
@@ -40,7 +40,7 @@ data:
   requiredBy:
   - src/all.hpp
   timestamp: '2023-09-08 16:34:00+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/843-2.test.cpp
 documentation_of: src/number_theory/sundaram_sieve.hpp

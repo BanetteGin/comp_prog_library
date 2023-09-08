@@ -205,13 +205,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/number_theory/dynamic_modint.hpp
     title: src/number_theory/dynamic_modint.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: src/number_theory/eratosthenes_sieve.hpp
     title: src/number_theory/eratosthenes_sieve.hpp
   - icon: ':heavy_check_mark:'
     path: src/number_theory/greatest_common_divisor.hpp
     title: src/number_theory/greatest_common_divisor.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: src/number_theory/linear_sieve.hpp
     title: src/number_theory/linear_sieve.hpp
   - icon: ':heavy_check_mark:'
@@ -229,7 +229,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/number_theory/prime_factorization.hpp
     title: src/number_theory/prime_factorization.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: src/number_theory/sundaram_sieve.hpp
     title: src/number_theory/sundaram_sieve.hpp
   - icon: ':warning:'
