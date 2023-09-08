@@ -220,7 +220,7 @@ data:
   - icon: ':warning:'
     path: src/number_theory/divisors.hpp
     title: src/number_theory/divisors.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: src/number_theory/dynamic_modint.hpp
     title: src/number_theory/dynamic_modint.hpp
   - icon: ':warning:'
@@ -673,10 +673,10 @@ data:
     \ std::ostream& operator<<(std::ostream& os, const dynamic_modint& x) noexcept\
     \ {\n        return os << x.val;\n    }\n\n    friend std::istream& operator>>(std::istream&\
     \ is, dynamic_modint& x) noexcept {\n        long long int t;\n        is >> t;\n\
-    \        x = dynamic_modint(t);\n        return (is);\n    }\n\n    friend constexpr\
+    \        x = dynamic_modint(t);\n        return (is);\n    }\n\n    friend dynamic_modint<id>\
     \ modpow(const dynamic_modint& a, long long int n) noexcept {\n        if (n ==\
-    \ 0) return 1LL;\n        auto t = modpow(a, n / 2);\n        t = t * t;\n   \
-    \     if (n & 1) t = t * a;\n        return t;\n    }\n};\n\n}  // namespace BanetteGin\n\
+    \ 0) return 1;\n        auto t = modpow(a, n / 2);\n        t = t * t;\n     \
+    \   if (n & 1) t = t * a;\n        return t;\n    }\n};\n\n}  // namespace BanetteGin\n\
     \n\n#line 1 \"src/number_theory/eratosthenes_sieve.hpp\"\n\n\n\n#line 5 \"src/number_theory/eratosthenes_sieve.hpp\"\
     \n\nnamespace BanetteGin {\n\ntemplate <class T>\nstd::vector<T> eratosthenes_sieve(T\
     \ n) {\n    std::vector<bool> ret(n + 1, true);\n    std::vector<T> prime_list;\n\
@@ -1024,7 +1024,7 @@ data:
   isVerificationFile: false
   path: src/all.hpp
   requiredBy: []
-  timestamp: '2023-09-08 09:41:15+09:00'
+  timestamp: '2023-09-08 09:45:12+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/all.hpp

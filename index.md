@@ -175,7 +175,7 @@ data:
     - icon: ':warning:'
       path: src/number_theory/divisors.hpp
       title: src/number_theory/divisors.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: src/number_theory/dynamic_modint.hpp
       title: src/number_theory/dynamic_modint.hpp
     - icon: ':warning:'
@@ -229,7 +229,7 @@ data:
       title: test/library_checker/union_find.test.cpp
   - name: test/yukicoder
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yukicoder/1092.test.cpp
       title: test/yukicoder/1092.test.cpp
 layout: toppage
