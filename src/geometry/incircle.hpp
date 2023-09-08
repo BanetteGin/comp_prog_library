@@ -8,13 +8,13 @@ namespace BanetteGin {
 
 template <class T>
 circle<T> incircle(triangle<T> t) {
-    point ret = point(0.0L, 0.0L);
-    T denom = 0.0L;
+    point ret = point(T(0), T(0));
+    T denom = T(0);
     for (int i = 0; i < 3; ++i) {
         ret += t.points[i] * t.lengths[i];
         denom += t.lengths[i];
     }
-    T r = t.area * 2.0L / denom;
+    T r = t.area * T(2) / denom;
     return circle(ret / denom, r);
 }
 
