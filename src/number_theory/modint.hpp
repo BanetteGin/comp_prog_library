@@ -54,9 +54,9 @@ struct modint {
         while (b) {
             long long int t = a / b;
             a -= t * b;
-            this->swap(a, b);
+            std::swap(a, b);
             u -= t * v;
-            this->swap(u, v);
+            std::swap(u, v);
         }
         val = val * u % MOD;
         if (val < 0) val += MOD;
