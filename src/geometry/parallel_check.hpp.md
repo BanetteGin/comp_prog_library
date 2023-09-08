@@ -1,34 +1,34 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/basic/comparison.hpp
     title: src/basic/comparison.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/basic/constant.hpp
     title: src/basic/constant.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/basic/equal.hpp
     title: src/basic/equal.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/basic/greater_equal.hpp
     title: src/basic/greater_equal.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/basic/greater_than.hpp
     title: src/basic/greater_than.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/basic/less_equal.hpp
     title: src/basic/less_equal.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/basic/less_than.hpp
     title: src/basic/less_than.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/basic/sign.hpp
     title: src/basic/sign.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/geometry/line.hpp
     title: src/geometry/line.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/geometry/point.hpp
     title: src/geometry/point.hpp
   _extendedRequiredBy:
@@ -44,10 +44,10 @@ data:
   bundledCode: "#line 1 \"src/geometry/parallel_check.hpp\"\n\n\n\n#line 1 \"src/basic/comparison.hpp\"\
     \n\n\n\n#line 1 \"src/basic/equal.hpp\"\n\n\n\n#line 1 \"src/basic/sign.hpp\"\n\
     \n\n\n#line 1 \"src/basic/constant.hpp\"\n\n\n\nnamespace BanetteGin {\n\nconst\
-    \ long double EPS = 10e-12;\nconst long long int LINF = 1001001001001001001LL;\n\
-    const long double PI = acos(-1);\nconst long double GOLDEN_RATIO = 2 * cos(PI\
-    \ / 5);\n\n}  // namespace BanetteGin\n\n\n#line 5 \"src/basic/sign.hpp\"\n\n\
-    namespace BanetteGin {\n\ntemplate <class T>\nint sign(const T& x) {\n    return\
+    \ long double EPS = 10e-12L;\nconst long long int LINF = 1001001001001001001LL;\n\
+    const long double PI = acos(-1.0L);\nconst long double GOLDEN_RATIO = 2.0L * cos(PI\
+    \ / 5.0L);\n\n}  // namespace BanetteGin\n\n\n#line 5 \"src/basic/sign.hpp\"\n\
+    \nnamespace BanetteGin {\n\ntemplate <class T>\nint sign(const T& x) {\n    return\
     \ (x < -EPS ? -1 : (x < EPS ? 0 : 1));\n}\n\n}  // namespace BanetteGin\n\n\n\
     #line 5 \"src/basic/equal.hpp\"\n\nnamespace BanetteGin {\n\ntemplate <class T>\n\
     bool equal(const T &a, const T &b) {\n    return (sign(a - b) == 0);\n}\n\n} \
@@ -131,7 +131,7 @@ data:
   path: src/geometry/parallel_check.hpp
   requiredBy:
   - src/all.hpp
-  timestamp: '2023-09-08 07:19:50+09:00'
+  timestamp: '2023-09-08 21:12:14+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/geometry/parallel_check.hpp

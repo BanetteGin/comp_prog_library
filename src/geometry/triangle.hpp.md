@@ -1,43 +1,43 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/basic/comparison.hpp
     title: src/basic/comparison.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/basic/constant.hpp
     title: src/basic/constant.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/basic/equal.hpp
     title: src/basic/equal.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/basic/equal.hpp
     title: src/basic/equal.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/basic/greater_equal.hpp
     title: src/basic/greater_equal.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/basic/greater_than.hpp
     title: src/basic/greater_than.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/basic/less_equal.hpp
     title: src/basic/less_equal.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/basic/less_than.hpp
     title: src/basic/less_than.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/basic/sign.hpp
     title: src/basic/sign.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/geometry/distance.hpp
     title: src/geometry/distance.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/geometry/line.hpp
     title: src/geometry/line.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/geometry/point.hpp
     title: src/geometry/point.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/geometry/segment.hpp
     title: src/geometry/segment.hpp
   _extendedRequiredBy:
@@ -82,10 +82,10 @@ data:
     links: []
   bundledCode: "#line 1 \"src/geometry/triangle.hpp\"\n\n\n\n#line 1 \"src/basic/equal.hpp\"\
     \n\n\n\n#line 1 \"src/basic/sign.hpp\"\n\n\n\n#line 1 \"src/basic/constant.hpp\"\
-    \n\n\n\nnamespace BanetteGin {\n\nconst long double EPS = 10e-12;\nconst long\
-    \ long int LINF = 1001001001001001001LL;\nconst long double PI = acos(-1);\nconst\
-    \ long double GOLDEN_RATIO = 2 * cos(PI / 5);\n\n}  // namespace BanetteGin\n\n\
-    \n#line 5 \"src/basic/sign.hpp\"\n\nnamespace BanetteGin {\n\ntemplate <class\
+    \n\n\n\nnamespace BanetteGin {\n\nconst long double EPS = 10e-12L;\nconst long\
+    \ long int LINF = 1001001001001001001LL;\nconst long double PI = acos(-1.0L);\n\
+    const long double GOLDEN_RATIO = 2.0L * cos(PI / 5.0L);\n\n}  // namespace BanetteGin\n\
+    \n\n#line 5 \"src/basic/sign.hpp\"\n\nnamespace BanetteGin {\n\ntemplate <class\
     \ T>\nint sign(const T& x) {\n    return (x < -EPS ? -1 : (x < EPS ? 0 : 1));\n\
     }\n\n}  // namespace BanetteGin\n\n\n#line 5 \"src/basic/equal.hpp\"\n\nnamespace\
     \ BanetteGin {\n\ntemplate <class T>\nbool equal(const T &a, const T &b) {\n \
@@ -244,7 +244,7 @@ data:
   - src/geometry/incircle.hpp
   - src/geometry/centroid.hpp
   - src/geometry/intersect.hpp
-  timestamp: '2023-09-08 15:22:49+09:00'
+  timestamp: '2023-09-08 21:12:14+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aizu_online_judge/Library/CGL/7_C.test.cpp

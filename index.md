@@ -8,10 +8,10 @@ data:
       title: src/all.hpp
   - name: src/analysis
     pages:
-    - icon: ':warning:'
+    - icon: ':x:'
       path: src/analysis/golden_ratio_search.hpp
       title: src/analysis/golden_ratio_search.hpp
-    - icon: ':warning:'
+    - icon: ':x:'
       path: src/analysis/ternary_search.hpp
       title: src/analysis/ternary_search.hpp
   - name: src/basic
@@ -22,28 +22,28 @@ data:
     - icon: ':warning:'
       path: src/basic/chmin.hpp
       title: src/basic/chmin.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: src/basic/comparison.hpp
       title: src/basic/comparison.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: src/basic/constant.hpp
       title: src/basic/constant.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: src/basic/equal.hpp
       title: src/basic/equal.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: src/basic/greater_equal.hpp
       title: src/basic/greater_equal.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: src/basic/greater_than.hpp
       title: src/basic/greater_than.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: src/basic/less_equal.hpp
       title: src/basic/less_equal.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: src/basic/less_than.hpp
       title: src/basic/less_than.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: src/basic/sign.hpp
       title: src/basic/sign.hpp
   - name: src/combinatorics
@@ -88,7 +88,7 @@ data:
     - icon: ':warning:'
       path: src/geometry/degree_to_radian.hpp
       title: src/geometry/degree_to_radian.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: src/geometry/distance.hpp
       title: src/geometry/distance.hpp
     - icon: ':warning:'
@@ -100,7 +100,7 @@ data:
     - icon: ':warning:'
       path: src/geometry/intersect.hpp
       title: src/geometry/intersect.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: src/geometry/line.hpp
       title: src/geometry/line.hpp
     - icon: ':warning:'
@@ -115,7 +115,7 @@ data:
     - icon: ':warning:'
       path: src/geometry/parallel_check.hpp
       title: src/geometry/parallel_check.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: src/geometry/point.hpp
       title: src/geometry/point.hpp
     - icon: ':warning:'
@@ -127,7 +127,7 @@ data:
     - icon: ':warning:'
       path: src/geometry/rotate.hpp
       title: src/geometry/rotate.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: src/geometry/segment.hpp
       title: src/geometry/segment.hpp
     - icon: ':heavy_check_mark:'
@@ -160,7 +160,7 @@ data:
       title: src/matrix/matrix_rotate.hpp
   - name: src/number_theory
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: src/number_theory/base_change.hpp
       title: src/number_theory/base_change.hpp
     - icon: ':heavy_check_mark:'
@@ -254,6 +254,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/1092.test.cpp
       title: test/yukicoder/1092.test.cpp
+    - icon: ':x:'
+      path: test/yukicoder/306-1.test.cpp
+      title: test/yukicoder/306-1.test.cpp
+    - icon: ':x:'
+      path: test/yukicoder/306-2.test.cpp
+      title: test/yukicoder/306-2.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/499.test.cpp
       title: test/yukicoder/499.test.cpp

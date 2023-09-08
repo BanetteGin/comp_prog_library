@@ -8,13 +8,13 @@ data:
   - icon: ':warning:'
     path: src/all.hpp
     title: src/all.hpp
-  - icon: ':warning:'
+  - icon: ':x:'
     path: src/analysis/golden_ratio_search.hpp
     title: src/analysis/golden_ratio_search.hpp
-  - icon: ':warning:'
+  - icon: ':x:'
     path: src/analysis/ternary_search.hpp
     title: src/analysis/ternary_search.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/basic/comparison.hpp
     title: src/basic/comparison.hpp
   - icon: ':warning:'
@@ -29,7 +29,7 @@ data:
   - icon: ':warning:'
     path: src/geometry/concyclic.hpp
     title: src/geometry/concyclic.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/geometry/distance.hpp
     title: src/geometry/distance.hpp
   - icon: ':warning:'
@@ -41,7 +41,7 @@ data:
   - icon: ':warning:'
     path: src/geometry/intersect.hpp
     title: src/geometry/intersect.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/geometry/line.hpp
     title: src/geometry/line.hpp
   - icon: ':warning:'
@@ -56,7 +56,7 @@ data:
   - icon: ':warning:'
     path: src/geometry/parallel_check.hpp
     title: src/geometry/parallel_check.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/geometry/point.hpp
     title: src/geometry/point.hpp
   - icon: ':warning:'
@@ -65,7 +65,7 @@ data:
   - icon: ':warning:'
     path: src/geometry/rotate.hpp
     title: src/geometry/rotate.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/geometry/segment.hpp
     title: src/geometry/segment.hpp
   - icon: ':heavy_check_mark:'
@@ -81,9 +81,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aizu_online_judge/Library/CGL/7_C.test.cpp
     title: test/aizu_online_judge/Library/CGL/7_C.test.cpp
-  _isVerificationFailed: false
+  - icon: ':x:'
+    path: test/yukicoder/306-1.test.cpp
+    title: test/yukicoder/306-1.test.cpp
+  - icon: ':x:'
+    path: test/yukicoder/306-2.test.cpp
+    title: test/yukicoder/306-2.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"src/basic/greater_than.hpp\"\n\n\n\nnamespace BanetteGin\
@@ -122,10 +128,12 @@ data:
   - src/geometry/segment.hpp
   - src/geometry/intersect.hpp
   timestamp: '2023-08-22 02:10:12+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/aizu_online_judge/Library/CGL/7_C.test.cpp
   - test/aizu_online_judge/Library/CGL/7_B.test.cpp
+  - test/yukicoder/306-2.test.cpp
+  - test/yukicoder/306-1.test.cpp
 documentation_of: src/basic/greater_than.hpp
 layout: document
 redirect_from:

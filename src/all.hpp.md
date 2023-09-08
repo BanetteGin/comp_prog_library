@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':x:'
     path: src/analysis/golden_ratio_search.hpp
     title: src/analysis/golden_ratio_search.hpp
-  - icon: ':warning:'
+  - icon: ':x:'
     path: src/analysis/ternary_search.hpp
     title: src/analysis/ternary_search.hpp
   - icon: ':warning:'
@@ -13,70 +13,70 @@ data:
   - icon: ':warning:'
     path: src/basic/chmin.hpp
     title: src/basic/chmin.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/basic/comparison.hpp
     title: src/basic/comparison.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/basic/comparison.hpp
     title: src/basic/comparison.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/basic/comparison.hpp
     title: src/basic/comparison.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/basic/constant.hpp
     title: src/basic/constant.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/basic/constant.hpp
     title: src/basic/constant.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/basic/constant.hpp
     title: src/basic/constant.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/basic/constant.hpp
     title: src/basic/constant.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/basic/constant.hpp
     title: src/basic/constant.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/basic/constant.hpp
     title: src/basic/constant.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/basic/equal.hpp
     title: src/basic/equal.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/basic/equal.hpp
     title: src/basic/equal.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/basic/equal.hpp
     title: src/basic/equal.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/basic/greater_equal.hpp
     title: src/basic/greater_equal.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/basic/greater_equal.hpp
     title: src/basic/greater_equal.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/basic/greater_than.hpp
     title: src/basic/greater_than.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/basic/greater_than.hpp
     title: src/basic/greater_than.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/basic/less_equal.hpp
     title: src/basic/less_equal.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/basic/less_equal.hpp
     title: src/basic/less_equal.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/basic/less_than.hpp
     title: src/basic/less_than.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/basic/less_than.hpp
     title: src/basic/less_than.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/basic/sign.hpp
     title: src/basic/sign.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/basic/sign.hpp
     title: src/basic/sign.hpp
   - icon: ':warning:'
@@ -118,10 +118,10 @@ data:
   - icon: ':warning:'
     path: src/geometry/degree_to_radian.hpp
     title: src/geometry/degree_to_radian.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/geometry/distance.hpp
     title: src/geometry/distance.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/geometry/distance.hpp
     title: src/geometry/distance.hpp
   - icon: ':warning:'
@@ -133,10 +133,10 @@ data:
   - icon: ':warning:'
     path: src/geometry/intersect.hpp
     title: src/geometry/intersect.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/geometry/line.hpp
     title: src/geometry/line.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/geometry/line.hpp
     title: src/geometry/line.hpp
   - icon: ':warning:'
@@ -151,10 +151,10 @@ data:
   - icon: ':warning:'
     path: src/geometry/parallel_check.hpp
     title: src/geometry/parallel_check.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/geometry/point.hpp
     title: src/geometry/point.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/geometry/point.hpp
     title: src/geometry/point.hpp
   - icon: ':warning:'
@@ -166,10 +166,10 @@ data:
   - icon: ':warning:'
     path: src/geometry/rotate.hpp
     title: src/geometry/rotate.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/geometry/segment.hpp
     title: src/geometry/segment.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/geometry/segment.hpp
     title: src/geometry/segment.hpp
   - icon: ':heavy_check_mark:'
@@ -196,7 +196,7 @@ data:
   - icon: ':warning:'
     path: src/matrix/matrix_rotate.hpp
     title: src/matrix/matrix_rotate.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/number_theory/base_change.hpp
     title: src/number_theory/base_change.hpp
   - icon: ':heavy_check_mark:'
@@ -257,10 +257,10 @@ data:
   bundledCode: "#line 1 \"src/all.hpp\"\n\n\n\n#line 1 \"src/analysis/golden_ratio_search.hpp\"\
     \n\n\n\n#line 1 \"src/basic/comparison.hpp\"\n\n\n\n#line 1 \"src/basic/equal.hpp\"\
     \n\n\n\n#line 1 \"src/basic/sign.hpp\"\n\n\n\n#line 1 \"src/basic/constant.hpp\"\
-    \n\n\n\nnamespace BanetteGin {\n\nconst long double EPS = 10e-12;\nconst long\
-    \ long int LINF = 1001001001001001001LL;\nconst long double PI = acos(-1);\nconst\
-    \ long double GOLDEN_RATIO = 2 * cos(PI / 5);\n\n}  // namespace BanetteGin\n\n\
-    \n#line 5 \"src/basic/sign.hpp\"\n\nnamespace BanetteGin {\n\ntemplate <class\
+    \n\n\n\nnamespace BanetteGin {\n\nconst long double EPS = 10e-12L;\nconst long\
+    \ long int LINF = 1001001001001001001LL;\nconst long double PI = acos(-1.0L);\n\
+    const long double GOLDEN_RATIO = 2.0L * cos(PI / 5.0L);\n\n}  // namespace BanetteGin\n\
+    \n\n#line 5 \"src/basic/sign.hpp\"\n\nnamespace BanetteGin {\n\ntemplate <class\
     \ T>\nint sign(const T& x) {\n    return (x < -EPS ? -1 : (x < EPS ? 0 : 1));\n\
     }\n\n}  // namespace BanetteGin\n\n\n#line 5 \"src/basic/equal.hpp\"\n\nnamespace\
     \ BanetteGin {\n\ntemplate <class T>\nbool equal(const T &a, const T &b) {\n \
@@ -275,38 +275,41 @@ data:
     \ <= 0);\n}\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/basic/less_than.hpp\"\
     \n\n\n\nnamespace BanetteGin {\n\ntemplate <class T>\nbool less_than(const T &a,\
     \ const T &b) {\n    return (sign(a - b) < 0);\n}\n\n}  // namespace BanetteGin\n\
-    \n\n#line 9 \"src/basic/comparison.hpp\"\n\n\n#line 5 \"src/analysis/golden_ratio_search.hpp\"\
+    \n\n#line 9 \"src/basic/comparison.hpp\"\n\n\n#line 6 \"src/analysis/golden_ratio_search.hpp\"\
     \n\nnamespace BanetteGin {\n\ntemplate <class T, class Function>\nT golden_ratio_search(T\
-    \ left, T right, Function func, bool option = true) {\n    T mid1 = left + (right\
-    \ - left) * GOLDEN_RATIO / (2 * GOLDEN_RATIO + 1);\n    T mid2 = left + (right\
-    \ - left) * (GOLDEN_RATIO + 1) / (2 * GOLDEN_RATIO + 1);\n    while (!equal(left,\
-    \ right)) {\n        if (option) {\n            if (less_equal(func(mid1), func(mid2)))\
-    \ {\n                right = mid2;\n                mid2 = mid1;\n           \
-    \     mid1 = left + (right - left) * GOLDEN_RATIO / (2 * GOLDEN_RATIO + 1);\n\
-    \            } else {\n                left = mid1;\n                mid1 = mid2;\n\
-    \                mid2 = left + (right - left) * (GOLDEN_RATIO + 1) / (2 * GOLDEN_RATIO\
-    \ + 1);\n            }\n        } else {\n            if (greater_equal(func(mid1),\
+    \ left, T right, Function func, bool minimize = true) {\n    assert(greater_equal(right,\
+    \ left));\n    T mid1 = left + (right - left) * GOLDEN_RATIO / (2 * GOLDEN_RATIO\
+    \ + 1);\n    T mid2 = left + (right - left) * (GOLDEN_RATIO + 1) / (2 * GOLDEN_RATIO\
+    \ + 1);\n    long long int iter = (std::log(right - left) - std::log(EPS)) / std::log(GOLDEN_RATIO)\
+    \ + 1;\n\n    while (iter--) {\n        if (minimize) {\n            if (less_equal(func(mid1),\
     \ func(mid2))) {\n                right = mid2;\n                mid2 = mid1;\n\
-    \                mid1 = left + (right - left) * GOLDEN_RATIO / (2 * GOLDEN_RATIO\
+    \                mid1 = left + (right - left) * T(GOLDEN_RATIO) / (T(2) * T(GOLDEN_RATIO)\
     \ + 1);\n            } else {\n                left = mid1;\n                mid1\
-    \ = mid2;\n                mid2 = left + (right - left) * (GOLDEN_RATIO + 1) /\
-    \ (2 * GOLDEN_RATIO + 1);\n            }\n        }\n    }\n    return left;\n\
-    }\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/analysis/ternary_search.hpp\"\
-    \n\n\n\n#line 6 \"src/analysis/ternary_search.hpp\"\n\nnamespace BanetteGin {\n\
-    \ntemplate <class T, class Function>\nT ternary_search(T left, T right, Function\
-    \ func, bool option = true) {\n    while (!equal(left, right)) {\n        T mid1\
-    \ = left + (right - left) / 3;\n        T mid2 = left + (right - left) / 3 * 2;\n\
-    \        if (option) {\n            if (less_equal(func(mid1), func(mid2)))\n\
-    \                right = mid2;\n            else\n                left = mid1;\n\
-    \        } else {\n            if (greater_equal(func(mid1), func(mid2)))\n  \
-    \              right = mid2;\n            else\n                left = mid1;\n\
-    \        }\n    }\n    return left;\n}\n\n}  // namespace BanetteGin\n\n\n#line\
-    \ 1 \"src/basic/chmax.hpp\"\n\n\n\nnamespace BanetteGin {\n\ntemplate <class T>\n\
-    bool chmax(T& a, const T& b) {\n    if (a < b) {\n        a = b;\n        return\
-    \ 1;\n    }\n    return 0;\n}\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/basic/chmin.hpp\"\
-    \n\n\n\nnamespace BanetteGin {\n\ntemplate <class T>\nbool chmin(T& a, const T&\
-    \ b) {\n    if (b < a) {\n        a = b;\n        return 1;\n    }\n    return\
-    \ 0;\n}\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/combinatorics/combination.hpp\"\
+    \ = mid2;\n                mid2 = left + (right - left) * T(GOLDEN_RATIO + 1)\
+    \ / (T(2) * T(GOLDEN_RATIO) + 1);\n            }\n        } else {\n         \
+    \   if (greater_equal(func(mid1), func(mid2))) {\n                right = mid2;\n\
+    \                mid2 = mid1;\n                mid1 = left + (right - left) *\
+    \ T(GOLDEN_RATIO) / (T(2) * T(GOLDEN_RATIO) + 1);\n            } else {\n    \
+    \            left = mid1;\n                mid1 = mid2;\n                mid2\
+    \ = left + (right - left) * T(GOLDEN_RATIO + 1) / (T(2) * T(GOLDEN_RATIO) + 1);\n\
+    \            }\n        }\n    }\n    return left;\n}\n\n}  // namespace BanetteGin\n\
+    \n\n#line 1 \"src/analysis/ternary_search.hpp\"\n\n\n\n#line 6 \"src/analysis/ternary_search.hpp\"\
+    \n\nnamespace BanetteGin {\n\ntemplate <class T, class Function>\nT ternary_search(T\
+    \ left, T right, Function func, bool minimize = true) {\n    long long int iter\
+    \ = (std::log(right - left) - std::log(EPS)) / std::log(T(3) / T(2)) + 1;\n  \
+    \  while (iter--) {\n        T mid1 = left + (right - left) / T(3);\n        T\
+    \ mid2 = left + (right - left) / T(3) * T(2);\n        if (minimize) {\n     \
+    \       if (less_equal(func(mid1), func(mid2)))\n                right = mid2;\n\
+    \            else\n                left = mid1;\n        } else {\n          \
+    \  if (greater_equal(func(mid1), func(mid2)))\n                right = mid2;\n\
+    \            else\n                left = mid1;\n        }\n    }\n    return\
+    \ left;\n}\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/basic/chmax.hpp\"\n\
+    \n\n\nnamespace BanetteGin {\n\ntemplate <class T>\nbool chmax(T& a, const T&\
+    \ b) {\n    if (a < b) {\n        a = b;\n        return 1;\n    }\n    return\
+    \ 0;\n}\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/basic/chmin.hpp\"\n\n\
+    \n\nnamespace BanetteGin {\n\ntemplate <class T>\nbool chmin(T& a, const T& b)\
+    \ {\n    if (b < a) {\n        a = b;\n        return 1;\n    }\n    return 0;\n\
+    }\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/combinatorics/combination.hpp\"\
     \n\n\n\nnamespace BanetteGin {\n\ntemplate <class T>\nT combination(const T& m,\
     \ const T& n) {\n    assert(m >= n);\n    T ret = 1;\n    for (long long int i\
     \ = m; i >= m - n + 1; --i) {\n        ret = ret * i;\n    }\n    for (long long\
@@ -921,8 +924,8 @@ data:
   - src/basic/greater_than.hpp
   - src/basic/less_equal.hpp
   - src/basic/less_than.hpp
-  - src/analysis/ternary_search.hpp
   - src/basic/constant.hpp
+  - src/analysis/ternary_search.hpp
   - src/basic/chmax.hpp
   - src/basic/chmin.hpp
   - src/basic/comparison.hpp
@@ -997,7 +1000,7 @@ data:
   isVerificationFile: false
   path: src/all.hpp
   requiredBy: []
-  timestamp: '2023-09-08 16:51:51+09:00'
+  timestamp: '2023-09-08 21:12:14+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/all.hpp

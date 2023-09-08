@@ -1,28 +1,28 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/basic/comparison.hpp
     title: src/basic/comparison.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/basic/constant.hpp
     title: src/basic/constant.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/basic/equal.hpp
     title: src/basic/equal.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/basic/greater_equal.hpp
     title: src/basic/greater_equal.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/basic/greater_than.hpp
     title: src/basic/greater_than.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/basic/less_equal.hpp
     title: src/basic/less_equal.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/basic/less_than.hpp
     title: src/basic/less_than.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/basic/sign.hpp
     title: src/basic/sign.hpp
   _extendedRequiredBy:
@@ -44,7 +44,7 @@ data:
   - icon: ':warning:'
     path: src/geometry/concyclic.hpp
     title: src/geometry/concyclic.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/geometry/distance.hpp
     title: src/geometry/distance.hpp
   - icon: ':warning:'
@@ -56,7 +56,7 @@ data:
   - icon: ':warning:'
     path: src/geometry/intersect.hpp
     title: src/geometry/intersect.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/geometry/line.hpp
     title: src/geometry/line.hpp
   - icon: ':warning:'
@@ -77,7 +77,7 @@ data:
   - icon: ':warning:'
     path: src/geometry/rotate.hpp
     title: src/geometry/rotate.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/geometry/segment.hpp
     title: src/geometry/segment.hpp
   - icon: ':heavy_check_mark:'
@@ -93,57 +93,69 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aizu_online_judge/Library/CGL/7_C.test.cpp
     title: test/aizu_online_judge/Library/CGL/7_C.test.cpp
-  _isVerificationFailed: false
+  - icon: ':x:'
+    path: test/yukicoder/306-1.test.cpp
+    title: test/yukicoder/306-1.test.cpp
+  - icon: ':x:'
+    path: test/yukicoder/306-1.test.cpp
+    title: test/yukicoder/306-1.test.cpp
+  - icon: ':x:'
+    path: test/yukicoder/306-2.test.cpp
+    title: test/yukicoder/306-2.test.cpp
+  - icon: ':x:'
+    path: test/yukicoder/306-2.test.cpp
+    title: test/yukicoder/306-2.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"src/geometry/point.hpp\"\n\n\n\n#include <complex>\n\n#line\
     \ 1 \"src/basic/comparison.hpp\"\n\n\n\n#line 1 \"src/basic/equal.hpp\"\n\n\n\n\
     #line 1 \"src/basic/sign.hpp\"\n\n\n\n#line 1 \"src/basic/constant.hpp\"\n\n\n\
-    \nnamespace BanetteGin {\n\nconst long double EPS = 10e-12;\nconst long long int\
-    \ LINF = 1001001001001001001LL;\nconst long double PI = acos(-1);\nconst long\
-    \ double GOLDEN_RATIO = 2 * cos(PI / 5);\n\n}  // namespace BanetteGin\n\n\n#line\
-    \ 5 \"src/basic/sign.hpp\"\n\nnamespace BanetteGin {\n\ntemplate <class T>\nint\
-    \ sign(const T& x) {\n    return (x < -EPS ? -1 : (x < EPS ? 0 : 1));\n}\n\n}\
-    \  // namespace BanetteGin\n\n\n#line 5 \"src/basic/equal.hpp\"\n\nnamespace BanetteGin\
-    \ {\n\ntemplate <class T>\nbool equal(const T &a, const T &b) {\n    return (sign(a\
-    \ - b) == 0);\n}\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/basic/greater_equal.hpp\"\
-    \n\n\n\nnamespace BanetteGin {\n\ntemplate <class T>\nbool greater_equal(const\
-    \ T &a, const T &b) {\n    return (sign(a - b) >= 0);\n}\n\n}  // namespace BanetteGin\n\
-    \n\n#line 1 \"src/basic/greater_than.hpp\"\n\n\n\nnamespace BanetteGin {\n\ntemplate\
-    \ <class T>\nbool greater_than(const T &a, const T &b) {\n    return (sign(a -\
-    \ b) > 0);\n}\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/basic/less_equal.hpp\"\
-    \n\n\n\nnamespace BanetteGin {\n\ntemplate <class T>\nbool less_equal(const T\
-    \ &a, const T &b) {\n    return (sign(a - b) <= 0);\n}\n\n}  // namespace BanetteGin\n\
-    \n\n#line 1 \"src/basic/less_than.hpp\"\n\n\n\nnamespace BanetteGin {\n\ntemplate\
-    \ <class T>\nbool less_than(const T &a, const T &b) {\n    return (sign(a - b)\
-    \ < 0);\n}\n\n}  // namespace BanetteGin\n\n\n#line 9 \"src/basic/comparison.hpp\"\
-    \n\n\n#line 7 \"src/geometry/point.hpp\"\n\nnamespace BanetteGin {\n\ntemplate\
-    \ <class T>\nstruct point {\n    T x, y;\n    point(T x_, T y_)\n        : x(x_),\
-    \ y(y_) {\n    }\n\n    point operator+(const point& p) const noexcept {\n   \
-    \     return point<T>(this->x + p.x, this->y + p.y);\n    }\n    point operator-(const\
-    \ point& p) const noexcept {\n        return point<T>(this->x - p.x, this->y -\
-    \ p.y);\n    }\n    point operator*(const T& a) const noexcept {\n        return\
-    \ point<T>(this->x * a, this->y * a);\n    }\n    point operator/(const T& a)\
-    \ const noexcept {\n        return point<T>(this->x / a, this->y / a);\n    }\n\
-    \n    point& operator+=(const point& p) noexcept {\n        this->x += p.x;\n\
-    \        this->y += p.y;\n        return *this;\n    }\n    point& operator-=(const\
-    \ point& p) noexcept {\n        this->x -= p.x;\n        this->y -= p.y;\n   \
-    \     return *this;\n    }\n    point& operator*=(const T& a) noexcept {\n   \
-    \     this->x *= a;\n        this->y *= a;\n        return *this;\n    }\n   \
-    \ point& operator/=(const T& a) noexcept {\n        this->x /= a;\n        this->y\
-    \ /= a;\n        return *this;\n    }\n\n    bool operator==(const point& p) const\
-    \ noexcept {\n        return equal(this->x, p.x) && equal(this->y, p.y);\n   \
-    \ }\n    bool operator!=(const point& p) const noexcept {\n        return !equal(this->x,\
-    \ p.x) || !equal(this->y, p.y);\n    }\n    bool operator<(const point& p) const\
-    \ noexcept {\n        return !equal(this->x, p.x) || !equal(this->y, p.y);\n \
-    \   }\n\n    friend T dot(const point& p, const point& q) noexcept {\n       \
-    \ return p.x * q.x + p.y * q.y;\n    }\n    friend T cross(const point& p, const\
-    \ point& q) noexcept {\n        return p.x * q.y - p.y * q.x;\n    }\n    friend\
-    \ T norm(const point& p) {\n        return sqrt(p.x * p.x + p.y * p.y);\n    }\n\
-    \    friend T arg(const point& p) {\n        return atan2(p.y, p.x);\n    }\n\
-    };\n\n}  // namespace BanetteGin\n\n\n"
+    \nnamespace BanetteGin {\n\nconst long double EPS = 10e-12L;\nconst long long\
+    \ int LINF = 1001001001001001001LL;\nconst long double PI = acos(-1.0L);\nconst\
+    \ long double GOLDEN_RATIO = 2.0L * cos(PI / 5.0L);\n\n}  // namespace BanetteGin\n\
+    \n\n#line 5 \"src/basic/sign.hpp\"\n\nnamespace BanetteGin {\n\ntemplate <class\
+    \ T>\nint sign(const T& x) {\n    return (x < -EPS ? -1 : (x < EPS ? 0 : 1));\n\
+    }\n\n}  // namespace BanetteGin\n\n\n#line 5 \"src/basic/equal.hpp\"\n\nnamespace\
+    \ BanetteGin {\n\ntemplate <class T>\nbool equal(const T &a, const T &b) {\n \
+    \   return (sign(a - b) == 0);\n}\n\n}  // namespace BanetteGin\n\n\n#line 1 \"\
+    src/basic/greater_equal.hpp\"\n\n\n\nnamespace BanetteGin {\n\ntemplate <class\
+    \ T>\nbool greater_equal(const T &a, const T &b) {\n    return (sign(a - b) >=\
+    \ 0);\n}\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/basic/greater_than.hpp\"\
+    \n\n\n\nnamespace BanetteGin {\n\ntemplate <class T>\nbool greater_than(const\
+    \ T &a, const T &b) {\n    return (sign(a - b) > 0);\n}\n\n}  // namespace BanetteGin\n\
+    \n\n#line 1 \"src/basic/less_equal.hpp\"\n\n\n\nnamespace BanetteGin {\n\ntemplate\
+    \ <class T>\nbool less_equal(const T &a, const T &b) {\n    return (sign(a - b)\
+    \ <= 0);\n}\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/basic/less_than.hpp\"\
+    \n\n\n\nnamespace BanetteGin {\n\ntemplate <class T>\nbool less_than(const T &a,\
+    \ const T &b) {\n    return (sign(a - b) < 0);\n}\n\n}  // namespace BanetteGin\n\
+    \n\n#line 9 \"src/basic/comparison.hpp\"\n\n\n#line 7 \"src/geometry/point.hpp\"\
+    \n\nnamespace BanetteGin {\n\ntemplate <class T>\nstruct point {\n    T x, y;\n\
+    \    point(T x_, T y_)\n        : x(x_), y(y_) {\n    }\n\n    point operator+(const\
+    \ point& p) const noexcept {\n        return point<T>(this->x + p.x, this->y +\
+    \ p.y);\n    }\n    point operator-(const point& p) const noexcept {\n       \
+    \ return point<T>(this->x - p.x, this->y - p.y);\n    }\n    point operator*(const\
+    \ T& a) const noexcept {\n        return point<T>(this->x * a, this->y * a);\n\
+    \    }\n    point operator/(const T& a) const noexcept {\n        return point<T>(this->x\
+    \ / a, this->y / a);\n    }\n\n    point& operator+=(const point& p) noexcept\
+    \ {\n        this->x += p.x;\n        this->y += p.y;\n        return *this;\n\
+    \    }\n    point& operator-=(const point& p) noexcept {\n        this->x -= p.x;\n\
+    \        this->y -= p.y;\n        return *this;\n    }\n    point& operator*=(const\
+    \ T& a) noexcept {\n        this->x *= a;\n        this->y *= a;\n        return\
+    \ *this;\n    }\n    point& operator/=(const T& a) noexcept {\n        this->x\
+    \ /= a;\n        this->y /= a;\n        return *this;\n    }\n\n    bool operator==(const\
+    \ point& p) const noexcept {\n        return equal(this->x, p.x) && equal(this->y,\
+    \ p.y);\n    }\n    bool operator!=(const point& p) const noexcept {\n       \
+    \ return !equal(this->x, p.x) || !equal(this->y, p.y);\n    }\n    bool operator<(const\
+    \ point& p) const noexcept {\n        return !equal(this->x, p.x) || !equal(this->y,\
+    \ p.y);\n    }\n\n    friend T dot(const point& p, const point& q) noexcept {\n\
+    \        return p.x * q.x + p.y * q.y;\n    }\n    friend T cross(const point&\
+    \ p, const point& q) noexcept {\n        return p.x * q.y - p.y * q.x;\n    }\n\
+    \    friend T norm(const point& p) {\n        return sqrt(p.x * p.x + p.y * p.y);\n\
+    \    }\n    friend T arg(const point& p) {\n        return atan2(p.y, p.x);\n\
+    \    }\n};\n\n}  // namespace BanetteGin\n\n\n"
   code: "#ifndef BANETTEGIN_POINT_HPP_INCLUDED\n#define BANETTEGIN_POINT_HPP_INCLUDED\n\
     \n#include <complex>\n\n#include \"../basic/comparison.hpp\"\n\nnamespace BanetteGin\
     \ {\n\ntemplate <class T>\nstruct point {\n    T x, y;\n    point(T x_, T y_)\n\
@@ -202,11 +214,15 @@ data:
   - src/geometry/centroid.hpp
   - src/geometry/segment.hpp
   - src/geometry/intersect.hpp
-  timestamp: '2023-09-08 07:19:50+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2023-09-08 21:12:14+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/aizu_online_judge/Library/CGL/7_C.test.cpp
   - test/aizu_online_judge/Library/CGL/7_B.test.cpp
+  - test/yukicoder/306-2.test.cpp
+  - test/yukicoder/306-2.test.cpp
+  - test/yukicoder/306-1.test.cpp
+  - test/yukicoder/306-1.test.cpp
 documentation_of: src/geometry/point.hpp
 layout: document
 redirect_from:

@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/basic/constant.hpp
     title: src/basic/constant.hpp
   _extendedRequiredBy:
@@ -16,9 +16,9 @@ data:
     links: []
   bundledCode: "#line 1 \"src/data_structure/segment_tree.hpp\"\n\n\n\n#include <vector>\n\
     \n#line 1 \"src/basic/constant.hpp\"\n\n\n\nnamespace BanetteGin {\n\nconst long\
-    \ double EPS = 10e-12;\nconst long long int LINF = 1001001001001001001LL;\nconst\
-    \ long double PI = acos(-1);\nconst long double GOLDEN_RATIO = 2 * cos(PI / 5);\n\
-    \n}  // namespace BanetteGin\n\n\n#line 7 \"src/data_structure/segment_tree.hpp\"\
+    \ double EPS = 10e-12L;\nconst long long int LINF = 1001001001001001001LL;\nconst\
+    \ long double PI = acos(-1.0L);\nconst long double GOLDEN_RATIO = 2.0L * cos(PI\
+    \ / 5.0L);\n\n}  // namespace BanetteGin\n\n\n#line 7 \"src/data_structure/segment_tree.hpp\"\
     \n\nnamespace BanetteGin {\n\ntemplate <class T>\nstruct segment_tree {\n    T\
     \ n;\n    std::vector<T> node;\n    const T ide = LINF;\n\n    segment_tree(std::vector<T>\
     \ a) {\n        n = 1;\n        while (n < a.size()) n *= 2;\n        node.resize(2\
@@ -61,7 +61,7 @@ data:
   path: src/data_structure/segment_tree.hpp
   requiredBy:
   - src/all.hpp
-  timestamp: '2023-08-23 17:08:47+09:00'
+  timestamp: '2023-09-08 21:12:14+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/data_structure/segment_tree.hpp
