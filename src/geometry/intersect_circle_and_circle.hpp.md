@@ -148,9 +148,9 @@ data:
     \   }\n\nprivate:\n    circle<T> constracter_circumcircle(triangle<T> t) {\n \
     \       point ret = point(0.0L, 0.0L);\n        T denom = 0.0L;\n        for (int\
     \ i = 0; i < 3; ++i) {\n            ret += t.points[i] * sin(2 * t.angles[i]);\n\
-    \            denom += sin(t.angles[i]);\n        }\n        T r = t.lengths[0]\
-    \ / sin(2 * t.angles[0]) / 2;\n        return circle(ret / denom, r);\n    }\n\
-    };\n\n}  // namespace BanetteGin\n\n\n#line 7 \"src/geometry/intersect_circle_and_circle.hpp\"\
+    \            denom += sin(2 * t.angles[i]);\n        }\n        T r = t.lengths[0]\
+    \ / sin(t.angles[0]) / 2;\n        return circle(ret / denom, r);\n    }\n};\n\
+    \n}  // namespace BanetteGin\n\n\n#line 7 \"src/geometry/intersect_circle_and_circle.hpp\"\
     \n\nnamespace BanetteGin {\n\ntemplate <class T>\nint intersect_circle_and_circle(const\
     \ circle<T>& c1, const circle<T>& c2) {\n    T d = distance_between_point_and_point(c1.p,\
     \ c2.p);\n    if (greater_than(d, c1.r + c2.r)) {\n        return 4;\n    }\n\
@@ -186,7 +186,7 @@ data:
   path: src/geometry/intersect_circle_and_circle.hpp
   requiredBy:
   - src/all.hpp
-  timestamp: '2023-09-08 12:01:00+09:00'
+  timestamp: '2023-09-08 12:39:10+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/geometry/intersect_circle_and_circle.hpp
