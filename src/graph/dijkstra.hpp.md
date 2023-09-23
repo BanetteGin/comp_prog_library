@@ -13,7 +13,7 @@ data:
     links: []
   bundledCode: "#line 1 \"src/graph/dijkstra.hpp\"\n\n\n\n#include <vector>\n\n#line\
     \ 1 \"src/basic/constant.hpp\"\n\n\n\nnamespace BanetteGin {\n\nconst long double\
-    \ EPS = 1e-16L;\nconst long long int LINF = 1001001001001001001LL;\nconst long\
+    \ EPS = 1e-15L;\nconst long long int LINF = 1001001001001001001LL;\nconst long\
     \ double PI = acos(-1.0L);\nconst long double GOLDEN_RATIO = (1 + sqrt(5)) / 2;\n\
     \n}  // namespace BanetteGin\n\n\n#line 7 \"src/graph/dijkstra.hpp\"\nnamespace\
     \ BanetteGin {\n\ntemplate <class T>\nstd::vector<T> dijkstra(std::vector<std::vector<std::pair<T,\
@@ -41,7 +41,7 @@ data:
   isVerificationFile: false
   path: src/graph/dijkstra.hpp
   requiredBy: []
-  timestamp: '2023-09-23 20:13:43+09:00'
+  timestamp: '2023-09-23 20:16:43+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/graph/dijkstra.hpp

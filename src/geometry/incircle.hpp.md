@@ -65,7 +65,7 @@ data:
   bundledCode: "#line 1 \"src/geometry/incircle.hpp\"\n\n\n\n#line 1 \"src/geometry/circle.hpp\"\
     \n\n\n\n#line 1 \"src/basic/comparison.hpp\"\n\n\n\n#line 1 \"src/basic/equal.hpp\"\
     \n\n\n\n#line 1 \"src/basic/sign.hpp\"\n\n\n\n#line 1 \"src/basic/constant.hpp\"\
-    \n\n\n\nnamespace BanetteGin {\n\nconst long double EPS = 1e-16L;\nconst long\
+    \n\n\n\nnamespace BanetteGin {\n\nconst long double EPS = 1e-15L;\nconst long\
     \ long int LINF = 1001001001001001001LL;\nconst long double PI = acos(-1.0L);\n\
     const long double GOLDEN_RATIO = (1 + sqrt(5)) / 2;\n\n}  // namespace BanetteGin\n\
     \n\n#line 5 \"src/basic/sign.hpp\"\n\nnamespace BanetteGin {\n\ntemplate <class\
@@ -216,7 +216,7 @@ data:
   requiredBy:
   - src/all.hpp
   - src/geometry/geometry.hpp
-  timestamp: '2023-09-23 20:13:43+09:00'
+  timestamp: '2023-09-23 20:16:43+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aizu_online_judge/Library/CGL/7_B.test.cpp

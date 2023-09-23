@@ -151,7 +151,7 @@ data:
     namespace BanetteGin {
 
 
-    const long double EPS = 1e-16L;
+    const long double EPS = 1e-15L;
 
     const long long int LINF = 1001001001001001001LL;
 
@@ -173,7 +173,7 @@ data:
     namespace BanetteGin {
 
 
-    const long double EPS = 1e-16L;
+    const long double EPS = 1e-15L;
 
     const long long int LINF = 1001001001001001001LL;
 
@@ -229,7 +229,7 @@ data:
   - src/geometry/incircle.hpp
   - src/geometry/parallel_check.hpp
   - src/geometry/line.hpp
-  timestamp: '2023-09-23 20:13:43+09:00'
+  timestamp: '2023-09-23 20:16:43+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/306-1.test.cpp
