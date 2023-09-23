@@ -1,25 +1,25 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/basic/constant.hpp
     title: src/basic/constant.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/basic/equal.hpp
     title: src/basic/equal.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/basic/greater_equal.hpp
     title: src/basic/greater_equal.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/basic/greater_than.hpp
     title: src/basic/greater_than.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/basic/less_equal.hpp
     title: src/basic/less_equal.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/basic/less_than.hpp
     title: src/basic/less_than.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/basic/sign.hpp
     title: src/basic/sign.hpp
   _extendedRequiredBy:
@@ -32,10 +32,10 @@ data:
   - icon: ':warning:'
     path: src/all.hpp
     title: src/all.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: src/analysis/golden_ratio_search.hpp
     title: src/analysis/golden_ratio_search.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: src/analysis/ternary_search.hpp
     title: src/analysis/ternary_search.hpp
   - icon: ':warning:'
@@ -50,7 +50,7 @@ data:
   - icon: ':warning:'
     path: src/geometry/concyclic.hpp
     title: src/geometry/concyclic.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/geometry/distance.hpp
     title: src/geometry/distance.hpp
   - icon: ':warning:'
@@ -65,7 +65,7 @@ data:
   - icon: ':warning:'
     path: src/geometry/intersect.hpp
     title: src/geometry/intersect.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/geometry/line.hpp
     title: src/geometry/line.hpp
   - icon: ':warning:'
@@ -80,7 +80,7 @@ data:
   - icon: ':warning:'
     path: src/geometry/parallel_check.hpp
     title: src/geometry/parallel_check.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/geometry/point.hpp
     title: src/geometry/point.hpp
   - icon: ':warning:'
@@ -89,7 +89,7 @@ data:
   - icon: ':warning:'
     path: src/geometry/rotate.hpp
     title: src/geometry/rotate.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/geometry/segment.hpp
     title: src/geometry/segment.hpp
   - icon: ':heavy_check_mark:'
@@ -105,26 +105,26 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aizu_online_judge/Library/CGL/7_C.test.cpp
     title: test/aizu_online_judge/Library/CGL/7_C.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/306-1.test.cpp
     title: test/yukicoder/306-1.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/306-1.test.cpp
     title: test/yukicoder/306-1.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/306-2.test.cpp
     title: test/yukicoder/306-2.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/306-2.test.cpp
     title: test/yukicoder/306-2.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"src/basic/comparison.hpp\"\n\n\n\n#line 1 \"src/basic/equal.hpp\"\
     \n\n\n\n#line 1 \"src/basic/sign.hpp\"\n\n\n\n#line 1 \"src/basic/constant.hpp\"\
-    \n\n\n\nnamespace BanetteGin {\n\nconst long double EPS = 1e-14L;\nconst long\
+    \n\n\n\nnamespace BanetteGin {\n\nconst long double EPS = 1e-16L;\nconst long\
     \ long int LINF = 1001001001001001001LL;\nconst long double PI = acos(-1.0L);\n\
     const long double GOLDEN_RATIO = (1 + sqrt(5)) / 2;\n\n}  // namespace BanetteGin\n\
     \n\n#line 5 \"src/basic/sign.hpp\"\n\nnamespace BanetteGin {\n\ntemplate <class\
@@ -196,8 +196,8 @@ data:
   - src/geometry/incircle.hpp
   - src/geometry/parallel_check.hpp
   - src/geometry/line.hpp
-  timestamp: '2023-09-23 20:08:59+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  timestamp: '2023-09-23 20:13:43+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/306-1.test.cpp
   - test/yukicoder/306-1.test.cpp

@@ -1,31 +1,31 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/basic/comparison.hpp
     title: src/basic/comparison.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/basic/constant.hpp
     title: src/basic/constant.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/basic/constant.hpp
     title: src/basic/constant.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/basic/equal.hpp
     title: src/basic/equal.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/basic/greater_equal.hpp
     title: src/basic/greater_equal.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/basic/greater_than.hpp
     title: src/basic/greater_than.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/basic/less_equal.hpp
     title: src/basic/less_equal.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/basic/less_than.hpp
     title: src/basic/less_than.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/basic/sign.hpp
     title: src/basic/sign.hpp
   _extendedRequiredBy:
@@ -33,18 +33,18 @@ data:
     path: src/all.hpp
     title: src/all.hpp
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/306-2.test.cpp
     title: test/yukicoder/306-2.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"src/analysis/golden_ratio_search.hpp\"\n\n\n\n#include <cmath>\n\
     \n#line 1 \"src/basic/comparison.hpp\"\n\n\n\n#line 1 \"src/basic/equal.hpp\"\n\
     \n\n\n#line 1 \"src/basic/sign.hpp\"\n\n\n\n#line 1 \"src/basic/constant.hpp\"\
-    \n\n\n\nnamespace BanetteGin {\n\nconst long double EPS = 1e-14L;\nconst long\
+    \n\n\n\nnamespace BanetteGin {\n\nconst long double EPS = 1e-16L;\nconst long\
     \ long int LINF = 1001001001001001001LL;\nconst long double PI = acos(-1.0L);\n\
     const long double GOLDEN_RATIO = (1 + sqrt(5)) / 2;\n\n}  // namespace BanetteGin\n\
     \n\n#line 5 \"src/basic/sign.hpp\"\n\nnamespace BanetteGin {\n\ntemplate <class\
@@ -105,8 +105,8 @@ data:
   path: src/analysis/golden_ratio_search.hpp
   requiredBy:
   - src/all.hpp
-  timestamp: '2023-09-23 20:08:59+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2023-09-23 20:13:43+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/306-2.test.cpp
 documentation_of: src/analysis/golden_ratio_search.hpp

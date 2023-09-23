@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/basic/constant.hpp
     title: src/basic/constant.hpp
   _extendedRequiredBy:
@@ -16,7 +16,7 @@ data:
     links: []
   bundledCode: "#line 1 \"src/string/clip_string.hpp\"\n\n\n\n#include <string>\n\
     #include <vector>\n\n#line 1 \"src/basic/constant.hpp\"\n\n\n\nnamespace BanetteGin\
-    \ {\n\nconst long double EPS = 1e-14L;\nconst long long int LINF = 1001001001001001001LL;\n\
+    \ {\n\nconst long double EPS = 1e-16L;\nconst long long int LINF = 1001001001001001001LL;\n\
     const long double PI = acos(-1.0L);\nconst long double GOLDEN_RATIO = (1 + sqrt(5))\
     \ / 2;\n\n}  // namespace BanetteGin\n\n\n#line 8 \"src/string/clip_string.hpp\"\
     \n\nnamespace BanetteGin {\n\nstd::vector<std::string> clip_string(const std::vector<std::string>&\
@@ -55,7 +55,7 @@ data:
   path: src/string/clip_string.hpp
   requiredBy:
   - src/all.hpp
-  timestamp: '2023-09-23 20:08:59+09:00'
+  timestamp: '2023-09-23 20:13:43+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/string/clip_string.hpp
