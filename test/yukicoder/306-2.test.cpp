@@ -17,11 +17,8 @@ using namespace BanetteGin;
 int main(void) {
     ld ax, ay, bx, by;
     cin >> ax >> ay >> bx >> by;
-    point p = point(ax, ay);
-    point q = point(bx, by);
     function<ld(ld)> func = [&](ld y) {
-        point a = point(0.0L, y);
-        return distance(a, p) + distance(a, q);
+        return hypot(ax, y - ay) + hypot(bx, y - by);
     };
     cout << fixed << setprecision(20) << golden_ratio_search(0.0L, 2000.0L, func) << endl;
     return 0;
