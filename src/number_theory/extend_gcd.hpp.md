@@ -1,7 +1,10 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: src/number_theory/number_theory.hpp
+    title: src/number_theory/number_theory.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aizu_online_judge/Library/NTL/A_5.test.cpp
@@ -25,7 +28,8 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: src/number_theory/extend_gcd.hpp
-  requiredBy: []
+  requiredBy:
+  - src/number_theory/number_theory.hpp
   timestamp: '2023-09-08 16:00:29+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

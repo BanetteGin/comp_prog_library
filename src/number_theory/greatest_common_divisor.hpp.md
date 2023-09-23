@@ -5,6 +5,9 @@ data:
   - icon: ':warning:'
     path: src/all.hpp
     title: src/all.hpp
+  - icon: ':warning:'
+    path: src/number_theory/number_theory.hpp
+    title: src/number_theory/number_theory.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aizu_online_judge/Library/NTL/A_3.test.cpp
@@ -26,6 +29,7 @@ data:
   isVerificationFile: false
   path: src/number_theory/greatest_common_divisor.hpp
   requiredBy:
+  - src/number_theory/number_theory.hpp
   - src/all.hpp
   timestamp: '2023-08-08 12:20:54+09:00'
   verificationStatus: LIBRARY_ALL_AC

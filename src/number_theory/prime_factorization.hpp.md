@@ -8,6 +8,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/number_theory/euler_phi.hpp
     title: src/number_theory/euler_phi.hpp
+  - icon: ':warning:'
+    path: src/number_theory/number_theory.hpp
+    title: src/number_theory/number_theory.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aizu_online_judge/Library/NTL/A_1.test.cpp
@@ -40,8 +43,9 @@ data:
   isVerificationFile: false
   path: src/number_theory/prime_factorization.hpp
   requiredBy:
-  - src/all.hpp
   - src/number_theory/euler_phi.hpp
+  - src/number_theory/number_theory.hpp
+  - src/all.hpp
   timestamp: '2023-09-08 09:32:39+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

@@ -11,6 +11,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/number_theory/naive_sieve.hpp
     title: src/number_theory/naive_sieve.hpp
+  - icon: ':warning:'
+    path: src/number_theory/number_theory.hpp
+    title: src/number_theory/number_theory.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/713.test.cpp
@@ -34,9 +37,10 @@ data:
   isVerificationFile: false
   path: src/number_theory/prime_check.hpp
   requiredBy:
-  - src/all.hpp
-  - src/all.hpp
   - src/number_theory/naive_sieve.hpp
+  - src/number_theory/number_theory.hpp
+  - src/all.hpp
+  - src/all.hpp
   timestamp: '2023-09-07 19:30:09+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

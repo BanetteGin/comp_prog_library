@@ -56,6 +56,9 @@ data:
   - icon: ':warning:'
     path: src/geometry/excircle.hpp
     title: src/geometry/excircle.hpp
+  - icon: ':warning:'
+    path: src/geometry/geometry.hpp
+    title: src/geometry/geometry.hpp
   - icon: ':heavy_check_mark:'
     path: src/geometry/incircle.hpp
     title: src/geometry/incircle.hpp
@@ -77,12 +80,12 @@ data:
   bundledCode: "#line 1 \"src/geometry/circle.hpp\"\n\n\n\n#line 1 \"src/basic/comparison.hpp\"\
     \n\n\n\n#line 1 \"src/basic/equal.hpp\"\n\n\n\n#line 1 \"src/basic/sign.hpp\"\n\
     \n\n\n#line 1 \"src/basic/constant.hpp\"\n\n\n\nnamespace BanetteGin {\n\nconst\
-    \ long double EPS = 1e-6L;\nconst long long int LINF = 1001001001001001001LL;\n\
-    const long double PI = acos(-1.0L);\nconst long double GOLDEN_RATIO = 2.0L * cos(PI\
-    \ / 5.0L);\n\n}  // namespace BanetteGin\n\n\n#line 5 \"src/basic/sign.hpp\"\n\
-    \nnamespace BanetteGin {\n\ntemplate <class T>\nint sign(const T& x) {\n    return\
-    \ (x < -EPS ? -1 : (x < EPS ? 0 : 1));\n}\n\n}  // namespace BanetteGin\n\n\n\
-    #line 5 \"src/basic/equal.hpp\"\n\nnamespace BanetteGin {\n\ntemplate <class T>\n\
+    \ long double EPS = 1e-14L;\nconst long long int LINF = 1001001001001001001LL;\n\
+    const long double PI = acos(-1.0L);\nconst long double GOLDEN_RATIO = (1 + sqrt(5))\
+    \ / 2;\n\n}  // namespace BanetteGin\n\n\n#line 5 \"src/basic/sign.hpp\"\n\nnamespace\
+    \ BanetteGin {\n\ntemplate <class T>\nint sign(const T& x) {\n    return (x <\
+    \ -EPS ? -1 : (x < EPS ? 0 : 1));\n}\n\n}  // namespace BanetteGin\n\n\n#line\
+    \ 5 \"src/basic/equal.hpp\"\n\nnamespace BanetteGin {\n\ntemplate <class T>\n\
     bool equal(const T &a, const T &b) {\n    return (sign(a - b) == 0);\n}\n\n} \
     \ // namespace BanetteGin\n\n\n#line 1 \"src/basic/greater_equal.hpp\"\n\n\n\n\
     namespace BanetteGin {\n\ntemplate <class T>\nbool greater_equal(const T &a, const\
@@ -233,10 +236,11 @@ data:
   - src/all.hpp
   - src/all.hpp
   - src/geometry/circumcircle.hpp
+  - src/geometry/intersect.hpp
+  - src/geometry/geometry.hpp
   - src/geometry/excircle.hpp
   - src/geometry/incircle.hpp
-  - src/geometry/intersect.hpp
-  timestamp: '2023-09-09 01:13:20+09:00'
+  timestamp: '2023-09-23 20:08:59+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aizu_online_judge/Library/CGL/7_C.test.cpp

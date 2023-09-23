@@ -65,6 +65,12 @@ data:
   - icon: ':warning:'
     path: src/geometry/excircle.hpp
     title: src/geometry/excircle.hpp
+  - icon: ':warning:'
+    path: src/geometry/geometry.hpp
+    title: src/geometry/geometry.hpp
+  - icon: ':warning:'
+    path: src/geometry/geometry.hpp
+    title: src/geometry/geometry.hpp
   - icon: ':heavy_check_mark:'
     path: src/geometry/incircle.hpp
     title: src/geometry/incircle.hpp
@@ -108,6 +114,9 @@ data:
     path: src/geometry/unit_vector.hpp
     title: src/geometry/unit_vector.hpp
   - icon: ':warning:'
+    path: src/graph/dijkstra.hpp
+    title: src/graph/dijkstra.hpp
+  - icon: ':warning:'
     path: src/string/clip_string.hpp
     title: src/string/clip_string.hpp
   _extendedVerifiedWith:
@@ -142,13 +151,13 @@ data:
     namespace BanetteGin {
 
 
-    const long double EPS = 1e-6L;
+    const long double EPS = 1e-14L;
 
     const long long int LINF = 1001001001001001001LL;
 
     const long double PI = acos(-1.0L);
 
-    const long double GOLDEN_RATIO = 2.0L * cos(PI / 5.0L);
+    const long double GOLDEN_RATIO = (1 + sqrt(5)) / 2;
 
 
     }  // namespace BanetteGin
@@ -164,13 +173,13 @@ data:
     namespace BanetteGin {
 
 
-    const long double EPS = 1e-6L;
+    const long double EPS = 1e-14L;
 
     const long long int LINF = 1001001001001001001LL;
 
     const long double PI = acos(-1.0L);
 
-    const long double GOLDEN_RATIO = 2.0L * cos(PI / 5.0L);
+    const long double GOLDEN_RATIO = (1 + sqrt(5)) / 2;
 
 
     }  // namespace BanetteGin
@@ -181,14 +190,6 @@ data:
   isVerificationFile: false
   path: src/basic/constant.hpp
   requiredBy:
-  - src/data_structure/segment_tree.hpp
-  - src/string/clip_string.hpp
-  - src/all.hpp
-  - src/all.hpp
-  - src/all.hpp
-  - src/all.hpp
-  - src/all.hpp
-  - src/all.hpp
   - src/basic/equal.hpp
   - src/basic/comparison.hpp
   - src/basic/sign.hpp
@@ -196,36 +197,47 @@ data:
   - src/analysis/golden_ratio_search.hpp
   - src/analysis/ternary_search.hpp
   - src/analysis/ternary_search.hpp
-  - src/geometry/normal_vector.hpp
-  - src/geometry/circle.hpp
-  - src/geometry/parallel_check.hpp
-  - src/geometry/rotate.hpp
+  - src/data_structure/segment_tree.hpp
+  - src/all.hpp
+  - src/all.hpp
+  - src/all.hpp
+  - src/all.hpp
+  - src/all.hpp
+  - src/all.hpp
+  - src/graph/dijkstra.hpp
+  - src/string/clip_string.hpp
   - src/geometry/radian_to_degree.hpp
-  - src/geometry/projection.hpp
-  - src/geometry/distance.hpp
-  - src/geometry/point.hpp
-  - src/geometry/concyclic.hpp
   - src/geometry/orthogonal_check.hpp
   - src/geometry/circumcircle.hpp
-  - src/geometry/orthocenter.hpp
-  - src/geometry/unit_vector.hpp
-  - src/geometry/line.hpp
-  - src/geometry/degree_to_radian.hpp
-  - src/geometry/excircle.hpp
-  - src/geometry/incircle.hpp
-  - src/geometry/triangle.hpp
-  - src/geometry/centroid.hpp
-  - src/geometry/segment.hpp
   - src/geometry/intersect.hpp
-  timestamp: '2023-09-09 01:13:20+09:00'
+  - src/geometry/degree_to_radian.hpp
+  - src/geometry/segment.hpp
+  - src/geometry/triangle.hpp
+  - src/geometry/normal_vector.hpp
+  - src/geometry/geometry.hpp
+  - src/geometry/geometry.hpp
+  - src/geometry/point.hpp
+  - src/geometry/orthocenter.hpp
+  - src/geometry/distance.hpp
+  - src/geometry/excircle.hpp
+  - src/geometry/centroid.hpp
+  - src/geometry/concyclic.hpp
+  - src/geometry/unit_vector.hpp
+  - src/geometry/circle.hpp
+  - src/geometry/projection.hpp
+  - src/geometry/rotate.hpp
+  - src/geometry/incircle.hpp
+  - src/geometry/parallel_check.hpp
+  - src/geometry/line.hpp
+  timestamp: '2023-09-23 20:08:59+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
+  - test/yukicoder/306-1.test.cpp
+  - test/yukicoder/306-1.test.cpp
+  - test/yukicoder/306-2.test.cpp
+  - test/yukicoder/306-2.test.cpp
   - test/aizu_online_judge/Library/CGL/7_C.test.cpp
   - test/aizu_online_judge/Library/CGL/7_B.test.cpp
-  - test/yukicoder/306-2.test.cpp
-  - test/yukicoder/306-2.test.cpp
-  - test/yukicoder/306-1.test.cpp
-  - test/yukicoder/306-1.test.cpp
 documentation_of: src/basic/constant.hpp
 layout: document
 redirect_from:

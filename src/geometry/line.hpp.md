@@ -50,6 +50,9 @@ data:
   - icon: ':warning:'
     path: src/geometry/excircle.hpp
     title: src/geometry/excircle.hpp
+  - icon: ':warning:'
+    path: src/geometry/geometry.hpp
+    title: src/geometry/geometry.hpp
   - icon: ':heavy_check_mark:'
     path: src/geometry/incircle.hpp
     title: src/geometry/incircle.hpp
@@ -95,12 +98,12 @@ data:
   bundledCode: "#line 1 \"src/geometry/line.hpp\"\n\n\n\n#line 1 \"src/basic/comparison.hpp\"\
     \n\n\n\n#line 1 \"src/basic/equal.hpp\"\n\n\n\n#line 1 \"src/basic/sign.hpp\"\n\
     \n\n\n#line 1 \"src/basic/constant.hpp\"\n\n\n\nnamespace BanetteGin {\n\nconst\
-    \ long double EPS = 1e-6L;\nconst long long int LINF = 1001001001001001001LL;\n\
-    const long double PI = acos(-1.0L);\nconst long double GOLDEN_RATIO = 2.0L * cos(PI\
-    \ / 5.0L);\n\n}  // namespace BanetteGin\n\n\n#line 5 \"src/basic/sign.hpp\"\n\
-    \nnamespace BanetteGin {\n\ntemplate <class T>\nint sign(const T& x) {\n    return\
-    \ (x < -EPS ? -1 : (x < EPS ? 0 : 1));\n}\n\n}  // namespace BanetteGin\n\n\n\
-    #line 5 \"src/basic/equal.hpp\"\n\nnamespace BanetteGin {\n\ntemplate <class T>\n\
+    \ long double EPS = 1e-14L;\nconst long long int LINF = 1001001001001001001LL;\n\
+    const long double PI = acos(-1.0L);\nconst long double GOLDEN_RATIO = (1 + sqrt(5))\
+    \ / 2;\n\n}  // namespace BanetteGin\n\n\n#line 5 \"src/basic/sign.hpp\"\n\nnamespace\
+    \ BanetteGin {\n\ntemplate <class T>\nint sign(const T& x) {\n    return (x <\
+    \ -EPS ? -1 : (x < EPS ? 0 : 1));\n}\n\n}  // namespace BanetteGin\n\n\n#line\
+    \ 5 \"src/basic/equal.hpp\"\n\nnamespace BanetteGin {\n\ntemplate <class T>\n\
     bool equal(const T &a, const T &b) {\n    return (sign(a - b) == 0);\n}\n\n} \
     \ // namespace BanetteGin\n\n\n#line 1 \"src/basic/greater_equal.hpp\"\n\n\n\n\
     namespace BanetteGin {\n\ntemplate <class T>\nbool greater_equal(const T &a, const\
@@ -196,26 +199,27 @@ data:
   requiredBy:
   - src/all.hpp
   - src/all.hpp
-  - src/geometry/circle.hpp
-  - src/geometry/parallel_check.hpp
-  - src/geometry/projection.hpp
-  - src/geometry/distance.hpp
   - src/geometry/orthogonal_check.hpp
   - src/geometry/circumcircle.hpp
-  - src/geometry/orthocenter.hpp
-  - src/geometry/excircle.hpp
-  - src/geometry/incircle.hpp
-  - src/geometry/triangle.hpp
-  - src/geometry/centroid.hpp
-  - src/geometry/segment.hpp
   - src/geometry/intersect.hpp
-  timestamp: '2023-09-09 01:13:20+09:00'
+  - src/geometry/segment.hpp
+  - src/geometry/triangle.hpp
+  - src/geometry/geometry.hpp
+  - src/geometry/orthocenter.hpp
+  - src/geometry/distance.hpp
+  - src/geometry/excircle.hpp
+  - src/geometry/centroid.hpp
+  - src/geometry/circle.hpp
+  - src/geometry/projection.hpp
+  - src/geometry/incircle.hpp
+  - src/geometry/parallel_check.hpp
+  timestamp: '2023-09-23 20:08:59+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
+  - test/yukicoder/306-1.test.cpp
+  - test/yukicoder/306-2.test.cpp
   - test/aizu_online_judge/Library/CGL/7_C.test.cpp
   - test/aizu_online_judge/Library/CGL/7_B.test.cpp
-  - test/yukicoder/306-2.test.cpp
-  - test/yukicoder/306-1.test.cpp
 documentation_of: src/geometry/line.hpp
 layout: document
 redirect_from:

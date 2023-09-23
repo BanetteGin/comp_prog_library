@@ -94,6 +94,9 @@ data:
     - icon: ':warning:'
       path: src/geometry/excircle.hpp
       title: src/geometry/excircle.hpp
+    - icon: ':warning:'
+      path: src/geometry/geometry.hpp
+      title: src/geometry/geometry.hpp
     - icon: ':heavy_check_mark:'
       path: src/geometry/incircle.hpp
       title: src/geometry/incircle.hpp
@@ -190,6 +193,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/number_theory/naive_sieve.hpp
       title: src/number_theory/naive_sieve.hpp
+    - icon: ':warning:'
+      path: src/number_theory/number_theory.hpp
+      title: src/number_theory/number_theory.hpp
     - icon: ':heavy_check_mark:'
       path: src/number_theory/prime_check.hpp
       title: src/number_theory/prime_check.hpp

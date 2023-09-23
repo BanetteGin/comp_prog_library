@@ -8,6 +8,9 @@ data:
   - icon: ':warning:'
     path: src/all.hpp
     title: src/all.hpp
+  - icon: ':warning:'
+    path: src/number_theory/number_theory.hpp
+    title: src/number_theory/number_theory.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/713.test.cpp
@@ -39,6 +42,7 @@ data:
   isVerificationFile: false
   path: src/number_theory/naive_sieve.hpp
   requiredBy:
+  - src/number_theory/number_theory.hpp
   - src/all.hpp
   timestamp: '2023-09-08 16:51:51+09:00'
   verificationStatus: LIBRARY_ALL_AC

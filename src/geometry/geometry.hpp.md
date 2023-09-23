@@ -8,6 +8,9 @@ data:
     path: src/basic/constant.hpp
     title: src/basic/constant.hpp
   - icon: ':question:'
+    path: src/basic/constant.hpp
+    title: src/basic/constant.hpp
+  - icon: ':question:'
     path: src/basic/equal.hpp
     title: src/basic/equal.hpp
   - icon: ':question:'
@@ -28,25 +31,6 @@ data:
   - icon: ':question:'
     path: src/basic/sign.hpp
     title: src/basic/sign.hpp
-  - icon: ':question:'
-    path: src/geometry/distance.hpp
-    title: src/geometry/distance.hpp
-  - icon: ':question:'
-    path: src/geometry/line.hpp
-    title: src/geometry/line.hpp
-  - icon: ':question:'
-    path: src/geometry/point.hpp
-    title: src/geometry/point.hpp
-  - icon: ':question:'
-    path: src/geometry/segment.hpp
-    title: src/geometry/segment.hpp
-  _extendedRequiredBy:
-  - icon: ':warning:'
-    path: src/all.hpp
-    title: src/all.hpp
-  - icon: ':warning:'
-    path: src/all.hpp
-    title: src/all.hpp
   - icon: ':warning:'
     path: src/geometry/centroid.hpp
     title: src/geometry/centroid.hpp
@@ -57,33 +41,68 @@ data:
     path: src/geometry/circumcircle.hpp
     title: src/geometry/circumcircle.hpp
   - icon: ':warning:'
+    path: src/geometry/concyclic.hpp
+    title: src/geometry/concyclic.hpp
+  - icon: ':warning:'
+    path: src/geometry/degree_to_radian.hpp
+    title: src/geometry/degree_to_radian.hpp
+  - icon: ':question:'
+    path: src/geometry/distance.hpp
+    title: src/geometry/distance.hpp
+  - icon: ':warning:'
     path: src/geometry/excircle.hpp
     title: src/geometry/excircle.hpp
-  - icon: ':warning:'
-    path: src/geometry/geometry.hpp
-    title: src/geometry/geometry.hpp
   - icon: ':heavy_check_mark:'
     path: src/geometry/incircle.hpp
     title: src/geometry/incircle.hpp
   - icon: ':warning:'
     path: src/geometry/intersect.hpp
     title: src/geometry/intersect.hpp
+  - icon: ':question:'
+    path: src/geometry/line.hpp
+    title: src/geometry/line.hpp
+  - icon: ':warning:'
+    path: src/geometry/normal_vector.hpp
+    title: src/geometry/normal_vector.hpp
   - icon: ':warning:'
     path: src/geometry/orthocenter.hpp
     title: src/geometry/orthocenter.hpp
-  _extendedVerifiedWith:
+  - icon: ':warning:'
+    path: src/geometry/orthogonal_check.hpp
+    title: src/geometry/orthogonal_check.hpp
+  - icon: ':warning:'
+    path: src/geometry/parallel_check.hpp
+    title: src/geometry/parallel_check.hpp
+  - icon: ':question:'
+    path: src/geometry/point.hpp
+    title: src/geometry/point.hpp
+  - icon: ':warning:'
+    path: src/geometry/projection.hpp
+    title: src/geometry/projection.hpp
+  - icon: ':warning:'
+    path: src/geometry/radian_to_degree.hpp
+    title: src/geometry/radian_to_degree.hpp
+  - icon: ':warning:'
+    path: src/geometry/rotate.hpp
+    title: src/geometry/rotate.hpp
+  - icon: ':question:'
+    path: src/geometry/segment.hpp
+    title: src/geometry/segment.hpp
   - icon: ':heavy_check_mark:'
-    path: test/aizu_online_judge/Library/CGL/7_B.test.cpp
-    title: test/aizu_online_judge/Library/CGL/7_B.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aizu_online_judge/Library/CGL/7_C.test.cpp
-    title: test/aizu_online_judge/Library/CGL/7_C.test.cpp
+    path: src/geometry/triangle.hpp
+    title: src/geometry/triangle.hpp
+  - icon: ':warning:'
+    path: src/geometry/unit_vector.hpp
+    title: src/geometry/unit_vector.hpp
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"src/geometry/triangle.hpp\"\n\n\n\n#line 1 \"src/basic/equal.hpp\"\
+  bundledCode: "#line 1 \"src/geometry/geometry.hpp\"\n\n\n\n#line 1 \"src/geometry/centroid.hpp\"\
+    \n\n\n\n#line 1 \"src/geometry/triangle.hpp\"\n\n\n\n#line 1 \"src/basic/equal.hpp\"\
     \n\n\n\n#line 1 \"src/basic/sign.hpp\"\n\n\n\n#line 1 \"src/basic/constant.hpp\"\
     \n\n\n\nnamespace BanetteGin {\n\nconst long double EPS = 1e-14L;\nconst long\
     \ long int LINF = 1001001001001001001LL;\nconst long double PI = acos(-1.0L);\n\
@@ -189,39 +208,146 @@ data:
     \   points[0] = point(0, 0);\n        points[1] = point(0, lengths[1]);\n    \
     \    points[2] = point(lengths[2] * cos(angles[0]), lengths[2] * sin(angles[0]));\n\
     \n        area = lengths[1] * lengths[2] * sin(angles[0]) / 2;\n    };\n};\n\n\
-    }  // namespace BanetteGin\n\n\n"
-  code: "#ifndef BANETTEGIN_TRIANGLE_HPP_INCLUDED\n#define BANETTEGIN_TRIANGLE_HPP_INCLUDED\n\
-    \n#include \"../basic/equal.hpp\"\n#include \"distance.hpp\"\n#include \"point.hpp\"\
-    \n#include \"segment.hpp\"\n\nnamespace BanetteGin {\n\ntemplate <class T>\nstruct\
-    \ triangle {\n    point<T> points[3];\n    T lengths[3];\n    T angles[3];\n \
-    \   T area;\n    triangle(point<T> point_a, point<T> point_b, point<T> point_c)\n\
-    \        : points{point_a, point_b, point_c} {\n        for (int a = 0; a < 3;\
-    \ ++a) {\n            int b, c;\n            bool added_flag = false;\n      \
-    \      for (int i = 0; i < 3; ++i) {\n                if (a != i) {\n        \
-    \            if (!added_flag) {\n                        b = i;\n            \
-    \            added_flag = true;\n                    } else\n                \
-    \        c = i;\n                }\n            }\n            lengths[a] = distance(points[b],\
-    \ points[c]);\n        }\n\n        for (int a = 0; a < 3; ++a) {\n          \
-    \  int b, c;\n            bool added_flag = false;\n            for (int i = 0;\
-    \ i < 3; ++i) {\n                if (a != i) {\n                    if (!added_flag)\
-    \ {\n                        b = i;\n                        added_flag = true;\n\
-    \                    } else\n                        c = i;\n                }\n\
-    \            }\n            angles[a] = acos((pow(lengths[b], 2) + pow(lengths[c],\
-    \ 2) - pow(lengths[a], 2)) / (2 * lengths[b] * lengths[c]));\n        }\n\n  \
-    \      area = lengths[1] * lengths[2] * sin(angles[0]) / 2;\n    };\n    triangle(T\
-    \ length_a, T length_b, T length_c)\n        : lengths{length_a, length_b, length_c}\
-    \ {\n        for (int a = 0; a < 3; ++a) {\n            int b, c;\n          \
-    \  bool added_flag = false;\n            for (int i = 0; i < 3; ++i) {\n     \
-    \           if (a != i) {\n                    if (!added_flag) {\n          \
-    \              b = i;\n                        added_flag = true;\n          \
-    \          } else\n                        c = i;\n                }\n       \
-    \     }\n            angles[a] = acos((pow(lengths[b], 2) + pow(lengths[c], 2)\
-    \ - pow(lengths[a], 2)) / (2 * lengths[b] * lengths[c]));\n        }\n\n     \
-    \   points[0] = point(0, 0);\n        points[1] = point(0, lengths[1]);\n    \
-    \    points[2] = point(lengths[2] * cos(angles[0]), lengths[2] * sin(angles[0]));\n\
-    \n        area = lengths[1] * lengths[2] * sin(angles[0]) / 2;\n    };\n};\n\n\
-    }  // namespace BanetteGin\n\n#endif"
+    }  // namespace BanetteGin\n\n\n#line 5 \"src/geometry/centroid.hpp\"\n\nnamespace\
+    \ BanetteGin {\n\ntemplate <class T>\npoint<T> centroid(triangle<T> t) {\n   \
+    \ return (t.points[0] + t.points[1] + t.points[2]) / 3;\n}\n\n}  // namespace\
+    \ BanetteGin\n\n\n#line 1 \"src/geometry/circle.hpp\"\n\n\n\n#line 9 \"src/geometry/circle.hpp\"\
+    \n\nnamespace BanetteGin {\n\ntemplate <class T>\nstruct circle {\n    point<T>\
+    \ p;\n    T r;\n    circle(point<T> p_, T r_)\n        : p(p_), r(r_) {\n    }\n\
+    \    circle(point<T> p_, point<T> q_)\n        : p(p_), r(distance(p_, q_)) {\n\
+    \    }\n    circle(point<T> p_, point<T> q_, point<T> r_)\n        : p(constracter_circumcircle(triangle(p_,\
+    \ q_, r_)).p), r(constracter_circumcircle(triangle(p_, q_, r_)).r) {\n    }\n\
+    \    bool operator==(const circle& c) const noexcept {\n        return equal(this->p,\
+    \ c.p) && equal(this->r, c.r);\n    }\n    bool operator!=(const circle& c) const\
+    \ noexcept {\n        return !equal(this->p, c.p) || !equal(this->r, c.r);\n \
+    \   }\n\nprivate:\n    circle<T> constracter_circumcircle(triangle<T> t) {\n \
+    \       point ret = point(0.0L, 0.0L);\n        T denom = 0.0L;\n        for (int\
+    \ i = 0; i < 3; ++i) {\n            ret += t.points[i] * sin(2 * t.angles[i]);\n\
+    \            denom += sin(2 * t.angles[i]);\n        }\n        T r = t.lengths[0]\
+    \ / sin(t.angles[0]) / 2;\n        return circle(ret / denom, r);\n    }\n};\n\
+    \n}  // namespace BanetteGin\n\n\n#line 1 \"src/geometry/circumcircle.hpp\"\n\n\
+    \n\n#line 6 \"src/geometry/circumcircle.hpp\"\n\nnamespace BanetteGin {\n\ntemplate\
+    \ <class T>\ncircle<T> circumcircle(triangle<T> t) {\n    point ret = point(T(0),\
+    \ T(0));\n    for (int i = 0; i < 3; ++i) {\n        T mlt = 0;\n        for (int\
+    \ j = 0; j < 3; ++j) {\n            if (i == j)\n                mlt += -pow(t.lengths[j],\
+    \ T(2));\n            else\n                mlt += pow(t.lengths[j], T(2));\n\
+    \        }\n        mlt *= pow(t.lengths[i], T(2));\n        ret += t.points[i]\
+    \ * mlt;\n    }\n    T r = t.lengths[0] / sin(t.angles[0]) / T(2);\n    return\
+    \ circle(ret / (T(16) * pow(t.area, T(2))), r);\n}\n\n}  // namespace BanetteGin\n\
+    \n\n#line 1 \"src/geometry/concyclic.hpp\"\n\n\n\n#line 5 \"src/geometry/concyclic.hpp\"\
+    \n\nnamespace BanetteGin {\n\ntemplate <class T>\nbool concyclic(std::vector<T>\
+    \ points) {\n    assert(points.size() >= 3);\n    if (points.size() == 3) return\
+    \ true;\n    T theta = triangle(points[0], points[1], points[2]).angles[2];\n\
+    \    for (long long int i = 3; i < points.size(); ++i) {\n        if (triangle(points[0],\
+    \ points[1], points[i]).angles[2] != theta) return false;\n    }\n    return true;\n\
+    }\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/geometry/degree_to_radian.hpp\"\
+    \n\n\n\n#line 5 \"src/geometry/degree_to_radian.hpp\"\n\nnamespace BanetteGin\
+    \ {\n\ntemplate <class T>\nT degree_to_radian(T theta) {\n    return theta / 180\
+    \ * PI;\n}\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/geometry/excircle.hpp\"\
+    \n\n\n\n#line 6 \"src/geometry/excircle.hpp\"\n\nnamespace BanetteGin {\n\ntemplate\
+    \ <class T>\ncircle<T> excircle(triangle<T> t, int option = 0) {\n    assert(0\
+    \ <= option && option <= 2);\n    point ret = point(T(0), T(0));\n    T denom\
+    \ = T(0);\n    for (int i = 0; i < 3; ++i) {\n        T sgn = 1.0;\n        if\
+    \ (i == option) sgn = -1.0;\n        ret += t.points[i] * sgn * t.lengths[i];\n\
+    \        denom += sgn * t.lengths[i];\n    }\n\n    T r = t.area * T(2) / denom;\n\
+    \    return circle(ret / denom, r);\n}\n\n}  // namespace BanetteGin\n\n\n#line\
+    \ 1 \"src/geometry/incircle.hpp\"\n\n\n\n#line 6 \"src/geometry/incircle.hpp\"\
+    \n\nnamespace BanetteGin {\n\ntemplate <class T>\ncircle<T> incircle(triangle<T>\
+    \ t) {\n    point ret = point(T(0), T(0));\n    T denom = T(0);\n    for (int\
+    \ i = 0; i < 3; ++i) {\n        ret += t.points[i] * t.lengths[i];\n        denom\
+    \ += t.lengths[i];\n    }\n    T r = t.area * T(2) / denom;\n    return circle(ret\
+    \ / denom, r);\n}\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/geometry/intersect.hpp\"\
+    \n\n\n\n#line 7 \"src/geometry/intersect.hpp\"\n\nnamespace BanetteGin {\n\ntemplate\
+    \ <class T>\nint intersect(const line<T>& l, const circle<T>& c) {\n    T d =\
+    \ distance(c.p, l);\n    if (greater_than(d, c.r)) {\n        return 2;\n    }\n\
+    \    if (equal(d, c.r)) {\n        return 1;\n    }\n    return 0;\n}\n\ntemplate\
+    \ <class T>\nint intersect(const circle<T>& c1, const circle<T>& c2) {\n    T\
+    \ d = distance(c1.p, c2.p);\n    if (greater_than(d, c1.r + c2.r)) {\n       \
+    \ return 4;\n    }\n    if (greater_than(d, c1.r + c2.r)) {\n        return 3;\n\
+    \    }\n    if (equal(d, abs(c1.r - c2.r))) {\n        return 1;\n    }\n    if\
+    \ (less_than(d, abs(c1.r - c2.r))) {\n        return 0;\n    }\n    return 2;\n\
+    }\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/geometry/normal_vector.hpp\"\
+    \n\n\n\n#line 5 \"src/geometry/normal_vector.hpp\"\n\nnamespace BanetteGin {\n\
+    \ntemplate <class T>\npoint<T> normal_vector(const point<T>& p) {\n    return\
+    \ p * point(0, 1);\n}\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/geometry/orthocenter.hpp\"\
+    \n\n\n\n#line 5 \"src/geometry/orthocenter.hpp\"\n\nnamespace BanetteGin {\n\n\
+    template <class T>\npoint<T> orthocenter(triangle<T> t) {\n    point ret = point(0.0L,\
+    \ 0.0L);\n    T denom = 0.0L;\n    for (int i = 0; i < 3; ++i) {\n        ret\
+    \ += t.points[i] * tan(t.angles[i]);\n        denom += tan(t.angles[i]);\n   \
+    \ }\n    return ret / denom;\n}\n\n}  // namespace BanetteGin\n\n\n#line 1 \"\
+    src/geometry/orthogonal_check.hpp\"\n\n\n\n#line 6 \"src/geometry/orthogonal_check.hpp\"\
+    \n\nnamespace BanetteGin {\n\ntemplate <class T>\nbool orthogonal_check(const\
+    \ line<T>& l, const line<T>& m) {\n    return equal(l.a * l.b + m.a * m.b, 0);\n\
+    }\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/geometry/parallel_check.hpp\"\
+    \n\n\n\n#line 6 \"src/geometry/parallel_check.hpp\"\n\nnamespace BanetteGin {\n\
+    \ntemplate <class T>\nbool parallel_check(const line<T>& l, const line<T>& m)\
+    \ {\n    return equal(l.a * m.b - l.b * m.a, 0);\n}\n\n}  // namespace BanetteGin\n\
+    \n\n#line 1 \"src/geometry/projection.hpp\"\n\n\n\n#line 6 \"src/geometry/projection.hpp\"\
+    \n\nnamespace BanetteGin {\n\ntemplate <class T>\npoint<T> projection(const point<T>\
+    \ p, const line<T>& l) {\n}\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/geometry/radian_to_degree.hpp\"\
+    \n\n\n\n#line 5 \"src/geometry/radian_to_degree.hpp\"\n\nnamespace BanetteGin\
+    \ {\n\ntemplate <class T>\nT radian_to_degree(T theta) {\n    return theta / PI\
+    \ * 180;\n}\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/geometry/rotate.hpp\"\
+    \n\n\n\n#line 5 \"src/geometry/rotate.hpp\"\n\nnamespace BanetteGin {\n\ntemplate\
+    \ <class T>\npoint<T> rotate(const point<T>& p, const T& theta) {\n    return\
+    \ point<T>(cos(theta) * p.x - sin(theta) * p.y, sin(theta) * p.x + cos(theta)\
+    \ * p.y);\n}\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/geometry/unit_vector.hpp\"\
+    \n\n\n\n#line 5 \"src/geometry/unit_vector.hpp\"\n\nnamespace BanetteGin {\n\n\
+    template <class T>\npoint<T> unit_vector(const point<T>& p) {\n    return p /\
+    \ norm(p);\n}\n\n}  // namespace BanetteGin\n\n\n#line 25 \"src/geometry/geometry.hpp\"\
+    \n\n\n"
+  code: '#ifndef BANETTEGIN_GEOMETRY_HPP_INCLUDED
+
+    #define BANETTEGIN_GEOMETRY_HPP_INCLUDED
+
+
+    #include "centroid.hpp"
+
+    #include "circle.hpp"
+
+    #include "circumcircle.hpp"
+
+    #include "concyclic.hpp"
+
+    #include "degree_to_radian.hpp"
+
+    #include "distance.hpp"
+
+    #include "excircle.hpp"
+
+    #include "incircle.hpp"
+
+    #include "intersect.hpp"
+
+    #include "line.hpp"
+
+    #include "normal_vector.hpp"
+
+    #include "orthocenter.hpp"
+
+    #include "orthogonal_check.hpp"
+
+    #include "parallel_check.hpp"
+
+    #include "point.hpp"
+
+    #include "projection.hpp"
+
+    #include "radian_to_degree.hpp"
+
+    #include "rotate.hpp"
+
+    #include "segment.hpp"
+
+    #include "triangle.hpp"
+
+    #include "unit_vector.hpp"
+
+
+    #endif'
   dependsOn:
+  - src/geometry/centroid.hpp
+  - src/geometry/triangle.hpp
   - src/basic/equal.hpp
   - src/basic/sign.hpp
   - src/basic/constant.hpp
@@ -235,28 +361,32 @@ data:
   - src/basic/less_than.hpp
   - src/geometry/point.hpp
   - src/geometry/segment.hpp
-  isVerificationFile: false
-  path: src/geometry/triangle.hpp
-  requiredBy:
-  - src/all.hpp
-  - src/all.hpp
-  - src/geometry/circumcircle.hpp
-  - src/geometry/intersect.hpp
-  - src/geometry/geometry.hpp
-  - src/geometry/orthocenter.hpp
-  - src/geometry/excircle.hpp
-  - src/geometry/centroid.hpp
   - src/geometry/circle.hpp
+  - src/geometry/circumcircle.hpp
+  - src/geometry/concyclic.hpp
+  - src/geometry/degree_to_radian.hpp
+  - src/basic/constant.hpp
+  - src/geometry/excircle.hpp
   - src/geometry/incircle.hpp
+  - src/geometry/intersect.hpp
+  - src/geometry/normal_vector.hpp
+  - src/geometry/orthocenter.hpp
+  - src/geometry/orthogonal_check.hpp
+  - src/geometry/parallel_check.hpp
+  - src/geometry/projection.hpp
+  - src/geometry/radian_to_degree.hpp
+  - src/geometry/rotate.hpp
+  - src/geometry/unit_vector.hpp
+  isVerificationFile: false
+  path: src/geometry/geometry.hpp
+  requiredBy: []
   timestamp: '2023-09-23 20:08:59+09:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - test/aizu_online_judge/Library/CGL/7_C.test.cpp
-  - test/aizu_online_judge/Library/CGL/7_B.test.cpp
-documentation_of: src/geometry/triangle.hpp
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
+documentation_of: src/geometry/geometry.hpp
 layout: document
 redirect_from:
-- /library/src/geometry/triangle.hpp
-- /library/src/geometry/triangle.hpp.html
-title: src/geometry/triangle.hpp
+- /library/src/geometry/geometry.hpp
+- /library/src/geometry/geometry.hpp.html
+title: src/geometry/geometry.hpp
 ---

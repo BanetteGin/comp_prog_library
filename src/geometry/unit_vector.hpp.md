@@ -32,6 +32,9 @@ data:
   - icon: ':warning:'
     path: src/all.hpp
     title: src/all.hpp
+  - icon: ':warning:'
+    path: src/geometry/geometry.hpp
+    title: src/geometry/geometry.hpp
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
@@ -42,8 +45,8 @@ data:
     \n\n\n\n#include <complex>\n\n#line 1 \"src/basic/comparison.hpp\"\n\n\n\n#line\
     \ 1 \"src/basic/equal.hpp\"\n\n\n\n#line 1 \"src/basic/sign.hpp\"\n\n\n\n#line\
     \ 1 \"src/basic/constant.hpp\"\n\n\n\nnamespace BanetteGin {\n\nconst long double\
-    \ EPS = 1e-6L;\nconst long long int LINF = 1001001001001001001LL;\nconst long\
-    \ double PI = acos(-1.0L);\nconst long double GOLDEN_RATIO = 2.0L * cos(PI / 5.0L);\n\
+    \ EPS = 1e-14L;\nconst long long int LINF = 1001001001001001001LL;\nconst long\
+    \ double PI = acos(-1.0L);\nconst long double GOLDEN_RATIO = (1 + sqrt(5)) / 2;\n\
     \n}  // namespace BanetteGin\n\n\n#line 5 \"src/basic/sign.hpp\"\n\nnamespace\
     \ BanetteGin {\n\ntemplate <class T>\nint sign(const T& x) {\n    return (x <\
     \ -EPS ? -1 : (x < EPS ? 0 : 1));\n}\n\n}  // namespace BanetteGin\n\n\n#line\
@@ -105,7 +108,8 @@ data:
   path: src/geometry/unit_vector.hpp
   requiredBy:
   - src/all.hpp
-  timestamp: '2023-09-09 01:13:20+09:00'
+  - src/geometry/geometry.hpp
+  timestamp: '2023-09-23 20:08:59+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/geometry/unit_vector.hpp
