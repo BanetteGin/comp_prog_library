@@ -12,8 +12,8 @@ struct matrix_operation {
     std::vector<std::vector<T> > a, b;
     matrix_operation(std::vector<std::vector<T> > a_, std::vector<std::vector<T> > b_)
         : a(a_), b(b_) {
-            assert(a.size()>0&&a[0].size>0);
-            assert(b.size()>0&&b[0].size>0);
+        assert(a.size() > 0 && a[0].size > 0);
+        assert(b.size() > 0 && b[0].size > 0);
     }
     T addition(T& x, T& y) const noexcept {
         return x + y;
@@ -25,8 +25,8 @@ struct matrix_operation {
         assert(a.size() == b.size() && a[0].size() == b[0].size());
 
         std::vector<std::vector<T> > c(a.size(), std::vector<T>(a[0].size(), addide));
-        for (long long int i = 0; i < a.size(); ++i) {
-            for (long long int j = 0; j < a[i].size(); ++j) {
+        for (int i = 0; i < a.size(); ++i) {
+            for (int j = 0; j < a[i].size(); ++j) {
                 c[i][j] = addition(a[i][j], b[i][j]);
             }
         }
@@ -35,9 +35,9 @@ struct matrix_operation {
     std::vector<std::vector<T> > product() const noexcept {
         assert(a.size() == b[0].size() && a[0].size() == b.size());
         std::vector<std::vector<T> > c(a.size(), std::vector<T>(b[0].size(), addide));
-        for (long long int i = 0; i < a.size(); ++i) {
-            for (long long int j = 0; j < b[0].size(); ++j) {
-                for (long long int k = 0; k < b.size(); ++k) {
+        for (int i = 0; i < a.size(); ++i) {
+            for (int j = 0; j < b[0].size(); ++j) {
+                for (int k = 0; k < b.size(); ++k) {
                     c[i][j] = addition(c[i][j], multiplication(a[i][k], b[k][j]));
                 }
             }
