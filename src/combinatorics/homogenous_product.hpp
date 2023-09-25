@@ -6,10 +6,10 @@ namespace BanetteGin {
 template <class T>
 T homogenous_product(const T& m, const T& n) {
     T ret = 1;
-    for (long long int i = m + n - 1; i >= m; --i) {
+    for (int i = m + n - 1; i >= m; --i) {
         ret = ret * i;
     }
-    for (long long int i = m - 1; i >= 1; --i) {
+    for (int i = m - 1; i >= 1; --i) {
         ret = ret / i;
     }
     return ret;

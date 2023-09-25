@@ -11,7 +11,7 @@ std::string base_change(const std::string& num, const T& m, const T& n) {
     reverse(tmp.begin(), tmp.end());
     T p = 1;
     T covnum = 0;
-    for (long long int i = 0; i < num.size(); ++i) {
+    for (int i = 0; i < num.size(); ++i) {
         covnum += T(tmp[i] - '0') * p;
         p = p * m;
     }

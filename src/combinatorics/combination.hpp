@@ -7,10 +7,10 @@ template <class T>
 T combination(const T& m, const T& n) {
     assert(m >= n);
     T ret = 1;
-    for (long long int i = m; i >= m - n + 1; --i) {
+    for (int i = m; i >= m - n + 1; --i) {
         ret = ret * i;
     }
-    for (long long int i = n; i >= 1; --i) {
+    for (int i = n; i >= 1; --i) {
         ret = ret / i;
     }
     return ret;

@@ -8,8 +8,8 @@ namespace BanetteGin {
 
 std::vector<std::pair<char, long long int> > run_length_encording(const std::string& s) {
     std::vector<std::pair<char, long long int> > ret;
-    for (long long int i = 0; i < s.size();) {
-        long long int j = i + 1;
+    for (int i = 0; i < s.size();) {
+        int j = i + 1;
         for (; j < s.size() && s[i] == s[j]; j++) {
         }
         ret.emplace_back(std::make_pair(s[i], j - i));
