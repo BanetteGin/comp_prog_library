@@ -7,6 +7,7 @@
 #include "eratosthenes_sieve.hpp"
 #include "euler_phi.hpp"
 #include "extend_gcd.hpp"
+#include "fast_pow.hpp"
 #include "greatest_common_divisor.hpp"
 #include "linear_sieve.hpp"
 #include "modint.hpp"
