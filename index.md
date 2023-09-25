@@ -181,6 +181,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/number_theory/extend_gcd.hpp
       title: src/number_theory/extend_gcd.hpp
+    - icon: ':warning:'
+      path: src/number_theory/fast_pow.hpp
+      title: src/number_theory/fast_pow.hpp
     - icon: ':heavy_check_mark:'
       path: src/number_theory/greatest_common_divisor.hpp
       title: src/number_theory/greatest_common_divisor.hpp
@@ -205,6 +208,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/number_theory/sundaram_sieve.hpp
       title: src/number_theory/sundaram_sieve.hpp
+  - name: src/polynomial
+    pages:
+    - icon: ':warning:'
+      path: src/polynomial/formal_power_series.hpp
+      title: src/polynomial/formal_power_series.hpp
   - name: src/sorting
     pages:
     - icon: ':warning:'

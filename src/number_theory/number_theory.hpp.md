@@ -19,6 +19,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/number_theory/extend_gcd.hpp
     title: src/number_theory/extend_gcd.hpp
+  - icon: ':warning:'
+    path: src/number_theory/fast_pow.hpp
+    title: src/number_theory/fast_pow.hpp
   - icon: ':heavy_check_mark:'
     path: src/number_theory/greatest_common_divisor.hpp
     title: src/number_theory/greatest_common_divisor.hpp
@@ -126,24 +129,27 @@ data:
     \ const T& b, T& x, T& y) {\n    if (b == 0) {\n        x = 1;\n        y = 0;\n\
     \        return a;\n    } else {\n        T d = extend_gcd(b, a % b, y, x);\n\
     \        y -= a / b * x;\n        return d;\n    }\n}\n\n}  // namespace BanetteGin\n\
-    \n\n#line 1 \"src/number_theory/greatest_common_divisor.hpp\"\n\n\n\nnamespace\
-    \ BanetteGin {\n\ntemplate <class T>\nT greatest_common_divisor(T a, T b) {\n\
-    \    return b == 0 ? a : greatest_common_divisor(b, a % b);\n}\n\n}  // namespace\
-    \ BanetteGin\n\n\n#line 1 \"src/number_theory/linear_sieve.hpp\"\n\n\n\n#line\
-    \ 5 \"src/number_theory/linear_sieve.hpp\"\n\nnamespace BanetteGin {\n\ntemplate\
-    \ <class T>\nstd::vector<T> linear_sieve(T n) {\n    std::vector<T> prime_list;\n\
-    \    std::vector<T> lpf(n + 1, n + 1);\n    lpf[0] = 1;\n    lpf[1] = 1;\n   \
-    \ for (long long int i = 2; i <= n; ++i) {\n        if (lpf[i] == n + 1) {\n \
-    \           lpf[i] = i;\n            prime_list.emplace_back(i);\n        }\n\
-    \        for (long long int j = 0; j < prime_list.size(); ++j) {\n           \
-    \ T p = prime_list[j];\n            if (p * i > n || p > lpf[i]) break;\n    \
-    \        lpf[p * i] = p;\n        }\n    }\n    return prime_list;\n}\n\n}  //\
-    \ namespace BanetteGin\n\n\n#line 1 \"src/number_theory/modint.hpp\"\n\n\n\nnamespace\
-    \ BanetteGin {\n\ntemplate <long long int MOD>\nstruct modint {\n    long long\
-    \ int val;\n    modint(long long int v = 0) noexcept\n        : val(v % MOD) {\n\
-    \        if (val < 0) val += MOD;\n    }\n    long long int get_mod() const noexcept\
-    \ {\n        return MOD;\n    }\n\n    modint operator+(const modint& r) const\
-    \ noexcept {\n        return modint(*this) += r;\n    }\n    modint operator-(const\
+    \n\n#line 1 \"src/number_theory/fast_pow.hpp\"\n\n\n\nnamespace BanetteGin {\n\
+    \ntemplate <class T>\nT fast_pow(T a, T e) {\n    T ret = 1;\n    while (e > 0)\
+    \ {\n        if (e & 1) ret *= a;\n        a *= a;\n        e >>= 1;\n    }\n\
+    \    return ret;\n}\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/number_theory/greatest_common_divisor.hpp\"\
+    \n\n\n\nnamespace BanetteGin {\n\ntemplate <class T>\nT greatest_common_divisor(T\
+    \ a, T b) {\n    return b == 0 ? a : greatest_common_divisor(b, a % b);\n}\n\n\
+    }  // namespace BanetteGin\n\n\n#line 1 \"src/number_theory/linear_sieve.hpp\"\
+    \n\n\n\n#line 5 \"src/number_theory/linear_sieve.hpp\"\n\nnamespace BanetteGin\
+    \ {\n\ntemplate <class T>\nstd::vector<T> linear_sieve(T n) {\n    std::vector<T>\
+    \ prime_list;\n    std::vector<T> lpf(n + 1, n + 1);\n    lpf[0] = 1;\n    lpf[1]\
+    \ = 1;\n    for (long long int i = 2; i <= n; ++i) {\n        if (lpf[i] == n\
+    \ + 1) {\n            lpf[i] = i;\n            prime_list.emplace_back(i);\n \
+    \       }\n        for (long long int j = 0; j < prime_list.size(); ++j) {\n \
+    \           T p = prime_list[j];\n            if (p * i > n || p > lpf[i]) break;\n\
+    \            lpf[p * i] = p;\n        }\n    }\n    return prime_list;\n}\n\n\
+    }  // namespace BanetteGin\n\n\n#line 1 \"src/number_theory/modint.hpp\"\n\n\n\
+    \nnamespace BanetteGin {\n\ntemplate <long long int MOD>\nstruct modint {\n  \
+    \  long long int val;\n    modint(long long int v = 0) noexcept\n        : val(v\
+    \ % MOD) {\n        if (val < 0) val += MOD;\n    }\n    long long int get_mod()\
+    \ const noexcept {\n        return MOD;\n    }\n\n    modint operator+(const modint&\
+    \ r) const noexcept {\n        return modint(*this) += r;\n    }\n    modint operator-(const\
     \ modint& r) const noexcept {\n        return modint(*this) -= r;\n    }\n   \
     \ modint operator*(const modint& r) const noexcept {\n        return modint(*this)\
     \ *= r;\n    }\n    modint operator/(const modint& r) const noexcept {\n     \
@@ -189,7 +195,7 @@ data:
     \ ++b) {\n            ret[a + b + 2 * a * b] = false;\n        }\n    }\n    for\
     \ (T i = 0; i < ret.size(); ++i) {\n        if (ret[i]) prime_list.emplace_back(i\
     \ * 2 + 1);\n    }\n    return prime_list;\n}\n\n}  // namespace BanetteGin\n\n\
-    \n#line 17 \"src/number_theory/number_theory.hpp\"\n\n\n"
+    \n#line 18 \"src/number_theory/number_theory.hpp\"\n\n\n"
   code: '#ifndef BANETTEGIN_NUMBER_THEORY_HPP_INCLUDED
 
     #define BANETTEGIN_NUMBER_THEORY_HPP_INCLUDED
@@ -206,6 +212,8 @@ data:
     #include "euler_phi.hpp"
 
     #include "extend_gcd.hpp"
+
+    #include "fast_pow.hpp"
 
     #include "greatest_common_divisor.hpp"
 
@@ -231,6 +239,7 @@ data:
   - src/number_theory/euler_phi.hpp
   - src/number_theory/prime_factorization.hpp
   - src/number_theory/extend_gcd.hpp
+  - src/number_theory/fast_pow.hpp
   - src/number_theory/greatest_common_divisor.hpp
   - src/number_theory/linear_sieve.hpp
   - src/number_theory/modint.hpp
@@ -240,7 +249,7 @@ data:
   isVerificationFile: false
   path: src/number_theory/number_theory.hpp
   requiredBy: []
-  timestamp: '2023-09-23 20:08:59+09:00'
+  timestamp: '2023-09-25 19:28:14+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/number_theory/number_theory.hpp
