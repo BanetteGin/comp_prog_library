@@ -13,19 +13,19 @@ data:
     links: []
   bundledCode: "#line 1 \"src/combinatorics/permutation.hpp\"\n\n\n\nnamespace BanetteGin\
     \ {\n\ntemplate <class T>\nT permutation(const T& m, const T& n) {\n    T ret\
-    \ = 1;\n    for (long long int i = m; i >= m - n + 1; --i) {\n        ret = ret\
-    \ * i;\n    }\n    return ret;\n}\n\n}  // namespace BanetteGin\n\n\n"
+    \ = 1;\n    for (int i = m; i >= m - n + 1; --i) {\n        ret = ret * i;\n \
+    \   }\n    return ret;\n}\n\n}  // namespace BanetteGin\n\n\n"
   code: "#ifndef BANETTEGIN_PERMUTATION_HPP_INCLUDED\n#define BANETTEGIN_PERMUTATION_HPP_INCLUDED\n\
     \nnamespace BanetteGin {\n\ntemplate <class T>\nT permutation(const T& m, const\
-    \ T& n) {\n    T ret = 1;\n    for (long long int i = m; i >= m - n + 1; --i)\
-    \ {\n        ret = ret * i;\n    }\n    return ret;\n}\n\n}  // namespace BanetteGin\n\
-    \n#endif"
+    \ T& n) {\n    T ret = 1;\n    for (int i = m; i >= m - n + 1; --i) {\n      \
+    \  ret = ret * i;\n    }\n    return ret;\n}\n\n}  // namespace BanetteGin\n\n\
+    #endif"
   dependsOn: []
   isVerificationFile: false
   path: src/combinatorics/permutation.hpp
   requiredBy:
   - src/all.hpp
-  timestamp: '2023-08-23 17:08:47+09:00'
+  timestamp: '2023-09-25 19:49:37+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/combinatorics/permutation.hpp

@@ -199,7 +199,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/number_theory/base_change.hpp
     title: src/number_theory/base_change.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: src/number_theory/divisors.hpp
     title: src/number_theory/divisors.hpp
   - icon: ':heavy_check_mark:'
@@ -307,19 +307,18 @@ data:
     \        a = b;\n        return 1;\n    }\n    return 0;\n}\n\n}  // namespace\
     \ BanetteGin\n\n\n#line 1 \"src/combinatorics/combination.hpp\"\n\n\n\nnamespace\
     \ BanetteGin {\n\ntemplate <class T>\nT combination(const T& m, const T& n) {\n\
-    \    assert(m >= n);\n    T ret = 1;\n    for (long long int i = m; i >= m - n\
-    \ + 1; --i) {\n        ret = ret * i;\n    }\n    for (long long int i = n; i\
-    \ >= 1; --i) {\n        ret = ret / i;\n    }\n    return ret;\n}\n\n}  // namespace\
-    \ BanetteGin\n\n\n#line 1 \"src/combinatorics/homogenous_product.hpp\"\n\n\n\n\
-    namespace BanetteGin {\n\ntemplate <class T>\nT homogenous_product(const T& m,\
-    \ const T& n) {\n    T ret = 1;\n    for (long long int i = m + n - 1; i >= m;\
-    \ --i) {\n        ret = ret * i;\n    }\n    for (long long int i = m - 1; i >=\
-    \ 1; --i) {\n        ret = ret / i;\n    }\n    return ret;\n}\n\n}  // namespace\
-    \ BanetteGin\n\n\n#line 1 \"src/combinatorics/permutation.hpp\"\n\n\n\nnamespace\
-    \ BanetteGin {\n\ntemplate <class T>\nT permutation(const T& m, const T& n) {\n\
-    \    T ret = 1;\n    for (long long int i = m; i >= m - n + 1; --i) {\n      \
-    \  ret = ret * i;\n    }\n    return ret;\n}\n\n}  // namespace BanetteGin\n\n\
-    \n#line 1 \"src/data_structure/binary_indexed_tree.hpp\"\n\n\n\n#include <vector>\n\
+    \    assert(m >= n);\n    T ret = 1;\n    for (int i = m; i >= m - n + 1; --i)\
+    \ {\n        ret = ret * i;\n    }\n    for (int i = n; i >= 1; --i) {\n     \
+    \   ret = ret / i;\n    }\n    return ret;\n}\n\n}  // namespace BanetteGin\n\n\
+    \n#line 1 \"src/combinatorics/homogenous_product.hpp\"\n\n\n\nnamespace BanetteGin\
+    \ {\n\ntemplate <class T>\nT homogenous_product(const T& m, const T& n) {\n  \
+    \  T ret = 1;\n    for (int i = m + n - 1; i >= m; --i) {\n        ret = ret *\
+    \ i;\n    }\n    for (int i = m - 1; i >= 1; --i) {\n        ret = ret / i;\n\
+    \    }\n    return ret;\n}\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/combinatorics/permutation.hpp\"\
+    \n\n\n\nnamespace BanetteGin {\n\ntemplate <class T>\nT permutation(const T& m,\
+    \ const T& n) {\n    T ret = 1;\n    for (int i = m; i >= m - n + 1; --i) {\n\
+    \        ret = ret * i;\n    }\n    return ret;\n}\n\n}  // namespace BanetteGin\n\
+    \n\n#line 1 \"src/data_structure/binary_indexed_tree.hpp\"\n\n\n\n#include <vector>\n\
     \nnamespace BanetteGin {\n\ntemplate <class T>\nstruct binary_indexed_tree {\n\
     \    T n;\n    std::vector<T> tree;\n    const T ide = 0;\n\n    binary_indexed_tree(T\
     \ n_)\n        : n(n_) {\n        tree.resize(n, ide);\n    }\n\n    T abel_operation(const\
@@ -585,44 +584,43 @@ data:
     \n\n#line 5 \"src/matrix/matrix_operation.hpp\"\n\nnamespace BanetteGin {\n\n\
     template <class T>\nstruct matrix_operation {\n    const T addide = 0;\n    const\
     \ T mulide = 1;\n    std::vector<std::vector<T> > a, b;\n    matrix_operation(std::vector<std::vector<T>\
-    \ > a_, std::vector<std::vector<T> > b_)\n        : a(a_), b(b_) {\n         \
-    \   assert(a.size()>0&&a[0].size>0);\n            assert(b.size()>0&&b[0].size>0);\n\
-    \    }\n    T addition(T& x, T& y) const noexcept {\n        return x + y;\n \
-    \   }\n    T multiplication(T& x, T& y) const noexcept {\n        return x * y;\n\
-    \    }\n    std::vector<std::vector<T> > addition() const noexcept {\n       \
-    \ assert(a.size() == b.size() && a[0].size() == b[0].size());\n\n        std::vector<std::vector<T>\
-    \ > c(a.size(), std::vector<T>(a[0].size(), addide));\n        for (long long\
-    \ int i = 0; i < a.size(); ++i) {\n            for (long long int j = 0; j < a[i].size();\
-    \ ++j) {\n                c[i][j] = addition(a[i][j], b[i][j]);\n            }\n\
-    \        }\n        return c;\n    }\n    std::vector<std::vector<T> > product()\
-    \ const noexcept {\n        assert(a.size() == b[0].size() && a[0].size() == b.size());\n\
+    \ > a_, std::vector<std::vector<T> > b_)\n        : a(a_), b(b_) {\n        assert(a.size()\
+    \ > 0 && a[0].size > 0);\n        assert(b.size() > 0 && b[0].size > 0);\n   \
+    \ }\n    T addition(T& x, T& y) const noexcept {\n        return x + y;\n    }\n\
+    \    T multiplication(T& x, T& y) const noexcept {\n        return x * y;\n  \
+    \  }\n    std::vector<std::vector<T> > addition() const noexcept {\n        assert(a.size()\
+    \ == b.size() && a[0].size() == b[0].size());\n\n        std::vector<std::vector<T>\
+    \ > c(a.size(), std::vector<T>(a[0].size(), addide));\n        for (int i = 0;\
+    \ i < a.size(); ++i) {\n            for (int j = 0; j < a[i].size(); ++j) {\n\
+    \                c[i][j] = addition(a[i][j], b[i][j]);\n            }\n      \
+    \  }\n        return c;\n    }\n    std::vector<std::vector<T> > product() const\
+    \ noexcept {\n        assert(a.size() == b[0].size() && a[0].size() == b.size());\n\
     \        std::vector<std::vector<T> > c(a.size(), std::vector<T>(b[0].size(),\
-    \ addide));\n        for (long long int i = 0; i < a.size(); ++i) {\n        \
-    \    for (long long int j = 0; j < b[0].size(); ++j) {\n                for (long\
-    \ long int k = 0; k < b.size(); ++k) {\n                    c[i][j] = addition(c[i][j],\
-    \ multiplication(a[i][k], b[k][j]));\n                }\n            }\n     \
-    \   }\n        return c;\n    }\n};\n\n}  // namespace BanetteGin\n\n\n#line 1\
-    \ \"src/matrix/matrix_rotate.hpp\"\n\n\n\n#line 5 \"src/matrix/matrix_rotate.hpp\"\
-    \n\nnamespace BanetteGin {\n\ntemplate <class T>\nstd::vector<std::vector<T>>\
-    \ matrix_rotate(std::vector<std::vector<T>> a) {\n    std::vector<std::vector<T>>\
-    \ ret;\n    for (long long int i = 0; i < a[0].size(); ++i) {\n        std::vector<T>\
-    \ b;\n        for (long long int j = 0; j < a.size(); ++j) {\n            b.emplace_back(a[j][a[0].size()\
-    \ - 1 - i]);\n        }\n        ret.emplace_back(b);\n    }\n    return ret;\n\
-    }\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/number_theory/base_change.hpp\"\
-    \n\n\n\n#include <string>\n\nnamespace BanetteGin {\n\ntemplate <class T>\nstd::string\
-    \ base_change(const std::string& num, const T& m, const T& n) {\n    string tmp\
-    \ = num;\n    reverse(tmp.begin(), tmp.end());\n    T p = 1;\n    T covnum = 0;\n\
-    \    for (long long int i = 0; i < num.size(); ++i) {\n        covnum += T(tmp[i]\
-    \ - '0') * p;\n        p = p * m;\n    }\n    T max_np = 1;\n    while (max_np\
-    \ * n <= covnum) {\n        max_np *= n;\n    }\n    std::string ret = \"\";\n\
-    \    while (max_np != 0) {\n        ret.push_back((covnum / max_np) + '0');\n\
-    \        covnum %= max_np;\n        max_np /= n;\n    }\n    return ret;\n}\n\n\
-    }  // namespace BanetteGin\n\n\n#line 1 \"src/number_theory/divisors.hpp\"\n\n\
-    \n\n#line 5 \"src/number_theory/divisors.hpp\"\n\nnamespace BanetteGin {\n\ntemplate\
-    \ <class T>\nstd::vector<T> divisors(T n) {\n    std::vector<T> ret;\n    for\
-    \ (long long int i = 1; i * i <= n; ++i) {\n        if (n % i == 0) {\n      \
-    \      if (i == n / i) {\n                ret.emplace_back(i);\n            }\
-    \ else {\n                ret.emplace_back(i);\n                ret.emplace_back(n\
+    \ addide));\n        for (int i = 0; i < a.size(); ++i) {\n            for (int\
+    \ j = 0; j < b[0].size(); ++j) {\n                for (int k = 0; k < b.size();\
+    \ ++k) {\n                    c[i][j] = addition(c[i][j], multiplication(a[i][k],\
+    \ b[k][j]));\n                }\n            }\n        }\n        return c;\n\
+    \    }\n};\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/matrix/matrix_rotate.hpp\"\
+    \n\n\n\n#line 5 \"src/matrix/matrix_rotate.hpp\"\n\nnamespace BanetteGin {\n\n\
+    template <class T>\nstd::vector<std::vector<T>> matrix_rotate(std::vector<std::vector<T>>\
+    \ a) {\n    std::vector<std::vector<T>> ret;\n    for (int i = 0; i < a[0].size();\
+    \ ++i) {\n        std::vector<T> b;\n        for (int j = 0; j < a.size(); ++j)\
+    \ {\n            b.emplace_back(a[j][a[0].size() - 1 - i]);\n        }\n     \
+    \   ret.emplace_back(b);\n    }\n    return ret;\n}\n\n}  // namespace BanetteGin\n\
+    \n\n#line 1 \"src/number_theory/base_change.hpp\"\n\n\n\n#include <string>\n\n\
+    namespace BanetteGin {\n\ntemplate <class T>\nstd::string base_change(const std::string&\
+    \ num, const T& m, const T& n) {\n    string tmp = num;\n    reverse(tmp.begin(),\
+    \ tmp.end());\n    T p = 1;\n    T covnum = 0;\n    for (int i = 0; i < num.size();\
+    \ ++i) {\n        covnum += T(tmp[i] - '0') * p;\n        p = p * m;\n    }\n\
+    \    T max_np = 1;\n    while (max_np * n <= covnum) {\n        max_np *= n;\n\
+    \    }\n    std::string ret = \"\";\n    while (max_np != 0) {\n        ret.push_back((covnum\
+    \ / max_np) + '0');\n        covnum %= max_np;\n        max_np /= n;\n    }\n\
+    \    return ret;\n}\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/number_theory/divisors.hpp\"\
+    \n\n\n\n#line 5 \"src/number_theory/divisors.hpp\"\n\nnamespace BanetteGin {\n\
+    \ntemplate <class T>\nstd::vector<T> divisors(T n) {\n    std::vector<T> ret;\n\
+    \    for (int i = 1; i * i <= n; ++i) {\n        if (n % i == 0) {\n         \
+    \   if (i == n / i) {\n                ret.emplace_back(i);\n            } else\
+    \ {\n                ret.emplace_back(i);\n                ret.emplace_back(n\
     \ / i);\n            }\n        }\n    }\n    sort(ret.begin(), ret.end());\n\
     \    return ret;\n}\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/number_theory/dynamic_modint.hpp\"\
     \n\n\n\nnamespace BanetteGin {\n\ntemplate <long long int id>\nstruct dynamic_modint\
@@ -664,123 +662,119 @@ data:
     \n\n#line 1 \"src/number_theory/eratosthenes_sieve.hpp\"\n\n\n\n#line 5 \"src/number_theory/eratosthenes_sieve.hpp\"\
     \n\nnamespace BanetteGin {\n\ntemplate <class T>\nstd::vector<T> eratosthenes_sieve(T\
     \ n) {\n    std::vector<bool> ret(n + 1, true);\n    std::vector<T> prime_list;\n\
-    \    ret[0] = ret[1] = false;\n    for (long long int i = 2; i * i <= n; ++i)\
-    \ {\n        if (!ret[i]) continue;\n        for (long long int j = i * 2; j <=\
-    \ n; j += i) {\n            ret[j] = false;\n        }\n    }\n    for (long long\
-    \ int i = 2; i <= n; ++i) {\n        if (ret[i]) prime_list.emplace_back(i);\n\
-    \    }\n    return prime_list;\n}\n\n}  // namespace BanetteGin\n\n\n#line 1 \"\
-    src/number_theory/greatest_common_divisor.hpp\"\n\n\n\nnamespace BanetteGin {\n\
-    \ntemplate <class T>\nT greatest_common_divisor(T a, T b) {\n    return b == 0\
-    \ ? a : greatest_common_divisor(b, a % b);\n}\n\n}  // namespace BanetteGin\n\n\
-    \n#line 1 \"src/number_theory/linear_sieve.hpp\"\n\n\n\n#line 5 \"src/number_theory/linear_sieve.hpp\"\
-    \n\nnamespace BanetteGin {\n\ntemplate <class T>\nstd::vector<T> linear_sieve(T\
-    \ n) {\n    std::vector<T> prime_list;\n    std::vector<T> lpf(n + 1, n + 1);\n\
-    \    lpf[0] = 1;\n    lpf[1] = 1;\n    for (long long int i = 2; i <= n; ++i)\
-    \ {\n        if (lpf[i] == n + 1) {\n            lpf[i] = i;\n            prime_list.emplace_back(i);\n\
-    \        }\n        for (long long int j = 0; j < prime_list.size(); ++j) {\n\
-    \            T p = prime_list[j];\n            if (p * i > n || p > lpf[i]) break;\n\
-    \            lpf[p * i] = p;\n        }\n    }\n    return prime_list;\n}\n\n\
-    }  // namespace BanetteGin\n\n\n#line 1 \"src/number_theory/modint.hpp\"\n\n\n\
-    \nnamespace BanetteGin {\n\ntemplate <long long int MOD>\nstruct modint {\n  \
-    \  long long int val;\n    modint(long long int v = 0) noexcept\n        : val(v\
-    \ % MOD) {\n        if (val < 0) val += MOD;\n    }\n    long long int get_mod()\
-    \ const noexcept {\n        return MOD;\n    }\n\n    modint operator+(const modint&\
-    \ r) const noexcept {\n        return modint(*this) += r;\n    }\n    modint operator-(const\
-    \ modint& r) const noexcept {\n        return modint(*this) -= r;\n    }\n   \
-    \ modint operator*(const modint& r) const noexcept {\n        return modint(*this)\
-    \ *= r;\n    }\n    modint operator/(const modint& r) const noexcept {\n     \
-    \   return modint(*this) /= r;\n    }\n\n    modint& operator+=(const modint&\
-    \ r) noexcept {\n        val += r.val;\n        if (val >= MOD) val -= MOD;\n\
-    \        return *this;\n    }\n    modint& operator-=(const modint& r) noexcept\
-    \ {\n        val -= r.val;\n        if (val < 0) val += MOD;\n        return *this;\n\
-    \    }\n    modint& operator*=(const modint& r) noexcept {\n        val = val\
-    \ * r.val % MOD;\n        return *this;\n    }\n\n    modint& operator++() noexcept\
-    \ {\n        return modint(*this) += 1;\n    }\n    modint& operator--() noexcept\
-    \ {\n        return modint(*this) -= 1;\n    }\n\n    modint& operator/=(const\
-    \ modint& r) noexcept {\n        long long int a = r.val, b = MOD, u = 1, v =\
-    \ 0;\n        while (b) {\n            long long int t = a / b;\n            a\
-    \ -= t * b;\n            std::swap(a, b);\n            u -= t * v;\n         \
-    \   std::swap(u, v);\n        }\n        val = val * u % MOD;\n        if (val\
-    \ < 0) val += MOD;\n        return *this;\n    }\n\n    bool operator==(const\
-    \ modint& r) const noexcept {\n        return this->val == r.val;\n    }\n   \
-    \ bool operator!=(const modint& r) const noexcept {\n        return this->val\
-    \ != r.val;\n    }\n\n    friend std::ostream& operator<<(std::ostream& os, const\
-    \ modint<MOD>& x) noexcept {\n        return os << x.val;\n    }\n\n    friend\
-    \ std::istream& operator>>(std::istream& is, modint<MOD>& x) noexcept {\n    \
-    \    long long int t;\n        is >> t;\n        x = modint(t);\n        return\
-    \ (is);\n    }\n\n    friend modint<MOD> modpow(const modint<MOD>& a, long long\
-    \ int n) noexcept {\n        if (n == 0) return 1;\n        auto t = modpow(a,\
-    \ n / 2);\n        t = t * t;\n        if (n & 1) t = t * a;\n        return t;\n\
-    \    }\n};\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/number_theory/naive_sieve.hpp\"\
+    \    ret[0] = ret[1] = false;\n    for (int i = 2; i * i <= n; ++i) {\n      \
+    \  if (!ret[i]) continue;\n        for (long long int j = i * 2; j <= n; j +=\
+    \ i) {\n            ret[j] = false;\n        }\n    }\n    for (int i = 2; i <=\
+    \ n; ++i) {\n        if (ret[i]) prime_list.emplace_back(i);\n    }\n    return\
+    \ prime_list;\n}\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/number_theory/greatest_common_divisor.hpp\"\
+    \n\n\n\nnamespace BanetteGin {\n\ntemplate <class T>\nT greatest_common_divisor(T\
+    \ a, T b) {\n    return b == 0 ? a : greatest_common_divisor(b, a % b);\n}\n\n\
+    }  // namespace BanetteGin\n\n\n#line 1 \"src/number_theory/linear_sieve.hpp\"\
+    \n\n\n\n#line 5 \"src/number_theory/linear_sieve.hpp\"\n\nnamespace BanetteGin\
+    \ {\n\ntemplate <class T>\nstd::vector<T> linear_sieve(T n) {\n    std::vector<T>\
+    \ prime_list;\n    std::vector<T> lpf(n + 1, n + 1);\n    lpf[0] = 1;\n    lpf[1]\
+    \ = 1;\n    for (int i = 2; i <= n; ++i) {\n        if (lpf[i] == n + 1) {\n \
+    \           lpf[i] = i;\n            prime_list.emplace_back(i);\n        }\n\
+    \        for (int j = 0; j < prime_list.size(); ++j) {\n            T p = prime_list[j];\n\
+    \            if (p * i > n || p > lpf[i]) break;\n            lpf[p * i] = p;\n\
+    \        }\n    }\n    return prime_list;\n}\n\n}  // namespace BanetteGin\n\n\
+    \n#line 1 \"src/number_theory/modint.hpp\"\n\n\n\nnamespace BanetteGin {\n\ntemplate\
+    \ <long long int MOD>\nstruct modint {\n    long long int val;\n    modint(long\
+    \ long int v = 0) noexcept\n        : val(v % MOD) {\n        if (val < 0) val\
+    \ += MOD;\n    }\n    long long int get_mod() const noexcept {\n        return\
+    \ MOD;\n    }\n\n    modint operator+(const modint& r) const noexcept {\n    \
+    \    return modint(*this) += r;\n    }\n    modint operator-(const modint& r)\
+    \ const noexcept {\n        return modint(*this) -= r;\n    }\n    modint operator*(const\
+    \ modint& r) const noexcept {\n        return modint(*this) *= r;\n    }\n   \
+    \ modint operator/(const modint& r) const noexcept {\n        return modint(*this)\
+    \ /= r;\n    }\n\n    modint& operator+=(const modint& r) noexcept {\n       \
+    \ val += r.val;\n        if (val >= MOD) val -= MOD;\n        return *this;\n\
+    \    }\n    modint& operator-=(const modint& r) noexcept {\n        val -= r.val;\n\
+    \        if (val < 0) val += MOD;\n        return *this;\n    }\n    modint& operator*=(const\
+    \ modint& r) noexcept {\n        val = val * r.val % MOD;\n        return *this;\n\
+    \    }\n\n    modint& operator++() noexcept {\n        return modint(*this) +=\
+    \ 1;\n    }\n    modint& operator--() noexcept {\n        return modint(*this)\
+    \ -= 1;\n    }\n\n    modint& operator/=(const modint& r) noexcept {\n       \
+    \ long long int a = r.val, b = MOD, u = 1, v = 0;\n        while (b) {\n     \
+    \       long long int t = a / b;\n            a -= t * b;\n            std::swap(a,\
+    \ b);\n            u -= t * v;\n            std::swap(u, v);\n        }\n    \
+    \    val = val * u % MOD;\n        if (val < 0) val += MOD;\n        return *this;\n\
+    \    }\n\n    bool operator==(const modint& r) const noexcept {\n        return\
+    \ this->val == r.val;\n    }\n    bool operator!=(const modint& r) const noexcept\
+    \ {\n        return this->val != r.val;\n    }\n\n    friend std::ostream& operator<<(std::ostream&\
+    \ os, const modint<MOD>& x) noexcept {\n        return os << x.val;\n    }\n\n\
+    \    friend std::istream& operator>>(std::istream& is, modint<MOD>& x) noexcept\
+    \ {\n        long long int t;\n        is >> t;\n        x = modint(t);\n    \
+    \    return (is);\n    }\n\n    friend modint<MOD> modpow(const modint<MOD>& a,\
+    \ long long int n) noexcept {\n        if (n == 0) return 1;\n        auto t =\
+    \ modpow(a, n / 2);\n        t = t * t;\n        if (n & 1) t = t * a;\n     \
+    \   return t;\n    }\n};\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/number_theory/naive_sieve.hpp\"\
     \n\n\n\n#line 5 \"src/number_theory/naive_sieve.hpp\"\n\n#line 1 \"src/number_theory/prime_check.hpp\"\
     \n\n\n\nnamespace BanetteGin {\n\ntemplate <class T>\nbool prime_check(T n) {\n\
     \    if (n < 2) return false;\n    if (n != 2 && n % 2 == 0) return false;\n \
-    \   for (long long int i = 3; i * i <= n; i += 2)\n        if (n % i == 0) return\
-    \ false;\n    return true;\n}\n\n}  // namespace BanetteGin\n\n\n#line 7 \"src/number_theory/naive_sieve.hpp\"\
+    \   for (int i = 3; i * i <= n; i += 2)\n        if (n % i == 0) return false;\n\
+    \    return true;\n}\n\n}  // namespace BanetteGin\n\n\n#line 7 \"src/number_theory/naive_sieve.hpp\"\
     \n\nnamespace BanetteGin {\n\ntemplate <class T>\nstd::vector<T> naive_sieve(T\
     \ n) {\n    std::vector<T> prime_list;\n    if (n < 2) return prime_list;\n  \
-    \  prime_list.emplace_back(2);\n    for (long long int i = 3; i <= n; i += 2)\
-    \ {\n        if (prime_check(i)) prime_list.emplace_back(i);\n    }\n    return\
-    \ prime_list;\n}\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/number_theory/prime_factorization.hpp\"\
+    \  prime_list.emplace_back(2);\n    for (int i = 3; i <= n; i += 2) {\n      \
+    \  if (prime_check(i)) prime_list.emplace_back(i);\n    }\n    return prime_list;\n\
+    }\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/number_theory/prime_factorization.hpp\"\
     \n\n\n\n#line 5 \"src/number_theory/prime_factorization.hpp\"\n\nnamespace BanetteGin\
     \ {\n\ntemplate <class T>\nstd::vector<std::pair<T, T> > prime_factorization(T\
-    \ n) {\n    std::vector<std::pair<T, T> > prime_list;\n    for (long long int\
-    \ i = 2; i * i <= n; ++i) {\n        if (n % i == 0) {\n            long long\
-    \ int e = 0;\n            while (n % i == 0) {\n                n /= i;\n    \
-    \            e++;\n            }\n            prime_list.emplace_back(std::make_pair(i,\
-    \ e));\n        }\n    }\n    if (n != 1) {\n        prime_list.emplace_back(std::make_pair(n,\
+    \ n) {\n    std::vector<std::pair<T, T> > prime_list;\n    for (int i = 2; i *\
+    \ i <= n; ++i) {\n        if (n % i == 0) {\n            long long int e = 0;\n\
+    \            while (n % i == 0) {\n                n /= i;\n                e++;\n\
+    \            }\n            prime_list.emplace_back(std::make_pair(i, e));\n \
+    \       }\n    }\n    if (n != 1) {\n        prime_list.emplace_back(std::make_pair(n,\
     \ 1));\n    }\n    return prime_list;\n}\n\n}  // namespace BanetteGin\n\n\n#line\
     \ 1 \"src/number_theory/sundaram_sieve.hpp\"\n\n\n\n#line 5 \"src/number_theory/sundaram_sieve.hpp\"\
     \n\nnamespace BanetteGin {\n\ntemplate <class T>\nstd::vector<T> sundaram_sieve(T\
     \ n) {\n    std::vector<bool> ret((n + 1) / 2, true);\n    std::vector<T> prime_list;\n\
     \    if (n < 2) return prime_list;\n    prime_list.emplace_back(2);\n    ret[0]\
-    \ = false;\n    T m = ((n + 1) / 2 - 2) / 3;\n    for (long long int a = 1; a\
-    \ <= m; ++a) {\n        for (long long int b = 1; b <= a && a + b + 2 * a * b\
-    \ <= (n + 1) / 2 - 1; ++b) {\n            ret[a + b + 2 * a * b] = false;\n  \
-    \      }\n    }\n    for (T i = 0; i < ret.size(); ++i) {\n        if (ret[i])\
-    \ prime_list.emplace_back(i * 2 + 1);\n    }\n    return prime_list;\n}\n\n} \
-    \ // namespace BanetteGin\n\n\n#line 1 \"src/sorting/bubble_sort.hpp\"\n\n\n\n\
-    #line 5 \"src/sorting/bubble_sort.hpp\"\n\nnamespace BanetteGin {\n\ntemplate\
-    \ <class T>\nstd::vector<T> bubble_sort(const std::vector<T>& a) {\n    for (long\
-    \ long int i = 0; i < a.size(); ++i) {\n        for (long long int j = i + 1;\
-    \ j < a.size(); ++j) {\n            if (a[i] > a[j]) swap(a[i], a[j]);\n     \
-    \   }\n    }\n    return a;\n}\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/sorting/insertion_sort.hpp\"\
-    \n\n\n\n#line 5 \"src/sorting/insertion_sort.hpp\"\n\nnamespace BanetteGin {\n\
-    \ntemplate <class T>\nstd::vector<T> insertion_sort(const std::vector<T>& a) {\n\
-    \    for (long long int i = 1; i < a.size(); ++i) {\n        long long int v =\
-    \ a[i];\n        long long int j = i;\n        for (; j > 0; j--) {\n        \
-    \    if (a[j] > a[i - 1]) a[j] = a[j - 1];\n        }\n        for (long long\
-    \ int j = i + 1; j < a.size(); ++j) {\n            if (a[i] > a[j]) swap(a[i],\
+    \ = false;\n    T m = ((n + 1) / 2 - 2) / 3;\n    for (int a = 1; a <= m; ++a)\
+    \ {\n        for (int b = 1; b <= a && a + b + 2 * a * b <= (n + 1) / 2 - 1; ++b)\
+    \ {\n            ret[a + b + 2 * a * b] = false;\n        }\n    }\n    for (T\
+    \ i = 0; i < ret.size(); ++i) {\n        if (ret[i]) prime_list.emplace_back(i\
+    \ * 2 + 1);\n    }\n    return prime_list;\n}\n\n}  // namespace BanetteGin\n\n\
+    \n#line 1 \"src/sorting/bubble_sort.hpp\"\n\n\n\n#line 5 \"src/sorting/bubble_sort.hpp\"\
+    \n\nnamespace BanetteGin {\n\ntemplate <class T>\nstd::vector<T> bubble_sort(const\
+    \ std::vector<T>& a) {\n    for (int i = 0; i < a.size(); ++i) {\n        for\
+    \ (int j = i + 1; j < a.size(); ++j) {\n            if (a[i] > a[j]) swap(a[i],\
     \ a[j]);\n        }\n    }\n    return a;\n}\n\n}  // namespace BanetteGin\n\n\
-    \n#line 1 \"src/string/clip_string.hpp\"\n\n\n\n#line 6 \"src/string/clip_string.hpp\"\
+    \n#line 1 \"src/sorting/insertion_sort.hpp\"\n\n\n\n#line 5 \"src/sorting/insertion_sort.hpp\"\
+    \n\nnamespace BanetteGin {\n\ntemplate <class T>\nstd::vector<T> insertion_sort(const\
+    \ std::vector<T>& a) {\n    for (int i = 1; i < a.size(); ++i) {\n        long\
+    \ long int v = a[i];\n        int j = i;\n        for (; j > 0; j--) {\n     \
+    \       if (a[j] > a[i - 1]) a[j] = a[j - 1];\n        }\n        for (int j =\
+    \ i + 1; j < a.size(); ++j) {\n            if (a[i] > a[j]) swap(a[i], a[j]);\n\
+    \        }\n    }\n    return a;\n}\n\n}  // namespace BanetteGin\n\n\n#line 1\
+    \ \"src/string/clip_string.hpp\"\n\n\n\n#line 6 \"src/string/clip_string.hpp\"\
     \n\n#line 8 \"src/string/clip_string.hpp\"\n\nnamespace BanetteGin {\n\nstd::vector<std::string>\
-    \ clip_string(const std::vector<std::string>& s, char target) {\n    long long\
-    \ int lefx, rigx, lefy, rigy;\n    lefx = lefy = LINF;\n    rigx = rigy = -LINF;\n\
-    \    std::vector<std::string> ret;\n    for (long long int i = 0; i < s.size();\
-    \ ++i) {\n        for (long long int j = 0; j < s[i].size(); ++j) {\n        \
-    \    if (s[i][j] == target) {\n                lefx = std::min(lefx, i);\n   \
-    \             rigx = std::max(rigx, i);\n            }\n        }\n    }\n   \
-    \ for (long long int i = 0; i < s[0].size(); ++i) {\n        for (long long int\
-    \ j = 0; j < s.size(); ++j) {\n            if (s[j][i] == target) {\n        \
-    \        lefy = std::min(lefy, i);\n                rigy = std::max(rigy, i);\n\
-    \            }\n        }\n    }\n    for (long long int i = lefx; i <= rigx;\
-    \ ++i) {\n        std::string t = \"\";\n        for (long long int j = lefy;\
-    \ j <= rigy; ++j) {\n            t.push_back(s[i][j]);\n        }\n        ret.emplace_back(t);\n\
+    \ clip_string(const std::vector<std::string>& s, char target) {\n    int lefx,\
+    \ rigx, lefy, rigy;\n    lefx = lefy = LINF;\n    rigx = rigy = -LINF;\n    std::vector<std::string>\
+    \ ret;\n    for (int i = 0; i < s.size(); ++i) {\n        for (int j = 0; j <\
+    \ s[i].size(); ++j) {\n            if (s[i][j] == target) {\n                lefx\
+    \ = std::min(lefx, i);\n                rigx = std::max(rigx, i);\n          \
+    \  }\n        }\n    }\n    for (int i = 0; i < s[0].size(); ++i) {\n        for\
+    \ (int j = 0; j < s.size(); ++j) {\n            if (s[j][i] == target) {\n   \
+    \             lefy = std::min(lefy, i);\n                rigy = std::max(rigy,\
+    \ i);\n            }\n        }\n    }\n    for (int i = lefx; i <= rigx; ++i)\
+    \ {\n        std::string t = \"\";\n        for (int j = lefy; j <= rigy; ++j)\
+    \ {\n            t.push_back(s[i][j]);\n        }\n        ret.emplace_back(t);\n\
     \    }\n    return ret;\n}\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/string/rotate_string.hpp\"\
     \n\n\n\n#line 6 \"src/string/rotate_string.hpp\"\n\nnamespace BanetteGin {\n\n\
     std::vector<std::string> rotate_string(const std::vector<std::string>& s) {\n\
-    \    std::vector<std::string> ret;\n    for (long long int i = 0; i < s[0].size();\
-    \ ++i) {\n        std::string t = \"\";\n        for (long long int j = 0; j <\
-    \ s.size(); ++j) {\n            t.push_back(s[j][s[0].size() - 1 - i]);\n    \
-    \    }\n        ret.emplace_back(t);\n    }\n    return ret;\n}\n\n}  // namespace\
-    \ BanetteGin\n\n\n#line 1 \"src/string/run_length_encording.hpp\"\n\n\n\n#line\
-    \ 6 \"src/string/run_length_encording.hpp\"\n\nnamespace BanetteGin {\n\nstd::vector<std::pair<char,\
-    \ long long int> > run_length_encording(const std::string& s) {\n    std::vector<std::pair<char,\
-    \ long long int> > ret;\n    for (long long int i = 0; i < s.size();) {\n    \
-    \    long long int j = i + 1;\n        for (; j < s.size() && s[i] == s[j]; j++)\
-    \ {\n        }\n        ret.emplace_back(std::make_pair(s[i], j - i));\n     \
-    \   i = j;\n    }\n    return ret;\n}\n\n}  // namespace BanetteGin\n\n\n#line\
-    \ 65 \"src/all.hpp\"\n\n\n"
+    \    std::vector<std::string> ret;\n    for (int i = 0; i < s[0].size(); ++i)\
+    \ {\n        std::string t = \"\";\n        for (int j = 0; j < s.size(); ++j)\
+    \ {\n            t.push_back(s[j][s[0].size() - 1 - i]);\n        }\n        ret.emplace_back(t);\n\
+    \    }\n    return ret;\n}\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/string/run_length_encording.hpp\"\
+    \n\n\n\n#line 6 \"src/string/run_length_encording.hpp\"\n\nnamespace BanetteGin\
+    \ {\n\nstd::vector<std::pair<char, long long int> > run_length_encording(const\
+    \ std::string& s) {\n    std::vector<std::pair<char, long long int> > ret;\n \
+    \   for (int i = 0; i < s.size();) {\n        int j = i + 1;\n        for (; j\
+    \ < s.size() && s[i] == s[j]; j++) {\n        }\n        ret.emplace_back(std::make_pair(s[i],\
+    \ j - i));\n        i = j;\n    }\n    return ret;\n}\n\n}  // namespace BanetteGin\n\
+    \n\n#line 65 \"src/all.hpp\"\n\n\n"
   code: '#ifndef BANETTEGIN_ALL_HPP_INCLUDED
 
     #define BANETTEGIN_ALL_HPP_INCLUDED
@@ -996,7 +990,7 @@ data:
   isVerificationFile: false
   path: src/all.hpp
   requiredBy: []
-  timestamp: '2023-09-23 20:16:43+09:00'
+  timestamp: '2023-09-25 19:50:42+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/all.hpp

@@ -13,22 +13,21 @@ data:
     links: []
   bundledCode: "#line 1 \"src/combinatorics/homogenous_product.hpp\"\n\n\n\nnamespace\
     \ BanetteGin {\n\ntemplate <class T>\nT homogenous_product(const T& m, const T&\
-    \ n) {\n    T ret = 1;\n    for (long long int i = m + n - 1; i >= m; --i) {\n\
-    \        ret = ret * i;\n    }\n    for (long long int i = m - 1; i >= 1; --i)\
-    \ {\n        ret = ret / i;\n    }\n    return ret;\n}\n\n}  // namespace BanetteGin\n\
-    \n\n"
+    \ n) {\n    T ret = 1;\n    for (int i = m + n - 1; i >= m; --i) {\n        ret\
+    \ = ret * i;\n    }\n    for (int i = m - 1; i >= 1; --i) {\n        ret = ret\
+    \ / i;\n    }\n    return ret;\n}\n\n}  // namespace BanetteGin\n\n\n"
   code: "#ifndef BANETTEGIN_HOMOGENOUS_PRODUCT_HPP_INCLUDED\n#define BANETTEGIN_HOMOGENOUS_PRODUCT_HPP_INCLUDED\n\
     \nnamespace BanetteGin {\n\ntemplate <class T>\nT homogenous_product(const T&\
-    \ m, const T& n) {\n    T ret = 1;\n    for (long long int i = m + n - 1; i >=\
-    \ m; --i) {\n        ret = ret * i;\n    }\n    for (long long int i = m - 1;\
-    \ i >= 1; --i) {\n        ret = ret / i;\n    }\n    return ret;\n}\n\n}  // namespace\
-    \ BanetteGin\n\n#endif"
+    \ m, const T& n) {\n    T ret = 1;\n    for (int i = m + n - 1; i >= m; --i) {\n\
+    \        ret = ret * i;\n    }\n    for (int i = m - 1; i >= 1; --i) {\n     \
+    \   ret = ret / i;\n    }\n    return ret;\n}\n\n}  // namespace BanetteGin\n\n\
+    #endif"
   dependsOn: []
   isVerificationFile: false
   path: src/combinatorics/homogenous_product.hpp
   requiredBy:
   - src/all.hpp
-  timestamp: '2023-08-23 17:08:47+09:00'
+  timestamp: '2023-09-25 19:49:37+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/combinatorics/homogenous_product.hpp

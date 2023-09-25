@@ -25,14 +25,14 @@ data:
     links: []
   bundledCode: "#line 1 \"src/number_theory/prime_check.hpp\"\n\n\n\nnamespace BanetteGin\
     \ {\n\ntemplate <class T>\nbool prime_check(T n) {\n    if (n < 2) return false;\n\
-    \    if (n != 2 && n % 2 == 0) return false;\n    for (long long int i = 3; i\
-    \ * i <= n; i += 2)\n        if (n % i == 0) return false;\n    return true;\n\
-    }\n\n}  // namespace BanetteGin\n\n\n"
+    \    if (n != 2 && n % 2 == 0) return false;\n    for (int i = 3; i * i <= n;\
+    \ i += 2)\n        if (n % i == 0) return false;\n    return true;\n}\n\n}  //\
+    \ namespace BanetteGin\n\n\n"
   code: "#ifndef BANETTEGIN_PRIME_CHECK_HPP_INCLUDED\n#define BANETTEGIN_PRIME_CHECK_HPP_INCLUDED\n\
     \nnamespace BanetteGin {\n\ntemplate <class T>\nbool prime_check(T n) {\n    if\
     \ (n < 2) return false;\n    if (n != 2 && n % 2 == 0) return false;\n    for\
-    \ (long long int i = 3; i * i <= n; i += 2)\n        if (n % i == 0) return false;\n\
-    \    return true;\n}\n\n}  // namespace BanetteGin\n\n#endif"
+    \ (int i = 3; i * i <= n; i += 2)\n        if (n % i == 0) return false;\n   \
+    \ return true;\n}\n\n}  // namespace BanetteGin\n\n#endif"
   dependsOn: []
   isVerificationFile: false
   path: src/number_theory/prime_check.hpp
@@ -41,7 +41,7 @@ data:
   - src/number_theory/number_theory.hpp
   - src/all.hpp
   - src/all.hpp
-  timestamp: '2023-09-07 19:30:09+09:00'
+  timestamp: '2023-09-25 19:49:37+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/713.test.cpp
