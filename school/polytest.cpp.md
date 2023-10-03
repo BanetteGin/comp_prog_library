@@ -1,0 +1,127 @@
+---
+data:
+  _extendedDependsOn:
+  - icon: ':warning:'
+    path: src/basic/fast_complex.hpp
+    title: src/basic/fast_complex.hpp
+  - icon: ':warning:'
+    path: src/polynomial/formal_power_series.hpp
+    title: src/polynomial/formal_power_series.hpp
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _isVerificationFailed: false
+  _pathExtension: cpp
+  _verificationStatusIcon: ':warning:'
+  attributes:
+    links: []
+  bundledCode: "#line 1 \"school/polytest.cpp\"\n#include <bits/stdc++.h>\nusing namespace\
+    \ std;\n\n#line 1 \"src/polynomial/formal_power_series.hpp\"\n\n\n\n#line 5 \"\
+    src/polynomial/formal_power_series.hpp\"\n\n#line 1 \"src/basic/fast_complex.hpp\"\
+    \n\n\n\n#line 5 \"src/basic/fast_complex.hpp\"\n\nnamespace BanetteGin {\n\ntemplate\
+    \ <class T>\nstruct fast_complex {\n    T real_part, imag_part;\n\n    fast_complex()\n\
+    \        : real_part(0), imag_part(0) {\n    }\n    fast_complex(const T& real_part,\
+    \ const T& imag_part)\n        : real_part(real_part), imag_part(imag_part) {\n\
+    \    }\n    fast_complex(const T& real_part)\n        : real_part(real_part),\
+    \ imag_part(0) {\n    }\n    fast_complex(const std::complex<T>& c)\n        :\
+    \ real_part(c.real()), imag_part(c.imag()) {\n    }\n\n    T& real() noexcept\
+    \ {\n        return this->real_part;\n    }\n    T& imag() noexcept {\n      \
+    \  return this->imag_part;\n    }\n    T& abs() const noexcept {\n        return\
+    \ std::hypot(this->real_part, this->imag_part);\n    }\n    T& arg() const noexcept\
+    \ {\n        return std::atan2(this->imag_part, this->real_part);\n    }\n\n \
+    \   fast_complex<T> operator+(const T& rhs) const noexcept {\n        return fast_complex<T>(*this)\
+    \ += rhs;\n    }\n    fast_complex<T>& operator+=(const T& rhs) noexcept {\n \
+    \       return fast_complex<T>(*this) += (fast_complex<T>(rhs));\n    }\n    fast_complex<T>\
+    \ operator-(const T& rhs) const noexcept {\n        return fast_complex<T>(*this)\
+    \ -= rhs;\n    }\n    fast_complex<T>& operator-=(const T& rhs) noexcept {\n \
+    \       return fast_complex<T>(*this) -= (fast_complex<T>(rhs));\n    }\n    fast_complex<T>\
+    \ operator*(const T& rhs) const noexcept {\n        return fast_complex<T>(*this)\
+    \ *= rhs;\n    }\n    fast_complex<T>& operator*=(const T& rhs) noexcept {\n \
+    \       return fast_complex<T>(*this) *= (fast_complex<T>(rhs));\n    }\n    fast_complex<T>\
+    \ operator/(const T& rhs) const noexcept {\n        return fast_complex<T>(*this)\
+    \ /= rhs;\n    }\n    fast_complex<T>& operator/=(const T& rhs) noexcept {\n \
+    \       return fast_complex<T>(*this) /= (fast_complex<T>(rhs));\n    }\n    fast_complex<T>&\
+    \ operator+=(const fast_complex<T>& rhs) noexcept {\n        this->real_part +=\
+    \ rhs.real_part;\n        this->imag_part += rhs.imag_part;\n        return *this;\n\
+    \    }\n    fast_complex<T>& operator-=(const fast_complex<T>& rhs) noexcept {\n\
+    \        this->real_part -= rhs.real_part;\n        this->imag_part -= rhs.imag_part;\n\
+    \        return *this;\n    }\n    fast_complex<T>& operator*=(const fast_complex<T>&\
+    \ rhs) noexcept {\n        T tmpreal = this->real_part;\n        this->real_part\
+    \ = this->real_part * rhs.real_part - this->imag_part * rhs.imag_part;\n     \
+    \   this->imag_part = tmpreal * rhs.imag_part + rhs.real_part * this->imag_part;\n\
+    \        return *this;\n    }\n    fast_complex<T>& operator/=(const fast_complex<T>&\
+    \ rhs) noexcept {\n        *this *= fast_complex<T>(rhs.real_part, -rhs.imag_part);\n\
+    \        T dnm = rhs.real_part * rhs.real_part + rhs.imag_part * rhs.imag_part;\n\
+    \        this->real_part /= dnm;\n        this->imag_part /= dnm;\n        return\
+    \ *this;\n    }\n};\n}  // namespace BanetteGin\n\n\n#line 7 \"src/polynomial/formal_power_series.hpp\"\
+    \n\nnamespace BanetteGin {\n\ntemplate <class T>\nstruct formal_power_series :\
+    \ std::vector<T> {\n    using P = formal_power_series<T>;\n    void shrink() noexcept\
+    \ {\n        while (this->size() && this->back() == T(0)) this->pop_back();\n\
+    \        return;\n    }\n    void dft(vector<fast_complex<T>> &func, int inverse)\
+    \ noexcept {\n        int sz = func.size();\n        if (sz == 1) return;\n  \
+    \      std::vector<BanetteGin::fast_complex<T>> even, odd;\n        for (int i\
+    \ = 0; i < sz / 2; ++i) {\n            even.push_back(func[2 * i]);\n        \
+    \    odd.push_back(func[2 * i + 1]);\n        }\n        dft(even, inverse);\n\
+    \        dft(odd, inverse);\n        BanetteGin::fast_complex<T> now = 1, zeta\
+    \ = polar(T(1), T(inverse * 2 * M_PI / sz));\n        for (int i = 0; i < sz;\
+    \ ++i) {\n            func[i] = even[i % (sz / 2)] + now * odd[i % (sz / 2)];\n\
+    \            now *= zeta;\n        }\n        return;\n    }\n    P operator+(const\
+    \ P &r) const noexcept {\n        return P(*this) += r;\n    }\n\n    P operator+(const\
+    \ T &v) const noexcept {\n        return P(*this) += v;\n    }\n\n    P operator-(const\
+    \ P &r) const noexcept {\n        return P(*this) -= r;\n    }\n\n    P operator-(const\
+    \ T &v) const noexcept {\n        return P(*this) -= v;\n    }\n\n    P operator*(const\
+    \ P &r) const noexcept {\n        return P(*this) *= r;\n    }\n\n    P operator*(const\
+    \ T &v) const noexcept {\n        return P(*this) *= v;\n    }\n\n    P operator/(const\
+    \ P &r) const noexcept {\n        return P(*this) /= r;\n    }\n\n    P operator%(const\
+    \ P &r) const noexcept {\n        return P(*this) %= r;\n    }\n\n    P &operator+=(const\
+    \ P &r) noexcept {\n        if (r.size() > this->size()) this->resize(r.size());\n\
+    \        for (int i = 0; i < r.size(); i++) (*this)[i] += r[i];\n        return\
+    \ *this;\n    }\n\n    P &operator+=(const T &r) noexcept {\n        if (this->empty())\
+    \ this->resize(1);\n        (*this)[0] += r;\n        return *this;\n    }\n\n\
+    \    P &operator-=(const P &r) noexcept {\n        if (r.size() > this->size())\
+    \ this->resize(r.size());\n        for (int i = 0; i < r.size(); i++) (*this)[i]\
+    \ -= r[i];\n        shrink();\n        return *this;\n    }\n\n    P &operator-=(const\
+    \ T &r) noexcept {\n        if (this->empty()) this->resize(1);\n        (*this)[0]\
+    \ -= r;\n        shrink();\n        return *this;\n    }\n\n    P &operator*=(const\
+    \ T &v) noexcept {\n        const int n = (int)this->size();\n        for (int\
+    \ k = 0; k < n; k++) (*this)[k] *= v;\n        return *this;\n    }\n\n    P &operator*=(const\
+    \ P &r) noexcept {\n        if (this->empty() || r.empty()) {\n            this->clear();\n\
+    \            return *this;\n        }\n        std::vector<BanetteGin::fast_complex<T>>\
+    \ nf, ng;\n        int sz = 1;\n        while (sz < (*this).size() + r.size())\
+    \ sz *= 2;\n        nf.resize(sz, 0);\n        ng.resize(sz, 0);\n        for\
+    \ (int i = 0; i < (*this).size(); ++i) {\n            nf[i] = (*this)[i];\n  \
+    \      }\n        for (int i = 0; i < r.size(); ++i) {\n            ng[i] = r[i];\n\
+    \        }\n        dft(nf, 1);\n        dft(ng, 1);\n        for (int i = 0;\
+    \ i < sz; ++i) {\n            nf[i] *= ng[i];\n        }\n        dft(nf, -1);\n\
+    \        P ret;\n        for (int i = 0; i < sz; ++i) {\n            ret.emplace_back(nf[i].real()\
+    \ / sz);\n        }\n        ret.shrink();\n        return (*this) = ret;\n  \
+    \  }\n\n    P &operator%=(const P &r) noexcept {\n        return *this -= *this\
+    \ / r * r;\n    }\n\n    P operator-() const noexcept {\n        P ret(this->size());\n\
+    \        for (int i = 0; i < this->size(); i++) ret[i] = -(*this)[i];\n      \
+    \  return ret;\n    }\n};\n\n}  // namespace BanetteGin\n\n\n#line 5 \"school/polytest.cpp\"\
+    \n\n#define rep(i, n) for (ll i = 0, n_f = (ll)(n); i < n_f; ++i)\n\ntypedef long\
+    \ long ll;\n\nusing namespace BanetteGin;\n\nint main(void) {\n    formal_power_series<long\
+    \ double> f, g;\n    f.emplace_back(4);\n    f.emplace_back(3);\n    f.emplace_back(3);\n\
+    \    g.emplace_back(2);\n    g.emplace_back(3);\n    f *= g;\n    rep(i, f.size())\
+    \ cout << f[i] << endl;\n    return 0;\n}\n"
+  code: "#include <bits/stdc++.h>\nusing namespace std;\n\n#include \"../src/polynomial/formal_power_series.hpp\"\
+    \n\n#define rep(i, n) for (ll i = 0, n_f = (ll)(n); i < n_f; ++i)\n\ntypedef long\
+    \ long ll;\n\nusing namespace BanetteGin;\n\nint main(void) {\n    formal_power_series<long\
+    \ double> f, g;\n    f.emplace_back(4);\n    f.emplace_back(3);\n    f.emplace_back(3);\n\
+    \    g.emplace_back(2);\n    g.emplace_back(3);\n    f *= g;\n    rep(i, f.size())\
+    \ cout << f[i] << endl;\n    return 0;\n}"
+  dependsOn:
+  - src/polynomial/formal_power_series.hpp
+  - src/basic/fast_complex.hpp
+  isVerificationFile: false
+  path: school/polytest.cpp
+  requiredBy: []
+  timestamp: '2023-10-04 07:18:49+09:00'
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
+documentation_of: school/polytest.cpp
+layout: document
+redirect_from:
+- /library/school/polytest.cpp
+- /library/school/polytest.cpp.html
+title: school/polytest.cpp
+---

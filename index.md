@@ -1,6 +1,11 @@
 ---
 data:
   libraryCategories:
+  - name: school
+    pages:
+    - icon: ':warning:'
+      path: school/polytest.cpp
+      title: school/polytest.cpp
   - name: src
     pages:
     - icon: ':warning:'
