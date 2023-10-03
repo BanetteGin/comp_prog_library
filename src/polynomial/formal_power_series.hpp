@@ -134,15 +134,6 @@ struct formal_power_series : std::vector<T> {
         for (int i = 0; i < this->size(); i++) ret[i] = -(*this)[i];
         return ret;
     }
-
-    P &operator/=(const P &r) {
-        if (this->size() < r.size()) {
-            this->clear();
-            return *this;
-        }
-        int n = this->size() - r.size() + 1;
-        return *this = (rev().pre(n) * r.rev().inv(n)).pre(n).rev(n);
-    }
 };
 
 }  // namespace BanetteGin
