@@ -9,12 +9,12 @@ namespace BanetteGin {
 
 template <class T>
 struct formal_power_series : std::vector<T> {
-    using P = formal_power_series;
+    using P = formal_power_series<T>;
     void shrink() noexcept {
         while (this->size() && this->back() == T(0)) this->pop_back();
         return;
     }
-    void dft(P &func, int inverse) noexcept {
+    void dft(vector<fast_complex<T>> &func, int inverse) noexcept {
         int sz = func.size();
         if (sz == 1) return;
         std::vector<BanetteGin::fast_complex<T>> even, odd;
@@ -24,7 +24,7 @@ struct formal_power_series : std::vector<T> {
         }
         dft(even, inverse);
         dft(odd, inverse);
-        BanetteGin::fast_complex<T> now = 1, zeta = polar(T(1), inverse * T(2) * M_PI / sz);
+        BanetteGin::fast_complex<T> now = 1, zeta = polar(T(1), T(inverse * 2 * M_PI / sz));
         for (int i = 0; i < sz; ++i) {
             func[i] = even[i % (sz / 2)] + now * odd[i % (sz / 2)];
             now *= zeta;
@@ -102,14 +102,14 @@ struct formal_power_series : std::vector<T> {
         }
         std::vector<BanetteGin::fast_complex<T>> nf, ng;
         int sz = 1;
-        while (sz < f.size() + g.size()) sz *= 2;
+        while (sz < (*this).size() + r.size()) sz *= 2;
         nf.resize(sz, 0);
         ng.resize(sz, 0);
-        for (int i = 0; i < f.size(); ++i) {
-            nf[i] = f[i];
+        for (int i = 0; i < (*this).size(); ++i) {
+            nf[i] = (*this)[i];
         }
-        for (int i = 0; i < g.size(); ++i) {
-            ng[i] = g[i];
+        for (int i = 0; i < r.size(); ++i) {
+            ng[i] = r[i];
         }
         dft(nf, 1);
         dft(ng, 1);
@@ -117,12 +117,12 @@ struct formal_power_series : std::vector<T> {
             nf[i] *= ng[i];
         }
         dft(nf, -1);
-        P res;
+        P ret;
         for (int i = 0; i < sz; ++i) {
-            res.emplace_back(nf[i].real() / sz)
+            ret.emplace_back(nf[i].real() / sz);
         }
-        res.shrink();
-        return res;
+        ret.shrink();
+        return (*this) = ret;
     }
 
     P &operator%=(const P &r) noexcept {

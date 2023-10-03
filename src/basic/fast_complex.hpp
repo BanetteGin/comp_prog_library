@@ -12,20 +12,20 @@ struct fast_complex {
     fast_complex()
         : real_part(0), imag_part(0) {
     }
-    fast_complex(const T& realvalue, const T& imagvalue)
-        : real_part(realvalue), imag_part(imagvalue) {
+    fast_complex(const T& real_part, const T& imag_part)
+        : real_part(real_part), imag_part(imag_part) {
     }
-    fast_complex(const T& realvalue)
-        : real_part(realvalue), imag_part(0) {
+    fast_complex(const T& real_part)
+        : real_part(real_part), imag_part(0) {
     }
     fast_complex(const std::complex<T>& c)
         : real_part(c.real()), imag_part(c.imag()) {
     }
 
-    T& real() const noexcept {
+    T& real() noexcept {
         return this->real_part;
     }
-    T& imag() const noexcept {
+    T& imag() noexcept {
         return this->imag_part;
     }
     T& abs() const noexcept {
@@ -35,51 +35,51 @@ struct fast_complex {
         return std::atan2(this->imag_part, this->real_part);
     }
 
-    fast_complex operator+(const T& rhs) const noexcept {
-        return fast_complex(*this) += rhs;
+    fast_complex<T> operator+(const T& rhs) const noexcept {
+        return fast_complex<T>(*this) += rhs;
     }
-    fast_complex& operator+=(const T& rhs) noexcept {
-        return fast_complex(*this) += (fast_complex(rhs));
+    fast_complex<T>& operator+=(const T& rhs) noexcept {
+        return fast_complex<T>(*this) += (fast_complex<T>(rhs));
     }
-    fast_complex operator-(const T& rhs) const noexcept {
-        return fast_complex(*this) -= rhs;
+    fast_complex<T> operator-(const T& rhs) const noexcept {
+        return fast_complex<T>(*this) -= rhs;
     }
-    fast_complex& operator-=(const T& rhs) noexcept {
-        return fast_complex(*this) -= (fast_complex(rhs));
+    fast_complex<T>& operator-=(const T& rhs) noexcept {
+        return fast_complex<T>(*this) -= (fast_complex<T>(rhs));
     }
-    fast_complex operator*(const T& rhs) const noexcept {
-        return fast_complex(*this) *= rhs;
+    fast_complex<T> operator*(const T& rhs) const noexcept {
+        return fast_complex<T>(*this) *= rhs;
     }
-    fast_complex& operator*=(const T& rhs) noexcept {
-        return fast_complex(*this) *= (fast_complex(rhs));
+    fast_complex<T>& operator*=(const T& rhs) noexcept {
+        return fast_complex<T>(*this) *= (fast_complex<T>(rhs));
     }
-    fast_complex operator/(const T& rhs) const noexcept {
-        return fast_complex(*this) /= rhs;
+    fast_complex<T> operator/(const T& rhs) const noexcept {
+        return fast_complex<T>(*this) /= rhs;
     }
-    fast_complex& operator/=(const T& rhs) noexcept {
-        return fast_complex(*this) /= (fast_complex(rhs));
+    fast_complex<T>& operator/=(const T& rhs) noexcept {
+        return fast_complex<T>(*this) /= (fast_complex<T>(rhs));
     }
-    fast_complex& operator+=(const fast_complex& rhs) noexcept {
-        this->realvalue += rhs.realvalue;
-        this->imagvalue += rhs.imagvalue;
+    fast_complex<T>& operator+=(const fast_complex<T>& rhs) noexcept {
+        this->real_part += rhs.real_part;
+        this->imag_part += rhs.imag_part;
         return *this;
     }
-    fast_complex& operator-=(const fast_complex& rhs) noexcept {
-        this->realvalue -= rhs.realvalue;
-        this->imagvalue -= rhs.imagvalue;
+    fast_complex<T>& operator-=(const fast_complex<T>& rhs) noexcept {
+        this->real_part -= rhs.real_part;
+        this->imag_part -= rhs.imag_part;
         return *this;
     }
-    fast_complex& operator*=(const fast_complex& rhs) noexcept {
-        T tmpreal = this->realvalue;
-        this->realvalue = this->realvalue * rhs.realvalue - this->imagvalue * rhs.imagvalue;
-        this->imagvalue = tmpreal * rhs.imagvalue + rhs.realvalue * this->imagvalue;
+    fast_complex<T>& operator*=(const fast_complex<T>& rhs) noexcept {
+        T tmpreal = this->real_part;
+        this->real_part = this->real_part * rhs.real_part - this->imag_part * rhs.imag_part;
+        this->imag_part = tmpreal * rhs.imag_part + rhs.real_part * this->imag_part;
         return *this;
     }
-    fast_complex& operator/=(const fast_complex& rhs) noexcept {
-        *this *= fast_complex(rhs.realvalue, -rhs.imagvalue);
-        T dnm = rhs.realvalue * rhs.realvalue + rhs.imagvalue * rhs.imagvalue;
-        this->realvalue /= dnm;
-        this->imagvalue /= dnm;
+    fast_complex<T>& operator/=(const fast_complex<T>& rhs) noexcept {
+        *this *= fast_complex<T>(rhs.real_part, -rhs.imag_part);
+        T dnm = rhs.real_part * rhs.real_part + rhs.imag_part * rhs.imag_part;
+        this->real_part /= dnm;
+        this->imag_part /= dnm;
         return *this;
     }
 };
