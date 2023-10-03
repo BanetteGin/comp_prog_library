@@ -197,36 +197,36 @@ data:
   isVerificationFile: false
   path: src/geometry/point.hpp
   requiredBy:
-  - src/all.hpp
-  - src/all.hpp
-  - src/geometry/orthogonal_check.hpp
-  - src/geometry/circumcircle.hpp
-  - src/geometry/intersect.hpp
-  - src/geometry/segment.hpp
-  - src/geometry/triangle.hpp
-  - src/geometry/normal_vector.hpp
-  - src/geometry/geometry.hpp
-  - src/geometry/orthocenter.hpp
-  - src/geometry/distance.hpp
   - src/geometry/excircle.hpp
-  - src/geometry/centroid.hpp
-  - src/geometry/concyclic.hpp
   - src/geometry/unit_vector.hpp
-  - src/geometry/circle.hpp
-  - src/geometry/projection.hpp
-  - src/geometry/rotate.hpp
-  - src/geometry/incircle.hpp
-  - src/geometry/parallel_check.hpp
   - src/geometry/line.hpp
+  - src/geometry/projection.hpp
+  - src/geometry/triangle.hpp
+  - src/geometry/geometry.hpp
+  - src/geometry/distance.hpp
+  - src/geometry/concyclic.hpp
+  - src/geometry/incircle.hpp
+  - src/geometry/circle.hpp
+  - src/geometry/orthocenter.hpp
+  - src/geometry/centroid.hpp
+  - src/geometry/segment.hpp
+  - src/geometry/parallel_check.hpp
+  - src/geometry/intersect.hpp
+  - src/geometry/rotate.hpp
+  - src/geometry/normal_vector.hpp
+  - src/geometry/circumcircle.hpp
+  - src/geometry/orthogonal_check.hpp
+  - src/all.hpp
+  - src/all.hpp
   timestamp: '2023-09-23 20:16:43+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yukicoder/306-1.test.cpp
-  - test/yukicoder/306-1.test.cpp
   - test/yukicoder/306-2.test.cpp
   - test/yukicoder/306-2.test.cpp
-  - test/aizu_online_judge/Library/CGL/7_C.test.cpp
+  - test/yukicoder/306-1.test.cpp
+  - test/yukicoder/306-1.test.cpp
   - test/aizu_online_judge/Library/CGL/7_B.test.cpp
+  - test/aizu_online_judge/Library/CGL/7_C.test.cpp
 documentation_of: src/geometry/point.hpp
 layout: document
 redirect_from:

@@ -199,7 +199,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/number_theory/base_change.hpp
     title: src/number_theory/base_change.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: src/number_theory/divisors.hpp
     title: src/number_theory/divisors.hpp
   - icon: ':heavy_check_mark:'
@@ -618,9 +618,9 @@ data:
     \    return ret;\n}\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/number_theory/divisors.hpp\"\
     \n\n\n\n#line 5 \"src/number_theory/divisors.hpp\"\n\nnamespace BanetteGin {\n\
     \ntemplate <class T>\nstd::vector<T> divisors(T n) {\n    std::vector<T> ret;\n\
-    \    for (int i = 1; i * i <= n; ++i) {\n        if (n % i == 0) {\n         \
-    \   if (i == n / i) {\n                ret.emplace_back(i);\n            } else\
-    \ {\n                ret.emplace_back(i);\n                ret.emplace_back(n\
+    \    for (long long int i = 1; i * i <= n; ++i) {\n        if (n % i == 0) {\n\
+    \            if (i == n / i) {\n                ret.emplace_back(i);\n       \
+    \     } else {\n                ret.emplace_back(i);\n                ret.emplace_back(n\
     \ / i);\n            }\n        }\n    }\n    sort(ret.begin(), ret.end());\n\
     \    return ret;\n}\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/number_theory/dynamic_modint.hpp\"\
     \n\n\n\nnamespace BanetteGin {\n\ntemplate <long long int id>\nstruct dynamic_modint\
@@ -750,17 +750,18 @@ data:
     \        }\n    }\n    return a;\n}\n\n}  // namespace BanetteGin\n\n\n#line 1\
     \ \"src/string/clip_string.hpp\"\n\n\n\n#line 6 \"src/string/clip_string.hpp\"\
     \n\n#line 8 \"src/string/clip_string.hpp\"\n\nnamespace BanetteGin {\n\nstd::vector<std::string>\
-    \ clip_string(const std::vector<std::string>& s, char target) {\n    int lefx,\
-    \ rigx, lefy, rigy;\n    lefx = lefy = LINF;\n    rigx = rigy = -LINF;\n    std::vector<std::string>\
-    \ ret;\n    for (int i = 0; i < s.size(); ++i) {\n        for (int j = 0; j <\
-    \ s[i].size(); ++j) {\n            if (s[i][j] == target) {\n                lefx\
-    \ = std::min(lefx, i);\n                rigx = std::max(rigx, i);\n          \
-    \  }\n        }\n    }\n    for (int i = 0; i < s[0].size(); ++i) {\n        for\
-    \ (int j = 0; j < s.size(); ++j) {\n            if (s[j][i] == target) {\n   \
-    \             lefy = std::min(lefy, i);\n                rigy = std::max(rigy,\
-    \ i);\n            }\n        }\n    }\n    for (int i = lefx; i <= rigx; ++i)\
-    \ {\n        std::string t = \"\";\n        for (int j = lefy; j <= rigy; ++j)\
-    \ {\n            t.push_back(s[i][j]);\n        }\n        ret.emplace_back(t);\n\
+    \ clip_string(const std::vector<std::string>& s, char target) {\n    long long\
+    \ int lefx, rigx, lefy, rigy;\n    lefx = lefy = LINF;\n    rigx = rigy = -LINF;\n\
+    \    std::vector<std::string> ret;\n    for (long long int i = 0; i < s.size();\
+    \ ++i) {\n        for (long long int j = 0; j < s[i].size(); ++j) {\n        \
+    \    if (s[i][j] == target) {\n                lefx = std::min(lefx, i);\n   \
+    \             rigx = std::max(rigx, i);\n            }\n        }\n    }\n   \
+    \ for (long long int i = 0; i < s[0].size(); ++i) {\n        for (long long int\
+    \ j = 0; j < s.size(); ++j) {\n            if (s[j][i] == target) {\n        \
+    \        lefy = std::min(lefy, i);\n                rigy = std::max(rigy, i);\n\
+    \            }\n        }\n    }\n    for (long long int i = lefx; i <= rigx;\
+    \ ++i) {\n        std::string t = \"\";\n        for (long long int j = lefy;\
+    \ j <= rigy; ++j) {\n            t.push_back(s[i][j]);\n        }\n        ret.emplace_back(t);\n\
     \    }\n    return ret;\n}\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/string/rotate_string.hpp\"\
     \n\n\n\n#line 6 \"src/string/rotate_string.hpp\"\n\nnamespace BanetteGin {\n\n\
     std::vector<std::string> rotate_string(const std::vector<std::string>& s) {\n\
@@ -990,7 +991,7 @@ data:
   isVerificationFile: false
   path: src/all.hpp
   requiredBy: []
-  timestamp: '2023-09-25 19:50:42+09:00'
+  timestamp: '2023-10-04 06:53:52+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/all.hpp

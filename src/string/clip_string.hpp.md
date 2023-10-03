@@ -20,31 +20,33 @@ data:
     const long double PI = acos(-1.0L);\nconst long double GOLDEN_RATIO = (1 + sqrt(5))\
     \ / 2;\n\n}  // namespace BanetteGin\n\n\n#line 8 \"src/string/clip_string.hpp\"\
     \n\nnamespace BanetteGin {\n\nstd::vector<std::string> clip_string(const std::vector<std::string>&\
-    \ s, char target) {\n    int lefx, rigx, lefy, rigy;\n    lefx = lefy = LINF;\n\
-    \    rigx = rigy = -LINF;\n    std::vector<std::string> ret;\n    for (int i =\
-    \ 0; i < s.size(); ++i) {\n        for (int j = 0; j < s[i].size(); ++j) {\n \
-    \           if (s[i][j] == target) {\n                lefx = std::min(lefx, i);\n\
-    \                rigx = std::max(rigx, i);\n            }\n        }\n    }\n\
-    \    for (int i = 0; i < s[0].size(); ++i) {\n        for (int j = 0; j < s.size();\
-    \ ++j) {\n            if (s[j][i] == target) {\n                lefy = std::min(lefy,\
-    \ i);\n                rigy = std::max(rigy, i);\n            }\n        }\n \
-    \   }\n    for (int i = lefx; i <= rigx; ++i) {\n        std::string t = \"\"\
-    ;\n        for (int j = lefy; j <= rigy; ++j) {\n            t.push_back(s[i][j]);\n\
+    \ s, char target) {\n    long long int lefx, rigx, lefy, rigy;\n    lefx = lefy\
+    \ = LINF;\n    rigx = rigy = -LINF;\n    std::vector<std::string> ret;\n    for\
+    \ (long long int i = 0; i < s.size(); ++i) {\n        for (long long int j = 0;\
+    \ j < s[i].size(); ++j) {\n            if (s[i][j] == target) {\n            \
+    \    lefx = std::min(lefx, i);\n                rigx = std::max(rigx, i);\n  \
+    \          }\n        }\n    }\n    for (long long int i = 0; i < s[0].size();\
+    \ ++i) {\n        for (long long int j = 0; j < s.size(); ++j) {\n           \
+    \ if (s[j][i] == target) {\n                lefy = std::min(lefy, i);\n      \
+    \          rigy = std::max(rigy, i);\n            }\n        }\n    }\n    for\
+    \ (long long int i = lefx; i <= rigx; ++i) {\n        std::string t = \"\";\n\
+    \        for (long long int j = lefy; j <= rigy; ++j) {\n            t.push_back(s[i][j]);\n\
     \        }\n        ret.emplace_back(t);\n    }\n    return ret;\n}\n\n}  // namespace\
     \ BanetteGin\n\n\n"
   code: "#ifndef BANETTEGIN_CLIP_STRING_HPP_INCLUDED\n#define BANETTEGIN_CLIP_STRING_HPP_INCLUDED\n\
     \n#include <string>\n#include <vector>\n\n#include \"../basic/constant.hpp\"\n\
     \nnamespace BanetteGin {\n\nstd::vector<std::string> clip_string(const std::vector<std::string>&\
-    \ s, char target) {\n    int lefx, rigx, lefy, rigy;\n    lefx = lefy = LINF;\n\
-    \    rigx = rigy = -LINF;\n    std::vector<std::string> ret;\n    for (int i =\
-    \ 0; i < s.size(); ++i) {\n        for (int j = 0; j < s[i].size(); ++j) {\n \
-    \           if (s[i][j] == target) {\n                lefx = std::min(lefx, i);\n\
-    \                rigx = std::max(rigx, i);\n            }\n        }\n    }\n\
-    \    for (int i = 0; i < s[0].size(); ++i) {\n        for (int j = 0; j < s.size();\
-    \ ++j) {\n            if (s[j][i] == target) {\n                lefy = std::min(lefy,\
-    \ i);\n                rigy = std::max(rigy, i);\n            }\n        }\n \
-    \   }\n    for (int i = lefx; i <= rigx; ++i) {\n        std::string t = \"\"\
-    ;\n        for (int j = lefy; j <= rigy; ++j) {\n            t.push_back(s[i][j]);\n\
+    \ s, char target) {\n    long long int lefx, rigx, lefy, rigy;\n    lefx = lefy\
+    \ = LINF;\n    rigx = rigy = -LINF;\n    std::vector<std::string> ret;\n    for\
+    \ (long long int i = 0; i < s.size(); ++i) {\n        for (long long int j = 0;\
+    \ j < s[i].size(); ++j) {\n            if (s[i][j] == target) {\n            \
+    \    lefx = std::min(lefx, i);\n                rigx = std::max(rigx, i);\n  \
+    \          }\n        }\n    }\n    for (long long int i = 0; i < s[0].size();\
+    \ ++i) {\n        for (long long int j = 0; j < s.size(); ++j) {\n           \
+    \ if (s[j][i] == target) {\n                lefy = std::min(lefy, i);\n      \
+    \          rigy = std::max(rigy, i);\n            }\n        }\n    }\n    for\
+    \ (long long int i = lefx; i <= rigx; ++i) {\n        std::string t = \"\";\n\
+    \        for (long long int j = lefy; j <= rigy; ++j) {\n            t.push_back(s[i][j]);\n\
     \        }\n        ret.emplace_back(t);\n    }\n    return ret;\n}\n\n}  // namespace\
     \ BanetteGin\n\n#endif"
   dependsOn:
@@ -53,7 +55,7 @@ data:
   path: src/string/clip_string.hpp
   requiredBy:
   - src/all.hpp
-  timestamp: '2023-09-25 19:49:37+09:00'
+  timestamp: '2023-10-04 06:52:17+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/string/clip_string.hpp

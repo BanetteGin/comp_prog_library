@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/number_theory/base_change.hpp
     title: src/number_theory/base_change.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: src/number_theory/divisors.hpp
     title: src/number_theory/divisors.hpp
   - icon: ':heavy_check_mark:'
@@ -61,9 +61,9 @@ data:
     \ + '0');\n        covnum %= max_np;\n        max_np /= n;\n    }\n    return\
     \ ret;\n}\n\n}  // namespace BanetteGin\n\n\n#line 1 \"src/number_theory/divisors.hpp\"\
     \n\n\n\n#include <vector>\n\nnamespace BanetteGin {\n\ntemplate <class T>\nstd::vector<T>\
-    \ divisors(T n) {\n    std::vector<T> ret;\n    for (int i = 1; i * i <= n; ++i)\
-    \ {\n        if (n % i == 0) {\n            if (i == n / i) {\n              \
-    \  ret.emplace_back(i);\n            } else {\n                ret.emplace_back(i);\n\
+    \ divisors(T n) {\n    std::vector<T> ret;\n    for (long long int i = 1; i *\
+    \ i <= n; ++i) {\n        if (n % i == 0) {\n            if (i == n / i) {\n \
+    \               ret.emplace_back(i);\n            } else {\n                ret.emplace_back(i);\n\
     \                ret.emplace_back(n / i);\n            }\n        }\n    }\n \
     \   sort(ret.begin(), ret.end());\n    return ret;\n}\n\n}  // namespace BanetteGin\n\
     \n\n#line 1 \"src/number_theory/dynamic_modint.hpp\"\n\n\n\nnamespace BanetteGin\
@@ -247,7 +247,7 @@ data:
   isVerificationFile: false
   path: src/number_theory/number_theory.hpp
   requiredBy: []
-  timestamp: '2023-09-25 19:49:37+09:00'
+  timestamp: '2023-10-04 06:53:52+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/number_theory/number_theory.hpp

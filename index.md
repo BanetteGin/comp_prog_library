@@ -31,6 +31,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/basic/equal.hpp
       title: src/basic/equal.hpp
+    - icon: ':warning:'
+      path: src/basic/fast_complex.hpp
+      title: src/basic/fast_complex.hpp
     - icon: ':heavy_check_mark:'
       path: src/basic/greater_equal.hpp
       title: src/basic/greater_equal.hpp
@@ -166,7 +169,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/number_theory/base_change.hpp
       title: src/number_theory/base_change.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: src/number_theory/divisors.hpp
       title: src/number_theory/divisors.hpp
     - icon: ':heavy_check_mark:'
@@ -289,7 +292,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/843-3.test.cpp
       title: test/yukicoder/843-3.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yukicoder/888.test.cpp
       title: test/yukicoder/888.test.cpp
 layout: toppage

@@ -220,8 +220,8 @@ data:
   isVerificationFile: false
   path: src/geometry/circumcircle.hpp
   requiredBy:
-  - src/all.hpp
   - src/geometry/geometry.hpp
+  - src/all.hpp
   timestamp: '2023-09-23 20:16:43+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

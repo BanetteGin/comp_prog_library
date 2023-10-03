@@ -29,8 +29,8 @@ data:
   isVerificationFile: false
   path: src/number_theory/greatest_common_divisor.hpp
   requiredBy:
-  - src/number_theory/number_theory.hpp
   - src/all.hpp
+  - src/number_theory/number_theory.hpp
   timestamp: '2023-08-08 12:20:54+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
