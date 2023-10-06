@@ -56,14 +56,6 @@ struct formal_power_series : std::vector<T> {
         return P(*this) *= v;
     }
 
-    P operator/(const P &r) const noexcept {
-        return P(*this) /= r;
-    }
-
-    P operator%(const P &r) const noexcept {
-        return P(*this) %= r;
-    }
-
     P &operator+=(const P &r) noexcept {
         if (r.size() > this->size()) this->resize(r.size());
         for (int i = 0; i < r.size(); i++) (*this)[i] += r[i];
@@ -124,10 +116,6 @@ struct formal_power_series : std::vector<T> {
         }
         ret.shrink();
         return (*this) = ret;
-    }
-
-    P &operator%=(const P &r) noexcept {
-        return (*this) -= (*this) / r * r;
     }
 
     P operator-() const noexcept {
