@@ -34,31 +34,34 @@ struct fast_complex {
     T& arg() const noexcept {
         return std::atan2(this->imag_part, this->real_part);
     }
-
-    fast_complex<T> operator+(const T& rhs) const noexcept {
-        return fast_complex<T>(*this) += rhs;
+    fast_complex<T> operator+(const fast_complex<T>& rhs) const noexcept {
+        return fast_complex(*this) += rhs;
     }
-    fast_complex<T>& operator+=(const T& rhs) noexcept {
+    fast_complex<T> operator+(const T& rhs) const noexcept {
         return fast_complex<T>(*this) += (fast_complex<T>(rhs));
     }
-    fast_complex<T> operator-(const T& rhs) const noexcept {
+
+    fast_complex<T> operator-(const fast_complex<T>& rhs) const noexcept {
         return fast_complex<T>(*this) -= rhs;
     }
-    fast_complex<T>& operator-=(const T& rhs) noexcept {
+    fast_complex<T> operator-(const T& rhs) const noexcept {
         return fast_complex<T>(*this) -= (fast_complex<T>(rhs));
     }
-    fast_complex<T> operator*(const T& rhs) const noexcept {
+
+    fast_complex<T> operator*(const fast_complex<T>& rhs) const noexcept {
         return fast_complex<T>(*this) *= rhs;
     }
-    fast_complex<T>& operator*=(const T& rhs) noexcept {
+    fast_complex<T> operator*(const T& rhs) const noexcept {
         return fast_complex<T>(*this) *= (fast_complex<T>(rhs));
     }
-    fast_complex<T> operator/(const T& rhs) const noexcept {
+
+    fast_complex<T> operator/(const fast_complex<T>& rhs) const noexcept {
         return fast_complex<T>(*this) /= rhs;
     }
-    fast_complex<T>& operator/=(const T& rhs) noexcept {
+    fast_complex<T> operator/(const T& rhs) const noexcept {
         return fast_complex<T>(*this) /= (fast_complex<T>(rhs));
     }
+
     fast_complex<T>& operator+=(const fast_complex<T>& rhs) noexcept {
         this->real_part += rhs.real_part;
         this->imag_part += rhs.imag_part;

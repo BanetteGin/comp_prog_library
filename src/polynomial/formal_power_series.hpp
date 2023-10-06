@@ -3,6 +3,7 @@
 
 #include <vector>
 
+#include "../basic/comparison.hpp"
 #include "../basic/fast_complex.hpp"
 
 namespace BanetteGin {
@@ -11,10 +12,10 @@ template <class T>
 struct formal_power_series : std::vector<T> {
     using P = formal_power_series<T>;
     void shrink() noexcept {
-        while (this->size() && this->back() == T(0)) this->pop_back();
+        while (this->size() && equal(this->back(), T(0))) this->pop_back();
         return;
     }
-    void dft(vector<fast_complex<T>> &func, int inverse) noexcept {
+    void dft(std::vector<BanetteGin::fast_complex<T>> &func, int inverse) noexcept {
         int sz = func.size();
         if (sz == 1) return;
         std::vector<BanetteGin::fast_complex<T>> even, odd;
@@ -24,7 +25,7 @@ struct formal_power_series : std::vector<T> {
         }
         dft(even, inverse);
         dft(odd, inverse);
-        BanetteGin::fast_complex<T> now = 1, zeta = polar(T(1), T(inverse * 2 * M_PI / sz));
+        BanetteGin::fast_complex<T> now = 1, zeta = std::polar(T(1), T(inverse * 2 * acos(-1) / sz));
         for (int i = 0; i < sz; ++i) {
             func[i] = even[i % (sz / 2)] + now * odd[i % (sz / 2)];
             now *= zeta;
@@ -126,7 +127,7 @@ struct formal_power_series : std::vector<T> {
     }
 
     P &operator%=(const P &r) noexcept {
-        return *this -= *this / r * r;
+        return (*this) -= (*this) / r * r;
     }
 
     P operator-() const noexcept {
