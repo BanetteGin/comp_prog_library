@@ -132,7 +132,7 @@ struct formal_power_series : std::vector<T> {
 
     P operator-() const noexcept {
         P ret(this->size());
-        for (int i = 0; i < this->size(); i++) ret[i] = -(*this)[i];
+        for (int i = 0; i < (this->size()); i++) ret[i] = -(*this)[i];
         return ret;
     }
 };
