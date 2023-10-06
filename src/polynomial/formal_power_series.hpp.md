@@ -111,9 +111,7 @@ data:
     \ P(*this) -= r;\n    }\n\n    P operator-(const T &v) const noexcept {\n    \
     \    return P(*this) -= v;\n    }\n\n    P operator*(const P &r) const noexcept\
     \ {\n        return P(*this) *= r;\n    }\n\n    P operator*(const T &v) const\
-    \ noexcept {\n        return P(*this) *= v;\n    }\n\n    P operator/(const P\
-    \ &r) const noexcept {\n        return P(*this) /= r;\n    }\n\n    P operator%(const\
-    \ P &r) const noexcept {\n        return P(*this) %= r;\n    }\n\n    P &operator+=(const\
+    \ noexcept {\n        return P(*this) *= v;\n    }\n\n    P &operator+=(const\
     \ P &r) noexcept {\n        if (r.size() > this->size()) this->resize(r.size());\n\
     \        for (int i = 0; i < r.size(); i++) (*this)[i] += r[i];\n        return\
     \ *this;\n    }\n\n    P &operator+=(const T &r) noexcept {\n        if (this->empty())\
@@ -135,10 +133,9 @@ data:
     \ i < sz; ++i) {\n            nf[i] *= ng[i];\n        }\n        dft(nf, -1);\n\
     \        P ret;\n        for (int i = 0; i < sz; ++i) {\n            ret.emplace_back(nf[i].real()\
     \ / sz);\n        }\n        ret.shrink();\n        return (*this) = ret;\n  \
-    \  }\n\n    P &operator%=(const P &r) noexcept {\n        return (*this) -= (*this)\
-    \ / r * r;\n    }\n\n    P operator-() const noexcept {\n        P ret(this->size());\n\
-    \        for (int i = 0; i < this->size(); i++) ret[i] = -(*this)[i];\n      \
-    \  return ret;\n    }\n};\n\n}  // namespace BanetteGin\n\n\n"
+    \  }\n\n    P operator-() const noexcept {\n        P ret(this->size());\n   \
+    \     for (int i = 0; i < (this->size()); i++) ret[i] = -(*this)[i];\n       \
+    \ return ret;\n    }\n};\n\n}  // namespace BanetteGin\n\n\n"
   code: "#ifndef BANETTEGIN_FORMAL_POWER_SERIES_HPP_INCLUDED\n#define BANETTEGIN_FORMAL_POWER_SERIES_HPP_INCLUDED\n\
     \n#include <vector>\n\n#include \"../basic/comparison.hpp\"\n#include \"../basic/fast_complex.hpp\"\
     \n\nnamespace BanetteGin {\n\ntemplate <class T>\nstruct formal_power_series :\
@@ -159,9 +156,7 @@ data:
     \ P(*this) -= r;\n    }\n\n    P operator-(const T &v) const noexcept {\n    \
     \    return P(*this) -= v;\n    }\n\n    P operator*(const P &r) const noexcept\
     \ {\n        return P(*this) *= r;\n    }\n\n    P operator*(const T &v) const\
-    \ noexcept {\n        return P(*this) *= v;\n    }\n\n    P operator/(const P\
-    \ &r) const noexcept {\n        return P(*this) /= r;\n    }\n\n    P operator%(const\
-    \ P &r) const noexcept {\n        return P(*this) %= r;\n    }\n\n    P &operator+=(const\
+    \ noexcept {\n        return P(*this) *= v;\n    }\n\n    P &operator+=(const\
     \ P &r) noexcept {\n        if (r.size() > this->size()) this->resize(r.size());\n\
     \        for (int i = 0; i < r.size(); i++) (*this)[i] += r[i];\n        return\
     \ *this;\n    }\n\n    P &operator+=(const T &r) noexcept {\n        if (this->empty())\
@@ -183,10 +178,9 @@ data:
     \ i < sz; ++i) {\n            nf[i] *= ng[i];\n        }\n        dft(nf, -1);\n\
     \        P ret;\n        for (int i = 0; i < sz; ++i) {\n            ret.emplace_back(nf[i].real()\
     \ / sz);\n        }\n        ret.shrink();\n        return (*this) = ret;\n  \
-    \  }\n\n    P &operator%=(const P &r) noexcept {\n        return (*this) -= (*this)\
-    \ / r * r;\n    }\n\n    P operator-() const noexcept {\n        P ret(this->size());\n\
-    \        for (int i = 0; i < this->size(); i++) ret[i] = -(*this)[i];\n      \
-    \  return ret;\n    }\n};\n\n}  // namespace BanetteGin\n\n#endif"
+    \  }\n\n    P operator-() const noexcept {\n        P ret(this->size());\n   \
+    \     for (int i = 0; i < (this->size()); i++) ret[i] = -(*this)[i];\n       \
+    \ return ret;\n    }\n};\n\n}  // namespace BanetteGin\n\n#endif"
   dependsOn:
   - src/basic/comparison.hpp
   - src/basic/equal.hpp
@@ -200,7 +194,7 @@ data:
   isVerificationFile: false
   path: src/polynomial/formal_power_series.hpp
   requiredBy: []
-  timestamp: '2023-10-06 19:20:51+09:00'
+  timestamp: '2023-10-06 19:57:41+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/polynomial/formal_power_series.hpp
