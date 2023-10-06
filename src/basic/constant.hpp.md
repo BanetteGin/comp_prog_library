@@ -117,6 +117,9 @@ data:
     path: src/graph/dijkstra.hpp
     title: src/graph/dijkstra.hpp
   - icon: ':warning:'
+    path: src/polynomial/formal_power_series.hpp
+    title: src/polynomial/formal_power_series.hpp
+  - icon: ':warning:'
     path: src/string/clip_string.hpp
     title: src/string/clip_string.hpp
   _extendedVerifiedWith:
@@ -218,6 +221,7 @@ data:
   - src/basic/equal.hpp
   - src/graph/dijkstra.hpp
   - src/string/clip_string.hpp
+  - src/polynomial/formal_power_series.hpp
   - src/data_structure/segment_tree.hpp
   - src/all.hpp
   - src/all.hpp

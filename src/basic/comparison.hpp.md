@@ -98,6 +98,9 @@ data:
   - icon: ':warning:'
     path: src/geometry/unit_vector.hpp
     title: src/geometry/unit_vector.hpp
+  - icon: ':warning:'
+    path: src/polynomial/formal_power_series.hpp
+    title: src/polynomial/formal_power_series.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aizu_online_judge/Library/CGL/7_B.test.cpp
@@ -191,6 +194,7 @@ data:
   - src/geometry/normal_vector.hpp
   - src/geometry/circumcircle.hpp
   - src/geometry/orthogonal_check.hpp
+  - src/polynomial/formal_power_series.hpp
   - src/all.hpp
   - src/all.hpp
   - src/all.hpp
